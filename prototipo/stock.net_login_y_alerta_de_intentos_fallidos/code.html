@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stock.net - Inicio de Sesión</title>
+<!-- Google Fonts: Montserrat & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Montserrat:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Montserrat', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              warmBg: '#F7F4EE',
+              cardBg: '#446482',
+              cardHover: '#3b5873',
+              darkBtn: '#253549',
+              darkBtnHover: '#1c293a',
+              amber: '#E6A017',
+              amberHover: '#C58913',
+              inputBg: '#FFFDF9',
+              ink: '#2B2B29'
+            }
+          },
+          boxShadow: {
+            'card': '0 20px 35px -8px rgba(37, 53, 73, 0.35), 0 8px 16px -6px rgba(0, 0, 0, 0.15)',
+            'modal': '0 25px 50px -12px rgba(0, 0, 0, 0.35)'
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom Typography and Transitions Styles -->
+<style data-purpose="typography">
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    h1, h2, h3, .font-heading {
+      font-family: 'Montserrat', sans-serif;
+    }
+  </style>
+<style data-purpose="layout-animations">
+    .modal-backdrop {
+      transition: opacity 0.25s ease-out;
+    }
+    .modal-content {
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease-out;
+    }
+    .modal-hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .modal-hidden .modal-content {
+      transform: scale(0.95) translateY(10px);
+    }
+  </style>
+<!-- END: Custom Typography and Transitions Styles -->
+</head>
+<body class="h-full bg-[#F7F4EE] text-[#2B2B29] antialiased flex flex-col justify-between selection:bg-brand-amber selection:text-white">
+<!-- BEGIN: Background Ambient Accents -->
+<div aria-hidden="true" class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+<div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-[#E5DFD3]/40 blur-3xl"></div>
+<div class="absolute -bottom-32 -right-32 w-96 h-96 rounded-full bg-[#DCE4EC]/50 blur-3xl"></div>
+</div>
+<!-- END: Background Ambient Accents -->
+<!-- Top spacer for balance -->
+<header class="w-full pt-6 pb-2 px-6 flex justify-between items-center z-10 max-w-6xl mx-auto">
+<div class="flex items-center gap-2 text-xs font-semibold tracking-wider text-slate-500 uppercase">
+<span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+      Sistema Operativo y Seguro
+    </div>
+<div class="text-xs text-slate-500 font-medium hidden sm:block">
+      Terminal ID: <span class="font-mono text-slate-700">SRV-SEC-09</span>
+</div>
+</header>
+<!-- BEGIN: MainContent -->
+<main class="flex-grow flex items-center justify-center p-4 sm:p-6 z-10" data-purpose="login-section">
+<!-- BEGIN: Login Card (Based on reference Image 13) -->
+<div class="w-full max-w-[420px] bg-[#446482] rounded-2xl shadow-card border border-[#5d7c9c] p-7 sm:p-8 text-white relative transition-all duration-300">
+<!-- Logo and Welcome Heading -->
+<div class="flex flex-col items-center justify-center text-center mb-6" data-purpose="brand-header">
+<!-- Logo Display using https://lh3.googleusercontent.com/aida-public/AB6AXuASKJAisrZBVHCC_kGFOpG0fKxSVCJB5ykYaKRF6dTep3yyiCuVyeyhzdoxcL6aZmf619m9j6YlbT7zX7FZXQX8ZIEc4bmQkwHNKW-PXXQwuY4HOOSk3vkuKdWGQcpOJdcbH8kEyUIM11EcztIW1w42B6SEmWA7OJj3gL-CgVO4ulTgO9hAzsy7xEBdjO3QPjPTuJcJ5lBndA8vRhOOn4tImfdZGEDq-G3Th9EVzvw6Mt0pcnH-r8dP -->
+<div class="h-12 w-auto mb-2 flex items-center justify-center">
+<img alt="STOCK.net Logo" class="h-11 w-auto object-contain filter drop-shadow brightness-0 invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASKJAisrZBVHCC_kGFOpG0fKxSVCJB5ykYaKRF6dTep3yyiCuVyeyhzdoxcL6aZmf619m9j6YlbT7zX7FZXQX8ZIEc4bmQkwHNKW-PXXQwuY4HOOSk3vkuKdWGQcpOJdcbH8kEyUIM11EcztIW1w42B6SEmWA7OJj3gL-CgVO4ulTgO9hAzsy7xEBdjO3QPjPTuJcJ5lBndA8vRhOOn4tImfdZGEDq-G3Th9EVzvw6Mt0pcnH-r8dP"/>
+</div>
+<!-- Welcome Title -->
+<h1 class="text-2xl font-bold tracking-tight text-white font-heading mt-1">
+          Bienvenido
+        </h1>
+<p class="text-xs text-sky-100/80 mt-1 font-normal">
+          Gestión de Inventario, Control y Seguridad
+        </p>
+</div>
+<!-- Login Form -->
+<form class="space-y-4" id="loginForm" onsubmit="event.preventDefault(); handleFormSubmit();">
+<!-- Input Group: Usuario -->
+<div data-purpose="input-group-user">
+<label class="block text-sm font-semibold text-sky-50 mb-1.5 ml-1" for="username">
+            Usuario
+          </label>
+<div class="relative">
+<input class="w-full px-4 py-2.5 rounded-xl bg-[#FFFDF9] text-[#2B2B29] placeholder-slate-400 text-sm font-medium border-0 focus:ring-2 focus:ring-brand-amber focus:outline-none shadow-inner" id="username" name="username" placeholder="Ingresa tu usuario" required="" type="text"/>
+</div>
+</div>
+<!-- Input Group: Contraseña -->
+<div data-purpose="input-group-password">
+<label class="block text-sm font-semibold text-sky-50 mb-1.5 ml-1" for="password">
+            Contraseña
+          </label>
+<div class="relative">
+<input class="w-full pl-4 pr-11 py-2.5 rounded-xl bg-[#FFFDF9] text-[#2B2B29] placeholder-slate-400 text-sm font-medium border-0 focus:ring-2 focus:ring-brand-amber focus:outline-none shadow-inner" id="password" name="password" placeholder="Ingresa tu contraseña" required="" type="password"/>
+<!-- Toggle password visibility button -->
+<button aria-label="Mostrar u ocultar contraseña" class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700 transition-colors p-1" id="togglePasswordBtn" type="button">
+<svg class="w-5 h-5" fill="none" id="eyeIcon" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</div>
+<!-- Forgot Password Link -->
+<div class="text-center pt-1 pb-1">
+<button class="text-xs font-medium text-sky-100 hover:text-white underline decoration-sky-300/60 underline-offset-2 transition-colors cursor-pointer" onclick="openWarningModal('Recuperación solicitada por el usuario.')" type="button">
+            ¿Olvidaste tu contraseña?
+          </button>
+</div>
+<!-- Action Buttons -->
+<div class="space-y-2.5 pt-2" data-purpose="form-actions">
+<!-- Main Action: Iniciar Sesión -->
+<button class="w-full py-2.5 px-4 rounded-xl bg-[#26374a] hover:bg-[#1a2736] text-white text-sm font-semibold tracking-wide border border-[#1b2735] shadow transition-all duration-150 transform active:scale-[0.99] flex items-center justify-center gap-2" id="loginSubmitBtn" type="submit">
+<span>Iniciar Sesión</span>
+</button>
+<!-- Intentos Fallidos Button (Reference Image 13) -->
+<button class="w-full py-2.5 px-4 rounded-xl bg-[#2e4359] hover:bg-[#25374a] text-sky-100 hover:text-white text-sm font-semibold border border-[#3c5670] transition-all duration-150 transform active:scale-[0.99] flex items-center justify-center" id="intentosFallidosBtn" onclick="openWarningModal()" type="button">
+            Intentos Fallidos
+          </button>
+</div>
+</form>
+<!-- Quick Simulated Demo Alert Banner -->
+<div class="mt-4 pt-3 border-t border-sky-400/20 text-center" id="demoHint">
+<span class="text-[11px] text-sky-200/90 font-medium">
+          Tip: Clic en <strong class="text-white">"Intentos Fallidos"</strong> o pulsa <strong class="text-white">Iniciar Sesión</strong> para probar la advertencia.
+        </span>
+</div>
+</div>
+<!-- END: Login Card -->
+</main>
+<!-- END: MainContent -->
+<!-- BEGIN: Footer -->
+<footer class="w-full py-4 px-6 text-center text-xs text-slate-500 z-10" data-purpose="footer-info">
+<p class="font-medium tracking-wide">
+      Stock.net v4.12.0 • Acceso Seguro SSL 256-bit • © 2026 Todos los derechos reservados
+    </p>
+</footer>
+<!-- END: Footer -->
+<!-- BEGIN: WarningModal (Based on reference Image 14) -->
+<div aria-labelledby="modalTitle" aria-modal="true" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm modal-backdrop modal-hidden" id="warningModal" role="dialog">
+<!-- Modal Card -->
+<div class="bg-white rounded-xl shadow-modal border border-slate-200 w-full max-w-md p-6 sm:p-7 relative text-center modal-content" onclick="event.stopPropagation()">
+<!-- Close Button (X) -->
+<button aria-label="Cerrar modal" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-lg p-1.5 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-amber" onclick="closeWarningModal()" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</button>
+<!-- Amber Warning Circle Icon -->
+<div class="mx-auto flex items-center justify-center w-16 h-16 rounded-full border-4 border-[#E6A017] text-[#E6A017] mb-4">
+<span class="text-3xl font-extrabold font-heading">!</span>
+</div>
+<!-- Modal Title -->
+<h2 class="text-xl font-bold text-slate-800 font-heading mb-2" id="modalTitle">
+        Mensaje de advertencia
+      </h2>
+<!-- Modal Description -->
+<p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-5 max-w-xs mx-auto">
+        Usuario y/o contraseña incorrecta intentos fallidos: <strong class="text-slate-800 font-bold">5</strong>.<br/>
+        Para poder acceder a su cuenta recupere su contraseña.
+      </p>
+<!-- Recovery Form -->
+<form class="space-y-4" id="recoveryForm" onsubmit="handleRecovery(event)">
+<div>
+<label class="sr-only" for="recoveryEmail">Correo de recuperación</label>
+<input class="w-full text-center px-4 py-2.5 rounded-lg border border-slate-300 bg-white text-slate-800 placeholder-slate-400 text-xs sm:text-sm focus:border-brand-amber focus:ring-1 focus:ring-brand-amber outline-none transition-shadow" id="recoveryEmail" name="recoveryEmail" placeholder="Ingresa tu correo de recuperación" required="" type="email"/>
+</div>
+<!-- Amber CTA Button -->
+<button class="w-full py-2.5 px-6 rounded-lg bg-[#E6A017] hover:bg-[#C58913] active:bg-[#af780d] text-slate-900 font-bold text-sm tracking-wide shadow-md transition-all duration-150 transform hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-amber" id="recuperarSubmitBtn" type="submit">
+          Recuperar
+        </button>
+</form>
+<!-- Success feedback container (hidden by default) -->
+<div class="hidden mt-3 p-2 bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs rounded-lg font-medium" id="recoverySuccessMsg">
+        Enlace de recuperación enviado exitosamente a tu correo.
+      </div>
+</div>
+</div>
+<!-- END: WarningModal -->
+<!-- BEGIN: Interactive Scripts -->
+<script data-purpose="toggle-password">
+    // Toggle show/hide password text
+    const togglePasswordBtn = document.getElementById('togglePasswordBtn');
+    const passwordInput = document.getElementById('password');
+
+    if (togglePasswordBtn && passwordInput) {
+      togglePasswordBtn.addEventListener('click', () => {
+        const isPassword = passwordInput.getAttribute('type') === 'password';
+        passwordInput.setAttribute('type', isPassword ? 'text' : 'password');
+        
+        // Update Icon appearance
+        togglePasswordBtn.innerHTML = isPassword 
+          ? `<svg class="w-5 h-5 text-brand-cardBg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l18 18" />
+            </svg>`
+          : `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+            </svg>`;
+      });
+    }
+  </script>
+<script data-purpose="modal-interactions">
+    const warningModal = document.getElementById('warningModal');
+    let failedAttemptsCount = 0;
+
+    function openWarningModal() {
+      if (!warningModal) return;
+      warningModal.classList.remove('modal-hidden');
+      document.body.classList.add('overflow-hidden');
+      
+      // Auto focus email input for immediate usability
+      setTimeout(() => {
+        const emailInput = document.getElementById('recoveryEmail');
+        if (emailInput) emailInput.focus();
+      }, 150);
+    }
+
+    function closeWarningModal() {
+      if (!warningModal) return;
+      warningModal.classList.add('modal-hidden');
+      document.body.classList.remove('overflow-hidden');
+      
+      // Reset success feedback state
+      const msg = document.getElementById('recoverySuccessMsg');
+      if (msg) msg.classList.add('hidden');
+    }
+
+    // Backdrop click close listener
+    warningModal.addEventListener('click', (event) => {
+      if (event.target === warningModal) {
+        closeWarningModal();
+      }
+    });
+
+    // Escape key listener for accessibility
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !warningModal.classList.contains('modal-hidden')) {
+        closeWarningModal();
+      }
+    });
+
+    // Form submission handling to simulate login attempt & trigger warning after attempts
+    function handleFormSubmit() {
+      failedAttemptsCount++;
+      const loginBtn = document.getElementById('loginSubmitBtn');
+      const originalText = loginBtn.innerHTML;
+
+      // Small feedback on button
+      loginBtn.innerHTML = `<span>Validando...</span>`;
+      loginBtn.disabled = true;
+
+      setTimeout(() => {
+        loginBtn.innerHTML = originalText;
+        loginBtn.disabled = false;
+        // Triggers the exact reference mockup modal
+        openWarningModal();
+      }, 500);
+    }
+
+    // Recovery action handler
+    function handleRecovery(event) {
+      event.preventDefault();
+      const emailInput = document.getElementById('recoveryEmail');
+      const btn = document.getElementById('recuperarSubmitBtn');
+      const msg = document.getElementById('recoverySuccessMsg');
+
+      if (!emailInput.value) return;
+
+      btn.disabled = true;
+      btn.innerText = 'Enviando...';
+
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.innerText = 'Recuperar';
+        if (msg) {
+          msg.classList.remove('hidden');
+          msg.innerText = `Instrucciones enviadas a: ${emailInput.value}`;
+        }
+        setTimeout(() => {
+          closeWarningModal();
+          emailInput.value = '';
+        }, 1800);
+      }, 700);
+    }
+  </script>
+<!-- END: Interactive Scripts -->
+</body></html>

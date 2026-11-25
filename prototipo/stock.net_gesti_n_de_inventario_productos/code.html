@@ -1,0 +1,1484 @@
+<!DOCTYPE html><html lang="es" style="width: 1280px; height: 1112px; overflow: hidden; position: relative;"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Montserrat:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-error": "#ffffff", "on-tertiary": "#ffffff", "on-primary": "#ffffff", "surface-container-highest": "#e5e2dc", "outline-variant": "#c2c7ce", "primary-container": "#4a6b8a", "background": "#fcf9f3", "tertiary-fixed": "#ffddb3", "surface-variant": "#e5e2dc", "on-secondary-fixed": "#281800", "on-secondary-fixed-variant": "#614000", "outline": "#73777e", "surface-container-lowest": "#ffffff", "on-surface-variant": "#42474d", "surface": "#fcf9f3", "surface-container-low": "#f6f3ed", "surface-container": "#f0eee7", "secondary-container": "#fcb32e", "tertiary-container": "#85622f", "on-primary-fixed-variant": "#274967", "secondary-fixed-dim": "#ffba44", "surface-container-high": "#eae8e2", "tertiary": "#6a4a19", "secondary-fixed": "#ffddaf", "on-secondary": "#ffffff", "on-surface": "#1c1c18", "on-primary-fixed": "#001d32", "tertiary-fixed-dim": "#ecbf83", "error-container": "#ffdad6", "surface-bright": "#fcf9f3", "primary-fixed": "#cee5ff", "on-tertiary-fixed-variant": "#5f4110", "on-primary-container": "#d8eaff", "on-tertiary-fixed": "#291800", "inverse-on-surface": "#f3f0ea", "inverse-surface": "#31312d", "surface-tint": "#406180", "inverse-primary": "#a8caed", "on-background": "#1c1c18", "on-tertiary-container": "#ffe5c5", "secondary": "#805600", "primary-fixed-dim": "#a8caed", "on-secondary-container": "#6b4800", "surface-dim": "#dcdad4", "on-error-container": "#93000a", "error": "#ba1a1a", "primary": "#315371" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "gutter-desktop": "1.5rem", "gutter": "1rem", "margin-desktop": "2rem", "space-xl": "2rem", "margin": "1rem", "space-lg": "1.25rem", "space-md": "0.75rem", "space-sm": "0.5rem", "space-xs": "0.25rem" }, "fontFamily": { "headline-1": [ "Montserrat" ], "body-lg": [ "Inter" ], "body-base": [ "Inter" ], "headline-2": [ "Montserrat" ], "body-sm-medium": [ "Inter" ], "headline-3": [ "Montserrat" ], "body-base-semibold": [ "Inter" ], "body-sm": [ "Inter" ], "headline-1-mobile": [ "Montserrat" ], "caption": [ "Inter" ] }, "fontSize": { "headline-1": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "body-lg": [ "16px", { "lineHeight": "24px", "fontWeight": "400" } ], "body-base": [ "14px", { "lineHeight": "20px", "fontWeight": "400" } ], "headline-2": [ "22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "body-sm-medium": [ "12px", { "lineHeight": "16px", "fontWeight": "500" } ], "headline-3": [ "18px", { "lineHeight": "24px", "fontWeight": "600" } ], "body-base-semibold": [ "14px", { "lineHeight": "20px", "fontWeight": "600" } ], "body-sm": [ "12px", { "lineHeight": "16px", "fontWeight": "400" } ], "headline-1-mobile": [ "24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "caption": [ "10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" } ] } } } };</script></head><body class="bg-background font-body-base text-body-base text-on-surface antialiased" style="overflow: hidden;"><header class="fixed top-0 left-0 right-0 z-50 bg-primary-container text-on-primary shadow-[0_1px_8px_rgba(0,0,0,0.06)]"><div class="h-16 w-full px-gutter-desktop flex items-center justify-between"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-md"><img alt="STOCK.net" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBM4cJACjnceS_rlnJzzrrL6WxE5VlqE73T9B6IJ7SBBzaC2P9w4znQGvMPq4fVPnW1mi3SIo1gGJZjv1VyhPDu3OpS0O4-8u643HyG2h7M58JknkdTia0QgX6igAIOPmIOVsaWhhDVUJygP_duNVUgSJ9thNhZ_mKI70Uehu22UuOfN0Gs3EU9CobCzMLSBR-IUGKPJyBNiu96aAstIo00ExN42BxKQHa63SnZLonhNcFdEDnxZ6ExgBs6AZK-b4PuQ"><div class="flex flex-col"><span class="hidden lg:block font-caption text-caption text-on-primary-container uppercase tracking-wider">Sistema Integral de Gestión de Inventario, Control y Seguridad</span></div></div></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-space-xs bg-surface-container-lowest/10 py-space-xs px-space-md rounded-full"><span class="material-symbols-outlined text-secondary-container text-[16px]">verified_user</span><span class="font-body-sm-medium text-body-sm-medium text-on-primary">Administrador</span><span class="font-caption text-caption uppercase px-1.5 py-0.5 rounded-DEFAULT bg-secondary-container text-on-secondary-container font-semibold">Acceso Total</span></div><div class="flex items-center gap-space-md pl-space-sm"><div class="text-right hidden md:block"><div class="font-body-base-semibold text-body-base-semibold text-on-primary">Carlos Morales</div><div class="font-body-sm text-body-sm text-on-primary-container">Jefe de Operaciones</div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-64 bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex flex-col justify-between py-space-md overflow-y-auto"><div class="px-space-sm"><div class="px-space-md py-space-xs font-caption text-caption uppercase text-on-surface-variant font-semibold tracking-wider">Operaciones &amp; Control</div><nav class="flex flex-col gap-1 mt-space-xs" data-active-classes="bg-primary-container text-on-primary font-body-base-semibold rounded-lg"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-base text-body-base" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Panel Principal</span></a><a aria-current="page" class="flex items-center gap-space-md px-space-md py-space-sm transition-colors bg-primary-container text-on-primary font-body-base-semibold rounded-lg" data-path="inventario" href="#"><span class="material-symbols-outlined text-[20px]">warehouse</span><span>Gestión de Inventario</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-base text-body-base" data-path="ventas" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span>Gestión de Ventas</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-base text-body-base" data-path="punto-de-venta" href="#"><span class="material-symbols-outlined text-[20px]">point_of_sale</span><span>Punto de Venta</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-base text-body-base" data-path="compras" href="#"><span class="material-symbols-outlined text-[20px]">shopping_cart</span><span>Compras</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-base text-body-base" data-path="creditos" href="#"><span class="material-symbols-outlined text-[20px]">credit_score</span><span>Créditos</span></a></nav><div class="px-space-md pt-space-lg pb-space-xs font-caption text-caption uppercase text-on-surface-variant font-semibold tracking-wider">Socios &amp; Reportes</div><nav class="flex flex-col gap-1 mt-space-xs" data-active-classes="bg-primary-container text-on-primary font-body-base-semibold rounded-lg"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-base text-body-base" data-path="reportes-margenes" href="#"><span class="material-symbols-outlined text-[20px]">analytics</span><span>Análisis de Márgenes</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-base text-body-base" data-path="clientes" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span>Clientes</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-base text-body-base" data-path="proveedores" href="#"><span class="material-symbols-outlined text-[20px]">local_shipping</span><span>Proveedores</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-base text-body-base" data-path="usuarios-roles" href="#"><span class="material-symbols-outlined text-[20px]">admin_panel_settings</span><span>Usuarios &amp; Roles</span></a></nav></div><div class="px-space-md pt-space-md"><div class="p-space-md rounded-xl bg-surface-container flex items-center justify-between"><div class="flex flex-col"><span class="font-caption text-caption text-on-surface-variant">Terminal ID</span><span class="font-body-sm-medium text-body-sm-medium text-on-surface">WH-SUR-04</span></div><div class="w-2.5 h-2.5 rounded-full bg-secondary-container"></div></div></div></aside><div class="pl-64"><main class="relative pt-16 w-full min-h-screen bg-surface px-gutter-desktop py-space-lg"><div class="flex flex-col w-full pb-space-xl">
+<!-- Top Navigation & Breadcrumbs -->
+<div class="flex items-center justify-between pb-space-md">
+<div class="flex items-center gap-space-md">
+<button aria-label="Volver" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center hover:bg-surface-container-high transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px] text-on-surface">arrow_back</span>
+</button>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider">Módulos Operativos</span>
+<span class="font-caption text-caption text-outline">/</span>
+<span class="font-caption text-caption text-secondary font-semibold uppercase tracking-wider">Inventario Central</span>
+</div>
+<h1 class="font-headline-1 text-headline-1 font-bold text-on-surface tracking-tight uppercase" id="section-main-title">GESTIÓN DE INVENTARIO</h1>
+</div>
+</div>
+<!-- Quick Status / Terminal Info -->
+<div class="hidden lg:flex items-center gap-space-md bg-surface-container-low px-space-md py-space-xs rounded-xl shadow-sm">
+<div class="flex items-center gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-secondary-container animate-pulse"></div>
+<span class="font-body-sm-medium text-body-sm-medium text-on-surface" id="status-chip-text">Catálogo Sincronizado</span>
+</div>
+<div class="h-4 w-px bg-surface-container-highest"></div>
+<span class="font-body-sm text-body-sm text-on-surface-variant" id="status-counter-text">542 Referencias Activas</span>
+</div>
+</div>
+<!-- Operational Tabs & Statistics Banner -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md mt-space-sm mb-space-md">
+<!-- Main Module Tabs -->
+<div class="flex items-center gap-space-xs p-1 bg-surface-container rounded-xl w-fit shadow-sm">
+<button class="flex items-center gap-2 px-space-lg py-space-xs rounded-lg bg-secondary-container text-on-secondary-fixed font-headline-3 text-body-base-semibold shadow-sm transition-all" id="tab-productos" type="button">
+<span class="material-symbols-outlined text-[18px]">inventory</span>
+<span>GESTIÓN DE PRODUCTOS</span>
+</button>
+<button class="flex items-center gap-2 px-space-lg py-space-xs rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-body-base-semibold border border-outline-variant/40 transition-all" id="tab-categorias" type="button">
+<span class="material-symbols-outlined text-[18px]">category</span>
+<span>CATEGORÍAS</span>
+</button>
+<button class="hidden sm:flex items-center gap-2 px-space-md py-space-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-body-base transition-all" id="tab-kardex" type="button">
+<span class="material-symbols-outlined text-[18px]">sync_alt</span>
+<span>Historial Kardex</span>
+</button>
+</div>
+<!-- Live KPI Summary (Productos) -->
+<div class="grid grid-cols-3 gap-space-sm sm:gap-space-md" id="products-kpi-bar">
+<div class="bg-surface-container-low px-space-md py-space-xs rounded-xl shadow-sm flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
+</div>
+<div>
+<span class="font-caption text-caption text-on-surface-variant block uppercase">Disponibles</span>
+<span class="font-headline-3 text-body-base-semibold text-on-surface">518</span>
+</div>
+</div>
+<div class="bg-surface-container-low px-space-md py-space-xs rounded-xl shadow-sm flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary-container text-[18px]">warning</span>
+</div>
+<div>
+<span class="font-caption text-caption text-on-surface-variant block uppercase">Bajo Stock</span>
+<span class="font-headline-3 text-body-base-semibold text-secondary">19</span>
+</div>
+</div>
+<div class="bg-surface-container-low px-space-md py-space-xs rounded-xl shadow-sm flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-error text-[18px]">error</span>
+</div>
+<div>
+<span class="font-caption text-caption text-on-surface-variant block uppercase">Agotados</span>
+<span class="font-headline-3 text-body-base-semibold text-error">5</span>
+</div>
+</div>
+</div>
+<!-- Live KPI Summary (Categorías - oculto inicialmente) -->
+<div class="grid-cols-3 gap-space-sm sm:gap-space-md hidden" id="categories-kpi-bar">
+<div class="bg-surface-container-low px-space-md py-space-xs rounded-xl shadow-sm flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[18px]">folder_special</span>
+</div>
+<div>
+<span class="font-caption text-caption text-on-surface-variant block uppercase">Principales</span>
+<span class="font-headline-3 text-body-base-semibold text-on-surface">3</span>
+</div>
+</div>
+<div class="bg-surface-container-low px-space-md py-space-xs rounded-xl shadow-sm flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary-container text-[18px]">account_tree</span>
+</div>
+<div>
+<span class="font-caption text-caption text-on-surface-variant block uppercase">Subcategorías</span>
+<span class="font-headline-3 text-body-base-semibold text-secondary">2</span>
+</div>
+</div>
+<div class="bg-surface-container-low px-space-md py-space-xs rounded-xl shadow-sm flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+</div>
+<div>
+<span class="font-caption text-caption text-on-surface-variant block uppercase">Activas</span>
+<span class="font-headline-3 text-body-base-semibold text-primary">4 / 5</span>
+</div>
+</div>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- VISTA: PRODUCTOS                                              -->
+<!-- ============================================================== -->
+<div id="view-productos">
+<!-- Search & Primary Filter Bar -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col md:flex-row items-stretch md:items-center justify-between gap-space-md mb-space-lg">
+<!-- Big Search Box -->
+<div class="relative flex-1 max-w-2xl">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline text-[20px]">search</span>
+</div>
+<input class="w-full pl-11 pr-4 py-2 bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-base rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="search-input" placeholder="Buscar producto por SKU, nombre, descripción o código de barras..." type="text">
+<div class="absolute inset-y-0 right-0 pr-2 flex items-center gap-1">
+<span class="hidden sm:inline-block px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-caption text-caption">⌘ K</span>
+</div>
+</div>
+<!-- Filter Selectors & CTA -->
+<div class="flex items-center flex-wrap gap-space-sm">
+<!-- Category Filter -->
+<div class="relative">
+<select class="appearance-none pl-3 pr-8 py-2 bg-surface-container-low text-on-surface font-body-sm-medium rounded-lg focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer shadow-sm">
+<option value="all">Todas las Categorías</option>
+<option selected="" value="papeleria">Papelería</option>
+<option value="escritorio">Escritorio</option>
+<option value="oficina">Oficina &amp; Archivo</option>
+<option value="tecnologia">Tecnología &amp; Tintas</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-[18px] text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+<!-- Status Filter -->
+<div class="relative">
+<select class="appearance-none pl-3 pr-8 py-2 bg-surface-container-low text-on-surface font-body-sm-medium rounded-lg focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer shadow-sm">
+<option value="all">Estado: Todos</option>
+<option value="in_stock">Solo Disponibles</option>
+<option value="low_stock">Stock Crítico</option>
+<option value="out">Agotados</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-[18px] text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+<!-- Quick Export -->
+<button class="p-2 bg-surface-container hover:bg-surface-container-high text-on-surface rounded-lg transition-colors shadow-sm" title="Exportar Reporte Excel" type="button">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+<!-- Primary Action: + CREAR PRODUCTO -->
+<button class="flex items-center justify-center gap-2 px-space-lg py-2 rounded-lg bg-secondary-container hover:bg-secondary-fixed-dim text-on-secondary-fixed font-headline-3 text-body-base-semibold shadow-md hover:shadow-lg transition-all transform active:scale-95" onclick="openModal('createModal')" type="button">
+<span class="material-symbols-outlined text-[20px] font-bold">add</span>
+<span class="tracking-wide uppercase font-bold">+ CREAR PRODUCTO</span>
+</button>
+</div>
+</div>
+<!-- Main High-Fidelity Data Grid -->
+<div class="bg-surface-container-lowest rounded-xl shadow-md overflow-hidden">
+<!-- Table Header Toolbar -->
+<div class="px-space-lg py-space-sm bg-primary-container text-on-primary flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<span class="material-symbols-outlined text-[20px] text-secondary-container">inventory_2</span>
+<span class="font-headline-3 text-headline-3 tracking-wide">REGISTRO DE INVENTARIO FÍSICO</span>
+</div>
+<div class="flex items-center gap-space-sm text-body-sm text-on-primary-container">
+<span>Mostrando 5 de 542 productos</span>
+<div class="flex items-center gap-1 pl-2">
+<button class="p-1 rounded hover:bg-surface-container-lowest/10" type="button"><span class="material-symbols-outlined text-[18px]">chevron_left</span></button>
+<button class="p-1 rounded hover:bg-surface-container-lowest/10" type="button"><span class="material-symbols-outlined text-[18px]">chevron_right</span></button>
+</div>
+</div>
+</div>
+<!-- Data Table Container -->
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high text-on-surface font-headline-3 text-body-sm-medium uppercase tracking-wider select-none">
+<th class="py-space-md px-space-lg" scope="col">CÓDIGO / SKU</th>
+<th class="py-space-md px-space-md" scope="col">PRODUCTO</th>
+<th class="py-space-md px-space-md" scope="col">CATEGORÍA</th>
+<th class="py-space-md px-space-md text-right" scope="col">STOCK</th>
+<th class="py-space-md px-space-md text-right" scope="col">PRECIO VENTA</th>
+<th class="py-space-md px-space-md text-center" scope="col">ESTADO</th>
+<th class="py-space-md px-space-lg text-center" scope="col">ACCIONES</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<!-- Row 1: Cuaderno Cosido 100h -->
+<tr class="hover:bg-primary-fixed/20 transition-colors group">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-headline-3 text-body-base-semibold text-primary font-bold">SKU-001</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center shrink-0 overflow-hidden shadow-sm">
+<span class="material-symbols-outlined text-outline text-[22px]">menu_book</span>
+</div>
+<div class="min-w-0">
+<span class="font-body-base-semibold text-body-base-semibold text-on-surface block truncate">Cuaderno Cosido 100h</span>
+<span class="font-caption text-caption text-on-surface-variant block">Rayado Grande / Norma</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-2.5 py-1 rounded-md bg-surface-container font-caption text-caption uppercase text-on-surface font-semibold tracking-wider">
+                PAPELERÍA
+              </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="font-headline-3 text-body-base-semibold text-on-surface">45 <span class="font-body-sm text-body-sm text-on-surface-variant font-normal">unds</span></div>
+<span class="font-caption text-caption text-on-surface-variant">Mín: 15</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="font-headline-3 text-body-base-semibold text-on-surface">$ 6.400</span>
+<span class="font-caption text-caption text-outline block">COP</span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1.5 px-space-md py-0.5 rounded-full bg-primary-fixed/40 text-primary font-body-sm-medium text-body-sm-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                Disponible
+              </span>
+</td>
+<td class="py-space-md px-space-lg text-center">
+<div class="flex items-center justify-center gap-1.5">
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors shadow-sm" onclick="openDetailModal('SKU-001', 'Cuaderno Cosido 100h', 'Es un cuaderno de tapa dura altamente resistente con hojas rayadas de alta calidad.', 45, 'Distribuidora Scribe')" title="Ver Detalle" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors shadow-sm" onclick="openModal('createModal')" title="Editar Producto" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-secondary-container/20 hover:bg-secondary-container flex items-center justify-center text-on-secondary-container transition-colors shadow-sm" onclick="openModal('adjustModal', 'SKU-001 - Cuaderno Cosido 100h', 45)" title="Ajuste de Stock Rápido" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-error-container flex items-center justify-center text-on-surface-variant hover:text-error transition-colors shadow-sm" onclick="openSecurityModal('SKU-001', 'Cuaderno Cosido 100h')" title="Inactivar / Borrar" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Cuaderno Argollado Grande -->
+<tr class="hover:bg-primary-fixed/20 transition-colors group bg-surface-container-low/30">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-headline-3 text-body-base-semibold text-primary font-bold">SKU-002</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center shrink-0 overflow-hidden shadow-sm">
+<span class="material-symbols-outlined text-outline text-[22px]">auto_stories</span>
+</div>
+<div class="min-w-0">
+<span class="font-body-base-semibold text-body-base-semibold text-on-surface block truncate">Cuaderno Argollado Grande</span>
+<span class="font-caption text-caption text-on-surface-variant block">Cuadriculado 80h / Jean Book</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-2.5 py-1 rounded-md bg-surface-container font-caption text-caption uppercase text-on-surface font-semibold tracking-wider">
+                PAPELERÍA
+              </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="font-headline-3 text-body-base-semibold text-on-surface">30 <span class="font-body-sm text-body-sm text-on-surface-variant font-normal">unds</span></div>
+<span class="font-caption text-caption text-on-surface-variant">Mín: 10</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="font-headline-3 text-body-base-semibold text-on-surface">$ 9.500</span>
+<span class="font-caption text-caption text-outline block">COP</span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1.5 px-space-md py-0.5 rounded-full bg-primary-fixed/40 text-primary font-body-sm-medium text-body-sm-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                Disponible
+              </span>
+</td>
+<td class="py-space-md px-space-lg text-center">
+<div class="flex items-center justify-center gap-1.5">
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors shadow-sm" onclick="openDetailModal('SKU-002', 'Cuaderno Argollado Grande', 'Cuaderno de espiral metálico reforzado con hojas cuadriculadas de 80 hojas.', 30, 'Jean Book Colombia')" title="Ver Detalle" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors shadow-sm" onclick="openModal('createModal')" title="Editar Producto" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-secondary-container/20 hover:bg-secondary-container flex items-center justify-center text-on-secondary-container transition-colors shadow-sm" onclick="openModal('adjustModal', 'SKU-002 - Cuaderno Argollado', 30)" title="Ajuste de Stock Rápido" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-error-container flex items-center justify-center text-on-surface-variant hover:text-error transition-colors shadow-sm" onclick="openSecurityModal('SKU-002', 'Cuaderno Argollado Grande')" title="Inactivar / Borrar" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Resma Papel Bond A4 75g -->
+<tr class="hover:bg-primary-fixed/20 transition-colors group">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+<span class="font-headline-3 text-body-base-semibold text-primary font-bold">SKU-003</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center shrink-0 overflow-hidden shadow-sm">
+<span class="material-symbols-outlined text-secondary-container text-[22px]">description</span>
+</div>
+<div class="min-w-0">
+<span class="font-body-base-semibold text-body-base-semibold text-on-surface block truncate">Resma Papel Bond A4 75g</span>
+<span class="font-caption text-caption text-on-surface-variant block">Paquete 500 hojas / Reprograf</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-2.5 py-1 rounded-md bg-surface-container font-caption text-caption uppercase text-on-surface font-semibold tracking-wider">
+                PAPELERÍA
+              </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="font-headline-3 text-body-base-semibold text-secondary">12 <span class="font-body-sm text-body-sm text-on-surface-variant font-normal">unds</span></div>
+<span class="font-caption text-caption text-secondary font-medium">Mín: 20 (Alerta)</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="font-headline-3 text-body-base-semibold text-on-surface">$ 18.000</span>
+<span class="font-caption text-caption text-outline block">COP</span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1.5 px-space-md py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-body-sm-medium text-body-sm-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span>
+                Stock Bajo
+              </span>
+</td>
+<td class="py-space-md px-space-lg text-center">
+<div class="flex items-center justify-center gap-1.5">
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors shadow-sm" onclick="openDetailModal('SKU-003', 'Resma Papel Bond A4 75g', 'Resma de alta blancura de 500 hojas de papel multifunción 75g para impresoras y fotocopiadoras.', 12, 'Reprograf Papeles S.A.')" title="Ver Detalle" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors shadow-sm" onclick="openModal('createModal')" title="Editar Producto" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-secondary-container/20 hover:bg-secondary-container flex items-center justify-center text-on-secondary-container transition-colors shadow-sm" onclick="openModal('adjustModal', 'SKU-003 - Resma Papel Bond', 12)" title="Ajuste de Stock Rápido" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-error-container flex items-center justify-center text-on-surface-variant hover:text-error transition-colors shadow-sm" onclick="openSecurityModal('SKU-003', 'Resma Papel Bond A4 75g')" title="Inactivar / Borrar" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Lapicero Tinta Gel 0.7mm x12 -->
+<tr class="hover:bg-primary-fixed/20 transition-colors group bg-surface-container-low/30">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="font-headline-3 text-body-base-semibold text-primary font-bold">SKU-004</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center shrink-0 overflow-hidden shadow-sm">
+<span class="material-symbols-outlined text-error text-[22px]">draw</span>
+</div>
+<div class="min-w-0">
+<span class="font-body-base-semibold text-body-base-semibold text-on-surface block truncate">Lapicero Tinta Gel 0.7mm x12</span>
+<span class="font-caption text-caption text-on-surface-variant block">Caja Colores Surtidos / Pilot</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-2.5 py-1 rounded-md bg-surface-container font-caption text-caption uppercase text-on-surface font-semibold tracking-wider">
+                ESCRITORIO
+              </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="font-headline-3 text-body-base-semibold text-error">0 <span class="font-body-sm text-body-sm text-on-surface-variant font-normal">unds</span></div>
+<span class="font-caption text-caption text-error font-medium">Reorden Urgente</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="font-headline-3 text-body-base-semibold text-on-surface">$ 14.500</span>
+<span class="font-caption text-caption text-outline block">COP</span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1.5 px-space-md py-0.5 rounded-full bg-error-container text-on-error-container font-body-sm-medium text-body-sm-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                Agotado
+              </span>
+</td>
+<td class="py-space-md px-space-lg text-center">
+<div class="flex items-center justify-center gap-1.5">
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors shadow-sm" onclick="openDetailModal('SKU-004', 'Lapicero Tinta Gel 0.7mm x12', 'Caja de 12 lapiceros tinta gel punta fina 0.7mm en colores surtidos con grip ergonómico.', 0, 'Pilot Corporation')" title="Ver Detalle" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors shadow-sm" onclick="openModal('createModal')" title="Editar Producto" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-secondary-container/20 hover:bg-secondary-container flex items-center justify-center text-on-secondary-container transition-colors shadow-sm" onclick="openModal('adjustModal', 'SKU-004 - Lapicero Tinta Gel', 0)" title="Ajuste de Stock Rápido" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-error-container flex items-center justify-center text-on-surface-variant hover:text-error transition-colors shadow-sm" onclick="openSecurityModal('SKU-004', 'Lapicero Tinta Gel 0.7mm x12')" title="Inactivar / Borrar" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5: Archivador Carpeta Oficio -->
+<tr class="hover:bg-primary-fixed/20 transition-colors group">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-headline-3 text-body-base-semibold text-primary font-bold">SKU-005</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center shrink-0 overflow-hidden shadow-sm">
+<span class="material-symbols-outlined text-outline text-[22px]">folder</span>
+</div>
+<div class="min-w-0">
+<span class="font-body-base-semibold text-body-base-semibold text-on-surface block truncate">Archivador Carpeta Oficio</span>
+<span class="font-caption text-caption text-on-surface-variant block">Lomo Ancho Mecánico / Carvajal</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-2.5 py-1 rounded-md bg-surface-container font-caption text-caption uppercase text-on-surface font-semibold tracking-wider">
+                OFICINA
+              </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="font-headline-3 text-body-base-semibold text-on-surface">85 <span class="font-body-sm text-body-sm text-on-surface-variant font-normal">unds</span></div>
+<span class="font-caption text-caption text-on-surface-variant">Mín: 15</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="font-headline-3 text-body-base-semibold text-on-surface">$ 12.200</span>
+<span class="font-caption text-caption text-outline block">COP</span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1.5 px-space-md py-0.5 rounded-full bg-primary-fixed/40 text-primary font-body-sm-medium text-body-sm-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                Disponible
+              </span>
+</td>
+<td class="py-space-md px-space-lg text-center">
+<div class="flex items-center justify-center gap-1.5">
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors shadow-sm" onclick="openDetailModal('SKU-005', 'Archivador Carpeta Oficio', 'Archivador tamaño oficio de lomo ancho con mecanismo palanca de alta durabilidad.', 85, 'Carvajal Espacios')" title="Ver Detalle" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors shadow-sm" onclick="openModal('createModal')" title="Editar Producto" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-secondary-container/20 hover:bg-secondary-container flex items-center justify-center text-on-secondary-container transition-colors shadow-sm" onclick="openModal('adjustModal', 'SKU-005 - Archivador Carpeta Oficio', 85)" title="Ajuste de Stock Rápido" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-error-container flex items-center justify-center text-on-surface-variant hover:text-error transition-colors shadow-sm" onclick="openSecurityModal('SKU-005', 'Archivador Carpeta Oficio')" title="Inactivar / Borrar" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Audit trail info & Pagination -->
+<div class="px-space-lg py-space-md bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md text-on-surface-variant font-caption text-caption">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">update</span>
+          Última actualización de existencias: Hoy 16:48 (Sincronizado)
+        </span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-body-sm text-body-sm text-on-surface-variant mr-2">Página 1 de 109</span>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded bg-surface-container text-on-surface font-body-sm-medium flex items-center justify-center shadow-sm opacity-50 cursor-not-allowed" type="button">
+<span class="material-symbols-outlined text-[18px]">first_page</span>
+</button>
+<button class="w-8 h-8 rounded bg-surface-container text-on-surface font-body-sm-medium flex items-center justify-center shadow-sm opacity-50 cursor-not-allowed" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<span class="w-8 h-8 rounded bg-secondary-container text-on-secondary-fixed font-body-sm-medium flex items-center justify-center font-bold shadow-sm">1</span>
+<button class="w-8 h-8 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm-medium flex items-center justify-center shadow-sm" type="button">2</button>
+<button class="w-8 h-8 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm-medium flex items-center justify-center shadow-sm" type="button">3</button>
+<span class="text-on-surface-variant px-1 font-body-sm">...</span>
+<button class="w-8 h-8 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm-medium flex items-center justify-center shadow-sm" type="button">109</button>
+<button class="w-8 h-8 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm-medium flex items-center justify-center shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+<button class="w-8 h-8 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm-medium flex items-center justify-center shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">last_page</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Operational Insight Card Banner with Visual Image -->
+<div class="mt-space-xl grid grid-cols-1 lg:grid-cols-3 gap-space-lg">
+<!-- Visual Warehouse Operations Spotlight -->
+<div class="relative bg-primary-container text-on-primary rounded-xl overflow-hidden p-space-lg flex flex-col justify-between shadow-md">
+<div class="absolute inset-0 opacity-15 mix-blend-overlay">
+<img alt="Control de Inventario Stock.net" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEq_8MTB6Z_9s3Ba0gnmmOK9CkT0R2mOZ7hP1aC1TTIhhLMmHyYjFrislqrez7rygts2k1priDiJgdri2_IQBDV-GnRJ0h1GNRXQ4LYroiBUzBkKGGwowON3YuvNIc9otFQY-fx5pZzck8POJgJayDmh8JRW4CXCe7dNaLiXvJfKP0PXe_X0_NCPrsn1mm5mCpdWKIM_mmJb7nIEMqjA8fPJHDmnP3iqfuXFGCr1Ekjt7zWdKdePAGGx0lkMS7w-HtVQ">
+</div>
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-space-xs">
+<span class="material-symbols-outlined text-secondary-container text-[20px]">verified</span>
+<span class="font-caption text-caption uppercase tracking-wider text-secondary-fixed font-bold">AUDITORÍA CONTINUA</span>
+</div>
+<h3 class="font-headline-2 text-headline-2 text-on-primary mb-space-xs">Control Físico y Trazabilidad</h3>
+<p class="font-body-sm text-body-sm text-on-primary-container">
+          Mantenga la consistencia entre el stock registrado y las existencias en anaqueles mediante los ajustes periódicos autorizados.
+        </p>
+</div>
+<div class="relative z-10 pt-space-lg flex items-center justify-between">
+<span class="font-caption text-caption text-on-primary-container">Terminal Activo WH-SUR-04</span>
+<button class="px-space-md py-1.5 bg-secondary-container hover:bg-secondary-fixed-dim text-on-secondary-fixed rounded-lg font-body-sm-medium text-body-sm-medium transition-colors shadow-sm font-bold" onclick="openModal('adjustModal', 'Auditoría General', 0)" type="button">
+          Iniciar Auditoría
+        </button>
+</div>
+</div>
+<!-- Inventory Valuation Card -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-md flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-caption text-caption uppercase text-on-surface-variant font-bold">VALORACIÓN TOTAL ACTIVA</span>
+<span class="material-symbols-outlined text-primary text-[20px]">account_balance_wallet</span>
+</div>
+<div class="font-headline-1 text-headline-1 font-bold text-on-surface tracking-tight">$ 48.650.000 <span class="font-body-base text-body-base text-on-surface-variant font-normal">COP</span></div>
+<div class="mt-space-sm flex items-center gap-2 text-body-sm text-secondary font-medium">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span>+4.2% respecto a la semana anterior</span>
+</div>
+</div>
+<!-- Mini Sparkline inline SVG -->
+<div class="pt-space-md">
+<svg class="w-full h-10 text-secondary-container" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 100 24">
+<path d="M0,20 Q15,18 25,12 T50,14 T75,8 T100,2" stroke-linecap="round"></path>
+<path d="M0,20 Q15,18 25,12 T50,14 T75,8 T100,2 L100,24 L0,24 Z" fill="currentColor" fill-opacity="0.1" stroke="none"></path>
+</svg>
+</div>
+</div>
+<!-- Quick Warehouse Tips & Protocol -->
+<div class="bg-surface-container-low p-space-lg rounded-xl shadow-md flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-caption text-caption uppercase text-on-surface-variant font-bold">PROTOCOLO DE DESPACHO</span>
+<span class="material-symbols-outlined text-outline text-[20px]">local_shipping</span>
+</div>
+<h4 class="font-headline-3 text-headline-3 text-on-surface">Recepción y Salida Rápida</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+          Todo ajuste manual negativo mayor a 20 unidades requiere validación de doble factor por el supervisor de turno.
+        </p>
+</div>
+<div class="pt-space-md flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-caption text-caption text-on-surface font-medium">Cumplimiento ISO 9001: 99.4%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- VISTA: GESTIÓN DE CATEGORÍAS (Integrada directamente)          -->
+<!-- ============================================================== -->
+<div id="view-categorias" class="hidden">
+<!-- Search & Filter Bar de Categorías -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col md:flex-row items-stretch md:items-center justify-between gap-space-md mb-space-lg">
+<!-- Search Box Categorías -->
+<div class="relative flex-1 max-w-xl">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline text-[20px]">search</span>
+</div>
+<input class="w-full pl-11 pr-4 py-2 bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-base rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="search-cat-input" placeholder="Buscar categoría por nombre, código o nivel..." type="text">
+</div>
+<!-- Filtros y Botón Nueva Categoría -->
+<div class="flex items-center flex-wrap gap-space-sm">
+<!-- Filtro Nivel -->
+<div class="relative">
+<select class="appearance-none pl-3 pr-8 py-2 bg-surface-container-low text-on-surface font-body-sm-medium rounded-lg focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer shadow-sm">
+<option value="all">FILTRAR POR NIVEL: Todos</option>
+<option value="principal">Nivel: Principal</option>
+<option value="subcategoria">Nivel: Subcategoría</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-[18px] text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+<!-- Filtro Estado -->
+<div class="relative">
+<select class="appearance-none pl-3 pr-8 py-2 bg-surface-container-low text-on-surface font-body-sm-medium rounded-lg focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer shadow-sm">
+<option value="all">FILTRAR POR ESTADO: Todas</option>
+<option value="activas">Solo Activas</option>
+<option value="inactivas">Solo Inactivas</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-[18px] text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+<!-- Botón CTA: + NUEVA CATEGORÍA -->
+<button class="flex items-center justify-center gap-2 px-space-lg py-2 rounded-lg bg-secondary-container hover:bg-secondary-fixed-dim text-on-secondary-fixed font-headline-3 text-body-base-semibold shadow-md hover:shadow-lg transition-all transform active:scale-95" onclick="openCreateCategoryModal()" type="button">
+<span class="material-symbols-outlined text-[20px] font-bold">add</span>
+<span class="tracking-wide uppercase font-bold">+ NUEVA CATEGORÍA</span>
+</button>
+</div>
+</div>
+<!-- Tabla Completa de Categorías -->
+<div class="bg-surface-container-lowest rounded-xl shadow-md overflow-hidden">
+<!-- Table Header Toolbar -->
+<div class="px-space-lg py-space-sm bg-primary-container text-on-primary flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<span class="material-symbols-outlined text-[20px] text-secondary-container">folder_open</span>
+<span class="font-headline-3 text-headline-3 tracking-wide">ESTRUCTURA DE CATEGORÍAS &amp; CLASIFICACIÓN</span>
+</div>
+<div class="flex items-center gap-space-sm text-body-sm text-on-primary-container">
+<span>5 Categorías Registradas</span>
+</div>
+</div>
+<!-- Data Table Categorías -->
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high text-on-surface font-headline-3 text-body-sm-medium uppercase tracking-wider select-none">
+<th class="py-space-md px-space-lg" scope="col">ID CATEGORÍA</th>
+<th class="py-space-md px-space-md" scope="col">NOMBRE CATEGORÍA</th>
+<th class="py-space-md px-space-md" scope="col">DESCRIPCIÓN</th>
+<th class="py-space-md px-space-md text-center" scope="col">NIVEL</th>
+<th class="py-space-md px-space-md text-center" scope="col">ESTADO</th>
+<th class="py-space-md px-space-lg text-center" scope="col">ACCIONES</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<!-- Cat 1 -->
+<tr class="hover:bg-primary-fixed/20 transition-colors group">
+<td class="py-space-md px-space-lg">
+<span class="font-mono text-body-base-semibold text-primary font-bold">CAT-001</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed/40 flex items-center justify-center shrink-0 shadow-sm border border-secondary-container/40">
+<span class="material-symbols-outlined text-secondary-container text-[24px]">folder</span>
+</div>
+<div>
+<span class="font-body-base-semibold text-body-base-semibold text-on-surface block">Papelería y Escritorio</span>
+<span class="font-caption text-caption text-on-surface-variant block">184 referencias activas</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-body-sm text-on-surface-variant">
+Artículos de papelería general, blocks, notas adhesivas y accesorios escolares.
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="px-2.5 py-1 rounded-md bg-primary-fixed text-on-primary-fixed font-caption text-caption uppercase font-bold tracking-wider">
+PRINCIPAL
+</span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1.5 px-space-md py-0.5 rounded-full bg-primary-fixed/40 text-primary font-body-sm-medium text-body-sm-medium"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span> ACTIVA</span>
+</td>
+<td class="py-space-md px-space-lg text-center">
+<div class="flex items-center justify-center gap-2">
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors shadow-sm" onclick="openEditCategoryModal('CAT-001', 'Papelería y Escritorio', 'Artículos de papelería general, blocks, notas adhesivas y accesorios escolares.', 'principal', 'activa')" title="Editar Categoría" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-secondary-container/30 flex items-center justify-center transition-colors shadow-sm text-secondary-container" onclick="requestCategoryStatusToggle(this, 'CAT-001', 'Papelería y Escritorio')" title="Cambiar Estado" type="button">
+<span class="material-symbols-outlined text-[18px]">toggle_on</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Cat 2 -->
+<tr class="hover:bg-primary-fixed/20 transition-colors group bg-surface-container-low/30">
+<td class="py-space-md px-space-lg">
+<span class="font-mono text-body-base-semibold text-primary font-bold">CAT-002</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed/40 flex items-center justify-center shrink-0 shadow-sm border border-secondary-container/40">
+<span class="material-symbols-outlined text-secondary-container text-[24px]">folder</span>
+</div>
+<div>
+<span class="font-body-base-semibold text-body-base-semibold text-on-surface block">Cuadernos y Libretas</span>
+<span class="font-caption text-caption text-on-surface-variant block">Subclasificación de Papelería</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-body-sm text-on-surface-variant">
+Cuadernos cosidos, argollados, libretas de apuntes y agendas ejecutivas.
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="px-2.5 py-1 rounded-md bg-surface-container font-caption text-caption uppercase text-on-surface font-semibold tracking-wider">
+SUBCATEGORÍA
+</span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1.5 px-space-md py-0.5 rounded-full bg-primary-fixed/40 text-primary font-body-sm-medium text-body-sm-medium"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span> ACTIVA</span>
+</td>
+<td class="py-space-md px-space-lg text-center">
+<div class="flex items-center justify-center gap-2">
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors shadow-sm" onclick="openEditCategoryModal('CAT-002', 'Cuadernos y Libretas', 'Cuadernos cosidos, argollados, libretas de apuntes y agendas ejecutivas.', 'subcategoria', 'activa')" title="Editar Categoría" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-secondary-container/30 flex items-center justify-center transition-colors shadow-sm text-secondary-container" onclick="requestCategoryStatusToggle(this, 'CAT-002', 'Cuadernos y Libretas')" title="Cambiar Estado" type="button">
+<span class="material-symbols-outlined text-[18px]">toggle_on</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Cat 3 -->
+<tr class="hover:bg-primary-fixed/20 transition-colors group">
+<td class="py-space-md px-space-lg">
+<span class="font-mono text-body-base-semibold text-primary font-bold">CAT-003</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed/40 flex items-center justify-center shrink-0 shadow-sm border border-secondary-container/40">
+<span class="material-symbols-outlined text-secondary-container text-[24px]">folder</span>
+</div>
+<div>
+<span class="font-body-base-semibold text-body-base-semibold text-on-surface block">Archivadores y Carpetas</span>
+<span class="font-caption text-caption text-on-surface-variant block">115 referencias activas</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-body-sm text-on-surface-variant">
+Sistemas de archivo, carpetas colgantes, fuelles, az y archivadores de palanca.
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="px-2.5 py-1 rounded-md bg-primary-fixed text-on-primary-fixed font-caption text-caption uppercase font-bold tracking-wider">
+PRINCIPAL
+</span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1.5 px-space-md py-0.5 rounded-full bg-primary-fixed/40 text-primary font-body-sm-medium text-body-sm-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+ACTIVA
+</span>
+</td>
+<td class="py-space-md px-space-lg text-center">
+<div class="flex items-center justify-center gap-2">
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors shadow-sm" onclick="openEditCategoryModal('CAT-003', 'Archivadores y Carpetas', 'Sistemas de archivo, carpetas colgantes, fuelles, az y archivadores de palanca.', 'principal', 'activa')" title="Editar Categoría" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-secondary-container/30 flex items-center justify-center text-secondary-container transition-colors shadow-sm" onclick="requestCategoryStatusToggle(this, 'CAT-003', 'Archivadores y Carpetas')" title="Cambiar Estado" type="button">
+<span class="material-symbols-outlined text-[18px]">toggle_on</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Cat 4 -->
+<tr class="hover:bg-primary-fixed/20 transition-colors group bg-surface-container-low/30">
+<td class="py-space-md px-space-lg">
+<span class="font-mono text-body-base-semibold text-primary font-bold">CAT-004</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed/40 flex items-center justify-center shrink-0 shadow-sm border border-secondary-container/40">
+<span class="material-symbols-outlined text-secondary-container text-[24px]">folder</span>
+</div>
+<div>
+<span class="font-body-base-semibold text-body-base-semibold text-on-surface block">Útiles de Escritura</span>
+<span class="font-caption text-caption text-on-surface-variant block">Subclasificación de Escritorio</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-body-sm text-on-surface-variant">
+Bolígrafos, lápices de grafito, plumones permanentes, resaltadores y correctores.
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="px-2.5 py-1 rounded-md bg-surface-container font-caption text-caption uppercase text-on-surface font-semibold tracking-wider">
+SUBCATEGORÍA
+</span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1.5 px-space-md py-0.5 rounded-full bg-primary-fixed/40 text-primary font-body-sm-medium text-body-sm-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+ACTIVA
+</span>
+</td>
+<td class="py-space-md px-space-lg text-center">
+<div class="flex items-center justify-center gap-2">
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors shadow-sm" onclick="openEditCategoryModal('CAT-004', 'Útiles de Escritura', 'Bolígrafos, lápices de grafito, plumones permanentes, resaltadores y correctores.', 'subcategoria', 'activa')" title="Editar Categoría" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-secondary-container/30 flex items-center justify-center text-secondary-container transition-colors shadow-sm" onclick="requestCategoryStatusToggle(this, 'CAT-004', 'Útiles de Escritura')" title="Cambiar Estado" type="button">
+<span class="material-symbols-outlined text-[18px]">toggle_on</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Cat 5 -->
+<tr class="hover:bg-primary-fixed/20 transition-colors group">
+<td class="py-space-md px-space-lg">
+<span class="font-mono text-body-base-semibold text-primary font-bold">CAT-005</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center shrink-0 shadow-sm border border-outline-variant">
+<span class="material-symbols-outlined text-outline text-[24px]">folder_off</span>
+</div>
+<div>
+<span class="font-body-base-semibold text-body-base-semibold text-on-surface block">Limpieza y Aseo</span>
+<span class="font-caption text-caption text-on-surface-variant block">Línea descontinuada temporal</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-body-sm text-on-surface-variant">
+Productos y suministros de aseo para bodegas y oficinas institucionales.
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="px-2.5 py-1 rounded-md bg-primary-fixed text-on-primary-fixed font-caption text-caption uppercase font-bold tracking-wider">
+PRINCIPAL
+</span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1.5 px-space-md py-0.5 rounded-full bg-error-container text-on-error-container font-body-sm-medium text-body-sm-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+INACTIVA
+</span>
+</td>
+<td class="py-space-md px-space-lg text-center">
+<div class="flex items-center justify-center gap-2">
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors shadow-sm" onclick="openEditCategoryModal('CAT-005', 'Limpieza y Aseo', 'Productos y suministros de aseo para bodegas y oficinas institucionales.', 'principal', 'inactiva')" title="Editar Categoría" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-secondary-container/30 flex items-center justify-center text-outline transition-colors shadow-sm" onclick="requestCategoryStatusToggle(this, 'CAT-005', 'Limpieza y Aseo')" title="Cambiar Estado" type="button">
+<span class="material-symbols-outlined text-[18px]">toggle_off</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer Categorías -->
+<div class="px-space-lg py-space-md bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md text-on-surface-variant font-caption text-caption">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">category</span>
+Árbol jerárquico sincronizado con terminal central
+</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-body-sm text-body-sm text-on-surface-variant mr-2">Página 1 de 1</span>
+<div class="flex items-center gap-1">
+<span class="w-8 h-8 rounded bg-secondary-container text-on-secondary-fixed font-body-sm-medium flex items-center justify-center font-bold shadow-sm">1</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- MODAL 1: CREAR NUEVO PRODUCTO (Mockup Image 16 Reference)        -->
+<!-- ============================================================== -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm flex items-center justify-center p-space-md overflow-y-auto" id="createModal">
+<div class="bg-surface-container-lowest w-full max-w-xl rounded-xl shadow-2xl overflow-hidden my-auto transform transition-all border border-surface-container-highest">
+<!-- Modal Header (Slate Blue #4A6B8A) -->
+<div class="bg-primary-container text-on-primary px-space-lg py-space-md flex items-center justify-between">
+<h2 class="font-headline-3 text-headline-3 font-bold text-on-primary tracking-wide uppercase"><div><br></div><div><br></div><div><br></div><div><br></div>EDITAR PRODUCTO</h2>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container-lowest/15 flex items-center justify-center text-on-primary transition-colors" onclick="closeModal('createModal')" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<form class="p-space-lg space-y-space-md bg-surface text-on-surface" onsubmit="event.preventDefault(); closeModal('createModal');">
+<!-- SECCIÓN: DATOS BÁSICOS -->
+<div>
+<h3 class="font-body-base-semibold uppercase text-on-surface tracking-wider mb-space-xs font-bold text-[13px]">
+            DATOS BÁSICOS
+          </h3>
+<div class="space-y-space-xs">
+<div>
+<label class="block font-body-sm text-body-sm text-on-surface-variant mb-1">Nombre del producto:</label>
+<input class="w-full px-space-md py-1.5 bg-surface-container-lowest border border-outline-variant text-on-surface font-body-base rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" placeholder="" required="" type="text">
+</div>
+<div>
+<label class="block font-body-sm text-body-sm text-on-surface-variant mb-1">Descripción:</label>
+<textarea class="w-full px-space-md py-1.5 bg-surface-container-lowest border border-outline-variant text-on-surface font-body-base rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" placeholder="" rows="2"></textarea>
+</div>
+<div>
+<label class="block font-body-sm text-body-sm text-on-surface-variant mb-1">Código SKU:</label>
+<input class="w-full px-space-md py-1.5 bg-surface-container-lowest border border-outline-variant text-on-surface font-body-base rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" placeholder="" required="" type="text">
+</div>
+</div>
+</div>
+<!-- SECCIÓN: Categorización y Atributos -->
+<div>
+<h3 class="font-body-base-semibold text-on-surface tracking-wider mb-space-xs font-bold text-[13px]">
+            Categorización y Atributos
+          </h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div>
+<label class="block font-body-sm text-body-sm text-on-surface-variant mb-1">Categoría</label>
+<div class="relative">
+<select class="w-full appearance-none pl-space-md pr-8 py-2 bg-secondary-container text-on-secondary-fixed font-body-sm-medium font-bold rounded-lg focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer shadow-sm">
+<option selected="" value="papeleria">Papelería</option>
+<option value="oficina">Oficina</option>
+<option value="escritorio">Escritorio</option>
+<option value="industrial">Industrial</option>
+<option value="tecnologia">Tecnología &amp; Tintas</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-[18px] text-on-secondary-fixed pointer-events-none">expand_more</span>
+</div>
+</div>
+<div>
+<label class="block font-body-sm text-body-sm text-on-surface-variant mb-1">Proveedor</label>
+<input class="w-full px-space-md py-2 bg-surface-container-lowest border border-outline-variant text-on-surface font-body-base rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" placeholder="" type="text">
+</div>
+</div>
+</div>
+<!-- SECCIÓN: Gestión de Stock y Precios -->
+<div>
+<h3 class="font-body-base-semibold text-on-surface tracking-wider mb-space-xs font-bold text-[13px]">
+            Gestión de Stock y Precios
+          </h3>
+<div class="grid grid-cols-2 gap-space-md">
+<div>
+<label class="block font-body-sm text-body-sm text-on-surface-variant mb-1">Stock Inicial</label>
+<input class="w-full px-space-md py-1.5 bg-surface-container-lowest border border-outline-variant text-on-surface font-body-base rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" min="0" type="number" value="0">
+</div>
+<div>
+<label class="block font-body-sm text-body-sm text-on-surface-variant mb-1">Costo</label>
+<input class="w-full px-space-md py-1.5 bg-surface-container-lowest border border-outline-variant text-on-surface font-body-base rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" placeholder="$ 0 COP" type="text">
+</div>
+<div>
+<label class="block font-body-sm text-body-sm text-on-surface-variant mb-1">Precio de Venta</label>
+<input class="w-full px-space-md py-1.5 bg-surface-container-lowest border border-outline-variant text-on-surface font-body-base rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" placeholder="$ 0 COP" required="" type="text">
+</div>
+<div>
+<label class="block font-body-sm text-body-sm text-on-surface-variant mb-1">Alerta de Stock Mínimo</label>
+<input class="w-full px-space-md py-1.5 bg-surface-container-lowest border border-outline-variant text-on-surface font-body-base rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" min="1" type="number" value="10">
+</div>
+</div>
+</div>
+<!-- SECCIÓN: Imágenes del Producto -->
+<div>
+<label class="block font-body-sm text-body-sm text-on-surface-variant mb-1">Imagenes del Producto</label>
+<div class="py-space-md px-space-lg rounded-xl border border-outline-variant bg-surface-container-lowest text-center flex flex-col items-center justify-center cursor-pointer hover:bg-surface-container transition-colors shadow-sm">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px] text-outline">add_photo_alternate</span>
+<span class="font-body-sm-medium text-body-sm-medium text-on-surface">Subir Imágenes</span>
+</div>
+</div>
+</div>
+<!-- Modal Actions Footer -->
+<div class="pt-space-md flex items-center justify-center gap-space-md">
+<button class="px-space-xl py-2 rounded-lg bg-secondary-container hover:bg-secondary-fixed-dim text-on-secondary-fixed font-headline-3 text-body-base-semibold shadow-md transition-all font-bold min-w-[150px]" type="submit">
+            Guardar Cambios
+          </button>
+<button class="px-space-xl py-2 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-body-base-semibold shadow-sm transition-colors min-w-[120px]" onclick="closeModal('createModal')" type="button">
+            Cancelar
+          </button>
+</div>
+</form>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- MODAL 2: ALERTA DE SEGURIDAD / CONFIRMACIÓN (Image 19 / 12)    -->
+<!-- ============================================================== -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm flex items-center justify-center p-space-md overflow-y-auto hidden" id="securityModal">
+<div class="bg-surface-container-lowest w-full max-w-md rounded-2xl shadow-2xl overflow-hidden my-auto transform transition-all border border-surface-container-highest">
+<!-- Header bar in Slate Blue (#4A6B8A) -->
+<div class="bg-primary-container text-on-primary px-space-lg py-space-md flex items-center justify-between">
+<h2 class="font-headline-3 text-headline-3 font-semibold text-on-primary tracking-wide" id="security-modal-title">Alerta de Seguridad</h2>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container-lowest/15 flex items-center justify-center text-on-primary transition-colors" onclick="closeModal('securityModal')" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Content Body -->
+<div class="p-space-xl text-center bg-surface flex flex-col items-center">
+<!-- Warning Icon Circular -->
+<div class="w-16 h-16 rounded-full border-2 border-secondary-container/80 flex items-center justify-center mb-space-md bg-secondary-fixed/20 shadow-inner">
+<span class="material-symbols-outlined text-secondary text-[36px]">priority_high</span>
+</div>
+<h3 class="font-headline-2 text-headline-3 font-bold text-on-surface mb-space-xs" id="security-question">¿Está seguro de inactivar este producto?</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md" id="security-product-ref">SKU-003 - Resma Papel Bond A4 75g</p>
+<!-- Warning badge subtext -->
+<div class="inline-flex items-center gap-1.5 px-space-md py-1 rounded-full bg-error-container/40 text-error font-body-sm-medium text-body-sm-medium mb-space-xl">
+<span class="material-symbols-outlined text-[16px] text-error">warning</span>
+<span>⚠️ ATENCIÓN: Se requiere confirmación</span>
+</div>
+<!-- Actions -->
+<div class="flex items-center justify-center gap-space-md w-full">
+<button class="flex-1 py-2 px-space-lg rounded-lg bg-secondary-container hover:bg-secondary-fixed-dim text-on-secondary-fixed font-headline-3 text-body-base-semibold shadow-md transition-all font-bold" onclick="confirmInactivate()" type="button">
+            Inactivar
+          </button>
+<button class="flex-1 py-2 px-space-lg rounded-lg bg-primary-container hover:bg-primary text-on-primary font-body-base-semibold shadow-sm transition-colors" onclick="closeModal('securityModal')" type="button">
+            Cancelar
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- MODAL 3: DETALLE DEL PRODUCTO (Image 18 Reference)             -->
+<!-- ============================================================== -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm flex items-center justify-center p-space-md overflow-y-auto hidden" id="detailModal">
+<div class="bg-surface-container-lowest w-full max-w-xl rounded-xl shadow-2xl overflow-hidden my-auto transform transition-all border border-surface-container-highest">
+<!-- Header bar in Slate Blue (#4A6B8A) -->
+<div class="bg-primary-container text-on-primary px-space-lg py-space-md flex items-center justify-between">
+<h2 class="font-headline-3 text-headline-3 font-bold text-on-primary tracking-wide uppercase">DETALLE DEL PRODUCTO</h2>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container-lowest/15 flex items-center justify-center text-on-primary transition-colors" onclick="closeModal('detailModal')" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Body: 2-column layout -->
+<div class="p-space-lg bg-surface">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-md items-stretch bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden">
+<!-- Left Column: Product Photo Box (Yellowish/Tan Canvas) -->
+<div class="md:col-span-5 bg-secondary-fixed/50 p-space-lg flex flex-col items-center justify-center text-center border-b md:border-b-0 md:border-r border-outline-variant min-h-[190px]">
+<div class="w-16 h-16 rounded-xl border border-secondary/30 flex items-center justify-center mb-space-xs bg-surface-container-lowest/70 shadow-sm">
+<span class="material-symbols-outlined text-[36px] text-on-surface">image</span>
+</div>
+<span class="font-caption text-caption uppercase text-on-surface-variant font-bold tracking-wider">FOTO DEL PRODUCTO</span>
+</div>
+<!-- Right Column: Product details breakdown table -->
+<div class="md:col-span-7 flex flex-col justify-between divide-y divide-outline-variant">
+<!-- Description block -->
+<div class="p-space-md">
+<span class="font-caption text-caption uppercase text-on-surface-variant font-bold block mb-1">DESCRIPCIÓN:</span>
+<p class="font-body-sm text-body-sm text-on-surface" id="detail-desc">Es un cuaderno de tapa dura altamente resistente con hojas rayadas de alta calidad.</p>
+</div>
+<!-- Middle Grid: SKU & Stock Actual -->
+<div class="grid grid-cols-2 divide-x divide-outline-variant">
+<div class="p-space-md">
+<span class="font-caption text-caption uppercase text-on-surface-variant font-bold block mb-1">SKU:</span>
+<span class="font-body-base-semibold text-body-base-semibold text-on-surface font-mono" id="detail-sku">SKU-001</span>
+</div>
+<div class="p-space-md">
+<span class="font-caption text-caption uppercase text-on-surface-variant font-bold block mb-1">STOCK ACTUAL:</span>
+<span class="font-headline-3 text-headline-3 text-secondary font-bold" id="detail-stock">45</span>
+</div>
+</div>
+<!-- Proveedor Asociado block -->
+<div class="p-space-md">
+<span class="font-caption text-caption uppercase text-on-surface-variant font-bold block mb-1">PROVEEDOR ASOCIADO:</span>
+<span class="font-body-base-semibold text-body-base-semibold text-on-surface" id="detail-provider">Distribuidora Scribe</span>
+</div>
+</div>
+</div>
+<!-- Action Button: Cerrar (Amber Mustard #E6A017) -->
+<div class="pt-space-lg flex items-center justify-center">
+<button class="px-space-xl py-2 rounded-lg bg-secondary-container hover:bg-secondary-fixed-dim text-on-secondary-fixed font-headline-3 text-body-base-semibold shadow-md transition-all font-bold min-w-[140px]" onclick="closeModal('detailModal')" type="button">
+            Cerrar
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- MODAL 4: AJUSTE DE INVENTARIO (Existing Quick Adjust)           -->
+<!-- ============================================================== -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm flex items-center justify-center p-space-md overflow-y-auto hidden" id="adjustModal">
+<div class="bg-surface-container-lowest w-full max-w-lg rounded-xl shadow-2xl overflow-hidden my-auto transform transition-all">
+<!-- Modal Header -->
+<div class="bg-primary-container text-on-primary px-space-lg py-space-md flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary-container text-[22px]">tune</span>
+<h2 class="font-headline-2 text-headline-3 font-bold text-on-primary tracking-wide uppercase">AJUSTE DE INVENTARIO</h2>
+</div>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container-lowest/15 flex items-center justify-center text-on-primary transition-colors" onclick="closeModal('adjustModal')" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<form class="p-space-lg space-y-space-md" onsubmit="event.preventDefault(); closeModal('adjustModal');">
+<!-- Target Product Display -->
+<div class="bg-surface-container-low p-space-md rounded-xl">
+<span class="font-caption text-caption uppercase text-on-surface-variant font-bold block mb-1">PRODUCTO SELECCIONADO</span>
+<div class="flex items-center justify-between">
+<span class="font-headline-3 text-headline-3 text-on-surface" id="adjust-product-title">SKU-001 - Cuaderno Cosido 100h</span>
+<div class="text-right">
+<span class="font-caption text-caption text-on-surface-variant block uppercase">Stock Actual</span>
+<span class="font-body-base-semibold text-body-base-semibold text-secondary" id="adjust-current-stock">45 unds</span>
+</div>
+</div>
+</div>
+<!-- Tipo de Ajuste (Segmented Control Buttons) -->
+<div>
+<label class="block font-body-sm-medium text-body-sm-medium text-on-surface-variant mb-space-xs uppercase tracking-wider">TIPO DE AJUSTE</label>
+<div class="grid grid-cols-2 gap-space-sm">
+<button class="py-2.5 px-space-md rounded-lg bg-secondary-container text-on-secondary-fixed font-body-base-semibold flex items-center justify-center gap-2 shadow-sm transition-all font-bold" id="btn-adjust-add" onclick="setAdjustType('add')" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>+ Aumentar stock</span>
+</button>
+<button class="py-2.5 px-space-md rounded-lg bg-surface-container text-on-surface font-body-base flex items-center justify-center gap-2 hover:bg-surface-container-high transition-all" id="btn-adjust-sub" onclick="setAdjustType('sub')" type="button">
+<span class="material-symbols-outlined text-[18px]">remove_circle</span>
+<span>- Disminuir stock</span>
+</button>
+</div>
+</div>
+<!-- Cantidad Input -->
+<div>
+<label class="block font-body-sm-medium text-body-sm-medium text-on-surface-variant mb-1">Cantidad *</label>
+<input class="w-full px-space-md py-2 bg-surface-container-low text-on-surface font-body-base rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-sm font-semibold" min="1" placeholder="1" required="" type="number">
+</div>
+<!-- Motivo del Ajuste Dropdown -->
+<div>
+<label class="block font-body-sm-medium text-body-sm-medium text-on-surface-variant mb-1">Motivo del ajuste *</label>
+<div class="relative">
+<select class="w-full appearance-none pl-space-md pr-8 py-2 bg-surface-container-low text-on-surface font-body-base rounded-lg focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer shadow-sm" required="">
+<option disabled="" selected="" value="">Seleccione un motivo</option>
+<option value="auditoria">Conteo Físico / Corrección Auditoría</option>
+<option value="devolucion">Devolución de Cliente en Buen Estado</option>
+<option value="danado">Mercancía Dañada / Deterioro en Bodega</option>
+<option value="vencido">Producto Vencido / Obsoleto</option>
+<option value="perdida">Pérdida / Faltante No Justificado</option>
+<option value="garantia">Reposición por Garantía Proveedor</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-[18px] text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Descripción Adicional (Opcional) -->
+<div>
+<label class="block font-body-sm-medium text-body-sm-medium text-on-surface-variant mb-1">Descripción adicional (opcional)</label>
+<textarea class="w-full px-space-md py-2 bg-surface-container-low text-on-surface font-body-base rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" placeholder="Ejemplo: Producto dañado por humedad en rack 4, devuelto por transportador..." rows="2"></textarea>
+</div>
+<!-- Modal Actions Footer -->
+<div class="pt-space-md flex items-center justify-end gap-space-md">
+<button class="px-space-xl py-2 rounded-lg bg-secondary-container hover:bg-secondary-fixed-dim text-on-secondary-fixed font-headline-3 text-body-base-semibold shadow-md transition-all font-bold" type="submit">
+            Guardar Cambios
+          </button>
+<button class="px-space-xl py-2 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-body-base-semibold shadow-sm transition-colors" onclick="closeModal('adjustModal')" type="button">
+            Cancelar
+          </button>
+</div>
+</form>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- MODAL 5: CREAR NUEVA CATEGORÍA                                -->
+<!-- ============================================================== -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm flex items-center justify-center p-space-md overflow-y-auto hidden" id="createCategoryModal">
+<div class="bg-surface-container-lowest w-full max-w-lg rounded-xl shadow-2xl overflow-hidden my-auto transform transition-all border border-surface-container-highest">
+<!-- Modal Header -->
+<div class="bg-primary-container text-on-primary px-space-lg py-space-md flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary-container text-[22px]">create_new_folder</span>
+<h2 class="font-headline-3 text-headline-3 font-bold text-on-primary tracking-wide uppercase">CREAR NUEVA CATEGORÍA</h2>
+</div>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container-lowest/15 flex items-center justify-center text-on-primary transition-colors" onclick="closeModal('createCategoryModal')" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<form class="p-space-lg space-y-space-md bg-surface text-on-surface" onsubmit="event.preventDefault(); closeModal('createCategoryModal');">
+<div>
+<label class="block font-body-sm text-body-sm text-on-surface-variant mb-1 font-semibold">Nombre de la categoría *</label>
+<input class="w-full px-space-md py-2 bg-surface-container-lowest border border-outline-variant text-on-surface font-body-base rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" placeholder="Ej: Útiles y Tintas" required="" type="text">
+</div>
+<div>
+<label class="block font-body-sm text-body-sm text-on-surface-variant mb-1">Descripción</label>
+<textarea class="w-full px-space-md py-2 bg-surface-container-lowest border border-outline-variant text-on-surface font-body-base rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" placeholder="Breve descripción del alcance de la categoría..." rows="2"></textarea>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div>
+<label class="block font-body-sm text-body-sm text-on-surface-variant mb-1 font-semibold">Nivel Jerárquico *</label>
+<div class="relative">
+<select class="w-full appearance-none pl-space-md pr-8 py-2 bg-surface-container-lowest border border-outline-variant text-on-surface font-body-base rounded-lg focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer shadow-sm">
+<option selected="" value="principal">Categoría Principal</option>
+<option value="subcategoria">Subcategoría</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-[18px] text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<div>
+<label class="block font-body-sm text-body-sm text-on-surface-variant mb-1 font-semibold">Icono Asignado</label>
+<div class="flex items-center gap-space-sm p-2 rounded-lg bg-surface-container-lowest border border-outline-variant">
+<div class="w-8 h-8 rounded bg-secondary-fixed/50 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary-container text-[20px]">folder</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Carpeta Estándar</span>
+</div>
+</div>
+</div>
+<!-- Actions Footer -->
+<div class="pt-space-md flex items-center justify-center gap-space-md">
+<button class="px-space-xl py-2 rounded-lg bg-secondary-container hover:bg-secondary-fixed-dim text-on-secondary-fixed font-headline-3 text-body-base-semibold shadow-md transition-all font-bold min-w-[150px]" type="submit">
+Crear Categoría
+</button>
+<button class="px-space-xl py-2 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-body-base-semibold shadow-sm transition-colors min-w-[120px]" onclick="closeModal('createCategoryModal')" type="button">
+Cancelar
+</button>
+</div>
+</form>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- MODAL 6: EDITAR CATEGORÍA                                     -->
+<!-- ============================================================== -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm flex items-center justify-center p-space-md overflow-y-auto hidden" id="editCategoryModal">
+<div class="bg-surface-container-lowest w-full max-w-lg rounded-xl shadow-2xl overflow-hidden my-auto transform transition-all border border-surface-container-highest">
+<!-- Modal Header -->
+<div class="bg-primary-container text-on-primary px-space-lg py-space-md flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary-container text-[22px]">edit_note</span>
+<h2 class="font-headline-3 text-headline-3 font-bold text-on-primary tracking-wide uppercase">EDITAR CATEGORÍA</h2>
+</div>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container-lowest/15 flex items-center justify-center text-on-primary transition-colors" onclick="closeModal('editCategoryModal')" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<form class="p-space-lg space-y-space-md bg-surface text-on-surface" onsubmit="event.preventDefault(); closeModal('editCategoryModal');">
+<div class="bg-surface-container-low p-space-sm rounded-lg flex items-center justify-between">
+<span class="font-caption text-caption uppercase text-on-surface-variant font-bold">CÓDIGO DE CATEGORÍA</span>
+<span class="font-mono text-body-base-semibold text-primary font-bold" id="edit-cat-id">CAT-001</span>
+</div>
+<div>
+<label class="block font-body-sm text-body-sm text-on-surface-variant mb-1 font-semibold">Nombre de la categoría *</label>
+<input class="w-full px-space-md py-2 bg-surface-container-lowest border border-outline-variant text-on-surface font-body-base rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="edit-cat-name" required="" type="text">
+</div>
+<div>
+<label class="block font-body-sm text-body-sm text-on-surface-variant mb-1">Descripción</label>
+<textarea class="w-full px-space-md py-2 bg-surface-container-lowest border border-outline-variant text-on-surface font-body-base rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="edit-cat-desc" rows="2"></textarea>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div>
+<label class="block font-body-sm text-body-sm text-on-surface-variant mb-1 font-semibold">Nivel Jerárquico</label>
+<div class="relative">
+<select class="w-full appearance-none pl-space-md pr-8 py-2 bg-surface-container-lowest border border-outline-variant text-on-surface font-body-base rounded-lg focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer shadow-sm" id="edit-cat-level">
+<option value="principal">Categoría Principal</option>
+<option value="subcategoria">Subcategoría</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-[18px] text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<div>
+<label class="block font-body-sm text-body-sm text-on-surface-variant mb-1 font-semibold">Estado Operativo</label>
+<div class="relative">
+<select class="w-full appearance-none pl-space-md pr-8 py-2 bg-surface-container-lowest border border-outline-variant text-on-surface font-body-base rounded-lg focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer shadow-sm" id="edit-cat-status">
+<option value="activa">Activa</option>
+<option value="inactiva">Inactiva</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-[18px] text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Actions Footer -->
+<div class="pt-space-md flex items-center justify-center gap-space-md">
+<button class="px-space-xl py-2 rounded-lg bg-secondary-container hover:bg-secondary-fixed-dim text-on-secondary-fixed font-headline-3 text-body-base-semibold shadow-md transition-all font-bold min-w-[150px]" type="submit">
+Guardar Cambios
+</button>
+<button class="px-space-xl py-2 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-body-base-semibold shadow-sm transition-colors min-w-[120px]" onclick="closeModal('editCategoryModal')" type="button">
+Cancelar
+</button>
+</div>
+</form>
+</div>
+</div><div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm flex items-center justify-center p-space-md overflow-y-auto hidden" id="categorySecurityModal">
+<div class="bg-surface-container-lowest w-full max-w-md rounded-2xl shadow-2xl overflow-hidden my-auto transform transition-all border border-surface-container-highest">
+<div class="bg-primary-container text-on-primary px-space-lg py-space-md flex items-center justify-between">
+<h2 class="font-headline-3 text-headline-3 font-semibold text-on-primary tracking-wide">Alerta de Seguridad</h2>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container-lowest/15 flex items-center justify-center text-on-primary transition-colors" onclick="closeModal('categorySecurityModal')" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="p-space-xl text-center bg-surface flex flex-col items-center">
+<div class="w-16 h-16 rounded-full border-2 border-secondary-container/80 flex items-center justify-center mb-space-md bg-secondary-fixed/20 shadow-inner">
+<span class="material-symbols-outlined text-secondary text-[36px]">priority_high</span>
+</div>
+<h3 class="font-headline-2 text-headline-3 font-bold text-on-surface mb-space-xs" id="category-security-question">¿Está seguro de inactivar esta categoría?</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md" id="category-security-ref">CAT-001 - Papelería y Escritorio</p>
+<div class="inline-flex items-center gap-1.5 px-space-md py-1 rounded-full bg-error-container/40 text-error font-body-sm-medium text-body-sm-medium mb-space-xl">
+<span class="material-symbols-outlined text-[16px] text-error">warning</span>
+<span>⚠️ ATENCIÓN: Se requiere confirmación</span>
+</div>
+<div class="flex items-center justify-center gap-space-md w-full">
+<button class="flex-1 py-2 px-space-lg rounded-lg bg-secondary-container hover:bg-secondary-fixed-dim text-on-secondary-fixed font-headline-3 text-body-base-semibold shadow-md transition-all font-bold" id="btn-confirm-category-status" onclick="confirmCategoryStatusChange()" type="button">
+Inactivar
+</button>
+<button class="flex-1 py-2 px-space-lg rounded-lg bg-primary-container hover:bg-primary text-on-primary font-body-base-semibold shadow-sm transition-colors" onclick="closeModal('categorySecurityModal')" type="button">
+Cancelar
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function openModal(modalId, productTitle, currentStock) {
+    const modal = document.getElementById(modalId);
+    if (!modal) return;
+    if (modalId === 'adjustModal') {
+      if (productTitle) {
+        document.getElementById('adjust-product-title').innerText = productTitle;
+      }
+      if (currentStock !== undefined) {
+        document.getElementById('adjust-current-stock').innerText = currentStock + ' unds';
+      }
+    }
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+      modal.classList.add('hidden');
+    }
+    // Only re-enable scroll if all modals are closed
+    const openModals = document.querySelectorAll('#createModal:not(.hidden), #adjustModal:not(.hidden), #securityModal:not(.hidden), #detailModal:not(.hidden), #createCategoryModal:not(.hidden), #editCategoryModal:not(.hidden)');
+    if (openModals.length === 0) {
+      document.body.style.overflow = '';
+    }
+  }
+
+  // Open Security Alert Modal with product data
+  function openSecurityModal(sku, productName) {
+    const question = document.getElementById('security-question');
+    const ref = document.getElementById('security-product-ref');
+    if (question) question.innerText = '¿Está seguro de inactivar este producto?';
+    if (ref) ref.innerText = (sku ? sku + ' - ' : '') + (productName || 'Producto seleccionado');
+    openModal('securityModal');
+  }
+
+  function confirmInactivate() {
+    closeModal('securityModal');
+  }
+
+  // Open Detail Modal with product data
+  function openDetailModal(sku, name, desc, stock, provider) {
+    const skuEl = document.getElementById('detail-sku');
+    const descEl = document.getElementById('detail-desc');
+    const stockEl = document.getElementById('detail-stock');
+    const provEl = document.getElementById('detail-provider');
+
+    if (skuEl) skuEl.innerText = sku || 'SKU-001';
+    if (descEl) descEl.innerText = desc || 'Descripción del producto seleccionado en inventario.';
+    if (stockEl) stockEl.innerText = stock !== undefined ? stock : '0';
+    if (provEl) provEl.innerText = provider || 'Distribuidora Autorizada';
+
+    openModal('detailModal');
+  }
+
+  let currentAdjustType = 'add';
+  function setAdjustType(type) {
+    currentAdjustType = type;
+    const addBtn = document.getElementById('btn-adjust-add');
+    const subBtn = document.getElementById('btn-adjust-sub');
+
+    if (type === 'add') {
+      addBtn.className = "py-2.5 px-space-md rounded-lg bg-secondary-container text-on-secondary-fixed font-body-base-semibold flex items-center justify-center gap-2 shadow-sm transition-all font-bold";
+      subBtn.className = "py-2.5 px-space-md rounded-lg bg-surface-container text-on-surface font-body-base flex items-center justify-center gap-2 hover:bg-surface-container-high transition-all";
+    } else {
+      subBtn.className = "py-2.5 px-space-md rounded-lg bg-secondary-container text-on-secondary-fixed font-body-base-semibold flex items-center justify-center gap-2 shadow-sm transition-all font-bold";
+      addBtn.className = "py-2.5 px-space-md rounded-lg bg-surface-container text-on-surface font-body-base flex items-center justify-center gap-2 hover:bg-surface-container-high transition-all";
+    }
+  }
+
+  // Categorías Modals Handlers
+  function openCreateCategoryModal() {
+    openModal('createCategoryModal');
+  }
+
+  function openEditCategoryModal(id, name, desc, level, status) {
+    const idEl = document.getElementById('edit-cat-id');
+    const nameEl = document.getElementById('edit-cat-name');
+    const descEl = document.getElementById('edit-cat-desc');
+    const levelEl = document.getElementById('edit-cat-level');
+    const statusEl = document.getElementById('edit-cat-status');
+
+    if (idEl) idEl.innerText = id || 'CAT-001';
+    if (nameEl) nameEl.value = name || '';
+    if (descEl) descEl.value = desc || '';
+    if (levelEl) levelEl.value = level || 'principal';
+    if (statusEl) statusEl.value = status || 'activa';
+
+    openModal('editCategoryModal');
+  }
+
+  function toggleCategoryStatus(button) {
+    const icon = button.querySelector('.material-symbols-outlined');
+    const row = button.closest('tr');
+    const statusBadge = row.querySelector('td:nth-child(5) span');
+    
+    if (icon.innerText === 'toggle_on') {
+      icon.innerText = 'toggle_off';
+      button.classList.remove('text-secondary-container');
+      button.classList.add('text-outline');
+      statusBadge.className = "inline-flex items-center gap-1.5 px-space-md py-0.5 rounded-full bg-error-container text-on-error-container font-body-sm-medium text-body-sm-medium";
+      statusBadge.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-error"></span> INACTIVA';
+    } else {
+      icon.innerText = 'toggle_on';
+      button.classList.add('text-secondary-container');
+      button.classList.remove('text-outline');
+      statusBadge.className = "inline-flex items-center gap-1.5 px-space-md py-0.5 rounded-full bg-primary-fixed/40 text-primary font-body-sm-medium text-body-sm-medium";
+      statusBadge.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> ACTIVA';
+    }
+  }
+
+  // Interactive Tab switching between GESTIÓN DE PRODUCTOS and CATEGORÍAS
+  const tabProductos = document.getElementById('tab-productos');
+  const tabCategorias = document.getElementById('tab-categorias');
+  const viewProductos = document.getElementById('view-productos');
+  const viewCategorias = document.getElementById('view-categorias');
+  const productsKpi = document.getElementById('products-kpi-bar');
+  const categoriesKpi = document.getElementById('categories-kpi-bar');
+  const mainTitle = document.getElementById('section-main-title');
+  const statusChipText = document.getElementById('status-chip-text');
+  const statusCounterText = document.getElementById('status-counter-text');
+
+  function showProductosTab() {
+    // Buttons styling
+    tabProductos.className = "flex items-center gap-2 px-space-lg py-space-xs rounded-lg bg-secondary-container text-on-secondary-fixed font-headline-3 text-body-base-semibold shadow-sm transition-all";
+    tabCategorias.className = "flex items-center gap-2 px-space-lg py-space-xs rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-body-base-semibold border border-outline-variant/40 transition-all";
+    
+    // View sections display
+    viewProductos.classList.remove('hidden');
+    viewCategorias.classList.add('hidden');
+
+    // KPI Switch
+    if (productsKpi && categoriesKpi) {
+      productsKpi.classList.remove('hidden');
+      categoriesKpi.classList.add('hidden');
+      categoriesKpi.classList.remove('grid');
+    }
+
+    // Top labels
+    if (mainTitle) mainTitle.innerText = "GESTIÓN DE INVENTARIO";
+    if (statusChipText) statusChipText.innerText = "Catálogo Sincronizado";
+    if (statusCounterText) statusCounterText.innerText = "542 Referencias Activas";
+  }
+
+  function showCategoriasTab() {
+    // Buttons styling
+    tabCategorias.className = "flex items-center gap-2 px-space-lg py-space-xs rounded-lg bg-secondary-container text-on-secondary-fixed font-headline-3 text-body-base-semibold shadow-sm transition-all";
+    tabProductos.className = "flex items-center gap-2 px-space-lg py-space-xs rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-body-base-semibold border border-outline-variant/40 transition-all";
+    
+    // View sections display
+    viewProductos.classList.add('hidden');
+    viewCategorias.classList.remove('hidden');
+
+    // KPI Switch
+    if (productsKpi && categoriesKpi) {
+      productsKpi.classList.add('hidden');
+      categoriesKpi.classList.remove('hidden');
+      categoriesKpi.classList.add('grid');
+    }
+
+    // Top labels
+    if (mainTitle) mainTitle.innerText = "GESTIÓN DE CATEGORÍAS";
+    if (statusChipText) statusChipText.innerText = "Clasificación Activa";
+    if (statusCounterText) statusCounterText.innerText = "5 Categorías Maestras";
+  }
+
+  if (tabCategorias && tabProductos) {
+    tabCategorias.addEventListener('click', showCategoriasTab);
+    tabProductos.addEventListener('click', showProductosTab);
+  }
+
+  // Close modals when clicking backdrop
+  window.addEventListener('click', function(event) {
+    const createModal = document.getElementById('createModal');
+    const adjustModal = document.getElementById('adjustModal');
+    const securityModal = document.getElementById('securityModal');
+    const detailModal = document.getElementById('detailModal');
+    const createCategoryModal = document.getElementById('createCategoryModal');
+    const editCategoryModal = document.getElementById('editCategoryModal');
+
+    if (event.target === createModal) closeModal('createModal');
+    if (event.target === adjustModal) closeModal('adjustModal');
+    if (event.target === securityModal) closeModal('securityModal');
+    if (event.target === detailModal) closeModal('detailModal');
+    if (event.target === createCategoryModal) closeModal('createCategoryModal');
+    if (event.target === editCategoryModal) closeModal('editCategoryModal');
+  });
+
+  // ESC key closes modals
+  window.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      closeModal('createModal');
+      closeModal('adjustModal');
+      closeModal('securityModal');
+      closeModal('detailModal');
+      closeModal('createCategoryModal');
+      closeModal('editCategoryModal');
+    }
+  });
+</script></main></div>
+
+
+
+
+
+
+
+<div id="snapdom-sandbox" data-snapdom-sandbox="true" aria-hidden="true" style="position: absolute; left: -9999px; top: -9999px; width: 0px; height: 0px; overflow: hidden;"></div>
+
+</body></html>

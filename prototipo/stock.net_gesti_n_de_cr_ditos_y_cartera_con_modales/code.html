@@ -1,0 +1,1014 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Gestión de Créditos - Stock.net</title>
+<!-- Fonts: Montserrat & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Montserrat:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
+<!-- FontAwesome Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<!-- Tailwind CSS v3 CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              cream: '#FCF9F3',
+              dark: '#1E293B',
+              slate: '#4A6B8A',
+              slateHover: '#3C5771',
+              slateLight: '#EDF2F7',
+              mustard: '#E6A017',
+              mustardDark: '#CF8E0E',
+              amberLight: '#FEF3C7',
+              border: '#E2DCD5',
+              surface: '#FFFFFF'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Montserrat', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom Styles -->
+<style data-purpose="base-styling">
+    body {
+      background-color: #FCF9F3;
+      color: #1E293B;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    /* Custom Scrollbar for sleek desktop feel */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F1ECE1;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #C9BFB5;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #9A8E83;
+    }
+  </style>
+<style data-purpose="layout-utilities">
+    .selected-client-row {
+      background-color: #F8F4EB !important;
+      border-left: 4px solid #4A6B8A !important;
+    }
+    .modal-backdrop {
+      background-color: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(2px);
+    }
+  </style>
+<!-- END: Custom Styles -->
+</head>
+<body class="min-h-screen flex flex-col bg-[#FCF9F3] text-slate-800 antialiased selection:bg-brand-mustard selection:text-white">
+<!-- BEGIN: Institutional Top Header -->
+<header class="h-14 bg-[#4A6B8A] text-white flex items-center justify-between px-6 shadow-md select-none shrink-0 border-b border-[#364e65]"><div class="flex items-center space-x-4"><div class="flex items-center space-x-2"><img alt="Stock.net Logo" class="h-8 object-contain brightness-0 invert drop-shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIu_T5QLsaXDLriQu2aqPCl-gXuzAcVK9Zh399AO3NTtp2h3dhR4DQVtIPjKIwUf6rzUL1rzW1NxIcqQuQZCimJAZ6CvlN-_EFfRWXRej-wyf6qdV8o53BQ6vLB2D_BmUnSn6mhkkYOKpwWC6X7Al2ymhDjpt8UBinN5ocCBlG3gWsZpEsi0U-5vLyzLkjDXJDGm2rFJMTODqxeC4Kg8F5JHFyjn0Q7hxY1ev5uKYAiZuqAl-odzR3"></div><div class="h-5 w-px bg-white/20"></div><p class="text-[11px] font-medium tracking-wider text-slate-100 uppercase hidden md:block">SISTEMA INTEGRAL DE GESTIÓN DE INVENTARIO, CONTROL Y SEGURIDAD</p></div><div class="flex items-center space-x-5 text-xs"><div class="flex items-center bg-[#3C5771]/60 pl-2.5 pr-1 py-1 rounded-full border border-white/10"><div class="flex items-center space-x-1.5 mr-2"><i class="fa-solid fa-shield-halved text-brand-mustard text-xs"></i><span class="font-medium text-slate-100 text-[11px]">Administrador</span></div><span class="bg-brand-mustard text-slate-950 font-bold text-[9px] px-2 py-0.5 rounded-full uppercase tracking-wider">ACCESO TOTAL</span></div><div class="text-right hidden sm:block leading-tight"><div class="font-bold text-white text-xs">Carlos Morales</div><div class="text-[10px] text-slate-200 font-medium">Jefe de Operaciones</div></div><button aria-label="Perfil de usuario" class="w-8 h-8 rounded-lg bg-[#3C5771] border border-white/15 flex items-center justify-center text-white hover:bg-white/10 transition shadow-inner"><i class="fa-solid fa-user text-xs text-slate-200"></i></button></div></header>
+<!-- END: Institutional Top Header -->
+<!-- BEGIN: Main Layout Wrapper -->
+<div class="flex flex-1 overflow-hidden">
+<!-- BEGIN: Left Navigation Sidebar -->
+<aside class="w-64 bg-[#FBF9F5] border-r border-[#E8E2D8] flex flex-col justify-between shrink-0 shadow-sm z-10 select-none"><div class="py-5 px-3 overflow-y-auto"><div class="px-3 mb-2"><p class="text-[11px] font-bold text-slate-700 tracking-wider uppercase font-heading">OPERACIONES &amp; CONTROL</p></div><nav class="space-y-1 mb-6"><a class="flex items-center space-x-3 px-3 py-2 text-xs font-medium rounded-lg text-slate-700 hover:bg-[#F3EFE6] transition-colors" href="#"><svg class="w-5 h-5 mr-3 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect></svg><span>Panel Principal</span></a><a class="flex items-center space-x-3 px-3 py-2 text-xs font-medium rounded-lg text-slate-700 hover:bg-[#F3EFE6] transition-colors" href="#"><svg class="w-5 h-5 mr-3 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10V20a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V10M2 10l10-6 10 6"></path><path d="M8 21v-7a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v7"></path><path d="M11 17h2"></path></svg><span>Gestión de Inventario</span></a><a class="flex items-center space-x-3 px-3 py-2 text-xs font-medium rounded-lg text-slate-700 hover:bg-[#F3EFE6] transition-colors" href="#"><svg class="w-5 h-5 mr-3 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v18l3-2 3 2 3-2 3 2 3-2 3 2V2H4z"></path><path d="M8 7h8"></path><path d="M8 11h8"></path><path d="M8 15h5"></path></svg><span>Gestión de Ventas</span></a><a class="flex items-center space-x-3 px-3 py-2 text-xs font-medium rounded-lg text-slate-700 hover:bg-[#F3EFE6] transition-colors" href="#"><svg class="w-5 h-5 mr-3 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="5" rx="1"></rect><path d="M4 11h16l-2 7H6l-2-7z"></path><rect x="3" y="18" width="18" height="4" rx="1"></rect><path d="M9 13h1"></path><path d="M14 13h1"></path><path d="M9 15h1"></path><path d="M14 15h1"></path></svg><span>Punto de Venta</span></a><a class="flex items-center space-x-3 px-3 py-2 text-xs font-medium rounded-lg text-slate-700 hover:bg-[#F3EFE6] transition-colors" href="#"><svg class="w-5 h-5 mr-3 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path></svg><span>Compras</span></a><a class="flex items-center space-x-3 px-3 py-2 text-xs font-semibold rounded-lg bg-[#4A6B8A] text-white shadow-sm transition-all" href="#"><svg class="w-5 h-5 mr-3 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="13" rx="2"></rect><path d="M2 9h20"></path><path d="M5 14l2 2 4-4"></path></svg><span>Créditos</span></a></nav><div class="px-3 mb-2"><p class="text-[11px] font-bold text-slate-700 tracking-wider uppercase font-heading">SOCIOS &amp; REPORTES</p></div><nav class="space-y-1"><a class="flex items-center space-x-3 px-3 py-2 text-xs font-medium rounded-lg text-slate-700 hover:bg-[#F3EFE6] transition-colors" href="#"><svg class="w-5 h-5 mr-3 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M8 17v-4"></path><path d="M12 17v-7"></path><path d="M16 17v-10"></path></svg><span>Análisis de Márgenes</span></a><a class="flex items-center space-x-3 px-3 py-2 text-xs font-medium rounded-lg text-slate-700 hover:bg-[#F3EFE6] transition-colors" href="#"><svg class="w-5 h-5 mr-3 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg><span>Clientes</span></a><a class="flex items-center space-x-3 px-3 py-2 text-xs font-medium rounded-lg text-slate-700 hover:bg-[#F3EFE6] transition-colors" href="#"><svg class="w-5 h-5 mr-3 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="5" width="14" height="11" rx="1"></rect><polygon points="15 8 19 8 22 11 22 16 15 16 15 8"></polygon><circle cx="6" cy="19" r="2"></circle><circle cx="18" cy="19" r="2"></circle><line x1="8" y1="19" x2="16" y2="19"></line></svg><span>Proveedores</span></a><a class="flex items-center space-x-3 px-3 py-2 text-xs font-medium rounded-lg text-slate-700 hover:bg-[#F3EFE6] transition-colors" href="#"><svg class="w-5 h-5 mr-3 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><circle cx="12" cy="10" r="2.5"></circle><path d="M8.5 16a3.5 3.5 0 0 1 7 0"></path></svg><span>Usuarios &amp; Roles</span></a></nav></div><div class="p-3 border-t border-[#E8E2D8] bg-[#FAF7F0] text-[11px] text-slate-500"><div class="flex items-center justify-between mb-1"><span class="font-semibold text-slate-700">V 3.4 OPERATIVA</span><span class="flex items-center text-[10px] text-emerald-600 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5 animate-pulse"></span> En Línea</span></div><div class="flex items-center text-[10px] text-slate-400"><i class="fa-solid fa-desktop mr-1.5"></i> Terminal: WH-SUR-04</div></div></aside>
+<!-- END: Left Navigation Sidebar -->
+<!-- BEGIN: Workspace & Content Area -->
+<main class="flex-1 flex flex-col overflow-y-auto px-6 py-5">
+<!-- Top Action Bar & Breadcrumbs -->
+<div class="mb-4">
+<div class="flex items-center space-x-2 text-[11px] font-medium text-slate-400 uppercase tracking-wider mb-2">
+<span>Módulos Operativos</span>
+<span>/</span>
+<span class="text-[#4A6B8A] font-semibold">Cartera y Cobranzas</span>
+</div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<!-- Page Title & Back Button -->
+<div class="flex items-center space-x-3">
+<button class="w-9 h-9 flex items-center justify-center rounded-lg border border-[#D5CDC2] bg-white text-slate-600 hover:bg-[#EAE4D8] hover:text-slate-800 shadow-sm transition" title="Regresar al panel">
+<i class="fa-solid fa-arrow-left text-sm"></i>
+</button>
+<div class="flex items-center space-x-2">
+<div class="w-9 h-9 rounded-lg bg-[#4A6B8A]/10 border border-[#4A6B8A]/30 flex items-center justify-center text-[#4A6B8A]">
+<i class="fa-solid fa-receipt text-lg"></i>
+</div>
+<h1 class="text-xl font-heading font-extrabold text-[#1E293B] tracking-tight">
+                GESTIÓN DE CRÉDITOS
+              </h1>
+</div>
+</div>
+<!-- Main Toolbar Buttons -->
+<div class="flex items-center space-x-2.5">
+<button class="inline-flex items-center space-x-2 px-3.5 py-2 text-xs font-semibold rounded-lg border border-[#D0C7B9] bg-white text-slate-700 shadow-sm hover:bg-[#F3EFE6] transition" id="btnOpenExportModal">
+<i class="fa-solid fa-file-invoice text-red-600"></i>
+<span>Reporte de Créditos</span>
+<span class="text-[10px] bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded border border-slate-200">PDF / XLS</span>
+</button>
+
+</div>
+</div>
+</div>
+<!-- BEGIN: KPI Summary Cards -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-5" data-purpose="kpi-cards">
+<!-- KPI 1: Total Aprobado -->
+<div class="bg-white rounded-xl p-4 border border-[#E4DED5] shadow-xs relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<p class="text-[11px] font-bold text-slate-400 tracking-wider uppercase">Crédito Total Asignado</p>
+<h3 class="text-xl font-heading font-black text-slate-800 mt-1">$ 4.000.000 <span class="text-xs font-medium text-slate-400">COP</span></h3>
+</div>
+<div class="p-2 rounded-lg bg-emerald-50 text-emerald-600 border border-emerald-100">
+<i class="fa-solid fa-sack-dollar text-base"></i>
+</div>
+</div>
+<div class="mt-3 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+<span class="text-slate-500">Cupo Disponible:</span>
+<span class="font-bold text-emerald-700">$ 1.000.000 COP</span>
+</div>
+</div>
+<!-- KPI 2: Total Clientes -->
+<div class="bg-white rounded-xl p-4 border border-[#E4DED5] shadow-xs relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<p class="text-[11px] font-bold text-slate-400 tracking-wider uppercase">Clientes con Crédito</p>
+<h3 class="text-xl font-heading font-black text-slate-800 mt-1">4 <span class="text-xs font-medium text-slate-400">Cuentas</span></h3>
+</div>
+<div class="p-2 rounded-lg bg-blue-50 text-blue-600 border border-blue-100">
+<i class="fa-solid fa-users text-base"></i>
+</div>
+</div>
+<div class="mt-3 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+<span class="text-slate-500">Estado de Cartera:</span>
+<span class="font-bold text-slate-700 bg-slate-100 px-2 py-0.5 rounded text-[10px]">4 ACTIVOS</span>
+</div>
+</div>
+<!-- KPI 3: Saldo Pendiente -->
+<div class="bg-white rounded-xl p-4 border border-[#E4DED5] shadow-xs relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<p class="text-[11px] font-bold text-slate-400 tracking-wider uppercase">Saldo Pendiente Cartera</p>
+<h3 class="text-xl font-heading font-black text-rose-700 mt-1">$ 3.000.000 <span class="text-xs font-medium text-slate-400">COP</span></h3>
+</div>
+<div class="p-2 rounded-lg bg-rose-50 text-rose-600 border border-rose-100">
+<i class="fa-solid fa-clock-rotate-left text-base"></i>
+</div>
+</div>
+<div class="mt-3 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+<span class="text-slate-500">Alerta de mora:</span>
+<span class="font-semibold text-amber-600 text-[10px] flex items-center">
+<i class="fa-solid fa-circle-exclamation mr-1"></i> 1 por vencer
+            </span>
+</div>
+</div>
+<!-- KPI 4: Recaudo Global -->
+<div class="bg-white rounded-xl p-4 border border-[#E4DED5] shadow-xs relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<p class="text-[11px] font-bold text-slate-400 tracking-wider uppercase">Efectividad de Recaudo</p>
+<h3 class="text-xl font-heading font-black text-[#4A6B8A] mt-1">82.5%</h3>
+</div>
+<div class="p-2 rounded-lg bg-sky-50 text-[#4A6B8A] border border-sky-100">
+<i class="fa-solid fa-chart-simple text-base"></i>
+</div>
+</div>
+<div class="mt-3 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+<span class="text-slate-500">Comparativa mes anterior:</span>
+<span class="font-bold text-emerald-600 text-[10px]">+4.1%</span>
+</div>
+</div>
+</section>
+<!-- END: KPI Summary Cards -->
+<!-- BEGIN: Two-Column Operational Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-5 flex-1 items-start">
+<!-- LEFT COLUMN: Client Portfolio Table (7 Cols) -->
+<section class="lg:col-span-7 bg-white rounded-xl border border-[#E4DED5] shadow-xs overflow-hidden flex flex-col" data-purpose="client-directory-panel">
+<!-- Directory Header -->
+<div class="p-4 border-b border-[#EFEAE2] flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-[#FAF7F0]/60">
+<div class="flex items-center space-x-2">
+<i class="fa-solid fa-address-book text-[#4A6B8A]"></i>
+<h2 class="text-sm font-heading font-bold text-slate-800 tracking-wide uppercase">CLIENTES CON CRÉDITO</h2>
+<span class="text-xs bg-slate-200/80 font-bold px-2 py-0.5 rounded-full text-slate-700">4</span>
+</div>
+<!-- Search Input -->
+<div class="relative w-full sm:w-64">
+<i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-xs text-slate-400"></i>
+<input class="w-full pl-8 pr-3 py-1.5 text-xs rounded-lg border border-[#D5CDC2] focus:border-[#4A6B8A] focus:ring-1 focus:ring-[#4A6B8A] bg-white placeholder-slate-400 transition" id="clientSearchInput" placeholder="Buscar cliente por Cédula / NIT..." type="text">
+</div>
+</div>
+<!-- Table Container -->
+<div class="overflow-x-auto">
+<table class="w-full text-left text-xs">
+<thead class="bg-[#F6F2EA] text-slate-600 uppercase font-semibold text-[10px] tracking-wider border-b border-[#E8E2D8]">
+<tr>
+<th class="py-2.5 px-3">Cliente</th>
+<th class="py-2.5 px-3 text-right">Límite</th>
+<th class="py-2.5 px-3 text-right">Disponible</th>
+<th class="py-2.5 px-3 text-center">Estado</th>
+<th class="py-2.5 px-3 text-center">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100" id="clientTableBody">
+<!-- Client 1: Liceo Joaquín Cárdenas (Selected by default) -->
+<tr class="hover:bg-[#FAF7F1] cursor-pointer transition" data-client-id="1" data-client-name="Liceo Joaquín Cárdenas" data-client-nit="900.342.112-1" data-disp="200.000" data-limit="500.000" data-saldo="300.000">
+<td class="py-3 px-3">
+<div class="flex items-center space-x-2.5">
+<div class="w-7 h-7 rounded-full bg-[#4A6B8A]/15 text-[#4A6B8A] flex items-center justify-center font-bold text-[11px] shrink-0 border border-[#4A6B8A]/30">
+<i class="fa-solid fa-school"></i>
+</div>
+<div>
+<div class="font-semibold text-slate-900 leading-tight">Liceo Joaquín Cárdenas</div>
+<div class="text-[10px] text-slate-400">NIT: 900.342.112-1</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-3 text-right font-medium text-slate-700">
+                    $ 500.000
+                  </td>
+<td class="py-3 px-3 text-right">
+<span class="font-bold text-emerald-700">$ 200.000</span>
+<div class="text-[9px] text-rose-500 font-medium">Debe: $ 300.000</div>
+</td>
+<td class="py-3 px-3 text-center">
+<span class="bg-emerald-100 text-emerald-800 text-[10px] font-semibold px-2 py-0.5 rounded-full">Activo</span>
+</td>
+<td class="py-3 px-3 text-center" onclick="event.stopPropagation()">
+<div class="flex items-center justify-center space-x-1">
+<button class="px-2 py-1 bg-brand-mustard hover:bg-brand-mustardDark text-slate-950 font-bold text-[10px] rounded shadow-xs flex items-center space-x-1 transition" onclick="openAbonoModal('Liceo Joaquín Cárdenas', '500.000', '200.000', '300.000')" title="Registrar Abono">
+<i class="fa-solid fa-plus text-[9px]"></i>
+<span>Abonar</span>
+</button>
+<button class="p-1 px-1.5 text-slate-500 hover:text-[#4A6B8A] hover:bg-slate-100 rounded border border-slate-200 transition" onclick="openUpdateCreditModal('Liceo Joaquín Cárdenas', '500000', '2026-12-31')" title="Actualizar Crédito">
+<i class="fa-solid fa-pen-to-square text-xs"></i>
+</button>
+<button class="p-1 px-1.5 text-slate-500 hover:text-red-600 hover:bg-slate-100 rounded border border-slate-200 transition" onclick="showNotification('Descargando estado de cuenta en PDF para Liceo Joaquín Cárdenas...')" title="Descargar Estado de Cuenta">
+<i class="fa-solid fa-file-pdf text-xs"></i>
+</button>
+</div>
+</td>
+</tr>
+<!-- Client 2: Don Juan -->
+<tr class="hover:bg-[#FAF7F1] cursor-pointer transition" data-client-id="2" data-client-name="Don Juan - Minisuper" data-client-nit="10.234.567" data-disp="200.000" data-limit="500.000" data-saldo="300.000">
+<td class="py-3 px-3">
+<div class="flex items-center space-x-2.5">
+<div class="w-7 h-7 rounded-full bg-slate-200 text-slate-600 flex items-center justify-center font-bold text-[11px] shrink-0 border border-slate-300">
+<i class="fa-solid fa-user"></i>
+</div>
+<div>
+<div class="font-semibold text-slate-900 leading-tight">Don Juan</div>
+<div class="text-[10px] text-slate-400">CC: 10.234.567</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-3 text-right font-medium text-slate-700">
+                    $ 500.000
+                  </td>
+<td class="py-3 px-3 text-right">
+<span class="font-bold text-emerald-700">$ 200.000</span>
+<div class="text-[9px] text-rose-500 font-medium">Debe: $ 300.000</div>
+</td>
+<td class="py-3 px-3 text-center">
+<span class="bg-emerald-100 text-emerald-800 text-[10px] font-semibold px-2 py-0.5 rounded-full">Activo</span>
+</td>
+<td class="py-3 px-3 text-center" onclick="event.stopPropagation()">
+<div class="flex items-center justify-center space-x-1">
+<button class="px-2 py-1 bg-brand-mustard hover:bg-brand-mustardDark text-slate-950 font-bold text-[10px] rounded shadow-xs flex items-center space-x-1 transition" onclick="openAbonoModal('Don Juan', '500.000', '200.000', '300.000')" title="Registrar Abono">
+<i class="fa-solid fa-plus text-[9px]"></i>
+<span>Abonar</span>
+</button>
+<button class="p-1 px-1.5 text-slate-500 hover:text-[#4A6B8A] hover:bg-slate-100 rounded border border-slate-200 transition" onclick="openUpdateCreditModal('Don Juan', '500000', '2026-11-20')" title="Actualizar Crédito">
+<i class="fa-solid fa-pen-to-square text-xs"></i>
+</button>
+<button class="p-1 px-1.5 text-slate-500 hover:text-red-600 hover:bg-slate-100 rounded border border-slate-200 transition" onclick="showNotification('Descargando estado de cuenta en PDF...')" title="Descargar Estado de Cuenta">
+<i class="fa-solid fa-file-pdf text-xs"></i>
+</button>
+</div>
+</td>
+</tr>
+<!-- Client 3: Libardo Mesa -->
+<tr class="hover:bg-[#FAF7F1] cursor-pointer transition" data-client-id="3" data-client-name="Libardo Mesa" data-client-nit="71.890.432" data-disp="100.000" data-limit="500.000" data-saldo="400.000">
+<td class="py-3 px-3">
+<div class="flex items-center space-x-2.5">
+<div class="w-7 h-7 rounded-full bg-slate-200 text-slate-600 flex items-center justify-center font-bold text-[11px] shrink-0 border border-slate-300">
+<i class="fa-solid fa-user"></i>
+</div>
+<div>
+<div class="font-semibold text-slate-900 leading-tight">Libardo Mesa</div>
+<div class="text-[10px] text-slate-400">CC: 71.890.432</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-3 text-right font-medium text-slate-700">
+                    $ 500.000
+                  </td>
+<td class="py-3 px-3 text-right">
+<span class="font-bold text-amber-700">$ 100.000</span>
+<div class="text-[9px] text-rose-500 font-medium">Debe: $ 400.000</div>
+</td>
+<td class="py-3 px-3 text-center">
+<span class="bg-emerald-100 text-emerald-800 text-[10px] font-semibold px-2 py-0.5 rounded-full">Activo</span>
+</td>
+<td class="py-3 px-3 text-center" onclick="event.stopPropagation()">
+<div class="flex items-center justify-center space-x-1">
+<button class="px-2 py-1 bg-brand-mustard hover:bg-brand-mustardDark text-slate-950 font-bold text-[10px] rounded shadow-xs flex items-center space-x-1 transition" onclick="openAbonoModal('Libardo Mesa', '500.000', '100.000', '400.000')" title="Registrar Abono">
+<i class="fa-solid fa-plus text-[9px]"></i>
+<span>Abonar</span>
+</button>
+<button class="p-1 px-1.5 text-slate-500 hover:text-[#4A6B8A] hover:bg-slate-100 rounded border border-slate-200 transition" onclick="openUpdateCreditModal('Libardo Mesa', '500000', '2026-10-15')" title="Actualizar Crédito">
+<i class="fa-solid fa-pen-to-square text-xs"></i>
+</button>
+<button class="p-1 px-1.5 text-slate-500 hover:text-red-600 hover:bg-slate-100 rounded border border-slate-200 transition" onclick="showNotification('Descargando estado de cuenta en PDF...')" title="Descargar Estado de Cuenta">
+<i class="fa-solid fa-file-pdf text-xs"></i>
+</button>
+</div>
+</td>
+</tr>
+<!-- Client 4: Alcaldía -->
+<tr class="hover:bg-[#FAF7F1] cursor-pointer transition" data-client-id="4" data-client-name="Alcaldía Municipal" data-client-nit="890.102.344-9" data-disp="300.000" data-limit="1.500.000" data-saldo="1.200.000">
+<td class="py-3 px-3">
+<div class="flex items-center space-x-2.5">
+<div class="w-7 h-7 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-[11px] shrink-0 border border-blue-200">
+<i class="fa-solid fa-landmark"></i>
+</div>
+<div>
+<div class="font-semibold text-slate-900 leading-tight">Alcaldía Municipal</div>
+<div class="text-[10px] text-slate-400">NIT: 890.102.344-9</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-3 text-right font-medium text-slate-700">
+                    $ 1.500.000
+                  </td>
+<td class="py-3 px-3 text-right">
+<span class="font-bold text-amber-700">$ 300.000</span>
+<div class="text-[9px] text-rose-500 font-medium">Debe: $ 1.200.000</div>
+</td>
+<td class="py-3 px-3 text-center">
+<span class="bg-emerald-100 text-emerald-800 text-[10px] font-semibold px-2 py-0.5 rounded-full">Activo</span>
+</td>
+<td class="py-3 px-3 text-center" onclick="event.stopPropagation()">
+<div class="flex items-center justify-center space-x-1">
+<button class="px-2 py-1 bg-brand-mustard hover:bg-brand-mustardDark text-slate-950 font-bold text-[10px] rounded shadow-xs flex items-center space-x-1 transition" onclick="openAbonoModal('Alcaldía Municipal', '1.500.000', '300.000', '1.200.000')" title="Registrar Abono">
+<i class="fa-solid fa-plus text-[9px]"></i>
+<span>Abonar</span>
+</button>
+<button class="p-1 px-1.5 text-slate-500 hover:text-[#4A6B8A] hover:bg-slate-100 rounded border border-slate-200 transition" onclick="openUpdateCreditModal('Alcaldía Municipal', '1500000', '2026-09-30')" title="Actualizar Crédito">
+<i class="fa-solid fa-pen-to-square text-xs"></i>
+</button>
+<button class="p-1 px-1.5 text-slate-500 hover:text-red-600 hover:bg-slate-100 rounded border border-slate-200 transition" onclick="showNotification('Descargando estado de cuenta en PDF...')" title="Descargar Estado de Cuenta">
+<i class="fa-solid fa-file-pdf text-xs"></i>
+</button>
+</div>
+</td>
+</tr>
+<!-- Client 5: Parroquia Nuestra Señora -->
+<tr class="hover:bg-[#FAF7F1] cursor-pointer transition selected-client-row" data-client-id="5" data-client-name="Parroquia Nuestra Señora" data-client-nit="860.291.874-5" data-disp="200.000" data-limit="1.000.000" data-saldo="800.000">
+<td class="py-3 px-3">
+<div class="flex items-center space-x-2.5">
+<div class="w-7 h-7 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-[11px] shrink-0 border border-purple-200">
+<i class="fa-solid fa-church"></i>
+</div>
+<div>
+<div class="font-semibold text-slate-900 leading-tight">Parroquia Nuestra Señora</div>
+<div class="text-[10px] text-slate-400">NIT: 860.291.874-5</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-3 text-right font-medium text-slate-700">
+                    $ 1.000.000
+                  </td>
+<td class="py-3 px-3 text-right">
+<span class="font-bold text-amber-700">$ 200.000</span>
+<div class="text-[9px] text-rose-500 font-medium">Debe: $ 800.000</div>
+</td>
+<td class="py-3 px-3 text-center">
+<span class="bg-emerald-100 text-emerald-800 text-[10px] font-semibold px-2 py-0.5 rounded-full">Activo</span>
+</td>
+<td class="py-3 px-3 text-center" onclick="event.stopPropagation()">
+<div class="flex items-center justify-center space-x-1">
+<button class="px-2 py-1 bg-brand-mustard hover:bg-brand-mustardDark text-slate-950 font-bold text-[10px] rounded shadow-xs flex items-center space-x-1 transition" onclick="openAbonoModal('Parroquia Nuestra Señora', '1.000.000', '200.000', '800.000')" title="Registrar Abono">
+<i class="fa-solid fa-plus text-[9px]"></i>
+<span>Abonar</span>
+</button>
+<button class="p-1 px-1.5 text-slate-500 hover:text-[#4A6B8A] hover:bg-slate-100 rounded border border-slate-200 transition" onclick="openUpdateCreditModal('Parroquia Nuestra Señora', '1000000', '2026-11-15')" title="Actualizar Crédito">
+<i class="fa-solid fa-pen-to-square text-xs"></i>
+</button>
+<button class="p-1 px-1.5 text-slate-500 hover:text-red-600 hover:bg-slate-100 rounded border border-slate-200 transition" onclick="showNotification('Descargando estado de cuenta en PDF...')" title="Descargar Estado de Cuenta">
+<i class="fa-solid fa-file-pdf text-xs"></i>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Helper Info -->
+<div class="p-3 bg-[#FBF9F5] border-t border-[#E8E2D8] flex items-center justify-between text-[11px] text-slate-500">
+<span>Haz clic en una fila para inspeccionar el historial individual.</span>
+<span class="font-medium text-slate-700">Mostrando 5 cuentas</span>
+</div>
+</section>
+<!-- RIGHT COLUMN: Detailed Transaction History (5 Cols) -->
+<section class="lg:col-span-5 bg-white rounded-xl border border-[#E4DED5] shadow-xs overflow-hidden flex flex-col" data-purpose="history-panel">
+<!-- History Header -->
+<div class="p-4 border-b border-[#EFEAE2] bg-[#FAF7F0]/60 flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<i class="fa-solid fa-clock-rotate-left text-[#4A6B8A]"></i>
+<h2 class="text-sm font-heading font-bold text-slate-800 tracking-wide uppercase">Historial de Movimientos</h2>
+</div>
+<!-- Active Selected Client Indicator Tag -->
+<div class="flex items-center space-x-1.5 bg-[#4A6B8A]/10 text-[#4A6B8A] px-2.5 py-1 rounded-full text-xs font-semibold border border-[#4A6B8A]/20" id="activeClientBadge">
+<i class="fa-solid fa-user-check text-[10px]"></i>
+<span class="truncate max-w-[150px]" id="activeClientName">Parroquia Nuestra Señora</span>
+</div>
+</div>
+<!-- Selected Client Mini Financial Health Snapshot -->
+<div class="px-4 py-3 bg-[#F8F5EE] border-b border-[#EAE3D6] grid grid-cols-3 gap-2 text-center">
+<div class="bg-white p-2 rounded-lg border border-[#E2DBD0]">
+<span class="text-[9px] uppercase tracking-wider font-semibold text-slate-400 block">Límite Aprobado</span>
+<span class="font-bold text-xs text-slate-800" id="activeLimitDisplay">$ 1.000.000</span>
+</div>
+<div class="bg-white p-2 rounded-lg border border-[#E2DBD0]">
+<span class="text-[9px] uppercase tracking-wider font-semibold text-emerald-600 block">Disponible</span>
+<span class="font-bold text-xs text-emerald-700" id="activeDispDisplay">$ 200.000</span>
+</div>
+<div class="bg-white p-2 rounded-lg border border-[#E2DBD0]">
+<span class="text-[9px] uppercase tracking-wider font-semibold text-rose-500 block">Saldo a Pagar</span>
+<span class="font-bold text-xs text-rose-700" id="activeSaldoDisplay">$ 800.000</span>
+</div>
+</div>
+<!-- Transaction Filtering Tabs -->
+<div class="px-4 pt-3 flex items-center justify-between border-b border-slate-100 pb-2">
+<span class="text-xs font-semibold text-slate-600">Transacciones Recientes</span>
+<div class="flex space-x-1">
+<button class="px-2 py-0.5 text-[10px] font-semibold bg-[#4A6B8A] text-white rounded">Todas</button>
+<button class="px-2 py-0.5 text-[10px] font-medium bg-slate-100 text-slate-600 hover:bg-slate-200 rounded">Ventas</button>
+<button class="px-2 py-0.5 text-[10px] font-medium bg-slate-100 text-slate-600 hover:bg-slate-200 rounded">Abonos</button>
+</div>
+</div>
+<!-- Movements List -->
+<div class="p-4 space-y-3 max-h-[380px] overflow-y-auto" id="movementsContainer">
+<!-- Movement 1: Compra -->
+<div class="flex items-center justify-between p-3 rounded-lg border border-[#E8E2D8] bg-[#FAF8F4] hover:shadow-xs transition">
+<div class="flex items-start space-x-3">
+<div class="w-8 h-8 rounded-lg bg-rose-50 text-rose-600 border border-rose-100 flex items-center justify-center shrink-0 mt-0.5">
+<i class="fa-solid fa-cart-arrow-down text-xs"></i>
+</div>
+<div>
+<div class="flex items-center space-x-2">
+<span class="font-bold text-xs uppercase text-slate-800">COMPRA A CRÉDITO</span>
+<span class="text-[10px] bg-slate-200 text-slate-700 px-1.5 py-0.2 rounded font-mono">#CR-104</span>
+</div>
+<div class="text-[11px] text-slate-400 mt-0.5">21/07/2026 • 15:42 • Fact. Electrónica</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-bold text-sm text-slate-900">$ 300.000</div>
+<button class="mt-1 px-2.5 py-0.5 text-[10px] font-semibold rounded bg-brand-mustard hover:bg-brand-mustardDark text-slate-950 transition inline-block" onclick="viewTransactionDetail('CR-104', 'COMPRA', '$ 300.000', '21/07/2026')">
+                  Ver detalle
+                </button>
+</div>
+</div>
+<!-- Movement 2: Abono -->
+<div class="flex items-center justify-between p-3 rounded-lg border border-emerald-200 bg-emerald-50/40 hover:shadow-xs transition">
+<div class="flex items-start space-x-3">
+<div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 border border-emerald-200 flex items-center justify-center shrink-0 mt-0.5">
+<i class="fa-solid fa-money-bill-transfer text-xs"></i>
+</div>
+<div>
+<div class="flex items-center space-x-2">
+<span class="font-bold text-xs uppercase text-emerald-800">ABONO A CUENTA</span>
+<span class="text-[10px] bg-emerald-200 text-emerald-900 px-1.5 py-0.2 rounded font-mono">#AB-082</span>
+</div>
+<div class="text-[11px] text-slate-400 mt-0.5">19/07/2026 • 11:20 • Transf. Bancolombia</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-bold text-sm text-emerald-700">+ $ 300.000</div>
+<button class="mt-1 px-2.5 py-0.5 text-[10px] font-semibold rounded bg-brand-mustard hover:bg-brand-mustardDark text-slate-950 transition inline-block" onclick="viewTransactionDetail('AB-082', 'ABONO', '+$ 300.000', '19/07/2026')">
+                  Ver detalle
+                </button>
+</div>
+</div>
+<!-- Movement 3: Compra Antigua -->
+<div class="flex items-center justify-between p-3 rounded-lg border border-[#E8E2D8] bg-[#FAF8F4] hover:shadow-xs transition">
+<div class="flex items-start space-x-3">
+<div class="w-8 h-8 rounded-lg bg-rose-50 text-rose-600 border border-rose-100 flex items-center justify-center shrink-0 mt-0.5">
+<i class="fa-solid fa-cart-arrow-down text-xs"></i>
+</div>
+<div>
+<div class="flex items-center space-x-2">
+<span class="font-bold text-xs uppercase text-slate-800">COMPRA A CRÉDITO</span>
+<span class="text-[10px] bg-slate-200 text-slate-700 px-1.5 py-0.2 rounded font-mono">#CR-098</span>
+</div>
+<div class="text-[11px] text-slate-400 mt-0.5">10/07/2026 • 09:15 • Factura #8921</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-bold text-sm text-slate-900">$ 500.000</div>
+<button class="mt-1 px-2.5 py-0.5 text-[10px] font-semibold rounded bg-brand-mustard hover:bg-brand-mustardDark text-slate-950 transition inline-block" onclick="viewTransactionDetail('CR-098', 'COMPRA', '$ 500.000', '10/07/2026')">
+                  Ver detalle
+                </button>
+</div>
+</div>
+<!-- Movement 4: Abono Antiguo -->
+<div class="flex items-center justify-between p-3 rounded-lg border border-emerald-200 bg-emerald-50/40 hover:shadow-xs transition">
+<div class="flex items-start space-x-3">
+<div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 border border-emerald-200 flex items-center justify-center shrink-0 mt-0.5">
+<i class="fa-solid fa-money-bill-transfer text-xs"></i>
+</div>
+<div>
+<div class="flex items-center space-x-2">
+<span class="font-bold text-xs uppercase text-emerald-800">ABONO A CUENTA</span>
+<span class="text-[10px] bg-emerald-200 text-emerald-900 px-1.5 py-0.2 rounded font-mono">#AB-079</span>
+</div>
+<div class="text-[11px] text-slate-400 mt-0.5">12/07/2026 • 16:05 • Efectivo en Caja</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-bold text-sm text-emerald-700">+ $ 200.000</div>
+<button class="mt-1 px-2.5 py-0.5 text-[10px] font-semibold rounded bg-brand-mustard hover:bg-brand-mustardDark text-slate-950 transition inline-block" onclick="viewTransactionDetail('AB-079', 'ABONO', '+$ 200.000', '12/07/2026')">
+                  Ver detalle
+                </button>
+</div>
+</div>
+</div>
+<!-- Bottom Direct Action -->
+<div class="p-3 bg-[#FBF9F5] border-t border-[#E8E2D8] flex items-center justify-between">
+<span class="text-[11px] text-slate-500 font-medium">¿Desea ingresar un pago directo?</span>
+<button class="px-3 py-1.5 bg-[#4A6B8A] hover:bg-[#3C5771] text-white text-xs font-bold rounded-lg shadow-sm transition flex items-center space-x-1.5" id="btnDirectAbono">
+<i class="fa-solid fa-plus-circle text-brand-mustard"></i>
+<span>Registrar Abono Inmediato</span>
+</button>
+</div>
+</section>
+</div>
+<!-- END: Two-Column Operational Layout -->
+<!-- Footer Informational Note -->
+<footer class="mt-6 py-2 border-t border-[#E8E2D8] flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-2">
+<p>© 2026 Stock.net — Gestión de Cartera, Cobranzas y Límites de Crédito Institucional</p>
+<div class="flex space-x-4">
+<a class="hover:text-slate-600 transition" href="#">Política de Cobro</a>
+<a class="hover:text-slate-600 transition" href="#">Guía de Auditoría</a>
+<a class="hover:text-slate-600 transition" href="#">Soporte Técnico</a>
+</div>
+</footer>
+</main>
+<!-- END: Workspace & Content Area -->
+</div>
+<!-- END: Main Layout Wrapper -->
+<!-- ======================================================== -->
+<!-- BEGIN: MODAL 1 - REGISTRAR ABONO (Reference IMAGE_3)     -->
+<!-- ======================================================== -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden" data-purpose="abono-modal" id="modalRegistrarAbono">
+<div class="bg-white w-full max-w-lg rounded-2xl shadow-2xl border border-slate-300 overflow-hidden transform transition-all">
+<!-- Modal Header -->
+<div class="bg-[#4A6B8A] px-6 py-3.5 flex items-center justify-between text-white">
+<div class="flex items-center space-x-2">
+<i class="fa-solid fa-receipt text-brand-mustard"></i>
+<h3 class="font-heading font-bold text-sm tracking-wider uppercase">REGISTRAR ABONO</h3>
+</div>
+<button aria-label="Cerrar modal" class="text-white/80 hover:text-white hover:bg-white/10 rounded-lg p-1 text-sm transition" onclick="closeModal('modalRegistrarAbono')">
+          ✕
+        </button>
+</div>
+<!-- Modal Body -->
+<div class="p-6 space-y-4 text-xs">
+<!-- Search client bar inside modal -->
+<div>
+<label class="block text-slate-500 font-semibold mb-1 text-[11px]">Cliente Destino</label>
+<div class="relative">
+<i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-400"></i>
+<input class="w-full pl-9 pr-3 py-2 rounded-lg border border-[#D5CDC2] focus:ring-1 focus:ring-[#4A6B8A] focus:border-[#4A6B8A] bg-slate-50/50" id="abonoModalSearch" placeholder="Buscar cliente por Nombre o Cédula / Id." type="text">
+</div>
+</div>
+<!-- Selected Client Card with Status Info -->
+<div class="bg-[#FAF7F0] p-3.5 rounded-xl border border-[#E6E0D4] space-y-2">
+<div class="flex items-center space-x-2.5">
+<div class="w-8 h-8 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-xs">
+<i class="fa-solid fa-user-tag"></i>
+</div>
+<div>
+<p class="font-bold text-slate-900 text-sm" id="abonoModalClientName">Liceo Joaquín Cárdenas</p>
+<p class="text-[10px] text-slate-500" id="abonoModalClientId">ID / NIT: 900.342.112-1</p>
+</div>
+</div>
+<div class="pt-2 border-t border-[#EAE3D6] flex justify-between items-center text-[11px]">
+<span class="text-slate-500">Crédito Aprobado: <strong class="text-slate-700" id="abonoModalCreditAprobado">$ 500.000 COP</strong></span>
+<span class="text-slate-500">Cupo Disponible: <strong class="text-emerald-700" id="abonoModalCupoDisp">$ 200.000 COP</strong></span>
+</div>
+<!-- Outstanding balance emphasis -->
+<div class="bg-white p-2 rounded-lg border border-[#DFD8CC] flex justify-between items-center mt-1">
+<span class="font-bold text-slate-700 uppercase tracking-tight text-[11px]">Saldo Pendiente Actual:</span>
+<span class="text-rose-700 font-black text-sm" id="abonoModalSaldoPendiente">$ 300.000 COP</span>
+</div>
+</div>
+<!-- Payment Inputs Form -->
+<div class="space-y-3 pt-1">
+<div>
+<label class="block font-semibold text-slate-700 mb-1 text-[11px]">
+<i class="fa-solid fa-qrcode text-slate-500 mr-1"></i> Transferencia / QR ($ COP)
+            </label>
+<div class="relative">
+<span class="absolute left-3 top-2 font-bold text-slate-400">$</span>
+<input class="w-full pl-7 pr-3 py-2 rounded-lg border border-[#D5CDC2] focus:ring-1 focus:ring-[#4A6B8A] font-semibold text-slate-800" id="inputAbonoTransf" placeholder="0" type="number">
+</div>
+</div>
+<div>
+<label class="block font-semibold text-slate-700 mb-1 text-[11px]">
+<i class="fa-solid fa-money-bill text-slate-500 mr-1"></i> Efectivo ($ COP)
+            </label>
+<div class="relative">
+<span class="absolute left-3 top-2 font-bold text-slate-400">$</span>
+<input class="w-full pl-7 pr-3 py-2 rounded-lg border border-[#D5CDC2] focus:ring-1 focus:ring-[#4A6B8A] font-semibold text-slate-800" id="inputAbonoEfectivo" placeholder="0" type="number">
+</div>
+</div>
+<div>
+<label class="block font-semibold text-slate-700 mb-1 text-[11px]">
+<i class="fa-solid fa-comment-dots text-slate-500 mr-1"></i> Observaciones / Referencia
+            </label>
+<input class="w-full px-3 py-2 rounded-lg border border-[#D5CDC2] focus:ring-1 focus:ring-[#4A6B8A] text-xs" id="inputAbonoObs" placeholder="Ej. Abono a factura CR-104 mediante Nequi comprobante #4902" type="text">
+</div>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="bg-[#FAF7F1] px-6 py-3 border-t border-[#E8E2D8] flex items-center justify-end space-x-3">
+<button class="px-4 py-2 text-xs font-semibold rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-700 transition" onclick="closeModal('modalRegistrarAbono')" type="button">
+          Cancelar
+        </button>
+<button class="px-5 py-2 text-xs font-bold rounded-lg bg-brand-mustard hover:bg-brand-mustardDark text-slate-950 transition shadow-sm" onclick="submitAbono()" type="button">
+          Confirmar Abono
+        </button>
+</div>
+</div>
+</div>
+<!-- END: MODAL 1 -->
+<!-- ======================================================== -->
+<!-- BEGIN: MODAL 2 - ACTUALIZAR CRÉDITO (Reference IMAGE_4)  -->
+<!-- ======================================================== -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden" data-purpose="update-credit-modal" id="modalActualizarCredito">
+<div class="bg-white w-full max-w-md rounded-2xl shadow-2xl border border-slate-300 overflow-hidden transform transition-all">
+<!-- Modal Header -->
+<div class="bg-[#4A6B8A] px-6 py-3.5 flex items-center justify-between text-white">
+<div class="flex items-center space-x-2">
+<i class="fa-solid fa-pen-ruler text-brand-mustard"></i>
+<h3 class="font-heading font-bold text-sm tracking-wider uppercase">ACTUALIZAR CRÉDITO</h3>
+</div>
+<button aria-label="Cerrar modal" class="text-white/80 hover:text-white hover:bg-white/10 rounded-lg p-1 text-sm transition" onclick="closeModal('modalActualizarCredito')">
+          ✕
+        </button>
+</div>
+<!-- Modal Body -->
+<div class="p-6 space-y-4 text-xs">
+<!-- Client Selector Dropdown -->
+<div>
+<label class="block font-semibold text-slate-700 mb-1 text-[11px]">
+            Ingrese el nombre del cliente y selecciónelo:
+          </label>
+<div class="relative">
+<select class="w-full px-3 py-2 rounded-lg border border-[#D5CDC2] focus:ring-1 focus:ring-[#4A6B8A] bg-white text-xs font-semibold" id="updateCreditClientSelect">
+<option value="Liceo Joaquín Cárdenas">Liceo Joaquín Cárdenas</option>
+<option value="Don Juan">Don Juan</option>
+<option value="Libardo Mesa">Libardo Mesa</option>
+<option value="Alcaldía Municipal">Alcaldía Municipal</option>
+<option value="Parroquia Nuestra Señora">Parroquia Nuestra Señora</option>
+</select>
+</div>
+</div>
+<!-- Limit Input -->
+<div>
+<label class="block font-semibold text-slate-700 mb-1 text-[11px]">
+            Límite del crédito ($ COP)
+          </label>
+<div class="relative">
+<span class="absolute left-3 top-2 font-bold text-slate-400">$</span>
+<input class="w-full pl-7 pr-3 py-2 rounded-lg border border-[#D5CDC2] focus:ring-1 focus:ring-[#4A6B8A] font-bold text-slate-800" id="updateCreditLimitInput" type="number" value="500000">
+</div>
+<span class="text-[10px] text-slate-400 mt-1 block">Monto máximo que el cliente puede adeudar al negocio.</span>
+</div>
+<!-- Expiration Date Picker -->
+<div>
+<label class="block font-semibold text-slate-700 mb-1 text-[11px]">
+            Fecha de vencimiento del crédito
+          </label>
+<input class="w-full px-3 py-2 rounded-lg border border-[#D5CDC2] focus:ring-1 focus:ring-[#4A6B8A] text-xs" id="updateCreditDateInput" type="date" value="2026-12-31">
+</div>
+<!-- Status Selector -->
+<div>
+<label class="block font-semibold text-slate-700 mb-1 text-[11px]">
+            ESTADO DE CUENTA
+          </label>
+<select class="w-full px-3 py-2 rounded-lg border border-[#D5CDC2] focus:ring-1 focus:ring-[#4A6B8A] bg-white text-xs font-semibold" id="updateCreditStatusSelect">
+<option selected="" value="Activo">Activo (Habilitado para compras)</option>
+<option value="Inactivo">Inactivo (Suspendido por mora o revisión)</option>
+</select>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="bg-[#FAF7F1] px-6 py-3 border-t border-[#E8E2D8] flex items-center justify-end space-x-3">
+<button class="px-4 py-2 text-xs font-semibold rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-700 transition" onclick="closeModal('modalActualizarCredito')" type="button">
+          Cancelar
+        </button>
+<button class="px-5 py-2 text-xs font-bold rounded-lg bg-brand-mustard hover:bg-brand-mustardDark text-slate-950 transition shadow-sm" onclick="saveUpdateCredit()" type="button">
+          Guardar Cambios
+        </button>
+</div>
+</div>
+</div>
+<!-- END: MODAL 2 -->
+<!-- ======================================================== -->
+<!-- BEGIN: MODAL 3 - EXPORTAR REPORTE (PDF / EXCEL)           -->
+<!-- ======================================================== -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden" data-purpose="export-report-modal" id="modalExportarReporte">
+<div class="bg-white w-full max-w-md rounded-2xl shadow-2xl border border-slate-300 overflow-hidden transform transition-all">
+<!-- Modal Header -->
+<div class="bg-[#4A6B8A] px-6 py-3.5 flex items-center justify-between text-white">
+<div class="flex items-center space-x-2">
+<i class="fa-solid fa-file-export text-brand-mustard"></i>
+<h3 class="font-heading font-bold text-sm tracking-wider uppercase">REPORTE DE CRÉDITO GENERAL</h3>
+</div>
+<button aria-label="Cerrar modal" class="text-white/80 hover:text-white hover:bg-white/10 rounded-lg p-1 text-sm transition" onclick="closeModal('modalExportarReporte')">
+          ✕
+        </button>
+</div>
+<!-- Modal Body -->
+<div class="p-6 space-y-4 text-xs">
+<p class="text-slate-600">
+          Seleccione el formato de exportación para la cartera activa con corte a la fecha actual:
+        </p>
+<div class="grid grid-cols-2 gap-3 pt-1">
+<!-- PDF Option -->
+<div class="cursor-pointer border-2 border-slate-200 hover:border-red-500 rounded-xl p-4 text-center hover:bg-red-50/30 transition group" onclick="executeExport('PDF')">
+<i class="fa-solid fa-file-pdf text-3xl text-red-500 mb-2 group-hover:scale-110 transition-transform"></i>
+<h4 class="font-bold text-slate-800 text-xs">Formato PDF</h4>
+<p class="text-[10px] text-slate-400 mt-1">Con membrete institucional e idoneidad fiscal.</p>
+</div>
+<!-- Excel Option -->
+<div class="cursor-pointer border-2 border-slate-200 hover:border-emerald-500 rounded-xl p-4 text-center hover:bg-emerald-50/30 transition group" onclick="executeExport('Excel')">
+<i class="fa-solid fa-file-excel text-3xl text-emerald-600 mb-2 group-hover:scale-110 transition-transform"></i>
+<h4 class="font-bold text-slate-800 text-xs">Formato EXCEL (.xlsx)</h4>
+<p class="text-[10px] text-slate-400 mt-1">Tablas dinámicas y edades de cartera (30/60/90).</p>
+</div>
+</div>
+<div class="bg-amber-50 p-3 rounded-lg border border-amber-200 text-amber-900 text-[11px] flex items-start space-x-2">
+<i class="fa-solid fa-shield-cat mt-0.5 text-amber-700"></i>
+<span>El reporte incluirá historial de abonos, saldos pendientes y estado de garantías.</span>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="bg-[#FAF7F1] px-6 py-3 border-t border-[#E8E2D8] flex items-center justify-end">
+<button class="px-4 py-2 text-xs font-semibold rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-700 transition" onclick="closeModal('modalExportarReporte')" type="button">
+          Cerrar
+        </button>
+</div>
+</div>
+</div>
+<!-- END: MODAL 3 -->
+<!-- ======================================================== -->
+<!-- BEGIN: MODAL 4 - NUEVA VENTA A CRÉDITO                   -->
+<!-- ======================================================== -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden" data-purpose="new-credit-sale-modal" id="modalNuevaVenta">
+<div class="bg-white w-full max-w-lg rounded-2xl shadow-2xl border border-slate-300 overflow-hidden transform transition-all">
+<!-- Modal Header -->
+<div class="bg-[#4A6B8A] px-6 py-3.5 flex items-center justify-between text-white">
+<div class="flex items-center space-x-2">
+<i class="fa-solid fa-cart-shopping text-brand-mustard"></i>
+<h3 class="font-heading font-bold text-sm tracking-wider uppercase">NUEVA VENTA A CRÉDITO</h3>
+</div>
+<button aria-label="Cerrar modal" class="text-white/80 hover:text-white hover:bg-white/10 rounded-lg p-1 text-sm transition" onclick="closeModal('modalNuevaVenta')">
+          ✕
+        </button>
+</div>
+<!-- Modal Body -->
+<div class="p-6 space-y-4 text-xs">
+<div>
+<label class="block font-semibold text-slate-700 mb-1 text-[11px]">Cliente Acreditado</label>
+<select class="w-full px-3 py-2 rounded-lg border border-[#D5CDC2] focus:ring-1 focus:ring-[#4A6B8A] text-xs font-semibold">
+<option>Liceo Joaquín Cárdenas (Cupo disponible: $200.000)</option>
+<option>Don Juan (Cupo disponible: $200.000)</option>
+<option>Libardo Mesa (Cupo disponible: $100.000)</option>
+<option>Alcaldía Municipal (Cupo disponible: $300.000)</option>
+<option>Parroquia Nuestra Señora (Cupo disponible: $200.000)</option>
+</select>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div>
+<label class="block font-semibold text-slate-700 mb-1 text-[11px]">Monto de la Venta ($ COP)</label>
+<input class="w-full px-3 py-2 rounded-lg border border-[#D5CDC2] focus:ring-1 focus:ring-[#4A6B8A] text-xs font-bold" placeholder="Ej. 150000" type="number">
+</div>
+<div>
+<label class="block font-semibold text-slate-700 mb-1 text-[11px]">Plazo de Pago (Días)</label>
+<select class="w-full px-3 py-2 rounded-lg border border-[#D5CDC2] focus:ring-1 focus:ring-[#4A6B8A] text-xs">
+<option>15 días</option>
+<option selected="">30 días</option>
+<option>45 días</option>
+<option>60 días</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block font-semibold text-slate-700 mb-1 text-[11px]">Número de Factura o Remisión</label>
+<input class="w-full px-3 py-2 rounded-lg border border-[#D5CDC2] focus:ring-1 focus:ring-[#4A6B8A] text-xs uppercase font-mono" placeholder="Ej. CR-105" type="text">
+</div>
+<div>
+<label class="block font-semibold text-slate-700 mb-1 text-[11px]">Artículos o Concepto</label>
+<textarea class="w-full px-3 py-2 rounded-lg border border-[#D5CDC2] focus:ring-1 focus:ring-[#4A6B8A] text-xs" placeholder="Resumen de mercancía autorizada para entrega a crédito..." rows="2"></textarea>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="bg-[#FAF7F1] px-6 py-3 border-t border-[#E8E2D8] flex items-center justify-end space-x-3">
+<button class="px-4 py-2 text-xs font-semibold rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-700 transition" onclick="closeModal('modalNuevaVenta')" type="button">
+          Cancelar
+        </button>
+<button class="px-5 py-2 text-xs font-bold rounded-lg bg-brand-mustard hover:bg-brand-mustardDark text-slate-950 transition shadow-sm" onclick="submitNuevaVenta()" type="button">
+          Aprobar y Facturar Venta
+        </button>
+</div>
+</div>
+</div>
+<!-- END: MODAL 4 -->
+<!-- Toast Notification Floating Widget -->
+<div class="fixed bottom-5 right-5 bg-slate-900 text-white text-xs px-4 py-3 rounded-xl shadow-xl flex items-center space-x-3 border border-slate-700 transform transition-transform duration-300 z-50 pointer-events-none translate-y-24" id="toastNotification">
+<div class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center shrink-0">
+<i class="fa-solid fa-check text-[10px]"></i>
+</div>
+<span class="font-medium" id="toastMessage">Generando y descargando informe general de créditos en Excel...</span>
+</div>
+<!-- BEGIN: Interactive Logic Scripts -->
+<script data-purpose="modal-handlers">
+    // Helper function to open modal by ID
+    function openModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) {
+        modal.classList.remove('hidden');
+      }
+    }
+
+    // Helper function to close modal by ID
+    function closeModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) {
+        modal.classList.add('hidden');
+      }
+    }
+
+    // General Notification Toast Handler
+    function showNotification(msg) {
+      const toast = document.getElementById('toastNotification');
+      const toastMsg = document.getElementById('toastMessage');
+      if (toast && toastMsg) {
+        toastMsg.textContent = msg;
+        toast.classList.remove('translate-y-24');
+        setTimeout(() => {
+          toast.classList.add('translate-y-24');
+        }, 3200);
+      }
+    }
+
+    // Open Abono Modal preloaded with client data
+    function openAbonoModal(name, limite, disp, saldo) {
+      document.getElementById('abonoModalClientName').textContent = name;
+      document.getElementById('abonoModalCreditAprobado').textContent = `$ ${limite} COP`;
+      document.getElementById('abonoModalCupoDisp').textContent = `$ ${disp} COP`;
+      document.getElementById('abonoModalSaldoPendiente').textContent = `$ ${saldo} COP`;
+      
+      // Clear inputs
+      document.getElementById('inputAbonoTransf').value = '';
+      document.getElementById('inputAbonoEfectivo').value = '';
+      document.getElementById('inputAbonoObs').value = '';
+      
+      openModal('modalRegistrarAbono');
+    }
+
+    // Open Update Credit Modal preloaded
+    function openUpdateCreditModal(name, limit, date) {
+      const clientSelect = document.getElementById('updateCreditClientSelect');
+      if (clientSelect) {
+        clientSelect.value = name;
+      }
+      document.getElementById('updateCreditLimitInput').value = limit;
+      if (date) {
+        document.getElementById('updateCreditDateInput').value = date;
+      }
+      openModal('modalActualizarCredito');
+    }
+
+    // Transaction Details Alert Mock
+    function viewTransactionDetail(code, type, amount, date) {
+      showNotification(`Consultando comprobante ${code} (${type} por ${amount}) registrado el ${date}`);
+    }
+
+    // Actions submission mocks
+    function submitAbono() {
+      const transf = parseFloat(document.getElementById('inputAbonoTransf').value) || 0;
+      const efec = parseFloat(document.getElementById('inputAbonoEfectivo').value) || 0;
+      const total = transf + efec;
+
+      if (total <= 0) {
+        alert('Por favor ingrese un monto de abono mayor a cero.');
+        return;
+      }
+
+      closeModal('modalRegistrarAbono');
+      showNotification(`Abono por $ ${total.toLocaleString('es-CO')} registrado exitosamente en el sistema.`);
+    }
+
+    function saveUpdateCredit() {
+      const client = document.getElementById('updateCreditClientSelect').value;
+      const limit = document.getElementById('updateCreditLimitInput').value;
+      closeModal('modalActualizarCredito');
+      showNotification(`Límite de crédito de ${client} actualizado a $ ${parseInt(limit).toLocaleString('es-CO')} COP`);
+    }
+
+    function executeExport(type) {
+      closeModal('modalExportarReporte');
+      showNotification(`Generando y descargando informe general de créditos en ${type}...`);
+    }
+
+    function submitNuevaVenta() {
+      closeModal('modalNuevaVenta');
+      showNotification(`Nueva venta a crédito autorizada y cargada al saldo del cliente.`);
+    }
+  </script>
+<script data-purpose="table-and-selection-events">
+    document.addEventListener('DOMContentLoaded', () => {
+      // Connect Top Bar Buttons
+      document.getElementById('btnOpenExportModal')?.addEventListener('click', () => {
+        openModal('modalExportarReporte');
+      });
+
+      document.getElementById('btnOpenVentaModal')?.addEventListener('click', () => {
+        openModal('modalNuevaVenta');
+      });
+
+      document.getElementById('btnDirectAbono')?.addEventListener('click', () => {
+        const clientName = document.getElementById('activeClientName').textContent;
+        const limit = document.getElementById('activeLimitDisplay').textContent.replace('$ ', '');
+        const disp = document.getElementById('activeDispDisplay').textContent.replace('$ ', '');
+        const saldo = document.getElementById('activeSaldoDisplay').textContent.replace('$ ', '');
+        openAbonoModal(clientName, limit, disp, saldo);
+      });
+
+      // Row Selection Logic for Table
+      const rows = document.querySelectorAll('#clientTableBody tr');
+      rows.forEach(row => {
+        row.addEventListener('click', () => {
+          // Remove selected class from all
+          rows.forEach(r => r.classList.remove('selected-client-row'));
+          
+          // Add selected styling to clicked row
+          row.classList.add('selected-client-row');
+
+          // Read data attributes
+          const name = row.getAttribute('data-client-name');
+          const limit = row.getAttribute('data-limit');
+          const disp = row.getAttribute('data-disp');
+          const saldo = row.getAttribute('data-saldo');
+
+          // Update Right Column History Panel
+          document.getElementById('activeClientName').textContent = name;
+          document.getElementById('activeLimitDisplay').textContent = `$ ${limit}`;
+          document.getElementById('activeDispDisplay').textContent = `$ ${disp}`;
+          document.getElementById('activeSaldoDisplay').textContent = `$ ${saldo}`;
+        });
+      });
+
+      // Filter Table Input
+      const searchInput = document.getElementById('clientSearchInput');
+      searchInput?.addEventListener('keyup', (e) => {
+        const term = e.target.value.toLowerCase();
+        rows.forEach(row => {
+          const text = row.innerText.toLowerCase();
+          if (text.includes(term)) {
+            row.style.display = '';
+          } else {
+            row.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+<!-- END: Interactive Logic Scripts -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>

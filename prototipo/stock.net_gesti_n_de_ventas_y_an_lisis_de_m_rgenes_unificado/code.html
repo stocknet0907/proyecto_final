@@ -1,0 +1,1613 @@
+<!DOCTYPE html><html class="h-full bg-[#F5F2EB]" lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Stock.net - Gestión de Ventas</title>
+<!-- Tailwind CSS v3 with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Font Awesome Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<!-- Google Fonts: Inter & Montserrat -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Montserrat:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              slate: '#4A6B8A',
+              slateDark: '#3A556E',
+              slateLight: '#5F82A5',
+              cream: '#FCF9F3',
+              creamDark: '#EFECE6',
+              amber: '#E6A017',
+              amberHover: '#CE8B0C',
+              accentBlue: '#2563EB',
+              accentGreen: '#10B981',
+              accentRed: '#EF4444'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Montserrat', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+<style data-purpose="custom-scrollbars">
+    /* Custom sleek scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F1EFE9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94A3B8;
+    }
+  </style>
+<style data-purpose="print-styles">
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      #modal-ticket-receipt, #modal-ticket-receipt * {
+        visibility: visible;
+      }
+      #modal-ticket-receipt {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background: white !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="h-full flex flex-col font-sans text-slate-800 bg-[#F5F2EB] antialiased select-none">
+<!-- BEGIN: GlobalHeader -->
+<header class="h-14 bg-[#4A6B8A] text-white flex items-center justify-between px-4 sm:px-6 shadow-md z-30 flex-shrink-0" data-purpose="main-header">
+<!-- Left: Brand Logo & Title -->
+<div class="flex items-center space-x-3">
+<div class="flex items-center space-x-2">
+<img alt="STOCK.net" class="h-8 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJ3gwDVTFGni5n_NUAUpviQOAfHIAQTm8Jt3-EIQwxeyom175oh9iYy-i-X1ypTuF2WpdgZTUFjvbZl43el_rSSby0sD68-hPqU5_gekv_YIM0xhS_jbOw-_ZjW5fwAi5NpHpFd9s3TyiIwfNZpoknI7nr3y-bxLh3-PcwLeV8QjPekqTyKlZX6ko0LKwie5PkZLpPbYxfG9j3R4T72f-xn1_GF4LYkGc4Gbl2a3NsYxIAg4w7JXai">
+</div>
+<div class="hidden md:block border-l border-white/25 pl-3 py-1">
+<p class="text-[10px] tracking-wider font-heading font-bold text-white/80 uppercase">SISTEMA INTEGRAL DE GESTIÓN DE INVENTARIO, CONTROL Y SEGURIDAD</p>
+</div>
+</div>
+<!-- Right: User Profile & Security Badge -->
+<div class="flex items-center space-x-4">
+<!-- Role Badge -->
+<div class="hidden sm:flex items-center bg-[#3D5974] rounded-full pl-3 pr-1 py-1 border border-white/10 shadow-inner">
+<i class="fa-solid fa-shield-halved text-[#E6A017] text-xs mr-2"></i>
+<span class="text-xs font-medium text-slate-200 mr-2">Administrador</span>
+<span class="bg-[#E6A017] text-slate-900 font-extrabold text-[10px] uppercase px-2 py-0.5 rounded-full tracking-wide">
+          ACCESO TOTAL
+        </span>
+</div>
+<!-- User Info -->
+<div class="flex items-center space-x-2 border-l border-white/20 pl-3">
+<div class="text-right hidden sm:block">
+<div class="text-xs font-bold leading-tight text-white">Carlos Morales</div>
+<div class="text-[10px] text-slate-300">Jefe de Operaciones</div>
+</div>
+<div class="w-8 h-8 rounded-full bg-[#354E66] border border-white/30 flex items-center justify-center text-white shadow">
+<i class="fa-regular fa-user text-xs"></i>
+</div>
+</div>
+</div>
+</header>
+<!-- END: GlobalHeader -->
+<!-- BEGIN: MainLayout -->
+<div class="flex-1 flex overflow-hidden">
+<!-- BEGIN: SidebarNavigation -->
+<aside class="w-64 bg-[#FCF9F3] border-r border-[#E8E2D5] flex flex-col justify-between overflow-y-auto flex-shrink-0" data-purpose="sidebar"><div class="py-5 flex-1">
+  <!-- Group 1: OPERACIONES & CONTROL -->
+  <div class="px-5 mb-2.5">
+    <h3 class="text-[11px] font-heading font-semibold tracking-wider text-slate-500 uppercase">OPERACIONES &amp; CONTROL</h3>
+  </div>
+  <nav class="space-y-1 px-3">
+    <!-- Item 1: Panel Principal -->
+    <a href="#" class="flex items-center space-x-3 px-3 py-2.5 text-sm font-medium font-heading text-slate-700 rounded-lg hover:bg-[#EFEAE1] transition-colors">
+      <svg class="w-5 h-5 text-slate-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+        <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
+        <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
+        <rect x="14" y="14" width="7" height="7" rx="1.5"></rect>
+        <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
+      </svg>
+      <span>Panel Principal</span>
+    </a>
+
+    <!-- Item 2: Gestión de Inventario -->
+    <a href="#" class="flex items-center space-x-3 px-3 py-2.5 text-sm font-medium font-heading text-slate-700 rounded-lg hover:bg-[#EFEAE1] transition-colors">
+      <svg class="w-5 h-5 text-slate-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+      </svg>
+      <span>Gestión de Inventario</span>
+    </a>
+
+    <!-- Item 3: Gestión de Ventas (ACTIVE) -->
+    <a href="#" class="flex items-center space-x-3 px-3 py-2.5 text-sm font-bold font-heading text-white bg-[#4A6B8A] rounded-lg shadow-sm">
+      <svg class="w-5 h-5 text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2z"></path>
+      </svg>
+      <span>Gestión de Ventas</span>
+    </a>
+
+    <!-- Item 4: Punto de Venta -->
+    <a href="#" class="flex items-center space-x-3 px-3 py-2.5 text-sm font-medium font-heading text-slate-700 rounded-lg hover:bg-[#EFEAE1] transition-colors">
+      <svg class="w-5 h-5 text-slate-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+        <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 8h12M6 12h3m5 0h4M6 16h12"></path>
+      </svg>
+      <span>Punto de Venta</span>
+    </a>
+
+    <!-- Item 5: Compras -->
+    <a href="#" class="flex items-center space-x-3 px-3 py-2.5 text-sm font-medium font-heading text-slate-700 rounded-lg hover:bg-[#EFEAE1] transition-colors">
+      <svg class="w-5 h-5 text-slate-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+        <circle cx="9" cy="21" r="1"></circle>
+        <circle cx="20" cy="21" r="1"></circle>
+        <path stroke-linecap="round" stroke-linejoin="round" d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+      </svg>
+      <span>Compras</span>
+    </a>
+
+    <!-- Item 6: Créditos -->
+    <a href="#" class="flex items-center space-x-3 px-3 py-2.5 text-sm font-medium font-heading text-slate-700 rounded-lg hover:bg-[#EFEAE1] transition-colors">
+      <svg class="w-5 h-5 text-slate-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+        <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+        <line x1="1" y1="10" x2="23" y2="10"></line>
+      </svg>
+      <span>Créditos</span>
+    </a>
+  </nav>
+
+  <!-- Group 2: SOCIOS & REPORTES -->
+  <div class="px-5 mt-7 mb-2.5">
+    <h3 class="text-[11px] font-heading font-semibold tracking-wider text-slate-500 uppercase">SOCIOS &amp; REPORTES</h3>
+  </div>
+  <nav class="space-y-1 px-3">
+    <!-- Item 7: Análisis de Márgenes -->
+    <button onclick="switchTab('tab-margenes')" class="w-full text-left flex items-center space-x-3 px-3 py-2.5 text-sm font-medium font-heading text-slate-700 rounded-lg hover:bg-[#EFEAE1] transition-colors">
+      <svg class="w-5 h-5 text-slate-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+        <line x1="18" y1="20" x2="18" y2="10"></line>
+        <line x1="12" y1="20" x2="12" y2="4"></line>
+        <line x1="6" y1="20" x2="6" y2="14"></line>
+      </svg>
+      <span>Análisis de Márgenes</span>
+    </button>
+
+    <!-- Item 8: Clientes -->
+    <a href="#" class="flex items-center space-x-3 px-3 py-2.5 text-sm font-medium font-heading text-slate-700 rounded-lg hover:bg-[#EFEAE1] transition-colors">
+      <svg class="w-5 h-5 text-slate-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+        <circle cx="9" cy="7" r="4"></circle>
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+      </svg>
+      <span>Clientes</span>
+    </a>
+
+    <!-- Item 9: Proveedores -->
+    <a href="#" class="flex items-center space-x-3 px-3 py-2.5 text-sm font-medium font-heading text-slate-700 rounded-lg hover:bg-[#EFEAE1] transition-colors">
+      <svg class="w-5 h-5 text-slate-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+        <rect x="1" y="3" width="15" height="13"></rect>
+        <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+        <circle cx="5.5" cy="18.5" r="2.5"></circle>
+        <circle cx="18.5" cy="18.5" r="2.5"></circle>
+      </svg>
+      <span>Proveedores</span>
+    </a>
+
+    <!-- Item 10: Usuarios & Roles -->
+    <a href="#" class="flex items-center space-x-3 px-3 py-2.5 text-sm font-medium font-heading text-slate-700 rounded-lg hover:bg-[#EFEAE1] transition-colors">
+      <svg class="w-5 h-5 text-slate-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+      </svg>
+      <span>Usuarios &amp; Roles</span>
+    </a>
+  </nav>
+</div>
+
+<!-- Sidebar Footer -->
+<div class="p-3.5 border-t border-[#E8E2D5] bg-[#F7F4EC] text-[11px] text-slate-500 flex items-center justify-between flex-shrink-0">
+  <span class="flex items-center font-heading font-medium">
+    <span class="w-2 h-2 rounded-full bg-emerald-500 mr-2 animate-pulse"></span>
+    Terminal Activa #02
+  </span>
+  <span class="font-mono text-[10px] bg-slate-200 px-1.5 py-0.5 rounded text-slate-700">v3.4.1</span>
+</div></aside>
+<!-- END: SidebarNavigation -->
+<!-- BEGIN: MainContentArea -->
+<main class="flex-1 overflow-y-auto flex flex-col bg-[#F8F6F0]" data-purpose="content-viewport">
+<!-- SubHeader Navigation Bar (Tabs & Quick Action) -->
+<div class="bg-white border-b border-slate-200 px-6 pt-3 pb-0 sticky top-0 z-20 shadow-xs">
+<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pb-3">
+<div class="flex items-center space-x-3">
+<div class="w-9 h-9 rounded-lg bg-[#4A6B8A]/10 text-[#4A6B8A] flex items-center justify-center font-bold text-lg">
+<i class="fa-solid fa-chart-column"></i>
+</div>
+<div>
+<h1 class="text-xl font-heading font-extrabold text-slate-800 tracking-tight flex items-center gap-2">
+                Gestión de Ventas
+                <span class="text-xs font-sans font-medium px-2 py-0.5 bg-blue-50 text-blue-700 border border-blue-200 rounded-full">En Vivo</span>
+</h1>
+<p class="text-xs text-slate-500">Módulo central de facturación, histórico de tickets y rendimiento comercial</p>
+</div>
+</div>
+<!-- Quick Right Actions -->
+<div class="flex items-center space-x-2">
+<button class="inline-flex items-center px-3.5 py-2 bg-[#E6A017] hover:bg-[#D59110] text-slate-900 font-bold text-xs rounded-lg shadow-sm transition-all focus:ring-2 focus:ring-[#E6A017]/40" onclick="openModal('modal-nueva-venta-rapida')">
+<i class="fa-solid fa-plus-circle mr-1.5 text-sm"></i>
+              Nueva Venta
+            </button>
+<button class="inline-flex items-center px-3 py-2 bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 font-semibold text-xs rounded-lg shadow-sm" onclick="openReportModal()">
+<i class="fa-solid fa-file-pdf mr-1.5 text-red-500"></i>
+              Reporte Z
+            </button>
+</div>
+</div>
+<!-- Navigation Tabs corresponding to the Flow Chart (IMAGE_2) -->
+<div class="flex space-x-6 border-b border-transparent">
+<button class="pb-3 text-xs font-bold border-b-2 border-[#4A6B8A] text-[#4A6B8A] flex items-center space-x-2 transition-colors" id="tab-btn-dashboard" onclick="switchTab('tab-dashboard')">
+<i class="fa-solid fa-table-columns"></i>
+<span>Dashboard de Ventas</span>
+</button>
+<button class="pb-3 text-xs font-semibold border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center space-x-2 transition-colors" id="tab-btn-historial" onclick="switchTab('tab-historial')">
+<i class="fa-solid fa-clock-rotate-left"></i>
+<span>Historial de Transacciones</span>
+<span class="bg-slate-200 text-slate-700 rounded-full px-1.5 py-0.2 text-[10px]">80</span>
+</button>
+<button class="pb-3 text-xs font-semibold border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center space-x-2 transition-colors" id="tab-btn-margenes" onclick="switchTab('tab-margenes')">
+<i class="fa-solid fa-scale-balanced"></i>
+<span>Análisis de Márgenes</span>
+<span class="bg-amber-100 text-amber-800 font-bold rounded-full px-1.5 py-0.2 text-[10px]">45%</span>
+</button>
+</div>
+</div>
+<!-- Main Dynamic Content Container -->
+<div class="p-6 space-y-6">
+<!-- ==================================================================== -->
+<!-- TAB 1: DASHBOARD DE VENTAS (Mockup IMAGE_89)                       -->
+<!-- ==================================================================== -->
+<section class="space-y-6" data-purpose="dashboard-view" id="tab-dashboard">
+<!-- Global Filtering Bar -->
+<div class="bg-white p-4 rounded-xl shadow-xs border border-slate-200 flex flex-wrap lg:flex-nowrap items-center gap-3" data-purpose="filter-bar">
+<!-- Date Range Filter -->
+<div class="w-full sm:w-auto flex-1 min-w-[220px]">
+<label class="block text-[11px] font-semibold text-slate-600 mb-1">Rango de Fechas</label>
+<div class="flex items-center space-x-2 bg-slate-50 border border-slate-300 rounded-lg px-2.5 py-1.5 text-xs text-slate-700">
+<i class="fa-regular fa-calendar text-slate-400"></i>
+<input class="w-20 bg-transparent border-0 p-0 text-xs focus:ring-0" type="text" value="01/07/2026">
+<span class="text-slate-400 font-bold">—</span>
+<input class="w-20 bg-transparent border-0 p-0 text-xs focus:ring-0" type="text" value="21/07/2026">
+</div>
+</div>
+<!-- Search Bar -->
+<div class="w-full sm:w-auto flex-1 min-w-[220px]">
+<label class="block text-[11px] font-semibold text-slate-600 mb-1">Buscador</label>
+<div class="relative">
+<i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-400 text-xs"></i>
+<input class="w-full pl-8 pr-3 py-1.5 text-xs bg-slate-50 border border-slate-300 rounded-lg focus:bg-white focus:border-[#4A6B8A] focus:ring-1 focus:ring-[#4A6B8A]" placeholder="Buscar cliente, comprobante o producto..." type="text">
+</div>
+</div>
+<!-- Status Dropdown -->
+<div class="w-full sm:w-auto w-44">
+<label class="block text-[11px] font-semibold text-slate-600 mb-1">Estado</label>
+<select class="w-full py-1.5 px-3 text-xs bg-slate-50 border border-slate-300 rounded-lg focus:bg-white focus:border-[#4A6B8A]">
+<option value="todos">Todos los Estados</option>
+<option selected="" value="completado">Completado</option>
+<option value="anulado">Anulado</option>
+<option value="pendiente">Pendiente</option>
+</select>
+</div>
+<!-- Filter Button -->
+<div class="self-end pt-5 w-full sm:w-auto">
+<button class="w-full sm:w-auto px-4 py-2 bg-[#E6A017] hover:bg-[#D59110] text-slate-900 font-bold text-xs rounded-lg transition-all flex items-center justify-center gap-1.5 shadow-sm">
+<i class="fa-solid fa-filter text-xs"></i>
+<span>Aplicar Filtros</span>
+</button>
+</div>
+</div>
+<!-- KPI Metric Cards (Moneda COP) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" data-purpose="kpi-cards">
+<!-- KPI 1: Ventas del Mes -->
+<div class="bg-white rounded-xl p-4 border border-slate-200 shadow-xs flex items-center space-x-4">
+<div class="w-12 h-12 rounded-full bg-amber-100 text-[#E6A017] flex items-center justify-center text-xl flex-shrink-0">
+<i class="fa-solid fa-dollar-sign"></i>
+</div>
+<div class="min-w-0">
+<p class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Total Ventas del Mes</p>
+<h3 class="text-xl font-extrabold text-slate-800 tracking-tight font-heading mt-0.5">$ 15.000.000 <span class="text-xs font-normal text-slate-400">COP</span></h3>
+<span class="inline-flex items-center text-[10px] font-bold text-emerald-600 mt-0.5">
+<i class="fa-solid fa-arrow-trend-up mr-1"></i> +12.4% vs mes ant.
+                </span>
+</div>
+</div>
+<!-- KPI 2: Margen de Ganancia -->
+<div class="bg-white rounded-xl p-4 border border-slate-200 shadow-xs flex items-center space-x-4">
+<div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-lg flex-shrink-0">
+<i class="fa-solid fa-percent"></i>
+</div>
+<div class="min-w-0">
+<p class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Margen de Ganancia</p>
+<h3 class="text-xl font-extrabold text-slate-800 tracking-tight font-heading mt-0.5">45%</h3>
+<span class="inline-flex items-center text-[10px] font-bold text-emerald-600 mt-0.5">
+<i class="fa-solid fa-arrow-trend-up mr-1"></i> Saludable (+3.2%)
+                </span>
+</div>
+</div>
+<!-- KPI 3: Transacciones Totales -->
+<div class="bg-white rounded-xl p-4 border border-slate-200 shadow-xs flex items-center space-x-4">
+<div class="w-12 h-12 rounded-full bg-blue-100 text-[#4A6B8A] flex items-center justify-center text-lg flex-shrink-0">
+<i class="fa-solid fa-arrow-right-arrow-left"></i>
+</div>
+<div class="min-w-0">
+<p class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Transacciones Totales</p>
+<h3 class="text-xl font-extrabold text-slate-800 tracking-tight font-heading mt-0.5">80 <span class="text-xs font-normal text-slate-500">ops</span></h3>
+<span class="text-[10px] text-slate-500">Meta mes: 100 operaciones</span>
+</div>
+</div>
+<!-- KPI 4: Ticket Promedio -->
+<div class="bg-white rounded-xl p-4 border border-slate-200 shadow-xs flex items-center space-x-4">
+<div class="w-12 h-12 rounded-full bg-violet-100 text-violet-600 flex items-center justify-center text-lg flex-shrink-0">
+<i class="fa-solid fa-tags"></i>
+</div>
+<div class="min-w-0">
+<p class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Ticket Promedio</p>
+<h3 class="text-xl font-extrabold text-slate-800 tracking-tight font-heading mt-0.5">$ 187.500 <span class="text-xs font-normal text-slate-400">COP</span></h3>
+<span class="text-[10px] text-emerald-600 font-semibold">+5.1% de incremento</span>
+</div>
+</div>
+</div>
+<!-- Two Column Section: Recent Sales Table + Selected Sale Detail Card -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- Left Column: Ventas Recientes (8 cols) -->
+<div class="lg:col-span-8 bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden" data-purpose="recent-sales-table">
+<div class="px-5 py-3.5 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<i class="fa-solid fa-list-check text-[#4A6B8A]"></i>
+<h2 class="text-sm font-bold text-slate-800">Ventas Recientes</h2>
+</div>
+<span class="text-[11px] text-slate-500 italic">Haz clic en una fila para ver el ticket</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse text-xs">
+<thead>
+<tr class="bg-slate-100/70 border-b border-slate-200 text-slate-600 uppercase text-[10px] tracking-wider font-semibold">
+<th class="py-2.5 px-4">ID Venta</th>
+<th class="py-2.5 px-4">Cliente (Ver Perfil)</th>
+<th class="py-2.5 px-4">Fecha</th>
+<th class="py-2.5 px-4">Método de Pago</th>
+<th class="py-2.5 px-4 text-right">Total</th>
+<th class="py-2.5 px-4 text-center">Estado</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100">
+<!-- Row 1 -->
+<tr class="sale-row hover:bg-amber-50/60 cursor-pointer transition-colors" onclick="selectSale('V-001', 'Papelería El Sol', '15/07/2026', 'Transferencia', '1.000.000', 'CARTULINA', 'Completado')">
+<td class="py-3 px-4 font-mono font-bold text-slate-700">V-001</td>
+<td class="py-3 px-4">
+<button class="text-[#4A6B8A] font-semibold hover:underline flex items-center gap-1" onclick="event.stopPropagation(); openCustomerModal('Papelería El Sol', '900.234.567-1', 'NIT')">
+                          Papelería El Sol <i class="fa-solid fa-arrow-up-right-from-square text-[9px] text-slate-400"></i>
+</button>
+</td>
+<td class="py-3 px-4 text-slate-600">15/07/2026</td>
+<td class="py-3 px-4 text-slate-600">Transferencia</td>
+<td class="py-3 px-4 font-bold text-slate-800 text-right font-mono">$ 1.000.000</td>
+<td class="py-3 px-4 text-center">
+<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-700">Completado</span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="sale-row hover:bg-amber-50/60 cursor-pointer transition-colors" onclick="selectSale('V-002', 'Santiago Sánchez', '18/07/2026', 'Tarjeta de Débito', '500.000', 'RESMA DE PAPEL A4', 'Completado')">
+<td class="py-3 px-4 font-mono font-bold text-slate-700">V-002</td>
+<td class="py-3 px-4">
+<button class="text-[#4A6B8A] font-semibold hover:underline flex items-center gap-1" onclick="event.stopPropagation(); openCustomerModal('Santiago Sánchez', '1.020.450.890', 'CC')">
+                          Santiago Sánchez <i class="fa-solid fa-arrow-up-right-from-square text-[9px] text-slate-400"></i>
+</button>
+</td>
+<td class="py-3 px-4 text-slate-600">18/07/2026</td>
+<td class="py-3 px-4 text-slate-600">Tarjeta de Débito</td>
+<td class="py-3 px-4 font-bold text-slate-800 text-right font-mono">$ 500.000</td>
+<td class="py-3 px-4 text-center">
+<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-700">Completado</span>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="sale-row hover:bg-amber-50/60 cursor-pointer transition-colors" onclick="selectSale('V-003', 'Leonelino Gaviria', '19/07/2026', 'Efectivo', '550.000', 'BORRADORES N° 2', 'Completado')">
+<td class="py-3 px-4 font-mono font-bold text-slate-700">V-003</td>
+<td class="py-3 px-4">
+<button class="text-[#4A6B8A] font-semibold hover:underline flex items-center gap-1" onclick="event.stopPropagation(); openCustomerModal('Leonelino Gaviria', '79.345.120', 'CC')">
+                          Leonelino Gaviria <i class="fa-solid fa-arrow-up-right-from-square text-[9px] text-slate-400"></i>
+</button>
+</td>
+<td class="py-3 px-4 text-slate-600">19/07/2026</td>
+<td class="py-3 px-4 text-slate-600">Efectivo</td>
+<td class="py-3 px-4 font-bold text-slate-800 text-right font-mono">$ 550.000</td>
+<td class="py-3 px-4 text-center">
+<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-700">Completado</span>
+</td>
+</tr>
+<!-- Row 4 (Selected by default as shown in IMAGE_89) -->
+<tr class="sale-row bg-amber-50/90 border-l-4 border-[#E6A017] cursor-pointer transition-colors" id="row-v004" onclick="selectSale('V-004', 'Pablo Motosky', '21/07/2026', 'Tarjeta de Crédito', '700.000', 'CUADERNO CHICAS ÁGUILA', 'Completado')">
+<td class="py-3 px-4 font-mono font-bold text-amber-900">V-004</td>
+<td class="py-3 px-4">
+<button class="text-[#4A6B8A] font-bold hover:underline flex items-center gap-1" onclick="event.stopPropagation(); openCustomerModal('Pablo Motosky', '1.098.765.432', 'CC')">
+                          Pablo Motosky <i class="fa-solid fa-arrow-up-right-from-square text-[9px] text-slate-400"></i>
+</button>
+</td>
+<td class="py-3 px-4 text-slate-700">21/07/2026</td>
+<td class="py-3 px-4 text-slate-700">Tarjeta de Crédito</td>
+<td class="py-3 px-4 font-bold text-slate-900 text-right font-mono">$ 700.000</td>
+<td class="py-3 px-4 text-center">
+<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-700">Completado</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Right Column: Detalle de Venta (Mockup IMAGE_89, 4 cols) -->
+<div class="lg:col-span-4 bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden" data-purpose="sale-detail-card">
+<!-- Card Header -->
+<div class="px-5 py-3.5 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<i class="fa-solid fa-file-invoice text-[#4A6B8A]"></i>
+<h2 class="text-sm font-bold text-slate-800">Detalle de venta</h2>
+</div>
+<span class="font-mono text-xs font-bold text-[#4A6B8A] bg-blue-50 px-2 py-0.5 rounded border border-blue-200" id="detail-ticket-id">V-004</span>
+</div>
+<!-- Metadata -->
+<div class="p-5 space-y-3 text-xs border-b border-slate-100">
+<div class="flex items-center text-slate-600">
+<i class="fa-regular fa-user w-5 text-slate-400"></i>
+<span class="font-semibold w-16 text-slate-500">Cliente:</span>
+<span class="font-bold text-slate-800" id="detail-customer-name">Pablo Motosky</span>
+</div>
+<div class="flex items-center text-slate-600">
+<i class="fa-regular fa-calendar w-5 text-slate-400"></i>
+<span class="font-semibold w-16 text-slate-500">Fecha:</span>
+<span class="text-slate-700" id="detail-sale-date">21/07/2026 - 16:35</span>
+</div>
+<div class="flex items-center text-slate-600">
+<i class="fa-regular fa-credit-card w-5 text-slate-400"></i>
+<span class="font-semibold w-16 text-slate-500">Método:</span>
+<span class="text-slate-700" id="detail-payment-method">Tarjeta de crédito</span>
+</div>
+</div>
+<!-- Product Item Summary Box -->
+<div class="p-5">
+<div class="bg-amber-50/70 border border-amber-200/80 rounded-lg p-3 flex items-center justify-between mb-4">
+<div class="flex items-center space-x-3">
+<div class="w-9 h-9 rounded bg-[#E6A017]/20 text-[#E6A017] flex items-center justify-center font-bold text-sm">
+<i class="fa-solid fa-box-open"></i>
+</div>
+<div>
+<div class="font-bold text-slate-800 text-xs uppercase" id="detail-product-name">CUADERNO CHICAS ÁGUILA</div>
+<div class="text-[10px] text-slate-500">Cantidad: 100 uds • SKU: LIB-902</div>
+</div>
+</div>
+<div class="font-mono font-bold text-slate-900 text-sm" id="detail-product-price">$ 700.000</div>
+</div>
+<!-- Financial Breakdown -->
+<div class="space-y-1.5 text-xs text-slate-600 border-t border-slate-100 pt-3">
+<div class="flex justify-between">
+<span>Subtotal Neto:</span>
+<span class="font-mono text-slate-800">$ 588.235 COP</span>
+</div>
+<div class="flex justify-between">
+<span>IVA (19%):</span>
+<span class="font-mono text-slate-800">$ 111.765 COP</span>
+</div>
+<div class="flex justify-between items-center text-sm font-extrabold text-slate-900 pt-2 border-t border-slate-200">
+<span>Total Facturado:</span>
+<span class="text-base text-slate-900 font-mono font-extrabold" id="detail-total-amount">$ 700.000 COP</span>
+</div>
+</div>
+<!-- Action Button: Print Receipt -->
+<div class="mt-5">
+<button class="w-full py-2.5 px-4 bg-[#E6A017] hover:bg-[#D59110] text-slate-900 font-bold text-xs rounded-lg transition-colors flex items-center justify-center space-x-2 shadow-sm" onclick="openModal('modal-ticket-receipt')">
+<i class="fa-solid fa-print"></i>
+<span>Ver / Imprimir comprobante</span>
+</button>
+<div class="flex items-center justify-between mt-2 pt-2 text-[11px] text-slate-500">
+<button class="hover:text-[#4A6B8A] underline" onclick="openCustomerModal('Pablo Motosky', '1.098.765.432', 'CC')">Historial de este cliente</button>
+<button class="hover:text-red-600 text-red-500" onclick="openModal('modal-cancelar-venta')">Anular venta</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section Inferior: Historial de Transacciones Rápido (IMAGE_89) -->
+<div class="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden" data-purpose="quick-transaction-history">
+<div class="px-5 py-3.5 bg-slate-50 border-b border-slate-200 flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center space-x-2">
+<i class="fa-solid fa-clock-rotate-left text-[#4A6B8A]"></i>
+<h3 class="text-sm font-bold text-slate-800">Historial de transacciones</h3>
+<span class="text-xs bg-slate-200 text-slate-700 px-2 py-0.5 rounded-full font-medium">80 Registradas</span>
+</div>
+<div class="flex items-center space-x-2">
+<button class="text-xs text-[#4A6B8A] hover:underline font-semibold flex items-center gap-1" onclick="switchTab('tab-historial')">
+                  Consultar historial completo <i class="fa-solid fa-chevron-right text-[10px]"></i>
+</button>
+<button class="px-3 py-1.5 bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 rounded-lg text-xs font-semibold flex items-center gap-1.5 shadow-2xs" onclick="exportToCSV()">
+<i class="fa-solid fa-file-excel text-emerald-600"></i>
+                  Exportar CSV
+                </button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse text-xs">
+<thead>
+<tr class="bg-slate-100/70 border-b border-slate-200 text-slate-600 uppercase text-[10px] tracking-wider font-semibold">
+<th class="py-2.5 px-4">Fecha</th>
+<th class="py-2.5 px-4">Hora</th>
+<th class="py-2.5 px-4">ID Venta</th>
+<th class="py-2.5 px-4">Cliente</th>
+<th class="py-2.5 px-4">Producto Principal</th>
+<th class="py-2.5 px-4">Método de Pago</th>
+<th class="py-2.5 px-4 text-center">Estado</th>
+<th class="py-2.5 px-4 text-right">Total</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100">
+<tr class="hover:bg-slate-50">
+<td class="py-2.5 px-4 text-slate-600">15/07/2026</td>
+<td class="py-2.5 px-4 text-slate-500 font-mono">10:15</td>
+<td class="py-2.5 px-4 font-mono font-bold text-slate-700">V-001</td>
+<td class="py-2.5 px-4 font-medium text-slate-800">Papelería El Sol</td>
+<td class="py-2.5 px-4 text-slate-600">CARTULINA</td>
+<td class="py-2.5 px-4 text-slate-600">Transferencia</td>
+<td class="py-2.5 px-4 text-center">
+<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-700">Completado</span>
+</td>
+<td class="py-2.5 px-4 text-right font-mono font-bold text-slate-800">$ 1.000.000</td>
+</tr>
+<tr class="hover:bg-slate-50">
+<td class="py-2.5 px-4 text-slate-600">18/07/2026</td>
+<td class="py-2.5 px-4 text-slate-500 font-mono">14:02</td>
+<td class="py-2.5 px-4 font-mono font-bold text-slate-700">V-002</td>
+<td class="py-2.5 px-4 font-medium text-slate-800">Santiago Sánchez</td>
+<td class="py-2.5 px-4 text-slate-600">RESMA DE PAPEL A4</td>
+<td class="py-2.5 px-4 text-slate-600">Tarjeta de débito</td>
+<td class="py-2.5 px-4 text-center">
+<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-700">Completado</span>
+</td>
+<td class="py-2.5 px-4 text-right font-mono font-bold text-slate-800">$ 500.000</td>
+</tr>
+<tr class="hover:bg-slate-50">
+<td class="py-2.5 px-4 text-slate-600">19/07/2026</td>
+<td class="py-2.5 px-4 text-slate-500 font-mono">09:37</td>
+<td class="py-2.5 px-4 font-mono font-bold text-slate-700">V-003</td>
+<td class="py-2.5 px-4 font-medium text-slate-800">Leonelino Gaviria</td>
+<td class="py-2.5 px-4 text-slate-600">BORRADORES N° 2</td>
+<td class="py-2.5 px-4 text-slate-600">Efectivo</td>
+<td class="py-2.5 px-4 text-center">
+<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-700">Completado</span>
+</td>
+<td class="py-2.5 px-4 text-right font-mono font-bold text-slate-800">$ 550.000</td>
+</tr>
+<tr class="bg-amber-50/70 hover:bg-amber-100/60">
+<td class="py-2.5 px-4 text-slate-700 font-semibold">21/07/2026</td>
+<td class="py-2.5 px-4 text-slate-600 font-mono">16:35</td>
+<td class="py-2.5 px-4 font-mono font-bold text-amber-900">V-004</td>
+<td class="py-2.5 px-4 font-bold text-slate-900">Pablo Motosky</td>
+<td class="py-2.5 px-4 text-slate-800 font-medium">CUADERNO CHICAS ÁGUILA</td>
+<td class="py-2.5 px-4 text-slate-700">Tarjeta de crédito</td>
+<td class="py-2.5 px-4 text-center">
+<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-700">Completado</span>
+</td>
+<td class="py-2.5 px-4 text-right font-mono font-bold text-slate-900">$ 700.000</td>
+</tr>
+<tr class="hover:bg-slate-50">
+<td class="py-2.5 px-4 text-slate-600">21/07/2026</td>
+<td class="py-2.5 px-4 text-slate-500 font-mono">17:02</td>
+<td class="py-2.5 px-4 font-mono font-bold text-slate-700">V-005</td>
+<td class="py-2.5 px-4 font-medium text-slate-800">Distribuciones Norte</td>
+<td class="py-2.5 px-4 text-slate-600">CARPETA OFICIO</td>
+<td class="py-2.5 px-4 text-slate-600">Transferencia</td>
+<td class="py-2.5 px-4 text-center">
+<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-rose-100 text-rose-700">Anulado</span>
+</td>
+<td class="py-2.5 px-4 text-right font-mono font-bold text-slate-400 line-through">$ 320.000</td>
+</tr>
+<tr class="hover:bg-slate-50">
+<td class="py-2.5 px-4 text-slate-600">20/07/2026</td>
+<td class="py-2.5 px-4 text-slate-500 font-mono">11:18</td>
+<td class="py-2.5 px-4 font-mono font-bold text-slate-700">V-006</td>
+<td class="py-2.5 px-4 font-medium text-slate-800">María Fernanda Ríos</td>
+<td class="py-2.5 px-4 text-slate-600">LÁPICES HB X 12</td>
+<td class="py-2.5 px-4 text-slate-600">Efectivo</td>
+<td class="py-2.5 px-4 text-center">
+<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-700">Completado</span>
+</td>
+<td class="py-2.5 px-4 text-right font-mono font-bold text-slate-800">$ 150.000</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination -->
+<div class="px-5 py-3 bg-slate-50 border-t border-slate-200 flex items-center justify-between text-xs text-slate-500">
+<span>Mostrando 1 - 6 de 80 transacciones</span>
+<div class="flex items-center space-x-1">
+<button class="px-2.5 py-1 rounded border border-slate-200 bg-white hover:bg-slate-100 disabled:opacity-50" disabled="">&lt;</button>
+<button class="px-2.5 py-1 rounded border border-[#4A6B8A] bg-[#4A6B8A] text-white font-bold">1</button>
+<button class="px-2.5 py-1 rounded border border-slate-200 bg-white hover:bg-slate-100">2</button>
+<button class="px-2.5 py-1 rounded border border-slate-200 bg-white hover:bg-slate-100">3</button>
+<button class="px-2.5 py-1 rounded border border-slate-200 bg-white hover:bg-slate-100">&gt;</button>
+</div>
+</div>
+</div>
+</section>
+<!-- END: TAB 1: DASHBOARD -->
+<!-- ==================================================================== -->
+<!-- TAB 2: HISTORIAL DE TRANSACCIONES EXTENDIDO                          -->
+<!-- ==================================================================== -->
+<section class="space-y-6 hidden" data-purpose="history-view" id="tab-historial">
+<div class="bg-white p-5 rounded-xl border border-slate-200 shadow-xs">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-slate-200">
+<div>
+<h2 class="text-base font-bold text-slate-800 font-heading">Historial Maestro de Transacciones Comerciales</h2>
+<p class="text-xs text-slate-500">Búsqueda avanzada, filtrado por pasarela y auditoría fiscal de comprobantes</p>
+</div>
+<div class="flex items-center space-x-2">
+<button class="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-bold flex items-center gap-1.5 shadow-sm" onclick="exportToCSV()">
+<i class="fa-solid fa-file-csv"></i> Descargar Excel / CSV
+                </button>
+<button class="px-3 py-2 bg-white border border-slate-300 text-slate-700 rounded-lg text-xs font-semibold hover:bg-slate-50 shadow-2xs" onclick="window.print()">
+<i class="fa-solid fa-print mr-1"></i> Imprimir Reporte
+                </button>
+</div>
+</div>
+<!-- Full Advanced Filter Toolbar -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 pt-4">
+<div>
+<label class="block text-[11px] font-bold text-slate-600 mb-1">Desde</label>
+<input class="w-full text-xs rounded-lg border-slate-300 focus:border-[#4A6B8A] focus:ring-[#4A6B8A]" type="date" value="2026-07-01">
+</div>
+<div>
+<label class="block text-[11px] font-bold text-slate-600 mb-1">Hasta</label>
+<input class="w-full text-xs rounded-lg border-slate-300 focus:border-[#4A6B8A] focus:ring-[#4A6B8A]" type="date" value="2026-07-21">
+</div>
+<div>
+<label class="block text-[11px] font-bold text-slate-600 mb-1">Método de Pago</label>
+<select class="w-full text-xs rounded-lg border-slate-300 focus:border-[#4A6B8A]">
+<option value="">Todos los Métodos</option>
+<option value="efectivo">Efectivo</option>
+<option value="transferencia">Transferencia Bancaria</option>
+<option value="tarjeta_debito">Tarjeta Débito</option>
+<option value="tarjeta_credito">Tarjeta Crédito</option>
+<option value="credito_directo">Crédito Directo</option>
+</select>
+</div>
+<div>
+<label class="block text-[11px] font-bold text-slate-600 mb-1">Estado Transacción</label>
+<select class="w-full text-xs rounded-lg border-slate-300 focus:border-[#4A6B8A]">
+<option value="">Todos</option>
+<option value="completado">Completado</option>
+<option value="anulado">Anulado</option>
+<option value="devuelto">Devuelto / Reembolsado</option>
+</select>
+</div>
+<div class="flex items-end">
+<button class="w-full py-2 bg-[#4A6B8A] hover:bg-[#3D5974] text-white font-bold text-xs rounded-lg shadow-sm">
+<i class="fa-solid fa-magnifying-glass mr-1"></i> Filtrar Historial
+                </button>
+</div>
+</div>
+</div>
+<!-- Large Master Table -->
+<div class="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse text-xs">
+<thead>
+<tr class="bg-slate-100 text-slate-600 uppercase text-[10px] tracking-wider font-bold border-b border-slate-200">
+<th class="py-3 px-4">Factura / Ticket</th>
+<th class="py-3 px-4">Fecha y Hora</th>
+<th class="py-3 px-4">Cliente Registrado</th>
+<th class="py-3 px-4">Documento / NIT</th>
+<th class="py-3 px-4">Tipo de Pago</th>
+<th class="py-3 px-4 text-center">Estado</th>
+<th class="py-3 px-4 text-right">Subtotal</th>
+<th class="py-3 px-4 text-right">IVA</th>
+<th class="py-3 px-4 text-right font-bold text-slate-900">Total (COP)</th>
+<th class="py-3 px-4 text-center">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 font-mono">
+<tr class="hover:bg-slate-50/80 font-sans">
+<td class="py-3 px-4 font-mono font-bold text-[#4A6B8A]">V-001</td>
+<td class="py-3 px-4 text-slate-500">15/07/2026 10:15</td>
+<td class="py-3 px-4 font-semibold text-slate-800">
+<button class="hover:text-[#4A6B8A] underline" onclick="openCustomerModal('Papelería El Sol', '900.234.567-1', 'NIT')">Papelería El Sol</button>
+</td>
+<td class="py-3 px-4 font-mono text-slate-500">900.234.567-1</td>
+<td class="py-3 px-4 text-slate-600">Transferencia</td>
+<td class="py-3 px-4 text-center">
+<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-700">Completado</span>
+</td>
+<td class="py-3 px-4 text-right font-mono text-slate-600">$ 840.336</td>
+<td class="py-3 px-4 text-right font-mono text-slate-600">$ 159.664</td>
+<td class="py-3 px-4 text-right font-mono font-bold text-slate-900">$ 1.000.000</td>
+<td class="py-3 px-4 text-center">
+<div class="flex items-center justify-center space-x-1 font-sans">
+<button class="w-7 h-7 rounded bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center" onclick="openModal('modal-ticket-receipt')" title="Ver Ticket"><i class="fa-solid fa-eye text-xs"></i></button>
+<button class="w-7 h-7 rounded bg-amber-50 hover:bg-amber-100 text-[#E6A017] flex items-center justify-center" onclick="window.print()" title="Imprimir"><i class="fa-solid fa-print text-xs"></i></button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50/80 font-sans">
+<td class="py-3 px-4 font-mono font-bold text-[#4A6B8A]">V-002</td>
+<td class="py-3 px-4 text-slate-500">18/07/2026 14:02</td>
+<td class="py-3 px-4 font-semibold text-slate-800">
+<button class="hover:text-[#4A6B8A] underline" onclick="openCustomerModal('Santiago Sánchez', '1.020.450.890', 'CC')">Santiago Sánchez</button>
+</td>
+<td class="py-3 px-4 font-mono text-slate-500">1.020.450.890</td>
+<td class="py-3 px-4 text-slate-600">Tarjeta de débito</td>
+<td class="py-3 px-4 text-center">
+<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-700">Completado</span>
+</td>
+<td class="py-3 px-4 text-right font-mono text-slate-600">$ 420.168</td>
+<td class="py-3 px-4 text-right font-mono text-slate-600">$ 79.832</td>
+<td class="py-3 px-4 text-right font-mono font-bold text-slate-900">$ 500.000</td>
+<td class="py-3 px-4 text-center">
+<div class="flex items-center justify-center space-x-1 font-sans">
+<button class="w-7 h-7 rounded bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center" onclick="openModal('modal-ticket-receipt')" title="Ver Ticket"><i class="fa-solid fa-eye text-xs"></i></button>
+<button class="w-7 h-7 rounded bg-amber-50 hover:bg-amber-100 text-[#E6A017] flex items-center justify-center" onclick="window.print()" title="Imprimir"><i class="fa-solid fa-print text-xs"></i></button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50/80 font-sans">
+<td class="py-3 px-4 font-mono font-bold text-[#4A6B8A]">V-003</td>
+<td class="py-3 px-4 text-slate-500">19/07/2026 09:37</td>
+<td class="py-3 px-4 font-semibold text-slate-800">
+<button class="hover:text-[#4A6B8A] underline" onclick="openCustomerModal('Leonelino Gaviria', '79.345.120', 'CC')">Leonelino Gaviria</button>
+</td>
+<td class="py-3 px-4 font-mono text-slate-500">79.345.120</td>
+<td class="py-3 px-4 text-slate-600">Efectivo</td>
+<td class="py-3 px-4 text-center">
+<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-700">Completado</span>
+</td>
+<td class="py-3 px-4 text-right font-mono text-slate-600">$ 462.185</td>
+<td class="py-3 px-4 text-right font-mono text-slate-600">$ 87.815</td>
+<td class="py-3 px-4 text-right font-mono font-bold text-slate-900">$ 550.000</td>
+<td class="py-3 px-4 text-center">
+<div class="flex items-center justify-center space-x-1 font-sans">
+<button class="w-7 h-7 rounded bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center" onclick="openModal('modal-ticket-receipt')" title="Ver Ticket"><i class="fa-solid fa-eye text-xs"></i></button>
+<button class="w-7 h-7 rounded bg-amber-50 hover:bg-amber-100 text-[#E6A017] flex items-center justify-center" onclick="window.print()" title="Imprimir"><i class="fa-solid fa-print text-xs"></i></button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-amber-50/70 font-sans bg-amber-50/30">
+<td class="py-3 px-4 font-mono font-bold text-amber-900">V-004</td>
+<td class="py-3 px-4 text-slate-500">21/07/2026 16:35</td>
+<td class="py-3 px-4 font-bold text-slate-900">
+<button class="hover:text-[#4A6B8A] underline" onclick="openCustomerModal('Pablo Motosky', '1.098.765.432', 'CC')">Pablo Motosky</button>
+</td>
+<td class="py-3 px-4 font-mono text-slate-500">1.098.765.432</td>
+<td class="py-3 px-4 text-slate-600">Tarjeta de crédito</td>
+<td class="py-3 px-4 text-center">
+<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-700">Completado</span>
+</td>
+<td class="py-3 px-4 text-right font-mono text-slate-600">$ 588.235</td>
+<td class="py-3 px-4 text-right font-mono text-slate-600">$ 111.765</td>
+<td class="py-3 px-4 text-right font-mono font-bold text-slate-900">$ 700.000</td>
+<td class="py-3 px-4 text-center">
+<div class="flex items-center justify-center space-x-1 font-sans">
+<button class="w-7 h-7 rounded bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center" onclick="openModal('modal-ticket-receipt')" title="Ver Ticket"><i class="fa-solid fa-eye text-xs"></i></button>
+<button class="w-7 h-7 rounded bg-amber-50 hover:bg-amber-100 text-[#E6A017] flex items-center justify-center" onclick="window.print()" title="Imprimir"><i class="fa-solid fa-print text-xs"></i></button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50/80 font-sans">
+<td class="py-3 px-4 font-mono font-bold text-slate-500">V-005</td>
+<td class="py-3 px-4 text-slate-500">21/07/2026 17:02</td>
+<td class="py-3 px-4 font-semibold text-slate-800">Distribuciones Norte</td>
+<td class="py-3 px-4 font-mono text-slate-500">800.112.334-9</td>
+<td class="py-3 px-4 text-slate-600">Transferencia</td>
+<td class="py-3 px-4 text-center">
+<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-rose-100 text-rose-700">Anulado</span>
+</td>
+<td class="py-3 px-4 text-right font-mono text-slate-400 line-through">$ 268.907</td>
+<td class="py-3 px-4 text-right font-mono text-slate-400 line-through">$ 51.093</td>
+<td class="py-3 px-4 text-right font-mono font-bold text-slate-400 line-through">$ 320.000</td>
+<td class="py-3 px-4 text-center">
+<span class="text-[10px] text-red-500 font-semibold">Anulada #R-88</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Complete Pagination Bar -->
+<div class="px-5 py-3 bg-slate-50 border-t border-slate-200 flex items-center justify-between text-xs text-slate-600">
+<div>Total acumulado en este filtro: <span class="font-bold text-slate-900">$ 3.070.000 COP</span> (5 transacciones válidas)</div>
+<div class="flex items-center space-x-1">
+<button class="px-3 py-1 rounded bg-white border border-slate-300 text-slate-600 hover:bg-slate-100">Anterior</button>
+<button class="px-3 py-1 rounded bg-[#4A6B8A] text-white font-bold">1</button>
+<button class="px-3 py-1 rounded bg-white border border-slate-300 text-slate-600 hover:bg-slate-100">Siguiente</button>
+</div>
+</div>
+</div>
+</section>
+<!-- END: TAB 2: HISTORIAL -->
+<!-- ==================================================================== -->
+<!-- TAB 3: ANÁLISIS DE MÁRGENES (Mockup IMAGE_88)                        -->
+<!-- ==================================================================== -->
+<section class="space-y-6 hidden" data-purpose="margins-view" id="tab-margenes">
+<!-- Margins Top Controls Bar (Exact from IMAGE_88) -->
+<div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs flex flex-wrap lg:flex-nowrap items-center gap-3">
+<button class="p-2 hover:bg-slate-100 rounded-lg text-slate-600" onclick="switchTab('tab-dashboard')" title="Volver al Dashboard">
+<i class="fa-solid fa-arrow-left text-sm"></i>
+</button>
+<div class="flex items-center space-x-2 mr-2">
+<i class="fa-solid fa-chart-column text-[#4A6B8A] text-lg"></i>
+<h2 class="text-base font-extrabold uppercase font-heading text-slate-800 tracking-tight">Análisis de Márgenes</h2>
+</div>
+<!-- Date Range Selector -->
+<div class="flex-1 min-w-[200px]">
+<label class="block text-[10px] font-bold text-slate-500 uppercase">Rango de fechas</label>
+<div class="flex items-center space-x-2 mt-1">
+<div class="relative flex-1">
+<i class="fa-regular fa-calendar absolute left-2.5 top-2 text-slate-400 text-xs"></i>
+<input class="w-full pl-7 pr-2 py-1 text-xs border border-slate-300 rounded-md" type="text" value="21 / 07 / 2026">
+</div>
+<div class="relative flex-1">
+<i class="fa-regular fa-calendar absolute left-2.5 top-2 text-slate-400 text-xs"></i>
+<input class="w-full pl-7 pr-2 py-1 text-xs border border-slate-300 rounded-md" type="text" value="21 / 07 / 2026">
+</div>
+</div>
+</div>
+<!-- Category Dropdown -->
+<div class="w-48">
+<label class="block text-[10px] font-bold text-slate-500 uppercase">Categoría</label>
+<select class="w-full mt-1 py-1 px-2.5 text-xs border border-slate-300 rounded-md">
+<option selected="">Todas</option>
+<option>Papelería</option>
+<option>Aseo</option>
+<option>Bebidas</option>
+<option>Snacks</option>
+<option>Libros &amp; Educación</option>
+</select>
+</div>
+<!-- Product Search -->
+<div class="w-60">
+<label class="block text-[10px] font-bold text-slate-500 uppercase">Producto</label>
+<div class="relative mt-1">
+<i class="fa-solid fa-magnifying-glass absolute left-2.5 top-2 text-slate-400 text-xs"></i>
+<input class="w-full pl-7 pr-2 py-1 text-xs border border-slate-300 rounded-md" placeholder="Buscar producto" type="text">
+</div>
+</div>
+<!-- Generate Report Button (Yellow/Gold) -->
+<div class="self-end mt-4 lg:mt-0">
+<button class="px-4 py-2 bg-[#E6A017] hover:bg-[#D59110] text-slate-900 font-bold text-xs rounded-lg flex items-center space-x-1.5 shadow-sm" onclick="generateReportAlert()">
+<i class="fa-solid fa-chart-line text-sm"></i>
+<span>GENERAR REPORTE</span>
+</button>
+</div>
+</div>
+<!-- Margins Top Metric Badges (Exact 5 cards from IMAGE_88) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3" data-purpose="margins-metrics">
+<!-- 1. Ganancia Bruta Total -->
+<div class="bg-white p-3.5 rounded-xl border border-slate-200 shadow-2xs">
+<div class="flex items-center space-x-2 text-slate-600 mb-1">
+<i class="fa-regular fa-money-bill-1 text-[#4A6B8A]"></i>
+<span class="text-[10px] font-bold uppercase tracking-wider">Ganancia Bruta Total</span>
+</div>
+<div class="text-base font-extrabold text-slate-900 font-heading">$ 2.845.600</div>
+<div class="text-[10px] text-emerald-600 font-semibold mt-1">
+<i class="fa-solid fa-caret-up"></i> +12% vs período anterior
+              </div>
+</div>
+<!-- 2. Margen Promedio -->
+<div class="bg-emerald-50/60 p-3.5 rounded-xl border border-emerald-200 shadow-2xs">
+<div class="flex items-center space-x-2 text-emerald-800 mb-1">
+<i class="fa-solid fa-percent text-emerald-600"></i>
+<span class="text-[10px] font-bold uppercase tracking-wider">Margen Promedio</span>
+</div>
+<div class="text-base font-extrabold text-emerald-900 font-heading">32.4%</div>
+<div class="text-[10px] text-emerald-700 font-semibold mt-1">
+<i class="fa-solid fa-caret-up"></i> +1.5% vs período anterior
+              </div>
+</div>
+<!-- 3. Productos Rentables -->
+<div class="bg-blue-50/60 p-3.5 rounded-xl border border-blue-200 shadow-2xs">
+<div class="flex items-center space-x-2 text-blue-800 mb-1">
+<i class="fa-solid fa-box text-blue-600"></i>
+<span class="text-[10px] font-bold uppercase tracking-wider">Productos Rentables</span>
+</div>
+<div class="text-base font-extrabold text-blue-900 font-heading">18 de 25</div>
+<div class="text-[10px] text-blue-600 font-medium mt-1">72% de margen positivo</div>
+</div>
+<!-- 4. Productos en Riesgo -->
+<div class="bg-amber-50/60 p-3.5 rounded-xl border border-amber-200 shadow-2xs">
+<div class="flex items-center space-x-2 text-amber-800 mb-1">
+<i class="fa-solid fa-triangle-exclamation text-amber-600"></i>
+<span class="text-[10px] font-bold uppercase tracking-wider">Productos en Riesgo</span>
+</div>
+<div class="text-base font-extrabold text-amber-900 font-heading">4 de 25</div>
+<div class="text-[10px] text-amber-700 font-medium mt-1">Margen bajo (&lt; 15%)</div>
+</div>
+<!-- 5. Productos No Rentables -->
+<div class="bg-rose-50/60 p-3.5 rounded-xl border border-rose-200 shadow-2xs">
+<div class="flex items-center space-x-2 text-rose-800 mb-1">
+<i class="fa-solid fa-circle-arrow-down text-rose-600"></i>
+<span class="text-[10px] font-bold uppercase tracking-wider">Productos No Rentables</span>
+</div>
+<div class="text-base font-extrabold text-rose-900 font-heading">3 de 25</div>
+<div class="text-[10px] text-rose-700 font-medium mt-1">Margen negativo</div>
+</div>
+</div>
+<!-- Charts Row (IMAGE_88 Layout: Categorías + Evolución + Top Productos) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+<!-- Chart 1: Margen de utilidad por categoría (4 cols) -->
+<div class="lg:col-span-4 bg-white p-4 rounded-xl border border-slate-200 shadow-xs flex flex-col justify-between">
+<div>
+<div class="flex items-center space-x-2 mb-3">
+<i class="fa-solid fa-coins text-slate-500"></i>
+<h4 class="text-xs font-bold text-slate-800">Margen de utilidad por categoría</h4>
+</div>
+<!-- Custom SVG Bar Chart -->
+<div class="h-44 w-full flex items-end justify-between px-2 pt-6 pb-2 border-b border-slate-200">
+<!-- Bar 1: Aseo -->
+<div class="flex flex-col items-center flex-1">
+<span class="text-[10px] font-bold text-emerald-600 mb-1">42%</span>
+<div class="w-8 bg-emerald-500 rounded-t-sm" style="height: 110px;"></div>
+<span class="text-[9px] text-slate-500 mt-2 truncate w-12 text-center">Aseo</span>
+</div>
+<!-- Bar 2: Bebidas -->
+<div class="flex flex-col items-center flex-1">
+<span class="text-[10px] font-bold text-blue-600 mb-1">36%</span>
+<div class="w-8 bg-blue-500 rounded-t-sm" style="height: 94px;"></div>
+<span class="text-[9px] text-slate-500 mt-2 truncate w-12 text-center">Bebidas</span>
+</div>
+<!-- Bar 3: Snacks -->
+<div class="flex flex-col items-center flex-1">
+<span class="text-[10px] font-bold text-amber-600 mb-1">28%</span>
+<div class="w-8 bg-amber-400 rounded-t-sm" style="height: 72px;"></div>
+<span class="text-[9px] text-slate-500 mt-2 truncate w-12 text-center">Snacks</span>
+</div>
+<!-- Bar 4: Papelería -->
+<div class="flex flex-col items-center flex-1">
+<span class="text-[10px] font-bold text-purple-600 mb-1">18%</span>
+<div class="w-8 bg-purple-500 rounded-t-sm" style="height: 48px;"></div>
+<span class="text-[9px] text-slate-500 mt-2 truncate w-12 text-center">Papelería</span>
+</div>
+<!-- Bar 5: Electrónicos -->
+<div class="flex flex-col items-center flex-1">
+<span class="text-[10px] font-bold text-rose-600 mb-1">12%</span>
+<div class="w-8 bg-rose-500 rounded-t-sm" style="height: 32px;"></div>
+<span class="text-[9px] text-slate-500 mt-2 truncate w-12 text-center">Electr.</span>
+</div>
+</div>
+</div>
+<div class="text-[10px] text-slate-400 text-center pt-2">Categoría líder en margen bruto: <strong class="text-slate-700">Aseo Comercial</strong></div>
+</div>
+<!-- Chart 2: Evolución del margen de utilidad (5 cols) -->
+<div class="lg:col-span-5 bg-white p-4 rounded-xl border border-slate-200 shadow-xs flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center space-x-2">
+<i class="fa-solid fa-chart-line text-slate-500"></i>
+<h4 class="text-xs font-bold text-slate-800">Evolución del margen de utilidad</h4>
+</div>
+<div class="flex items-center space-x-3 text-[10px]">
+<span class="flex items-center"><span class="w-2 h-2 rounded-full bg-blue-600 mr-1"></span> Margen %</span>
+<span class="flex items-center"><span class="w-2 h-2 rounded-full bg-sky-300 mr-1"></span> Ganancia bruta</span>
+</div>
+</div>
+<!-- SVG Area/Line Chart -->
+<div class="h-44 w-full relative">
+<svg class="w-full h-full overflow-visible" viewBox="0 0 320 140">
+<!-- Grid Lines -->
+<line stroke="#f1f5f9" stroke-width="1" x1="0" x2="320" y1="20" y2="20"></line>
+<line stroke="#f1f5f9" stroke-width="1" x1="0" x2="320" y1="50" y2="50"></line>
+<line stroke="#f1f5f9" stroke-width="1" x1="0" x2="320" y1="80" y2="80"></line>
+<line stroke="#f1f5f9" stroke-width="1" x1="0" x2="320" y1="110" y2="110"></line>
+<!-- Line 2: Ganancia Bruta (Light Blue) -->
+<path d="M 20 115 L 80 110 L 140 108 L 200 95 L 260 90 L 300 88" fill="none" stroke="#93c5fd" stroke-width="2"></path>
+<!-- Points -->
+<circle cx="20" cy="115" fill="#93c5fd" r="3"></circle>
+<circle cx="80" cy="110" fill="#93c5fd" r="3"></circle>
+<circle cx="140" cy="108" fill="#93c5fd" r="3"></circle>
+<circle cx="200" cy="95" fill="#93c5fd" r="3"></circle>
+<circle cx="260" cy="90" fill="#93c5fd" r="3"></circle>
+<circle cx="300" cy="88" fill="#93c5fd" r="3"></circle>
+<!-- Line 1: Margen % (Primary Blue) -->
+<path d="M 20 100 L 80 92 L 140 82 L 200 80 L 260 62 L 300 60" fill="none" stroke="#2563eb" stroke-width="2.5"></path>
+<!-- Points -->
+<circle cx="20" cy="100" fill="#2563eb" r="3.5"></circle>
+<circle cx="80" cy="92" fill="#2563eb" r="3.5"></circle>
+<circle cx="140" cy="82" fill="#2563eb" r="3.5"></circle>
+<circle cx="200" cy="80" fill="#2563eb" r="3.5"></circle>
+<circle cx="260" cy="62" fill="#2563eb" r="3.5"></circle>
+<circle cx="300" cy="60" fill="#2563eb" r="3.5"></circle>
+</svg>
+<!-- Month labels below chart -->
+<div class="flex justify-between text-[10px] text-slate-400 px-2 mt-1">
+<span>Ene</span>
+<span>Feb</span>
+<span>Mar</span>
+<span>Abr</span>
+<span>May</span>
+<span>Jul</span>
+</div>
+</div>
+</div>
+<div class="text-[10px] text-slate-400 text-center pt-2">Tendencia alcista sostenida en los últimos 4 meses (+4.2%)</div>
+</div>
+<!-- Chart 3: Top productos por rentabilidad (3 cols) -->
+<div class="lg:col-span-3 bg-white p-4 rounded-xl border border-slate-200 shadow-xs flex flex-col justify-between">
+<div>
+<div class="flex items-center space-x-2 mb-3">
+<i class="fa-solid fa-trophy text-[#E6A017]"></i>
+<h4 class="text-xs font-bold text-slate-800">Top productos por rentabilidad</h4>
+</div>
+<div class="space-y-2 text-xs">
+<div class="flex items-center justify-between p-1.5 hover:bg-slate-50 rounded">
+<div>
+<div class="font-bold text-slate-800 text-[11px]">Detergente en polvo</div>
+<div class="text-[9px] text-slate-400">Aseo • SKU-220</div>
+</div>
+<div class="text-right">
+<span class="font-bold text-slate-900">48.2%</span>
+<span class="block px-1.5 py-0.2 rounded text-[9px] font-bold bg-emerald-100 text-emerald-700">Alta</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-1.5 hover:bg-slate-50 rounded">
+<div>
+<div class="font-bold text-slate-800 text-[11px]">Papel higiénico</div>
+<div class="text-[9px] text-slate-400">Aseo • SKU-104</div>
+</div>
+<div class="text-right">
+<span class="font-bold text-slate-900">42.7%</span>
+<span class="block px-1.5 py-0.2 rounded text-[9px] font-bold bg-emerald-100 text-emerald-700">Alta</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-1.5 hover:bg-slate-50 rounded">
+<div>
+<div class="font-bold text-slate-800 text-[11px]">Cloro desinfectante</div>
+<div class="text-[9px] text-slate-400">Aseo • SKU-301</div>
+</div>
+<div class="text-right">
+<span class="font-bold text-slate-900">38.9%</span>
+<span class="block px-1.5 py-0.2 rounded text-[9px] font-bold bg-emerald-100 text-emerald-700">Alta</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-1.5 hover:bg-slate-50 rounded">
+<div>
+<div class="font-bold text-slate-800 text-[11px]">Jabón líquido</div>
+<div class="text-[9px] text-slate-400">Aseo • SKU-908</div>
+</div>
+<div class="text-right">
+<span class="font-bold text-slate-900">26.5%</span>
+<span class="block px-1.5 py-0.2 rounded text-[9px] font-bold bg-amber-100 text-amber-800">Media</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-1.5 hover:bg-slate-50 rounded">
+<div>
+<div class="font-bold text-slate-800 text-[11px]">Bolsas de basura</div>
+<div class="text-[9px] text-slate-400">Aseo • SKU-411</div>
+</div>
+<div class="text-right">
+<span class="font-bold text-slate-900">18.3%</span>
+<span class="block px-1.5 py-0.2 rounded text-[9px] font-bold bg-amber-100 text-amber-800">Media</span>
+</div>
+</div>
+</div>
+</div>
+<button class="mt-2 text-center text-[10px] text-[#4A6B8A] font-bold hover:underline">Ver ranking completo (25)</button>
+</div>
+</div>
+<!-- Bottom Table: Detalle por Producto (IMAGE_88) -->
+<div class="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden" data-purpose="product-margins-table">
+<div class="px-5 py-3.5 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<i class="fa-solid fa-boxes-stacked text-[#4A6B8A]"></i>
+<h3 class="text-sm font-bold text-slate-800">Detalle por producto</h3>
+</div>
+<div class="text-xs text-slate-500">Valores expresados en COP antes de impuestos</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse text-xs">
+<thead>
+<tr class="bg-slate-100/70 border-b border-slate-200 text-slate-600 uppercase text-[10px] tracking-wider font-semibold">
+<th class="py-2.5 px-4">ID</th>
+<th class="py-2.5 px-4">Producto</th>
+<th class="py-2.5 px-4">Categoría</th>
+<th class="py-2.5 px-4 text-right">Costo de adquisición</th>
+<th class="py-2.5 px-4 text-right">Precio venta</th>
+<th class="py-2.5 px-4 text-right">Ganancia bruta</th>
+<th class="py-2.5 px-4 text-right">Margen de utilidad</th>
+<th class="py-2.5 px-4 text-center">Estado</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100">
+<tr class="hover:bg-slate-50">
+<td class="py-2.5 px-4 font-mono font-bold text-slate-700">PRO-001</td>
+<td class="py-2.5 px-4 font-semibold text-slate-800">Cuaderno</td>
+<td class="py-2.5 px-4 text-slate-600">Papelería</td>
+<td class="py-2.5 px-4 font-mono text-right text-slate-600">$ 5.800</td>
+<td class="py-2.5 px-4 font-mono text-right font-bold text-slate-800">$ 7.000</td>
+<td class="py-2.5 px-4 font-mono text-right text-emerald-600 font-bold">$ 1.200</td>
+<td class="py-2.5 px-4 font-mono text-right font-bold text-slate-700">19.1 %</td>
+<td class="py-2.5 px-4 text-center">
+<span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800">Media</span>
+</td>
+</tr>
+<tr class="hover:bg-slate-50">
+<td class="py-2.5 px-4 font-mono font-bold text-slate-700">PRO-002</td>
+<td class="py-2.5 px-4 font-semibold text-slate-800">Lapicero</td>
+<td class="py-2.5 px-4 text-slate-600">Papelería</td>
+<td class="py-2.5 px-4 font-mono text-right text-slate-600">$ 1.500</td>
+<td class="py-2.5 px-4 font-mono text-right font-bold text-slate-800">$ 2.000</td>
+<td class="py-2.5 px-4 font-mono text-right text-emerald-600 font-bold">$ 500</td>
+<td class="py-2.5 px-4 font-mono text-right font-bold text-slate-700">10.1 %</td>
+<td class="py-2.5 px-4 text-center">
+<span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800">Media</span>
+</td>
+</tr>
+<tr class="hover:bg-slate-50">
+<td class="py-2.5 px-4 font-mono font-bold text-slate-700">PRO-003</td>
+<td class="py-2.5 px-4 font-semibold text-slate-800">Juguete</td>
+<td class="py-2.5 px-4 text-slate-600">Juguetería</td>
+<td class="py-2.5 px-4 font-mono text-right text-slate-600">$ 10.000</td>
+<td class="py-2.5 px-4 font-mono text-right font-bold text-slate-800">$ 20.000</td>
+<td class="py-2.5 px-4 font-mono text-right text-emerald-600 font-bold">$ 10.000</td>
+<td class="py-2.5 px-4 font-mono text-right font-bold text-slate-700">30.0 %</td>
+<td class="py-2.5 px-4 text-center">
+<span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-700">Alta</span>
+</td>
+</tr>
+<tr class="hover:bg-slate-50">
+<td class="py-2.5 px-4 font-mono font-bold text-slate-700">PRO-004</td>
+<td class="py-2.5 px-4 font-semibold text-slate-800">Python</td>
+<td class="py-2.5 px-4 text-slate-600">Libros</td>
+<td class="py-2.5 px-4 font-mono text-right text-slate-600">$ 30.000</td>
+<td class="py-2.5 px-4 font-mono text-right font-bold text-slate-800">$ 50.000</td>
+<td class="py-2.5 px-4 font-mono text-right text-emerald-600 font-bold">$ 20.000</td>
+<td class="py-2.5 px-4 font-mono text-right font-bold text-slate-700">40.0 %</td>
+<td class="py-2.5 px-4 text-center">
+<span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-700">Alta</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination (Image 88 format) -->
+<div class="px-5 py-3 bg-slate-50 border-t border-slate-200 flex items-center justify-between text-xs text-slate-500">
+<span class="text-[11px] uppercase tracking-wider font-semibold">Mostrando 1 - 4 de 20 productos</span>
+<div class="flex items-center space-x-1">
+<button class="px-2.5 py-1 rounded border border-slate-200 bg-white hover:bg-slate-100 disabled:opacity-40" disabled="">&lt;</button>
+<button class="px-2.5 py-1 rounded border border-[#4A6B8A] bg-[#4A6B8A] text-white font-bold">1</button>
+<button class="px-2.5 py-1 rounded border border-slate-200 bg-white hover:bg-slate-100">2</button>
+<button class="px-2.5 py-1 rounded border border-slate-200 bg-white hover:bg-slate-100">3</button>
+<button class="px-2.5 py-1 rounded border border-slate-200 bg-white hover:bg-slate-100">&gt;</button>
+</div>
+</div>
+</div>
+</section>
+<!-- END: TAB 3: MARGENES -->
+</div>
+</main>
+<!-- END: MainContentArea -->
+</div>
+<!-- END: MainLayout -->
+<!-- ==================================================================== -->
+<!-- MODAL 1: DETALLE DE VENTA & TICKET FISCAL (Imprimible)              -->
+<!-- ==================================================================== -->
+<div class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 hidden" id="modal-ticket-receipt">
+<div class="bg-white rounded-2xl shadow-2xl max-w-md w-full overflow-hidden border border-slate-200 animate-in fade-in zoom-in duration-150">
+<!-- Top Modal Header -->
+<div class="bg-[#4A6B8A] px-5 py-4 text-white flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<i class="fa-solid fa-receipt text-amber-300"></i>
+<span class="font-heading font-bold text-sm tracking-wide">Comprobante Oficial de Venta</span>
+</div>
+<button class="text-white/80 hover:text-white text-lg" onclick="closeModal('modal-ticket-receipt')">
+<i class="fa-solid fa-xmark"></i>
+</button>
+</div>
+<!-- Printable Ticket Body -->
+<div class="p-6 bg-white space-y-4 text-xs font-mono" id="printable-ticket-content">
+<!-- Logo Stock.net & Info Fiscal -->
+<div class="text-center space-y-1 border-b border-dashed border-slate-300 pb-4">
+<h2 class="text-lg font-black font-heading text-slate-800 tracking-wider">STOCK.net</h2>
+<p class="text-[10px] text-slate-500 font-sans">SISTEMA INTEGRAL DE GESTIÓN Y CONTROL</p>
+<p class="text-[11px] text-slate-700">NIT: 901.884.230-4 • Régimen Común</p>
+<p class="text-[10px] text-slate-500">Cra. 43A # 18 Sur - 12, Medellín, Colombia</p>
+<p class="text-[10px] text-slate-500">Resolución DIAN N° 1876400234 de 2026</p>
+</div>
+<!-- Metadata Ticket -->
+<div class="space-y-1 text-slate-700 text-[11px] border-b border-dashed border-slate-300 pb-3">
+<div class="flex justify-between">
+<span class="text-slate-500">COMPROBANTE N°:</span>
+<span class="font-bold text-slate-900" id="receipt-modal-id">V-004</span>
+</div>
+<div class="flex justify-between">
+<span class="text-slate-500">FECHA / HORA:</span>
+<span id="receipt-modal-date">21/07/2026 16:35:12</span>
+</div>
+<div class="flex justify-between">
+<span class="text-slate-500">CLIENTE:</span>
+<span class="font-bold text-slate-900" id="receipt-modal-customer">Pablo Motosky</span>
+</div>
+<div class="flex justify-between">
+<span class="text-slate-500">NIT / C.C.:</span>
+<span>1.098.765.432</span>
+</div>
+<div class="flex justify-between">
+<span class="text-slate-500">MÉTODO:</span>
+<span id="receipt-modal-payment">Tarjeta de Crédito</span>
+</div>
+<div class="flex justify-between">
+<span class="text-slate-500">CAJERO:</span>
+<span>Carlos Morales (Admin)</span>
+</div>
+</div>
+<!-- Items Table -->
+<div class="border-b border-dashed border-slate-300 pb-3">
+<table class="w-full text-left">
+<thead>
+<tr class="text-[10px] text-slate-400 border-b border-slate-200">
+<th class="pb-1">Cant/Desc</th>
+<th class="pb-1 text-right">Unitario</th>
+<th class="pb-1 text-right">Total</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 text-[11px]">
+<tr>
+<td class="py-2">
+<div class="font-bold text-slate-900" id="receipt-modal-prod">CUADERNO CHICAS ÁGUILA</div>
+<div class="text-[10px] text-slate-500">100 unidades x $ 7.000</div>
+</td>
+<td class="py-2 text-right text-slate-700">$ 7.000</td>
+<td class="py-2 text-right font-bold text-slate-900" id="receipt-modal-total-item">$ 700.000</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Total Calculation -->
+<div class="space-y-1.5 text-xs text-slate-700 border-b border-dashed border-slate-300 pb-3">
+<div class="flex justify-between">
+<span>SUBTOTAL:</span>
+<span id="receipt-modal-subtotal">$ 588.235 COP</span>
+</div>
+<div class="flex justify-between">
+<span>IVA DISCRIMINADO (19%):</span>
+<span id="receipt-modal-iva">$ 111.765 COP</span>
+</div>
+<div class="flex justify-between text-base font-black text-slate-900 pt-1">
+<span>TOTAL A PAGAR:</span>
+<span id="receipt-modal-total-grand">$ 700.000 COP</span>
+</div>
+</div>
+<!-- Barcode / QR Placeholder -->
+<div class="text-center pt-2">
+<div class="h-10 bg-slate-900 mx-auto w-3/4 rounded-xs flex items-center justify-center text-white tracking-[6px] text-xs font-mono">
+            ||| | |||| | |||||| || |
+          </div>
+<p class="text-[9px] text-slate-400 mt-1 font-sans">CUFE: a8f93e921d7b1029c9019234857682bc8173491</p>
+<p class="text-[10px] text-slate-500 font-sans font-semibold mt-1">¡Gracias por su compra en Stock.net!</p>
+</div>
+</div>
+<!-- Footer Buttons -->
+<div class="bg-slate-50 px-6 py-3 border-t border-slate-200 flex items-center justify-end space-x-3 no-print">
+<button class="px-4 py-2 bg-white border border-slate-300 hover:bg-slate-100 text-slate-700 text-xs font-semibold rounded-lg" onclick="closeModal('modal-ticket-receipt')">
+          Cerrar
+        </button>
+<button class="px-5 py-2 bg-[#E6A017] hover:bg-[#D59110] text-slate-900 text-xs font-bold rounded-lg shadow-sm flex items-center gap-1.5" onclick="window.print()">
+<i class="fa-solid fa-print"></i>
+          Imprimir Recibo
+        </button>
+</div>
+</div>
+</div>
+<!-- ==================================================================== -->
+<!-- MODAL 2: HISTORIAL COMPRAS DE CLIENTE (Según diagrama IMAGE_2)       -->
+<!-- ==================================================================== -->
+<div class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs hidden flex items-center justify-center p-4" id="modal-cliente-historial">
+<div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full overflow-hidden border border-slate-200 animate-in fade-in zoom-in duration-150">
+<!-- Modal Header -->
+<div class="bg-[#4A6B8A] px-6 py-4 text-white flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center text-white">
+<i class="fa-solid fa-user-clock text-sm"></i>
+</div>
+<div>
+<h3 class="font-heading font-bold text-sm" id="customer-modal-title">Historial de Compras de Cliente</h3>
+<p class="text-[11px] text-slate-200">Consolidado histórico de operaciones y compras acumuladas</p>
+</div>
+</div>
+<button class="text-white/80 hover:text-white text-lg" onclick="closeModal('modal-cliente-historial')">
+<i class="fa-solid fa-xmark"></i>
+</button>
+</div>
+<!-- Customer Summary Profile -->
+<div class="p-6 bg-slate-50 border-b border-slate-200 grid grid-cols-1 sm:grid-cols-3 gap-3">
+<div class="bg-white p-3 rounded-lg border border-slate-200 shadow-2xs">
+<span class="text-[10px] text-slate-500 font-bold uppercase">Cliente Titular</span>
+<p class="text-sm font-bold text-slate-800 truncate" id="customer-modal-name">Pablo Motosky</p>
+<span class="text-[10px] text-slate-400 font-mono" id="customer-modal-doc">C.C. 1.098.765.432</span>
+</div>
+<div class="bg-white p-3 rounded-lg border border-slate-200 shadow-2xs">
+<span class="text-[10px] text-slate-500 font-bold uppercase">Total Acumulado Comprado</span>
+<p class="text-sm font-extrabold text-emerald-700 font-mono">$ 3.450.000 COP</p>
+<span class="text-[10px] text-emerald-600 font-semibold">Cliente VIP • Calificación A</span>
+</div>
+<div class="bg-white p-3 rounded-lg border border-slate-200 shadow-2xs">
+<span class="text-[10px] text-slate-500 font-bold uppercase">Línea de Crédito</span>
+<p class="text-sm font-bold text-[#4A6B8A] font-mono">$ 2.000.000 COP</p>
+<span class="text-[10px] text-slate-500">Disponible: $ 1.300.000</span>
+</div>
+</div>
+<!-- Historical Sales Table for this customer -->
+<div class="p-6">
+<h4 class="text-xs font-bold text-slate-700 uppercase tracking-wider mb-3">Registro de Facturas Asociadas</h4>
+<div class="border border-slate-200 rounded-lg overflow-hidden">
+<table class="w-full text-left text-xs">
+<thead>
+<tr class="bg-slate-100 text-slate-600 font-semibold border-b border-slate-200 text-[10px] uppercase">
+<th class="py-2.5 px-3">Comprobante</th>
+<th class="py-2.5 px-3">Fecha</th>
+<th class="py-2.5 px-3">Ítems Adquiridos</th>
+<th class="py-2.5 px-3">Método</th>
+<th class="py-2.5 px-3 text-right">Monto (COP)</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100">
+<tr class="hover:bg-slate-50">
+<td class="py-2.5 px-3 font-mono font-bold text-[#4A6B8A]">V-004</td>
+<td class="py-2.5 px-3 text-slate-600">21/07/2026</td>
+<td class="py-2.5 px-3 text-slate-800">100x Cuaderno Chicas Águila</td>
+<td class="py-2.5 px-3 text-slate-500">Tarjeta Crédito</td>
+<td class="py-2.5 px-3 font-mono font-bold text-right text-slate-900">$ 700.000</td>
+</tr>
+<tr class="hover:bg-slate-50">
+<td class="py-2.5 px-3 font-mono font-bold text-[#4A6B8A]">V-019</td>
+<td class="py-2.5 px-3 text-slate-600">02/06/2026</td>
+<td class="py-2.5 px-3 text-slate-800">50x Resma Papel Carta Reprograf</td>
+<td class="py-2.5 px-3 text-slate-500">Transferencia</td>
+<td class="py-2.5 px-3 font-mono font-bold text-right text-slate-900">$ 1.250.000</td>
+</tr>
+<tr class="hover:bg-slate-50">
+<td class="py-2.5 px-3 font-mono font-bold text-[#4A6B8A]">V-034</td>
+<td class="py-2.5 px-3 text-slate-600">14/05/2026</td>
+<td class="py-2.5 px-3 text-slate-800">Kit Papelería Ejecutiva x 10</td>
+<td class="py-2.5 px-3 text-slate-500">Efectivo</td>
+<td class="py-2.5 px-3 font-mono font-bold text-right text-slate-900">$ 1.500.000</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="bg-slate-50 px-6 py-3 border-t border-slate-200 flex justify-between items-center text-xs">
+<span class="text-slate-500">Total 3 transacciones registradas</span>
+<button class="px-4 py-2 bg-[#4A6B8A] hover:bg-[#3D5974] text-white font-bold rounded-lg transition-colors" onclick="closeModal('modal-cliente-historial')">
+          Entendido / Cerrar
+        </button>
+</div>
+</div>
+</div>
+<!-- ==================================================================== -->
+<!-- MODAL 3: ANULAR VENTA                                                -->
+<!-- ==================================================================== -->
+<div class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs hidden flex items-center justify-center p-4" id="modal-cancelar-venta">
+<div class="bg-white rounded-2xl shadow-2xl max-w-sm w-full overflow-hidden border border-slate-200 p-6 space-y-4">
+<div class="w-12 h-12 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center text-xl mx-auto">
+<i class="fa-solid fa-triangle-exclamation"></i>
+</div>
+<div class="text-center space-y-1">
+<h3 class="font-heading font-bold text-base text-slate-900">¿Anular comprobante V-004?</h3>
+<p class="text-xs text-slate-500">Esta acción reintegrará automáticamente las 100 unidades al inventario y registrará la nota de crédito respectiva en DIAN.</p>
+</div>
+<div>
+<label class="block text-[11px] font-bold text-slate-600 mb-1">Motivo de Cancelación</label>
+<select class="w-full text-xs border-slate-300 rounded-lg">
+<option>Error en digitación de producto</option>
+<option>Devolución por cliente insatisfecho</option>
+<option>Rechazo de pasarela de pago</option>
+</select>
+</div>
+<div class="flex items-center space-x-2 pt-2">
+<button class="flex-1 py-2 bg-white border border-slate-300 hover:bg-slate-100 text-slate-700 text-xs font-semibold rounded-lg" onclick="closeModal('modal-cancelar-venta')">
+          Cancelar
+        </button>
+<button class="flex-1 py-2 bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold rounded-lg shadow-sm" onclick="confirmCancellation()">
+          Confirmar Anulación
+        </button>
+</div>
+</div>
+</div>
+<!-- ==================================================================== -->
+<!-- MODAL 4: NUEVA VENTA RÁPIDA                                          -->
+<!-- ==================================================================== -->
+<div class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs hidden flex items-center justify-center p-4" id="modal-nueva-venta-rapida">
+<div class="bg-white rounded-2xl shadow-2xl max-w-md w-full overflow-hidden border border-slate-200">
+<div class="bg-[#4A6B8A] px-5 py-3 text-white flex justify-between items-center">
+<h3 class="font-heading font-bold text-xs uppercase tracking-wider">Nueva Transacción Rápida</h3>
+<button class="text-white hover:text-amber-300" onclick="closeModal('modal-nueva-venta-rapida')"><i class="fa-solid fa-xmark"></i></button>
+</div>
+<div class="p-5 space-y-3 text-xs">
+<div>
+<label class="block font-bold text-slate-600 mb-1">Cliente</label>
+<input class="w-full text-xs rounded-lg border-slate-300 focus:ring-[#4A6B8A]" placeholder="Buscar por Nombre o Cédula..." type="text">
+</div>
+<div>
+<label class="block font-bold text-slate-600 mb-1">Producto</label>
+<select class="w-full text-xs rounded-lg border-slate-300">
+<option>CUADERNO CHICAS ÁGUILA ($ 7.000 COP)</option>
+<option>RESMA DE PAPEL A4 ($ 18.000 COP)</option>
+<option>CARTULINA BLANCA X 100 ($ 45.000 COP)</option>
+</select>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<div>
+<label class="block font-bold text-slate-600 mb-1">Cantidad</label>
+<input class="w-full text-xs rounded-lg border-slate-300" min="1" type="number" value="1">
+</div>
+<div>
+<label class="block font-bold text-slate-600 mb-1">Método de Pago</label>
+<select class="w-full text-xs rounded-lg border-slate-300">
+<option>Efectivo</option>
+<option>Transferencia</option>
+<option>Tarjeta Crédito</option>
+<option>Tarjeta Débito</option>
+</select>
+</div>
+</div>
+<div class="pt-2">
+<button class="w-full py-2.5 bg-[#E6A017] hover:bg-[#D59110] text-slate-900 font-extrabold rounded-lg text-xs uppercase tracking-wide" onclick="closeModal('modal-nueva-venta-rapida'); alert('¡Venta procesada exitosamente en Stock.net!');">
+            Registrar &amp; Facturar
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- BEGIN: InteractiveScripts -->
+<script data-purpose="tab-navigation">
+    // Switch between the three core tabs
+    function switchTab(tabId) {
+      const tabs = ['tab-dashboard', 'tab-historial', 'tab-margenes'];
+      const buttons = {
+        'tab-dashboard': document.getElementById('tab-btn-dashboard'),
+        'tab-historial': document.getElementById('tab-btn-historial'),
+        'tab-margenes': document.getElementById('tab-btn-margenes')
+      };
+
+      tabs.forEach(t => {
+        const el = document.getElementById(t);
+        if (el) {
+          if (t === tabId) {
+            el.classList.remove('hidden');
+          } else {
+            el.classList.add('hidden');
+          }
+        }
+      });
+
+      // Update button visual styles
+      Object.keys(buttons).forEach(btnKey => {
+        const btn = buttons[btnKey];
+        if (btn) {
+          if (btnKey === tabId) {
+            btn.className = "pb-3 text-xs font-bold border-b-2 border-[#4A6B8A] text-[#4A6B8A] flex items-center space-x-2 transition-colors";
+          } else {
+            btn.className = "pb-3 text-xs font-semibold border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center space-x-2 transition-colors";
+          }
+        }
+      });
+    }
+  </script>
+<script data-purpose="modal-handlers">
+    // Open modal by ID
+    function openModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.remove('hidden');
+      }
+    }
+
+    // Close modal by ID
+    function closeModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.add('hidden');
+      }
+    }
+
+    // Close modals on backdrop click
+    window.addEventListener('click', function(e) {
+      const modTicket = document.getElementById('modal-ticket-receipt');
+      const modCustomer = document.getElementById('modal-cliente-historial');
+      const modCancel = document.getElementById('modal-cancelar-venta');
+      const modQuick = document.getElementById('modal-nueva-venta-rapida');
+      
+      if (e.target === modTicket) closeModal('modal-ticket-receipt');
+      if (e.target === modCustomer) closeModal('modal-cliente-historial');
+      if (e.target === modCancel) closeModal('modal-cancelar-venta');
+      if (e.target === modQuick) closeModal('modal-nueva-venta-rapida');
+    });
+
+    // Open customer historical details modal
+    function openCustomerModal(name, doc, docType) {
+      const title = document.getElementById('customer-modal-title');
+      const cName = document.getElementById('customer-modal-name');
+      const cDoc = document.getElementById('customer-modal-doc');
+      
+      if (title) title.innerText = `Historial de Compras: ${name}`;
+      if (cName) cName.innerText = name;
+      if (cDoc) cDoc.innerText = `${docType}: ${doc}`;
+      
+      openModal('modal-cliente-historial');
+    }
+
+    // Alert simulation for Report Z
+    function openReportModal() {
+      alert("Generando 'Reporte Fiscal Z' consolidado del día 21/07/2026. Procesando en servidor seguro Stock.net...");
+    }
+
+    function generateReportAlert() {
+      alert("Generando informe consolidado de rentabilidad y márgenes de ganancia. Formato PDF exportado con éxito.");
+    }
+
+    function confirmCancellation() {
+      closeModal('modal-cancelar-venta');
+      alert("La venta V-004 ha sido anulada exitosamente en el sistema Stock.net.");
+    }
+
+    function exportToCSV() {
+      alert("Exportando 80 registros a formato compatible Excel / CSV de Stock.net.");
+    }
+  </script>
+<script data-purpose="row-selection">
+    // Update right panel when a sale row is clicked in dashboard
+    function selectSale(id, customer, date, method, total, product, status) {
+      // Update Detail Card
+      document.getElementById('detail-ticket-id').innerText = id;
+      document.getElementById('detail-customer-name').innerText = customer;
+      document.getElementById('detail-sale-date').innerText = `${date} - 16:35`;
+      document.getElementById('detail-payment-method').innerText = method;
+      document.getElementById('detail-product-name').innerText = product;
+      document.getElementById('detail-product-price').innerText = `$ ${total}`;
+      document.getElementById('detail-total-amount').innerText = `$ ${total} COP`;
+
+      // Update Modal Receipt elements
+      document.getElementById('receipt-modal-id').innerText = id;
+      document.getElementById('receipt-modal-customer').innerText = customer;
+      document.getElementById('receipt-modal-date').innerText = `${date} 16:35:12`;
+      document.getElementById('receipt-modal-payment').innerText = method;
+      document.getElementById('receipt-modal-prod').innerText = product;
+      document.getElementById('receipt-modal-total-item').innerText = `$ ${total}`;
+      document.getElementById('receipt-modal-total-grand').innerText = `$ ${total} COP`;
+
+      // Visual row highlight
+      const rows = document.querySelectorAll('.sale-row');
+      rows.forEach(r => {
+        r.classList.remove('bg-amber-50/90', 'border-l-4', 'border-[#E6A017]');
+      });
+      if (event && event.currentTarget) {
+        event.currentTarget.classList.add('bg-amber-50/90', 'border-l-4', 'border-[#E6A017]');
+      }
+    }
+  </script>
+<!-- END: InteractiveScripts -->
+
+
+
+
+</body></html>

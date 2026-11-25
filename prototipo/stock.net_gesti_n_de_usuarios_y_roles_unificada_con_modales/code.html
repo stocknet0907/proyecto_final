@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>STOCK.net - Gestión de Usuarios y Roles</title>
+<!-- Tailwind CSS v3 CDN with forms & container queries plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Montserrat & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Montserrat:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Config for Stock.net Theme -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              slate: '#4A6B8A',
+              slateDark: '#355370',
+              slateLight: '#6285A7',
+              amber: '#E6A017',
+              amberHover: '#CE8B0E',
+              amberLight: '#FBE8C5',
+              cream: '#FCF9F3',
+              creamCard: '#FAF6EE',
+              sidebar: '#F6F3ED',
+              border: '#E3DDD3',
+              dark: '#1E293B',
+              muted: '#64748B'
+            }
+          },
+          fontFamily: {
+            heading: ['Montserrat', 'sans-serif'],
+            sans: ['Inter', 'sans-serif']
+          },
+          boxShadow: {
+            modal: '0 20px 25px -5px rgba(0, 0, 0, 0.25), 0 10px 10px -5px rgba(0, 0, 0, 0.1)',
+            card: '0 2px 4px rgba(0, 0, 0, 0.04)'
+          }
+        }
+      }
+    }
+  </script>
+<!-- Global Custom Styles -->
+<style data-purpose="base-layout">
+    body {
+      background-color: #FCF9F3;
+      font-family: 'Inter', sans-serif;
+      color: #1F2937;
+    }
+    h1, h2, h3, .font-heading {
+      font-family: 'Montserrat', sans-serif;
+    }
+    .tab-content {
+      transition: opacity 0.2s ease-in-out;
+    }
+    .modal-overlay {
+      backdrop-filter: blur(2px);
+    }
+  </style>
+<style data-purpose="scrollbar">
+    /* Subtle scrollbar */
+    ::-webkit-scrollbar {
+      width: 7px;
+      height: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1ede4;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #c9c3b6;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #ab9f8c;
+    }
+  </style>
+</head>
+<body class="h-full flex flex-col antialiased text-slate-800">
+<!-- BEGIN: MainHeader (Consistent with SCREEN_8 & SCREEN_10) -->
+<header class="bg-brand-slate text-white px-6 py-2.5 flex items-center justify-between shadow-md shrink-0 z-20">
+<!-- Brand Logo and Subtitle -->
+<div class="flex items-center space-x-4">
+<div class="flex items-center space-x-2">
+<img alt="STOCK.net Logo" class="h-8 w-auto object-contain brightness-0 invert opacity-95" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbY25YdVf3fgX8y5Kbo8RJ0-OmBqw5WpyhBlHljEMh-9ssGqwZbfpaiqGU9-gSI9VsUHSlZTj2YeOCbTXdq8VuUBDvUyGSZWn5UTPUwJLK3EDM3mb71UcS4d000hVNOsgHs7-pxhOGnuGzD5XQifF4MFI17mYT7B2ERgTq4GoQJjYzuwHB9ORtQlhG0AYtsFQKa9q_pXTZxhAvVBNVUBlksUQ8QZf3pXQMM1WwgmHMc8o5WZMGGN4n"/>
+<!-- Fallback textual logo if image missing -->
+<div class="hidden items-center space-x-1 font-heading font-extrabold text-2xl tracking-wider">
+<svg class="w-7 h-7 mr-1 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>STOCK<span class="text-brand-amber">.net</span></span>
+</div>
+</div>
+<div class="h-6 w-px bg-slate-400/40 hidden sm:block"></div>
+<p class="text-xs text-slate-200 hidden md:block tracking-wide font-normal">
+        Sistema Integral de Gestión de Inventario, Control y Seguridad
+      </p>
+</div>
+<!-- Active User & Session Meta -->
+<div class="flex items-center space-x-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-brand-slateDark border border-white/30 text-white font-bold flex items-center justify-center text-xs shadow-sm">
+        CM
+      </div>
+<div class="hidden md:flex flex-col text-right">
+<div class="flex items-center gap-1.5 justify-end">
+<span class="text-xs font-semibold text-white">Carlos Morales</span>
+<span class="bg-brand-amber text-slate-900 text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded">ACCESO TOTAL</span>
+</div>
+<span class="text-[11px] text-slate-200">Jefe de Operaciones</span>
+</div>
+</div>
+<div class="h-6 w-px bg-slate-400/40 hidden sm:block"></div>
+<button class="text-slate-200 hover:text-white transition-colors p-1" title="Cerrar sesión">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: MainAppContainer -->
+<div class="flex-1 flex overflow-hidden">
+<!-- BEGIN: Sidebar (Fondo claro corporativo #F6F3ED, alineado a SCREEN_8 y SCREEN_10) -->
+<aside class="w-64 bg-[#F6F3ED] text-slate-700 flex flex-col shrink-0 border-r border-brand-border hidden lg:flex select-none">
+<div class="flex-1 overflow-y-auto py-4 px-3 space-y-4 text-sm font-medium">
+<!-- Section 1: OPERACIONES & CONTROL -->
+<div>
+<div class="px-3 pb-2 uppercase text-[11px] font-bold tracking-wider text-slate-400">
+          OPERACIONES &amp; CONTROL
+        </div>
+<div class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-200/60 hover:text-slate-900 transition-all text-xs font-medium" href="#">
+<svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+            Panel Principal
+          </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-200/60 hover:text-slate-900 transition-all text-xs font-medium" href="#">
+<svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+            Gestión de Inventario
+          </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-200/60 hover:text-slate-900 transition-all text-xs font-medium" href="#">
+<svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+            Gestión de Ventas
+          </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-200/60 hover:text-slate-900 transition-all text-xs font-medium" href="#">
+<svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+            Punto de Venta
+          </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-200/60 hover:text-slate-900 transition-all text-xs font-medium" href="#">
+<svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+            Compras &amp; Pedidos
+          </a>
+</div>
+</div>
+<!-- Section 2: SOCIOS & REPORTES -->
+<div>
+<div class="px-3 pb-2 uppercase text-[11px] font-bold tracking-wider text-slate-400">
+          SOCIOS &amp; REPORTES
+        </div>
+<div class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-200/60 hover:text-slate-900 transition-all text-xs font-medium" href="#">
+<svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+            Créditos &amp; Cobranzas
+          </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-200/60 hover:text-slate-900 transition-all text-xs font-medium" href="#">
+<svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+            Análisis de Márgenes
+          </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-200/60 hover:text-slate-900 transition-all text-xs font-medium" href="#">
+<svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+            Clientes &amp; Proveedores
+          </a>
+<!-- Active Item: Usuarios & Roles (Azul pizarra #4A6B8A con texto e icono blanco) -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-brand-slate text-white font-semibold shadow-sm transition-all text-xs" href="#">
+<svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+            Usuarios &amp; Roles
+          </a>
+</div>
+</div>
+</div>
+<!-- Sidebar Footer Info (Terminal ID WH-SUR-04 / V 3.4 OPERATIVA) -->
+<div class="p-3.5 border-t border-brand-border bg-[#F0ECE4] text-[11px] text-slate-500 space-y-1">
+<div class="flex items-center justify-between font-semibold">
+<span class="text-slate-700">V 3.4 OPERATIVA</span>
+<span class="inline-flex items-center gap-1 text-[10px] text-emerald-700 font-bold bg-emerald-100 px-1.5 py-0.5 rounded">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
+          EN LÍNEA
+        </span>
+</div>
+<div class="text-[10px] text-slate-400 font-mono">Terminal ID: WH-SUR-04</div>
+</div>
+</aside>
+<!-- END: Sidebar -->
+<!-- BEGIN: MainWorkArea -->
+<main class="flex-1 flex flex-col overflow-y-auto bg-brand-cream px-6 sm:px-10 py-6">
+<!-- BEGIN: PageTitleArea with Breadcrumbs -->
+<section class="mb-5" data-purpose="page-header">
+<!-- Breadcrumb -->
+<div class="flex items-center gap-2 text-xs text-slate-400 font-medium mb-2">
+<span>MÓDULOS OPERATIVOS</span>
+<span>/</span>
+<span class="text-brand-slateDark font-semibold">SEGURIDAD Y ACCESOS</span>
+</div>
+<div class="flex items-center gap-3 mb-4">
+<!-- Back Button (Round Arrow) -->
+<button aria-label="Volver atrás" class="w-8 h-8 rounded-full bg-brand-slate text-white hover:bg-brand-slateDark transition-colors flex items-center justify-center shadow focus:outline-none focus:ring-2 focus:ring-brand-slate" onclick="window.history.back()" title="Volver" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M10 19l-7-7m0 0l7-7m-7 7h18" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<h1 class="text-2xl font-bold tracking-tight text-slate-900 uppercase font-heading">
+            GESTIÓN DE USUARIOS Y ROLES
+          </h1>
+</div>
+<!-- Navigation Tabs: LISTA DE USUARIOS vs LOG DE ACTIVIDAD -->
+<div class="flex items-center gap-3 border-b border-brand-border pb-1">
+<!-- Tab 1: LISTA DE USUARIOS -->
+<button class="px-6 py-2 rounded-md font-heading font-bold text-xs tracking-wider uppercase transition-all duration-150 shadow-sm border border-brand-amber bg-brand-amber text-slate-900" data-purpose="tab-trigger-users" id="tab-users-btn" onclick="switchTab('users')">
+            LISTA DE USUARIOS
+          </button>
+<!-- Tab 2: LOG DE ACTIVIDAD -->
+<button class="px-6 py-2 rounded-md font-heading font-semibold text-xs tracking-wider uppercase transition-all duration-150 border border-slate-300 bg-white text-slate-700 hover:bg-slate-50" data-purpose="tab-trigger-logs" id="tab-logs-btn" onclick="switchTab('logs')">
+            LOG DE ACTIVIDAD
+          </button>
+</div>
+</section>
+<!-- END: PageTitleArea -->
+<!-- ======================================================== -->
+<!-- BEGIN: TabContentUsers                                   -->
+<!-- ======================================================== -->
+<section class="tab-content flex-1 flex flex-col" data-purpose="users-panel" id="tab-users-content">
+<!-- Search & Action Toolbar -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-5">
+<!-- Search and Filter controls -->
+<div class="flex items-center gap-3 w-full max-w-xl">
+<div class="relative w-full">
+<span class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</span>
+<input class="w-full pl-11 pr-4 py-2.5 bg-white border border-brand-border rounded-full text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-amber focus:border-brand-amber shadow-sm transition-all" id="search-users-input" onkeyup="filterUsersTable()" placeholder="Buscar por nombre, ID o rol..." type="text"/>
+</div>
+<select class="hidden md:block py-2.5 px-3 bg-white border border-brand-border rounded-lg text-xs font-semibold text-slate-700 shadow-sm focus:ring-2 focus:ring-brand-amber outline-none" id="filter-role-select" onchange="filterUsersTable()">
+<option value="">Todos los roles</option>
+<option value="Cajero / Vendedor">Cajero / Vendedor</option>
+<option value="Supervisor Bodega">Supervisor Bodega</option>
+<option value="Administrador General">Administrador General</option>
+</select>
+</div>
+<!-- + CREAR USUARIO Button -->
+<button class="w-full sm:w-auto px-6 py-2.5 rounded-full bg-brand-amber hover:bg-brand-amberHover text-slate-900 font-heading font-bold text-xs uppercase tracking-wider shadow-sm transition-transform active:scale-95 flex items-center justify-center gap-1.5 shrink-0" data-purpose="create-user-button" onclick="openCreateUserModal()" type="button">
+<span class="text-base leading-none font-bold">+</span>
+<span>CREAR USUARIO</span>
+</button>
+</div>
+<!-- Users Table Container -->
+<div class="bg-white rounded-lg border border-brand-border shadow-sm overflow-hidden flex-1 flex flex-col">
+<div class="overflow-x-auto flex-1">
+<table class="w-full text-left border-collapse" id="users-table">
+<thead>
+<tr class="border-b border-brand-border bg-[#FCFBF7] text-slate-700 text-xs font-heading font-bold tracking-wider uppercase">
+<th class="py-3.5 px-6">USUARIO</th>
+<th class="py-3.5 px-6">ROL</th>
+<th class="py-3.5 px-6">ÚLTIMO ACCESO</th>
+<th class="py-3.5 px-6">ESTADO</th>
+<th class="py-3.5 px-6 text-center">ACCIONES</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-brand-border/60 text-sm font-medium text-slate-700" id="users-table-body">
+<!-- Row 1: Empleado 1 -->
+<tr class="hover:bg-amber-50/30 transition-colors user-row" data-id="EMP-001" data-role="Cajero / Vendedor" data-status="ACTIVO" data-username="Empleado 1">
+<td class="py-4 px-6 flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-slate-200 text-brand-slate font-bold flex items-center justify-center text-xs shrink-0">
+                      E1
+                    </div>
+<div>
+<span class="font-semibold text-slate-900 block leading-tight">Empleado 1</span>
+<span class="text-xs text-slate-400 font-normal">ID: EMP-001</span>
+</div>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium bg-slate-100 text-slate-700 border border-slate-200">
+                      Cajero / Vendedor
+                    </span>
+</td>
+<td class="py-4 px-6 text-slate-600 text-xs font-normal">
+                    10:45 AM - Hoy
+                  </td>
+<td class="py-4 px-6">
+<span class="status-badge inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">
+                      ACTIVO
+                    </span>
+</td>
+<td class="py-4 px-6">
+<div class="flex items-center justify-center gap-2">
+<button class="px-3.5 py-1 border border-slate-300 hover:border-slate-800 rounded-full text-xs font-semibold uppercase text-slate-700 hover:text-black transition-all bg-white shadow-xs" onclick="openEditUserModal('Empleado 1', 'EMP-001', 'Cajero / Vendedor', 'pass123')" type="button">
+                        EDITAR
+                      </button>
+<button class="toggle-status-btn text-xs text-rose-600 hover:text-rose-800 hover:bg-rose-50 font-medium px-2.5 py-1 rounded transition" onclick="handleActionClick('Empleado 1')" title="Inactivar usuario" type="button">
+                        Inactivar
+                      </button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Empleado 2 -->
+<tr class="hover:bg-amber-50/30 transition-colors user-row" data-id="EMP-002" data-role="Supervisor Bodega" data-status="ACTIVO" data-username="Empleado 2">
+<td class="py-4 px-6 flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-slate-200 text-brand-slate font-bold flex items-center justify-center text-xs shrink-0">
+                      E2
+                    </div>
+<div>
+<span class="font-semibold text-slate-900 block leading-tight">Empleado 2</span>
+<span class="text-xs text-slate-400 font-normal">ID: EMP-002</span>
+</div>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium bg-slate-100 text-slate-700 border border-slate-200">
+                      Supervisor Bodega
+                    </span>
+</td>
+<td class="py-4 px-6 text-slate-600 text-xs font-normal">
+                    08:15 AM - Hoy
+                  </td>
+<td class="py-4 px-6">
+<span class="status-badge inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">
+                      ACTIVO
+                    </span>
+</td>
+<td class="py-4 px-6">
+<div class="flex items-center justify-center gap-2">
+<button class="px-3.5 py-1 border border-slate-300 hover:border-slate-800 rounded-full text-xs font-semibold uppercase text-slate-700 hover:text-black transition-all bg-white shadow-xs" onclick="openEditUserModal('Empleado 2', 'EMP-002', 'Supervisor Bodega', 'securePass9')" type="button">
+                        EDITAR
+                      </button>
+<button class="toggle-status-btn text-xs text-rose-600 hover:text-rose-800 hover:bg-rose-50 font-medium px-2.5 py-1 rounded transition" onclick="handleActionClick('Empleado 2')" title="Inactivar usuario" type="button">
+                        Inactivar
+                      </button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Administrador -->
+<tr class="hover:bg-amber-50/30 transition-colors user-row" data-id="ADM-001" data-role="Administrador General" data-status="ACTIVO" data-username="Administrador">
+<td class="py-4 px-6 flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-brand-amberLight text-brand-amber font-bold flex items-center justify-center text-xs shrink-0">
+                      AD
+                    </div>
+<div>
+<span class="font-semibold text-slate-900 block leading-tight">Administrador</span>
+<span class="text-xs text-slate-400 font-normal">ID: ADM-001</span>
+</div>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-bold bg-amber-50 text-brand-amber border border-amber-200">
+                      Administrador General
+                    </span>
+</td>
+<td class="py-4 px-6 text-slate-600 text-xs font-normal">
+                    10:50 AM - Hoy
+                  </td>
+<td class="py-4 px-6">
+<span class="status-badge inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">
+                      ACTIVO
+                    </span>
+</td>
+<td class="py-4 px-6">
+<div class="flex items-center justify-center gap-2">
+<button class="px-3.5 py-1 border border-slate-300 hover:border-slate-800 rounded-full text-xs font-semibold uppercase text-slate-700 hover:text-black transition-all bg-white shadow-xs" onclick="openEditUserModal('Administrador', 'ADM-001', 'Administrador General', 'adminStock2025')" type="button">
+                        EDITAR
+                      </button>
+<button class="text-xs text-slate-400 cursor-not-allowed font-medium px-2.5 py-1" onclick="alert('No es posible inactivar la cuenta de Administrador Principal del Sistema.')" type="button">
+                        Inactivar
+                      </button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Summary Footer -->
+<div class="px-6 py-3 border-t border-brand-border bg-[#FCFBF7] flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
+<span id="user-count-label">Mostrando 3 de 3 usuarios registrados</span>
+<div class="flex items-center gap-1 mt-2 sm:mt-0">
+<button class="px-2.5 py-1 rounded border border-slate-300 bg-white text-slate-600 disabled:opacity-50" disabled="">Anterior</button>
+<button class="px-2.5 py-1 rounded border border-brand-amber bg-brand-amber font-semibold text-slate-900">1</button>
+<button class="px-2.5 py-1 rounded border border-slate-300 bg-white text-slate-600 disabled:opacity-50" disabled="">Siguiente</button>
+</div>
+</div>
+</div>
+</section>
+<!-- END: TabContentUsers -->
+<!-- ======================================================== -->
+<!-- BEGIN: TabContentLogs                                    -->
+<!-- ======================================================== -->
+<section class="tab-content hidden flex-1 flex flex-col" data-purpose="logs-panel" id="tab-logs-content">
+<!-- Search Toolbar for Logs -->
+<div class="flex items-center justify-between gap-4 mb-5">
+<div class="relative w-full max-w-xl">
+<span class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</span>
+<input class="w-full pl-11 pr-4 py-2.5 bg-white border border-brand-border rounded-full text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-amber focus:border-brand-amber shadow-sm transition-all" id="search-logs-input" onkeyup="filterLogsTable()" placeholder="Buscar por usuario, módulo o descripción..." type="text"/>
+</div>
+<!-- Export or Refresh button -->
+<div class="flex items-center gap-2">
+<button class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 bg-white border border-slate-300 rounded-lg text-xs font-semibold text-slate-700 hover:bg-slate-50 transition shadow-xs" onclick="alert('Descargando reporte de auditoría completo en formato Excel...')" type="button">
+<svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewbox="0 0 20 20">
+<path clip-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" fill-rule="evenodd"></path>
+</svg>
+              Exportar Log
+            </button>
+</div>
+</div>
+<!-- Logs Table Container -->
+<div class="bg-white rounded-lg border border-brand-border shadow-sm overflow-hidden flex-1 flex flex-col">
+<div class="overflow-x-auto flex-1">
+<table class="w-full text-left border-collapse" id="logs-table">
+<thead>
+<tr class="border-b border-brand-border bg-[#FCFBF7] text-slate-700 text-xs font-heading font-bold tracking-wider uppercase">
+<th class="py-3.5 px-6">USUARIO</th>
+<th class="py-3.5 px-6">FECHA Y HORA</th>
+<th class="py-3.5 px-6">MÓDULO</th>
+<th class="py-3.5 px-6">EVENTO / DESCRIPCIÓN</th>
+<th class="py-3.5 px-6 text-center">ESTADO</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-brand-border/60 text-sm font-medium text-slate-700" id="logs-table-body">
+<!-- Log Entry 1 -->
+<tr class="hover:bg-amber-50/20 transition-colors log-row">
+<td class="py-4 px-6 font-semibold text-slate-800">
+                    Empleado 1
+                  </td>
+<td class="py-4 px-6 text-xs text-slate-600">
+                    10:45 AM - Hoy
+                  </td>
+<td class="py-4 px-6 text-xs text-slate-700">
+                    Punto de Venta
+                  </td>
+<td class="py-4 px-6 text-xs text-slate-600">
+                    Venta a Credito - Cliente id 1
+                  </td>
+<td class="py-4 px-6 text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-bold tracking-wide uppercase bg-emerald-100 text-emerald-800">
+                      EXITOSO
+                    </span>
+</td>
+</tr>
+<!-- Log Entry 2 -->
+<tr class="hover:bg-amber-50/20 transition-colors log-row">
+<td class="py-4 px-6 font-semibold text-slate-800">
+                    Administrador
+                  </td>
+<td class="py-4 px-6 text-xs text-slate-600">
+                    10:50 AM - Hoy
+                  </td>
+<td class="py-4 px-6 text-xs text-slate-700">
+                    Proveedores
+                  </td>
+<td class="py-4 px-6 text-xs text-slate-600">
+                    Nuevo proveedor registrado: Scribe papeleria
+                  </td>
+<td class="py-4 px-6 text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-bold tracking-wide uppercase bg-emerald-100 text-emerald-800">
+                      EXITOSO
+                    </span>
+</td>
+</tr>
+<!-- Log Entry 3 -->
+<tr class="hover:bg-amber-50/20 transition-colors log-row">
+<td class="py-4 px-6 font-semibold text-slate-800">
+                    Empleado 2
+                  </td>
+<td class="py-4 px-6 text-xs text-slate-600">
+                    09:12 AM - Hoy
+                  </td>
+<td class="py-4 px-6 text-xs text-slate-700">
+                    Gestión de Inventario
+                  </td>
+<td class="py-4 px-6 text-xs text-slate-600">
+                    Ajuste manual de stock lote #LT-4402 (+50 uds.)
+                  </td>
+<td class="py-4 px-6 text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-bold tracking-wide uppercase bg-emerald-100 text-emerald-800">
+                      EXITOSO
+                    </span>
+</td>
+</tr>
+<!-- Log Entry 4 -->
+<tr class="hover:bg-amber-50/20 transition-colors log-row">
+<td class="py-4 px-6 font-semibold text-slate-800">
+                    Administrador
+                  </td>
+<td class="py-4 px-6 text-xs text-slate-600">
+                    08:00 AM - Hoy
+                  </td>
+<td class="py-4 px-6 text-xs text-slate-700">
+                    Seguridad &amp; Acceso
+                  </td>
+<td class="py-4 px-6 text-xs text-slate-600">
+                    Inicio de sesión administrativo con autenticación de dos factores
+                  </td>
+<td class="py-4 px-6 text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-bold tracking-wide uppercase bg-emerald-100 text-emerald-800">
+                      EXITOSO
+                    </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Logs Table Summary Footer -->
+<div class="px-6 py-3 border-t border-brand-border bg-[#FCFBF7] flex items-center justify-between text-xs text-slate-500">
+<span id="log-count-label">Registro de 4 eventos auditados en tiempo real</span>
+<span class="text-slate-400">Encriptación SHA-256 habilitada</span>
+</div>
+</div>
+</section>
+<!-- END: TabContentLogs -->
+</main>
+<!-- END: MainWorkArea -->
+</div>
+<!-- END: MainAppContainer -->
+<!-- ======================================================== -->
+<!-- BEGIN: Modal - CREAR NUEVO USUARIO                       -->
+<!-- ======================================================== -->
+<div aria-labelledby="modal-create-title" aria-modal="true" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/60 modal-overlay" id="modal-create-user" role="dialog">
+<div class="bg-[#FAF6EF] w-full max-w-lg rounded-2xl shadow-modal border border-brand-border overflow-hidden transition-all transform scale-100">
+<!-- Slate Header -->
+<div class="bg-brand-slate px-6 py-3 flex items-center justify-between text-white">
+<h2 class="text-sm font-heading font-bold uppercase tracking-wider" id="modal-create-title">
+          CREAR NUEVO USUARIO
+        </h2>
+<button class="text-white/80 hover:text-white text-lg font-bold p-1 leading-none focus:outline-none" onclick="closeModal('modal-create-user')" type="button">
+          ✕
+        </button>
+</div>
+<!-- Form Body -->
+<form class="p-6 space-y-4" id="form-create-user" onsubmit="handleCreateUser(event)">
+<h3 class="text-base font-heading font-extrabold text-slate-900 tracking-tight uppercase">
+          DATOS BÁSICOS
+        </h3>
+<!-- Nombre del Usuario -->
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1" for="create-name">
+            Nombre del Usuario:
+          </label>
+<input class="w-full px-4 py-2 bg-white border border-brand-border rounded-xl text-sm text-slate-800 focus:ring-2 focus:ring-brand-amber focus:border-brand-amber outline-none shadow-sm" id="create-name" placeholder="Ej. Juan Pérez" required="" type="text"/>
+</div>
+<!-- Usuario ID -->
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1" for="create-id">
+            Usuario ID:
+          </label>
+<input class="w-full px-4 py-2 bg-white border border-brand-border rounded-xl text-sm text-slate-800 focus:ring-2 focus:ring-brand-amber focus:border-brand-amber outline-none shadow-sm" id="create-id" placeholder="Ej. EMP-003" required="" type="text"/>
+</div>
+<!-- Rol -->
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1" for="create-role">
+            Rol:
+          </label>
+<select class="w-full px-4 py-2 bg-white border border-brand-border rounded-xl text-sm text-slate-800 focus:ring-2 focus:ring-brand-amber focus:border-brand-amber outline-none shadow-sm" id="create-role">
+<option value="Cajero / Vendedor">Cajero / Vendedor</option>
+<option value="Supervisor Bodega">Supervisor Bodega</option>
+<option value="Administrador General">Administrador General</option>
+<option value="Auditor Contable">Auditor Contable</option>
+</select>
+</div>
+<!-- Password -->
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1" for="create-password">
+            Password:
+          </label>
+<input class="w-full px-4 py-2 bg-white border border-brand-border rounded-xl text-sm text-slate-800 focus:ring-2 focus:ring-brand-amber focus:border-brand-amber outline-none shadow-sm" id="create-password" placeholder="••••••••••••" required="" type="password"/>
+</div>
+<!-- Perfil de Usuario (Icon Picker exactly as Mockup) -->
+<div>
+<span class="block text-xs font-semibold text-slate-700 mb-2">Perfil de Usuario:</span>
+<div class="flex items-center gap-4">
+<!-- Icon preview box (Amber rounded badge) -->
+<div class="w-20 h-20 bg-brand-amber rounded-xl flex items-center justify-center text-slate-900 shadow-sm shrink-0" id="create-icon-badge">
+<!-- Folder icon default -->
+<svg class="w-10 h-10 fill-current" viewbox="0 0 20 20">
+<path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"></path>
+</svg>
+</div>
+<!-- Icon dropdown selector mini-widget -->
+<div class="space-y-1">
+<label class="text-[11px] text-slate-500 font-medium">Seleccionar Ícono</label>
+<div class="border border-brand-border bg-white rounded-lg p-1 shadow-sm w-36">
+<select class="w-full text-xs font-medium py-1 px-2 border-0 bg-brand-amber text-slate-900 rounded focus:ring-0 cursor-pointer" id="create-icon-select" onchange="updateIconBadge('create-icon-badge', this.value)">
+<option value="folder">📁 Carpeta</option>
+<option value="user">👤 Usuario</option>
+<option value="badge">🛡️ Seguridad</option>
+<option value="clip">📎 Adjunto</option>
+</select>
+<div class="px-2 py-1 text-slate-400 text-xs flex items-center gap-1.5 mt-0.5 border-t border-slate-100">
+<svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="text-[10px]">Icono activo</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Form Actions -->
+<div class="pt-4 flex items-center justify-end gap-3 border-t border-brand-border/60">
+<button class="px-6 py-2 rounded-full bg-brand-amber hover:bg-brand-amberHover text-slate-900 font-heading font-bold text-xs uppercase tracking-wider shadow-sm transition" type="submit">
+            Guardar
+          </button>
+<button class="px-6 py-2 rounded-full bg-slate-300 hover:bg-slate-400 text-slate-800 font-heading font-semibold text-xs uppercase tracking-wider transition" onclick="closeModal('modal-create-user')" type="button">
+            Cancelar
+          </button>
+</div>
+</form>
+</div>
+</div>
+<!-- END: Modal - CREAR NUEVO USUARIO -->
+<!-- ======================================================== -->
+<!-- BEGIN: Modal - EDITAR USUARIO                            -->
+<!-- ======================================================== -->
+<div aria-labelledby="modal-edit-title" aria-modal="true" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/60 modal-overlay" id="modal-edit-user" role="dialog">
+<div class="bg-[#FAF6EF] w-full max-w-lg rounded-2xl shadow-modal border border-brand-border overflow-hidden transition-all transform scale-100">
+<!-- Slate Header -->
+<div class="bg-brand-slate px-6 py-3 flex items-center justify-between text-white">
+<h2 class="text-sm font-heading font-bold uppercase tracking-wider" id="modal-edit-title">
+          EDITAR USUARIO
+        </h2>
+<button class="text-white/80 hover:text-white text-lg font-bold p-1 leading-none focus:outline-none" onclick="closeModal('modal-edit-user')" type="button">
+          ✕
+        </button>
+</div>
+<!-- Form Body -->
+<form class="p-6 space-y-4" id="form-edit-user" onsubmit="handleEditUser(event)">
+<h3 class="text-base font-heading font-extrabold text-slate-900 tracking-tight uppercase">
+          DATOS BÁSICOS
+        </h3>
+<!-- Nombre del Usuario -->
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1" for="edit-name">
+            Nombre del Usuario:
+          </label>
+<input class="w-full px-4 py-2 bg-white border border-brand-border rounded-xl text-sm text-slate-800 focus:ring-2 focus:ring-brand-amber focus:border-brand-amber outline-none shadow-sm" id="edit-name" required="" type="text"/>
+</div>
+<!-- Usuario ID -->
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1" for="edit-id">
+            Usuario ID:
+          </label>
+<input class="w-full px-4 py-2 bg-white border border-brand-border rounded-xl text-sm text-slate-800 focus:ring-2 focus:ring-brand-amber focus:border-brand-amber outline-none shadow-sm" id="edit-id" required="" type="text"/>
+</div>
+<!-- Rol -->
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1" for="edit-role">
+            Rol:
+          </label>
+<select class="w-full px-4 py-2 bg-white border border-brand-border rounded-xl text-sm text-slate-800 focus:ring-2 focus:ring-brand-amber focus:border-brand-amber outline-none shadow-sm" id="edit-role">
+<option value="Cajero / Vendedor">Cajero / Vendedor</option>
+<option value="Supervisor Bodega">Supervisor Bodega</option>
+<option value="Administrador General">Administrador General</option>
+<option value="Auditor Contable">Auditor Contable</option>
+</select>
+</div>
+<!-- Password -->
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1" for="edit-password">
+            Password:
+          </label>
+<input class="w-full px-4 py-2 bg-white border border-brand-border rounded-xl text-sm text-slate-800 focus:ring-2 focus:ring-brand-amber focus:border-brand-amber outline-none shadow-sm" id="edit-password" placeholder="••••••••••••" type="password"/>
+</div>
+<!-- Perfil de Usuario -->
+<div>
+<span class="block text-xs font-semibold text-slate-700 mb-2">Perfil de Usuario:</span>
+<div class="flex items-center gap-4">
+<!-- Icon preview box -->
+<div class="w-20 h-20 bg-brand-amber rounded-xl flex items-center justify-center text-slate-900 shadow-sm shrink-0" id="edit-icon-badge">
+<svg class="w-10 h-10 fill-current" viewbox="0 0 20 20">
+<path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"></path>
+</svg>
+</div>
+<!-- Icon dropdown selector widget -->
+<div class="space-y-1">
+<label class="text-[11px] text-slate-500 font-medium">Seleccionar Ícono</label>
+<div class="border border-brand-border bg-white rounded-lg p-1 shadow-sm w-36">
+<select class="w-full text-xs font-medium py-1 px-2 border-0 bg-brand-amber text-slate-900 rounded focus:ring-0 cursor-pointer" id="edit-icon-select" onchange="updateIconBadge('edit-icon-badge', this.value)">
+<option value="folder">📁 Carpeta</option>
+<option value="user">👤 Usuario</option>
+<option value="badge">🛡️ Seguridad</option>
+<option value="clip">📎 Adjunto</option>
+</select>
+<div class="px-2 py-1 text-slate-400 text-xs flex items-center gap-1.5 mt-0.5 border-t border-slate-100">
+<svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="text-[10px]">Icono activo</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Form Actions -->
+<div class="pt-4 flex items-center justify-end gap-3 border-t border-brand-border/60">
+<button class="px-6 py-2 rounded-full bg-brand-amber hover:bg-brand-amberHover text-slate-900 font-heading font-bold text-xs uppercase tracking-wider shadow-sm transition" type="submit">
+            Guardar Cambios
+          </button>
+<button class="px-6 py-2 rounded-full bg-slate-300 hover:bg-slate-400 text-slate-800 font-heading font-semibold text-xs uppercase tracking-wider transition" onclick="closeModal('modal-edit-user')" type="button">
+            Cancelar
+          </button>
+</div>
+</form>
+</div>
+</div>
+<!-- END: Modal - EDITAR USUARIO -->
+<!-- ======================================================== -->
+<!-- BEGIN: Modal - ALERTA DE SEGURIDAD (Confirmar Inactivar)  -->
+<!-- ======================================================== -->
+<div aria-modal="true" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/65 modal-overlay" id="modal-confirm-deactivate" role="alertdialog">
+<div class="bg-[#FAF6EF] w-full max-w-md rounded-2xl shadow-modal border border-brand-border overflow-hidden">
+<!-- Slate Header: EXACTO al mockup corporativo -->
+<div class="bg-brand-slate px-6 py-3 text-white flex items-center justify-between">
+<span class="font-heading font-bold text-xs uppercase tracking-wider">Alerta de Seguridad</span>
+<button class="text-white/80 hover:text-white text-lg font-bold p-1 leading-none focus:outline-none" onclick="closeModal('modal-confirm-deactivate')" type="button">
+          ✕
+        </button>
+</div>
+<!-- Content with Amber warning icon & confirmation -->
+<div class="p-6 text-center">
+<div class="w-14 h-14 mx-auto mb-3 rounded-full bg-amber-100 text-brand-amber flex items-center justify-center shadow-inner">
+<svg class="w-8 h-8 stroke-current" fill="none" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="9"></circle>
+<line x1="12" x2="12" y1="8" y2="12"></line>
+<line x1="12" x2="12.01" y1="16" y2="16"></line>
+</svg>
+</div>
+<h4 class="font-heading font-bold text-slate-900 text-base mb-1">¿Está seguro de inactivar este usuario?</h4>
+<div class="inline-block bg-amber-50 text-amber-800 border border-amber-200 px-3 py-1 rounded text-xs font-semibold uppercase tracking-wide mb-3">
+          ⚠️ ATENCIÓN: Se requiere confirmación
+        </div>
+<p class="text-xs text-slate-600 mb-2">
+          Al inactivar a <strong class="text-slate-900" id="deactivate-target-name">el usuario</strong>, se revocarán temporalmente todos sus accesos al sistema y terminales del inventario.
+        </p>
+<div class="flex items-center justify-center gap-3 mt-6">
+<button class="px-6 py-2 rounded-full bg-brand-amber hover:bg-brand-amberHover text-slate-900 font-heading font-bold text-xs uppercase tracking-wider shadow" onclick="confirmDeactivation()" type="button">
+            Inactivar
+          </button>
+<button class="px-6 py-2 rounded-full bg-slate-300 hover:bg-slate-400 text-slate-800 font-heading font-semibold text-xs uppercase tracking-wider" onclick="closeModal('modal-confirm-deactivate')" type="button">
+            Cancelar
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- END: Modal - ALERTA DE SEGURIDAD -->
+<!-- ======================================================== -->
+<!-- BEGIN: Interactive Logic Scripts                         -->
+<!-- ======================================================== -->
+<script data-purpose="tab-navigation">
+    /**
+     * Toggles between 'LISTA DE USUARIOS' and 'LOG DE ACTIVIDAD' tabs
+     * @param {'users' | 'logs'} activeTab 
+     */
+    function switchTab(activeTab) {
+      const usersBtn = document.getElementById('tab-users-btn');
+      const logsBtn = document.getElementById('tab-logs-btn');
+      const usersContent = document.getElementById('tab-users-content');
+      const logsContent = document.getElementById('tab-logs-content');
+
+      if (activeTab === 'users') {
+        usersBtn.className = "px-6 py-2 rounded-md font-heading font-bold text-xs tracking-wider uppercase transition-all duration-150 shadow-sm border border-brand-amber bg-brand-amber text-slate-900";
+        logsBtn.className = "px-6 py-2 rounded-md font-heading font-semibold text-xs tracking-wider uppercase transition-all duration-150 border border-slate-300 bg-white text-slate-700 hover:bg-slate-50";
+        usersContent.classList.remove('hidden');
+        logsContent.classList.add('hidden');
+      } else {
+        logsBtn.className = "px-6 py-2 rounded-md font-heading font-bold text-xs tracking-wider uppercase transition-all duration-150 shadow-sm border border-brand-amber bg-brand-amber text-slate-900";
+        usersBtn.className = "px-6 py-2 rounded-md font-heading font-semibold text-xs tracking-wider uppercase transition-all duration-150 border border-slate-300 bg-white text-slate-700 hover:bg-slate-50";
+        logsContent.classList.remove('hidden');
+        usersContent.classList.add('hidden');
+      }
+    }
+  </script>
+<script data-purpose="modal-handlers">
+    let currentDeactivatingUser = null;
+
+    function openModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+      }
+    }
+
+    function closeModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }
+    }
+
+    function openCreateUserModal() {
+      document.getElementById('form-create-user').reset();
+      updateIconBadge('create-icon-badge', 'folder');
+      openModal('modal-create-user');
+    }
+
+    function openEditUserModal(name, id, role, pass) {
+      document.getElementById('edit-name').value = name;
+      document.getElementById('edit-id').value = id;
+      document.getElementById('edit-role').value = role;
+      document.getElementById('edit-password').value = pass;
+      updateIconBadge('edit-icon-badge', 'folder');
+      openModal('modal-edit-user');
+    }
+
+    function handleActionClick(username) {
+      const rows = document.querySelectorAll('.user-row');
+      let targetRow = null;
+      rows.forEach(r => {
+        if (r.getAttribute('data-username') === username) targetRow = r;
+      });
+
+      if (!targetRow) return;
+
+      const currentStatus = targetRow.getAttribute('data-status');
+      if (currentStatus === 'INACTIVO') {
+        // Direct reactivate
+        targetRow.setAttribute('data-status', 'ACTIVO');
+        const badge = targetRow.querySelector('.status-badge');
+        if (badge) {
+          badge.className = "status-badge inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800";
+          badge.innerText = "ACTIVO";
+        }
+        const actionBtn = targetRow.querySelector('.toggle-status-btn');
+        if (actionBtn) {
+          actionBtn.innerText = "Inactivar";
+          actionBtn.className = "toggle-status-btn text-xs text-rose-600 hover:text-rose-800 hover:bg-rose-50 font-medium px-2.5 py-1 rounded transition";
+        }
+        appendLogEntry('Carlos Morales', 'Seguridad & Acceso', `Usuario reactivado en el sistema: ${username}`);
+      } else {
+        // Trigger Security Alert Modal
+        currentDeactivatingUser = username;
+        document.getElementById('deactivate-target-name').innerText = username;
+        openModal('modal-confirm-deactivate');
+      }
+    }
+
+    function confirmDeactivation() {
+      if (!currentDeactivatingUser) return;
+      const targetName = currentDeactivatingUser;
+      
+      const rows = document.querySelectorAll('.user-row');
+      rows.forEach(row => {
+        if (row.getAttribute('data-username') === targetName) {
+          row.setAttribute('data-status', 'INACTIVO');
+          const badge = row.querySelector('.status-badge');
+          if (badge) {
+            badge.className = "status-badge inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800";
+            badge.innerText = "INACTIVO";
+          }
+          const actionBtn = row.querySelector('.toggle-status-btn');
+          if (actionBtn) {
+            actionBtn.innerText = "Activar";
+            actionBtn.className = "toggle-status-btn text-xs text-emerald-600 hover:text-emerald-800 hover:bg-emerald-50 font-semibold px-2.5 py-1 rounded transition";
+          }
+        }
+      });
+
+      appendLogEntry('Carlos Morales', 'Seguridad & Acceso', `Usuario inactivado por control de acceso: ${targetName}`);
+      closeModal('modal-confirm-deactivate');
+      currentDeactivatingUser = null;
+    }
+
+    function updateIconBadge(elementId, iconType) {
+      const badge = document.getElementById(elementId);
+      if (!badge) return;
+
+      if (iconType === 'folder') {
+        badge.innerHTML = `<svg class="w-10 h-10 fill-current" viewBox="0 0 20 20"><path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"/></svg>`;
+      } else if (iconType === 'user') {
+        badge.innerHTML = `<svg class="w-10 h-10 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/></svg>`;
+      } else if (iconType === 'badge') {
+        badge.innerHTML = `<svg class="w-10 h-10 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>`;
+      } else if (iconType === 'clip') {
+        badge.innerHTML = `<svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"/></svg>`;
+      }
+    }
+
+    function handleCreateUser(e) {
+      e.preventDefault();
+      const name = document.getElementById('create-name').value;
+      const id = document.getElementById('create-id').value;
+      const role = document.getElementById('create-role').value;
+      const pass = document.getElementById('create-password').value;
+
+      const tbody = document.getElementById('users-table-body');
+      const tr = document.createElement('tr');
+      tr.className = "hover:bg-amber-50/30 transition-colors user-row";
+      tr.setAttribute('data-username', name);
+      tr.setAttribute('data-id', id);
+      tr.setAttribute('data-role', role);
+      tr.setAttribute('data-status', 'ACTIVO');
+
+      const initials = name.slice(0, 2).toUpperCase();
+
+      tr.innerHTML = `
+        <td class="py-4 px-6 flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-slate-200 text-brand-slate font-bold flex items-center justify-center text-xs shrink-0">
+            ${initials}
+          </div>
+          <div>
+            <span class="font-semibold text-slate-900 block leading-tight">${name}</span>
+            <span class="text-xs text-slate-400 font-normal">ID: ${id}</span>
+          </div>
+        </td>
+        <td class="py-4 px-6">
+          <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium bg-slate-100 text-slate-700 border border-slate-200">
+            ${role}
+          </span>
+        </td>
+        <td class="py-4 px-6 text-slate-600 text-xs font-normal">
+          Justo ahora
+        </td>
+        <td class="py-4 px-6">
+          <span class="status-badge inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">
+            ACTIVO
+          </span>
+        </td>
+        <td class="py-4 px-6">
+          <div class="flex items-center justify-center gap-2">
+            <button 
+              type="button" 
+              onclick="openEditUserModal('${name}', '${id}', '${role}', '${pass}')" 
+              class="px-3.5 py-1 border border-slate-300 hover:border-slate-800 rounded-full text-xs font-semibold uppercase text-slate-700 hover:text-black transition-all bg-white shadow-xs"
+            >
+              EDITAR
+            </button>
+            <button 
+              type="button" 
+              onclick="handleActionClick('${name}')" 
+              class="toggle-status-btn text-xs text-rose-600 hover:text-rose-800 hover:bg-rose-50 font-medium px-2.5 py-1 rounded transition"
+              title="Inactivar usuario"
+            >
+              Inactivar
+            </button>
+          </div>
+        </td>
+      `;
+
+      tbody.appendChild(tr);
+      appendLogEntry('Carlos Morales', 'Usuarios & Roles', `Nuevo usuario registrado en sistema: ${name} (${id})`);
+      closeModal('modal-create-user');
+      updateUserCount();
+    }
+
+    function handleEditUser(e) {
+      e.preventDefault();
+      const name = document.getElementById('edit-name').value;
+      const id = document.getElementById('edit-id').value;
+      const role = document.getElementById('edit-role').value;
+
+      // Update row in table if found
+      const rows = document.querySelectorAll('.user-row');
+      rows.forEach(row => {
+        if (row.getAttribute('data-id') === id || row.getAttribute('data-username') === name) {
+          row.setAttribute('data-role', role);
+          const roleCell = row.querySelector('td:nth-child(2) span');
+          if (roleCell) roleCell.innerText = role;
+        }
+      });
+
+      appendLogEntry('Carlos Morales', 'Usuarios & Roles', `Actualización de perfil para usuario: ${name} (${id}) - Rol: ${role}`);
+      closeModal('modal-edit-user');
+    }
+
+    function appendLogEntry(user, module, desc) {
+      const logsBody = document.getElementById('logs-table-body');
+      if (!logsBody) return;
+
+      const newRow = document.createElement('tr');
+      newRow.className = "hover:bg-amber-50/20 transition-colors log-row";
+      newRow.innerHTML = `
+        <td class="py-4 px-6 font-semibold text-slate-800">${user}</td>
+        <td class="py-4 px-6 text-xs text-slate-600">Justo ahora</td>
+        <td class="py-4 px-6 text-xs text-slate-700">${module}</td>
+        <td class="py-4 px-6 text-xs text-slate-600">${desc}</td>
+        <td class="py-4 px-6 text-center">
+          <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-bold tracking-wide uppercase bg-emerald-100 text-emerald-800">
+            EXITOSO
+          </span>
+        </td>
+      `;
+      logsBody.insertBefore(newRow, logsBody.firstChild);
+    }
+
+    function updateUserCount() {
+      const count = document.querySelectorAll('.user-row').length;
+      const label = document.getElementById('user-count-label');
+      if (label) {
+        label.innerText = `Mostrando ${count} de ${count} usuarios registrados`;
+      }
+    }
+  </script>
+<script data-purpose="table-filters">
+    function filterUsersTable() {
+      const query = document.getElementById('search-users-input').value.toLowerCase();
+      const roleFilter = document.getElementById('filter-role-select').value.toLowerCase();
+      const rows = document.querySelectorAll('.user-row');
+
+      rows.forEach(row => {
+        const text = row.innerText.toLowerCase();
+        const role = row.getAttribute('data-role').toLowerCase();
+        const matchesQuery = text.includes(query);
+        const matchesRole = !roleFilter || role.includes(roleFilter);
+        row.style.display = (matchesQuery && matchesRole) ? '' : 'none';
+      });
+    }
+
+    function filterLogsTable() {
+      const query = document.getElementById('search-logs-input').value.toLowerCase();
+      const rows = document.querySelectorAll('.log-row');
+
+      rows.forEach(row => {
+        const text = row.innerText.toLowerCase();
+        row.style.display = text.includes(query) ? '' : 'none';
+      });
+    }
+  </script>
+</body></html>

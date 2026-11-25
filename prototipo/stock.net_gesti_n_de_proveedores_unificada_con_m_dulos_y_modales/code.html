@@ -1,0 +1,1694 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Montserrat:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "inverse-surface": "#31312d", "error": "#ba1a1a", "on-secondary": "#ffffff", "on-primary-container": "#d8eaff", "on-tertiary": "#ffffff", "surface-bright": "#fcf9f3", "error-container": "#ffdad6", "tertiary-fixed": "#ffddb3", "secondary-fixed-dim": "#ffba44", "on-error": "#ffffff", "on-secondary-container": "#6b4800", "surface-container-low": "#f6f3ed", "tertiary-fixed-dim": "#ecbf83", "on-surface": "#1c1c18", "on-primary": "#ffffff", "on-tertiary-container": "#ffe5c5", "surface-tint": "#406180", "on-tertiary-fixed": "#291800", "on-tertiary-fixed-variant": "#5f4110", "secondary-container": "#fcb32e", "tertiary-container": "#85622f", "surface-dim": "#dcdad4", "inverse-on-surface": "#f3f0ea", "on-secondary-fixed": "#281800", "background": "#fcf9f3", "surface-container": "#f0eee7", "on-primary-fixed": "#001d32", "surface": "#fcf9f3", "outline": "#73777e", "secondary": "#805600", "outline-variant": "#c2c7ce", "on-primary-fixed-variant": "#274967", "tertiary": "#6a4a19", "surface-variant": "#e5e2dc", "primary-fixed": "#cee5ff", "inverse-primary": "#a8caed", "primary-fixed-dim": "#a8caed", "primary-container": "#4a6b8a", "surface-container-high": "#eae8e2", "surface-container-highest": "#e5e2dc", "on-surface-variant": "#42474d", "surface-container-lowest": "#ffffff", "secondary-fixed": "#ffddaf", "on-background": "#1c1c18", "on-secondary-fixed-variant": "#614000", "primary": "#315371", "on-error-container": "#93000a" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "gutter-desktop": "1.5rem", "space-sm": "0.5rem", "margin": "1rem", "space-md": "0.75rem", "gutter": "1rem", "margin-desktop": "2rem", "space-xs": "0.25rem", "space-lg": "1.25rem", "space-xl": "2rem" }, "fontFamily": { "body-lg": ["Inter"], "headline-3": ["Montserrat"], "caption": ["Inter"], "headline-1-mobile": ["Montserrat"], "headline-1": ["Montserrat"], "body-base-semibold": ["Inter"], "body-sm-medium": ["Inter"], "headline-2": ["Montserrat"], "body-base": ["Inter"], "body-sm": ["Inter"] }, "fontSize": { "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-3": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "caption": ["10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" }], "headline-1-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-1": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-base-semibold": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "body-sm-medium": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "headline-2": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-base": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }] } } } };</script></head><body class="bg-background font-body-base text-body-base text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 h-16 bg-primary-container z-50 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-gutter-desktop flex items-center justify-between"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><img alt="Logo geonet.png" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOKszDVG53aN5c0fgO6LDjrFeCDD-NwlgKx40sme6nBIb6gAwoDBy-tokqK-k-fbQ_L7LmI-B8EcZnep6nA30qbn9SZImwyPlv13uq-Dqb_0Ii1T-rcto4oJ7KMQaGhHqXEUWCKU4m_F_fGMQIt6ZHeSkkbPWEAwIv_HQSm2OfsG87XT_1ZyV-G6FS4cIB4SY2COGmnAIWyyhm4kKYDiwYZT85rGX4fS5deOE8W-2XrqTnNipLodvv"></div><div class="hidden xl:block h-6 w-px bg-on-primary-container/20"></div><p class="hidden xl:block font-body-sm text-body-sm text-on-primary-container font-medium">Sistema Integral de Gestión de Inventario, Control y Seguridad</p></div><div class="flex items-center gap-space-md"><div class="flex items-center bg-primary/40 px-space-md py-1.5 rounded-full"><div class="flex flex-col text-right mr-space-sm"><span class="font-body-sm-medium text-body-sm-medium text-on-primary leading-tight">Carlos Morales</span><span class="font-caption text-caption text-on-primary-container leading-tight">Jefe de Operaciones</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-64 bg-surface-container-low z-40 overflow-y-auto flex flex-col py-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><nav class="flex-1 px-space-md flex flex-col gap-space-lg" data-active-classes="bg-primary-container text-on-primary font-bold"><div class="flex flex-col gap-space-xs"><div class="px-space-sm py-1 font-caption text-caption text-on-surface-variant font-bold uppercase tracking-wider">OPERACIONES &amp; CONTROL</div><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-base text-body-base text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="panel-principal" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span>Panel Principal</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-base text-body-base text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="gestion-de-inventario" href="#"><span class="material-symbols-outlined text-[20px]">inventory_2</span>Gestión de Inventario</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-base text-body-base text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="gestion-de-ventas" href="#"><span class="material-symbols-outlined text-[20px]">trending_up</span>Gestión de Ventas</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-base text-body-base text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="punto-de-venta" href="#"><span class="material-symbols-outlined text-[20px]">point_of_sale</span>Punto de Venta</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-base text-body-base text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="compras" href="#"><span class="material-symbols-outlined text-[20px]">shopping_cart</span>Compras</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-base text-body-base text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="creditos" href="#"><span class="material-symbols-outlined text-[20px]">credit_card</span>Créditos</a></div><div class="flex flex-col gap-space-xs"><div class="px-space-sm py-1 font-caption text-caption text-on-surface-variant font-bold uppercase tracking-wider">SOCIOS &amp; REPORTES</div><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-base text-body-base text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="analisis-de-margenes" href="#"><span class="material-symbols-outlined text-[20px]">analytics</span>Análisis de Márgenes</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-base text-body-base text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="clientes" href="#"><span class="material-symbols-outlined text-[20px]">groups</span>Clientes</a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg transition-all bg-primary-container text-on-primary font-bold" data-path="proveedores" href="#"><span class="material-symbols-outlined text-[20px]">local_shipping</span>Proveedores</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-base text-body-base text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="usuarios-y-roles" href="#"><span class="material-symbols-outlined text-[20px]">manage_accounts</span>Usuarios &amp; Roles</a></div></nav><div class="px-space-md pt-space-md"><div class="p-space-sm rounded-lg bg-surface-container flex items-center justify-between text-on-surface-variant"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[16px] text-secondary">shield</span><span class="font-caption text-caption uppercase font-semibold">V 3.4 Operativa</span></div><span class="font-caption text-caption">2024</span></div></div></aside><div class="pl-64"><main class="w-full pt-16 bg-background min-h-screen"><div class="flex flex-col w-full">
+<div class="w-full px-gutter-desktop py-space-lg flex flex-col gap-space-lg max-w-[1600px] mx-auto">
+<!-- SUB-HEADER & BREADCRUMB NAVIGATION -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex items-center gap-space-md">
+<a class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary hover:bg-primary-container transition-colors shadow-sm" href="#" title="Regresar al panel">
+<span class="material-symbols-outlined text-[22px]">arrow_back</span>
+</a>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-caption text-caption text-secondary uppercase font-bold tracking-wider">MÓDULOS OPERATIVOS</span>
+<span class="text-outline-variant font-caption text-caption">/</span>
+<span class="font-caption text-caption text-on-surface-variant font-semibold uppercase tracking-wider">CADENA DE SUMINISTRO Y PROVEEDORES</span>
+</div>
+<h1 class="font-headline-1 text-headline-1 text-on-surface tracking-tight uppercase" id="section-title">HISTÓRICO Y VARIACIÓN DE PRECIOS</h1>
+</div>
+</div>
+<!-- BADGES DE ESTADO -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="flex items-center gap-1.5 px-space-md py-1.5 rounded-lg bg-surface-container text-on-surface-variant font-body-sm-medium text-body-sm-medium">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span id="counter-badge">5 Proveedores Registrados</span>
+</div>
+<div class="flex items-center gap-1.5 px-space-md py-1.5 rounded-lg bg-primary-fixed text-on-primary-fixed-variant font-body-sm-medium text-body-sm-medium">
+<span class="material-symbols-outlined text-[16px] text-primary">sync</span>
+<span>Sincronización en Tiempo Real</span>
+</div>
+<div class="flex items-center gap-1.5 px-space-md py-1.5 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed-variant font-body-sm-medium text-body-sm-medium">
+<span class="material-symbols-outlined text-[16px] text-tertiary">payments</span>
+<span>Precios en COP ($)</span>
+</div>
+</div>
+</div>
+<!-- PESTAÑAS DE NAVEGACIÓN SUPERIOR (SWITCH DINÁMICO DE 4 SECCIONES) -->
+<div class="flex flex-wrap items-center gap-space-sm border-b border-outline-variant/30 pb-2">
+<button class="flex items-center gap-2 px-space-lg py-2.5 rounded-lg font-body-base-semibold text-body-base-semibold transition-all bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container" id="tab-btn-directorio" onclick="switchAppTab('directorio')">
+<span class="material-symbols-outlined text-[20px]">contacts</span>
+    DIRECTORIO DE PROVEEDORES
+  </button>
+<button class="flex items-center gap-2 px-space-lg py-2.5 rounded-lg font-body-base-semibold text-body-base-semibold transition-all bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container" id="tab-btn-historial" onclick="switchAppTab('historial')">
+<span class="material-symbols-outlined text-[20px]">inventory</span>
+    PROVEEDORES POR PRODUCTO
+  </button>
+<button class="flex items-center gap-2 px-space-lg py-2.5 rounded-lg font-body-base-semibold text-body-base-semibold transition-all bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container" id="tab-btn-ordenes" onclick="switchAppTab('ordenes')">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+    HISTORIAL DE COMPRAS
+  </button>
+<button class="flex items-center gap-2 px-space-lg py-2.5 rounded-lg font-body-base-semibold text-body-base-semibold transition-all shadow-sm bg-secondary-container text-on-secondary-container" id="tab-btn-variacion" onclick="switchAppTab('variacion')">
+<span class="material-symbols-outlined text-[20px]">monitoring</span>
+    HISTÓRICO Y VARIACIÓN DE PRECIOS
+  </button>
+</div>
+<!-- ========================================== -->
+<!-- TAB 1: DIRECTORIO DE PROVEEDORES          -->
+<!-- ========================================== -->
+<div class="flex-col gap-space-lg hidden" id="view-directorio">
+<!-- TOOLBAR & FILTROS -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md">
+<div class="flex flex-1 flex-col sm:flex-row items-center gap-space-md">
+<div class="relative w-full sm:max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface rounded-lg font-body-base text-body-base text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="search-directorio" onkeyup="filterProveedoresTable()" placeholder="Buscar NIT, Nombre, Estado..." type="text">
+</div>
+<div class="flex items-center gap-2 w-full sm:w-auto">
+<label class="font-caption text-caption text-on-surface-variant font-bold uppercase whitespace-nowrap" for="filter-estado">ESTADO:</label>
+<select class="px-space-md py-2 bg-surface rounded-lg font-body-sm-medium text-body-sm-medium text-on-surface focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer shadow-sm" id="filter-estado" onchange="filterProveedoresTable()">
+<option value="todos">Todos</option>
+<option value="disponible">Disponible</option>
+<option value="inactivo">Inactivo</option>
+</select>
+</div>
+</div>
+<button class="flex items-center justify-center gap-2 px-space-lg py-2 rounded-lg bg-secondary-container text-on-secondary-container font-headline-3 text-headline-3 hover:bg-secondary-fixed-dim transition-all shadow-sm" onclick="openModal('modal-crear')">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+          + CREAR PROVEEDOR
+        </button>
+</div>
+<!-- TABLA PRINCIPAL DE PROVEEDORES -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left" id="table-proveedores">
+<thead>
+<tr class="bg-primary text-on-primary">
+<th class="py-3 px-space-lg font-headline-3 text-headline-3 uppercase tracking-wider text-xs">RUT / NIT</th>
+<th class="py-3 px-space-lg font-headline-3 text-headline-3 uppercase tracking-wider text-xs">NOMBRE</th>
+<th class="py-3 px-space-lg font-headline-3 text-headline-3 uppercase tracking-wider text-xs">TELÉFONO</th>
+<th class="py-3 px-space-lg font-headline-3 text-headline-3 uppercase tracking-wider text-xs">CORREO</th>
+<th class="py-3 px-space-lg font-headline-3 text-headline-3 uppercase tracking-wider text-xs text-center">ESTADO</th>
+<th class="py-3 px-space-lg font-headline-3 text-headline-3 uppercase tracking-wider text-xs text-right">ACCIONES</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container" id="proveedores-tbody">
+<!-- Fila 1 -->
+<tr class="hover:bg-primary-fixed/20 transition-colors" data-correo="vladi_import@gmail.com" data-desc="Distribuidora mayorista de accesorios y componentes tecnológicos" data-estado="disponible" data-nit="220819929-3" data-nombre="Importaciones Vladi S.A.S" data-telefono="300 839919">
+<td class="py-3.5 px-space-lg font-body-base-semibold text-body-base-semibold text-on-surface">220819929-3</td>
+<td class="py-3.5 px-space-lg font-body-base text-body-base text-on-surface">Importaciones Vladi S.A.S</td>
+<td class="py-3.5 px-space-lg font-body-base text-body-base text-on-surface-variant font-mono">300 839919</td>
+<td class="py-3.5 px-space-lg font-body-base text-body-base text-on-surface-variant">vladi_import@gmail.com</td>
+<td class="py-3.5 px-space-lg text-center status-col">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">Disponible</span>
+</td>
+<td class="py-3.5 px-space-lg text-right whitespace-nowrap">
+<div class="flex items-center justify-end gap-2">
+<button class="p-1.5 rounded-lg text-primary hover:bg-primary-fixed transition-colors" onclick="viewProveedorDetails(this)" title="Ver Detalle"><span class="material-symbols-outlined text-[20px]">visibility</span></button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" onclick="editProveedorRow(this)" title="Editar"><span class="material-symbols-outlined text-[20px]">edit</span></button>
+<div class="inline-flex items-center ml-1">
+<label class="relative inline-flex items-center cursor-pointer" title="Activar/Inactivar proveedor">
+<input checked="" class="sr-only switch-input" onchange="toggleProveedorSwitch(this)" type="checkbox">
+<div class="switch-track w-11 h-6 bg-emerald-500 rounded-full transition-colors relative after:content-[''] after:absolute after:top-[2px] after:left-[22px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all shadow-inner"></div>
+</label>
+</div>
+</div>
+</td>
+</tr>
+<!-- Fila 2 -->
+<tr class="hover:bg-primary-fixed/20 transition-colors bg-surface-container-low/40" data-correo="impor_changal129@gmail.com" data-desc="Es un distribuidor certificado de papelería especializada y cuadernos resistentes" data-estado="disponible" data-nit="2039812-1" data-nombre="Importaciones Chang-gal S.A.S" data-telefono="312 5171822">
+<td class="py-3.5 px-space-lg font-body-base-semibold text-body-base-semibold text-on-surface">2039812-1</td>
+<td class="py-3.5 px-space-lg font-body-base text-body-base text-on-surface">Importaciones Chang-gal S.A.S</td>
+<td class="py-3.5 px-space-lg font-body-base text-body-base text-on-surface-variant font-mono">312 5171822</td>
+<td class="py-3.5 px-space-lg font-body-base text-body-base text-on-surface-variant">impor_changal129@gmail.com</td>
+<td class="py-3.5 px-space-lg text-center status-col">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">Disponible</span>
+</td>
+<td class="py-3.5 px-space-lg text-right whitespace-nowrap">
+<div class="flex items-center justify-end gap-2">
+<button class="p-1.5 rounded-lg text-primary hover:bg-primary-fixed transition-colors" onclick="viewProveedorDetails(this)" title="Ver Detalle"><span class="material-symbols-outlined text-[20px]">visibility</span></button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" onclick="editProveedorRow(this)" title="Editar"><span class="material-symbols-outlined text-[20px]">edit</span></button>
+<div class="inline-flex items-center ml-1">
+<label class="relative inline-flex items-center cursor-pointer" title="Activar/Inactivar proveedor">
+<input checked="" class="sr-only switch-input" onchange="toggleProveedorSwitch(this)" type="checkbox">
+<div class="switch-track w-11 h-6 bg-emerald-500 rounded-full transition-colors relative after:content-[''] after:absolute after:top-[2px] after:left-[22px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all shadow-inner"></div>
+</label>
+</div>
+</div>
+</td>
+</tr>
+<!-- Fila 3 -->
+<tr class="hover:bg-primary-fixed/20 transition-colors" data-correo="contacto@techsolutions.co" data-desc="Proveedor líder en suministros y periféricos de oficina de alta gama" data-estado="disponible" data-nit="30293199-2" data-nombre="Tech &amp; Solutions Ltda" data-telefono="318 928822">
+<td class="py-3.5 px-space-lg font-body-base-semibold text-body-base-semibold text-on-surface">30293199-2</td>
+<td class="py-3.5 px-space-lg font-body-base text-body-base text-on-surface">Tech &amp; Solutions Ltda</td>
+<td class="py-3.5 px-space-lg font-body-base text-body-base text-on-surface-variant font-mono">318 928822</td>
+<td class="py-3.5 px-space-lg font-body-base text-body-base text-on-surface-variant">contacto@techsolutions.co</td>
+<td class="py-3.5 px-space-lg text-center status-col">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">Disponible</span>
+</td>
+<td class="py-3.5 px-space-lg text-right whitespace-nowrap">
+<div class="flex items-center justify-end gap-2">
+<button class="p-1.5 rounded-lg text-primary hover:bg-primary-fixed transition-colors" onclick="viewProveedorDetails(this)" title="Ver Detalle"><span class="material-symbols-outlined text-[20px]">visibility</span></button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" onclick="editProveedorRow(this)" title="Editar"><span class="material-symbols-outlined text-[20px]">edit</span></button>
+<div class="inline-flex items-center ml-1">
+<label class="relative inline-flex items-center cursor-pointer" title="Activar/Inactivar proveedor">
+<input checked="" class="sr-only switch-input" onchange="toggleProveedorSwitch(this)" type="checkbox">
+<div class="switch-track w-11 h-6 bg-emerald-500 rounded-full transition-colors relative after:content-[''] after:absolute after:top-[2px] after:left-[22px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all shadow-inner"></div>
+</label>
+</div>
+</div>
+</td>
+</tr>
+<!-- Fila 4 -->
+<tr class="hover:bg-primary-fixed/20 transition-colors bg-surface-container-low/40 opacity-75" data-correo="compras@conglomerados.com" data-desc="Distribuidora en proceso de regularización documental mercantil" data-estado="inactivo" data-nit="10298-2038" data-nombre="Conglomerado S. &amp; Cía" data-telefono="300 3785136">
+<td class="py-3.5 px-space-lg font-body-base-semibold text-body-base-semibold text-on-surface">10298-2038</td>
+<td class="py-3.5 px-space-lg font-body-base text-body-base text-on-surface">Conglomerado S. &amp; Cía</td>
+<td class="py-3.5 px-space-lg font-body-base text-body-base text-on-surface-variant font-mono">300 3785136</td>
+<td class="py-3.5 px-space-lg font-body-base text-body-base text-on-surface-variant">compras@conglomerados.com</td>
+<td class="py-3.5 px-space-lg text-center status-col">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800">Inactivo</span>
+</td>
+<td class="py-3.5 px-space-lg text-right whitespace-nowrap">
+<div class="flex items-center justify-end gap-2">
+<button class="p-1.5 rounded-lg text-primary hover:bg-primary-fixed transition-colors" onclick="viewProveedorDetails(this)" title="Ver Detalle"><span class="material-symbols-outlined text-[20px]">visibility</span></button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" onclick="editProveedorRow(this)" title="Editar"><span class="material-symbols-outlined text-[20px]">edit</span></button>
+<div class="inline-flex items-center ml-1">
+<label class="relative inline-flex items-center cursor-pointer" title="Activar/Inactivar proveedor">
+<input class="sr-only switch-input" onchange="toggleProveedorSwitch(this)" type="checkbox">
+<div class="switch-track w-11 h-6 bg-outline-variant rounded-full transition-colors relative after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all shadow-inner"></div>
+</label>
+</div>
+</div>
+</td>
+</tr>
+<!-- Fila 5 -->
+<tr class="hover:bg-primary-fixed/20 transition-colors" data-correo="ventas@scribe.com.co" data-desc="Fabricante oficial de cuadernos rayados, cosidos y resmas escolares" data-estado="disponible" data-nit="900.458.120-1" data-nombre="Scribe Papelería S.A.S" data-telefono="310 4458921">
+<td class="py-3.5 px-space-lg font-body-base-semibold text-body-base-semibold text-on-surface">900.458.120-1</td>
+<td class="py-3.5 px-space-lg font-body-base text-body-base text-on-surface">Scribe Papelería S.A.S</td>
+<td class="py-3.5 px-space-lg font-body-base text-body-base text-on-surface-variant font-mono">310 4458921</td>
+<td class="py-3.5 px-space-lg font-body-base text-body-base text-on-surface-variant">ventas@scribe.com.co</td>
+<td class="py-3.5 px-space-lg text-center status-col">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">Disponible</span>
+</td>
+<td class="py-3.5 px-space-lg text-right whitespace-nowrap">
+<div class="flex items-center justify-end gap-2">
+<button class="p-1.5 rounded-lg text-primary hover:bg-primary-fixed transition-colors" onclick="viewProveedorDetails(this)" title="Ver Detalle"><span class="material-symbols-outlined text-[20px]">visibility</span></button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" onclick="editProveedorRow(this)" title="Editar"><span class="material-symbols-outlined text-[20px]">edit</span></button>
+<div class="inline-flex items-center ml-1">
+<label class="relative inline-flex items-center cursor-pointer" title="Activar/Inactivar proveedor">
+<input checked="" class="sr-only switch-input" onchange="toggleProveedorSwitch(this)" type="checkbox">
+<div class="switch-track w-11 h-6 bg-emerald-500 rounded-full transition-colors relative after:content-[''] after:absolute after:top-[2px] after:left-[22px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all shadow-inner"></div>
+</label>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- PAGINACIÓN -->
+<div class="p-space-md bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<p class="font-body-sm text-body-sm text-on-surface-variant">Mostrando <span class="font-semibold text-on-surface" id="showing-count">5</span> de <span class="font-semibold text-on-surface" id="total-count">5</span> proveedores registrados</p>
+<div class="flex items-center gap-1">
+<button class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-body-sm-medium text-body-sm-medium" disabled="">Anterior</button>
+<button class="px-2.5 py-1 rounded bg-primary text-on-primary font-body-sm-medium text-body-sm-medium">1</button>
+<button class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-body-sm-medium text-body-sm-medium" disabled="">Siguiente</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- TAB 2: PROVEEDORES POR PRODUCTO & HISTORIAL -->
+<!-- ========================================== -->
+<div class="flex-col gap-space-lg hidden" id="view-historial">
+<!-- CARRUSEL DE TARJETAS HORIZONTALES DE PROVEEDORES -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption uppercase text-on-surface-variant font-bold tracking-wider">FILTRAR LISTADO POR PROVEEDOR ASOCIADO</span>
+<div class="flex items-center gap-1">
+<button class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center hover:bg-surface-container-high transition-colors" onclick="scrollVendorPills(-240)">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+</button>
+<button class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center hover:bg-surface-container-high transition-colors" onclick="scrollVendorPills(240)">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="flex items-center gap-space-sm overflow-x-auto pb-2 scroll-smooth" id="vendor-cards-container">
+<!-- Card: Todos los proveedores -->
+<div class="vendor-card cursor-pointer shrink-0 flex flex-col items-center justify-center p-space-md rounded-xl bg-primary text-on-primary min-w-[130px] h-[105px] shadow-sm transition-all scale-[1.03]" onclick="filterProductsByVendor('todos', this)">
+<span class="material-symbols-outlined text-[32px] text-secondary-container mb-1">inventory_2</span>
+<span class="font-body-base-semibold text-body-base-semibold text-center leading-tight">Todos</span>
+<span class="font-caption text-caption text-on-primary-container">6 productos</span>
+</div>
+<!-- Card: Ivon -->
+<div class="vendor-card cursor-pointer shrink-0 flex flex-col items-center justify-center p-space-md rounded-xl bg-surface-container-lowest text-on-surface min-w-[130px] h-[105px] shadow-sm transition-all hover:bg-surface-container hover:scale-[1.02]" onclick="filterProductsByVendor('Ivon', this)">
+<span class="material-symbols-outlined text-[32px] text-on-surface-variant mb-1">local_shipping</span>
+<span class="font-body-base-semibold text-body-base-semibold text-center leading-tight">Ivon</span>
+<span class="font-caption text-caption text-on-surface-variant">2 prod. asociados</span>
+</div>
+<!-- Card: Regol -->
+<div class="vendor-card cursor-pointer shrink-0 flex flex-col items-center justify-center p-space-md rounded-xl bg-surface-container-lowest text-on-surface min-w-[130px] h-[105px] shadow-sm transition-all hover:bg-surface-container hover:scale-[1.02]" onclick="filterProductsByVendor('Regol', this)">
+<span class="material-symbols-outlined text-[32px] text-on-surface-variant mb-1">local_shipping</span>
+<span class="font-body-base-semibold text-body-base-semibold text-center leading-tight">Regol</span>
+<span class="font-caption text-caption text-on-surface-variant">2 prod. asociados</span>
+</div>
+<!-- Card: Tech -->
+<div class="vendor-card cursor-pointer shrink-0 flex flex-col items-center justify-center p-space-md rounded-xl bg-surface-container-lowest text-on-surface min-w-[130px] h-[105px] shadow-sm transition-all hover:bg-surface-container hover:scale-[1.02]" onclick="filterProductsByVendor('Tech', this)">
+<span class="material-symbols-outlined text-[32px] text-on-surface-variant mb-1">local_shipping</span>
+<span class="font-body-base-semibold text-body-base-semibold text-center leading-tight">Tech</span>
+<span class="font-caption text-caption text-on-surface-variant">1 prod. asociado</span>
+</div>
+<!-- Card: Del Río -->
+<div class="vendor-card cursor-pointer shrink-0 flex flex-col items-center justify-center p-space-md rounded-xl bg-surface-container-lowest text-on-surface min-w-[130px] h-[105px] shadow-sm transition-all hover:bg-surface-container hover:scale-[1.02]" onclick="filterProductsByVendor('Del Río', this)">
+<span class="material-symbols-outlined text-[32px] text-on-surface-variant mb-1">local_shipping</span>
+<span class="font-body-base-semibold text-body-base-semibold text-center leading-tight">Del Río</span>
+<span class="font-caption text-caption text-on-surface-variant">1 prod. asociado</span>
+</div>
+<!-- Card: Prisma -->
+<div class="vendor-card cursor-pointer shrink-0 flex flex-col items-center justify-center p-space-md rounded-xl bg-surface-container-lowest text-on-surface min-w-[130px] h-[105px] shadow-sm transition-all hover:bg-surface-container hover:scale-[1.02]" onclick="filterProductsByVendor('Prisma', this)">
+<span class="material-symbols-outlined text-[32px] text-on-surface-variant mb-1">local_shipping</span>
+<span class="font-body-base-semibold text-body-base-semibold text-center leading-tight">Prisma</span>
+<span class="font-caption text-caption text-on-surface-variant">0 prod. asociados</span>
+</div>
+<!-- Card: Avonan -->
+<div class="vendor-card cursor-pointer shrink-0 flex flex-col items-center justify-center p-space-md rounded-xl bg-surface-container-lowest text-on-surface min-w-[130px] h-[105px] shadow-sm transition-all hover:bg-surface-container hover:scale-[1.02]" onclick="filterProductsByVendor('Avonan', this)">
+<span class="material-symbols-outlined text-[32px] text-on-surface-variant mb-1">local_shipping</span>
+<span class="font-body-base-semibold text-body-base-semibold text-center leading-tight">Avonan</span>
+<span class="font-caption text-caption text-on-surface-variant">0 prod. asociados</span>
+</div>
+<!-- Card: Norma -->
+<div class="vendor-card cursor-pointer shrink-0 flex flex-col items-center justify-center p-space-md rounded-xl bg-surface-container-lowest text-on-surface min-w-[130px] h-[105px] shadow-sm transition-all hover:bg-surface-container hover:scale-[1.02]" onclick="filterProductsByVendor('Norma', this)">
+<span class="material-symbols-outlined text-[32px] text-on-surface-variant mb-1">local_shipping</span>
+<span class="font-body-base-semibold text-body-base-semibold text-center leading-tight">Norma</span>
+<span class="font-caption text-caption text-on-surface-variant">0 prod. asociados</span>
+</div>
+</div>
+</div>
+<!-- BUSCADOR & FILTROS PARA PRODUCTOS -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col md:flex-row items-stretch md:items-center justify-between gap-space-md">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface rounded-lg font-body-base text-body-base text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="search-products" onkeyup="filterProductsTable()" placeholder="Buscar por nombre, categoría o proveedores" type="text">
+</div>
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-2">
+<label class="font-caption text-caption text-on-surface-variant font-bold uppercase" for="filter-categoria">Categorías:</label>
+<select class="px-space-md py-2 bg-surface rounded-lg font-body-sm-medium text-body-sm-medium text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="filter-categoria" onchange="filterProductsTable()">
+<option value="todas">Todas</option>
+<option value="Papelería">Papelería</option>
+<option value="Electrónicos">Electrónicos</option>
+<option value="Periféricos">Periféricos</option>
+</select>
+</div>
+<div class="flex items-center gap-2">
+<label class="font-caption text-caption text-on-surface-variant font-bold uppercase" for="filter-stock">Stock:</label>
+<select class="px-space-md py-2 bg-surface rounded-lg font-body-sm-medium text-body-sm-medium text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="filter-stock" onchange="filterProductsTable()">
+<option value="todas">Todas</option>
+<option value="alto">Stock Alto (&gt;25)</option>
+<option value="bajo">Stock Bajo (≤25)</option>
+</select>
+</div>
+</div>
+</div>
+<!-- BANNER DE ENCABEZADO DE TABLA -->
+<div class="bg-primary-container text-on-primary px-space-lg py-3 rounded-t-xl font-headline-3 text-headline-3 tracking-wide flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">history_edu</span>
+<span>REGISTROS DE HISTORIAL DE PRECIOS DE COMPRAS</span>
+</div>
+<span class="font-caption text-caption text-on-primary-container uppercase font-semibold">Stock.net Matriz Suministros</span>
+</div>
+<!-- TABLA DE PRODUCTOS VINCULADOS -->
+<div class="bg-surface-container-lowest rounded-b-xl shadow-sm overflow-hidden -mt-space-lg">
+<div class="overflow-x-auto">
+<table class="w-full text-left" id="table-productos">
+<thead>
+<tr class="bg-surface-container text-on-surface-variant">
+<th class="py-3 px-space-lg font-caption text-caption uppercase font-bold tracking-wider">SKU</th>
+<th class="py-3 px-space-lg font-caption text-caption uppercase font-bold tracking-wider">PRODUCTO</th>
+<th class="py-3 px-space-lg font-caption text-caption uppercase font-bold tracking-wider">CATEGORÍA</th>
+<th class="py-3 px-space-lg font-caption text-caption uppercase font-bold tracking-wider text-right">PRECIO COMPRA</th>
+<th class="py-3 px-space-lg font-caption text-caption uppercase font-bold tracking-wider text-right">STOCK</th>
+<th class="py-3 px-space-lg font-caption text-caption uppercase font-bold tracking-wider">PROVEEDOR ASOCIADO</th>
+<th class="py-3 px-space-lg font-caption text-caption uppercase font-bold tracking-wider text-center">ACCIONES</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container" id="products-tbody">
+<!-- Item 1 -->
+<tr class="hover:bg-primary-fixed/20 transition-colors" data-categoria="Papelería" data-desc="Es un cuaderno de tapa dura altamente resistente con encuadernado de seguridad y hojas prepicadas" data-nombre="Cuaderno Cosido 100 Hoj." data-precio="220000" data-proveedor="Ivon" data-sku="PRD-001" data-stock="45">
+<td class="py-3.5 px-space-lg font-mono font-bold text-on-surface">PRD-001</td>
+<td class="py-3.5 px-space-lg font-body-base text-body-base text-on-surface">Cuaderno Cosido 100 Hoj.</td>
+<td class="py-3.5 px-space-lg font-body-sm text-body-sm text-on-surface-variant">Papelería</td>
+<td class="py-3.5 px-space-lg font-body-base-semibold text-body-base-semibold text-right text-on-surface">$ 220.000 COP</td>
+<td class="py-3.5 px-space-lg font-mono text-right text-on-surface font-semibold">45</td>
+<td class="py-3.5 px-space-lg">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-secondary-fixed text-on-secondary-fixed-variant">Ivon</span>
+</td>
+<td class="py-3.5 px-space-lg text-center">
+<button class="p-1.5 rounded-lg text-primary hover:bg-primary-fixed transition-colors" onclick="viewProductDetails(this)" title="Ver Detalle Producto">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Item 2 -->
+<tr class="hover:bg-primary-fixed/20 transition-colors bg-surface-container-low/40" data-categoria="Electrónicos" data-desc="Teclado de alto rendimiento con switches mecánicos táctiles y cable mallado" data-nombre="Teclado Mecánico RGB Switch" data-precio="12500" data-proveedor="Del Río" data-sku="PRD-102" data-stock="50">
+<td class="py-3.5 px-space-lg font-mono font-bold text-on-surface">PRD-102</td>
+<td class="py-3.5 px-space-lg font-body-base text-body-base text-on-surface">Teclado Mecánico RGB Switch</td>
+<td class="py-3.5 px-space-lg font-body-sm text-body-sm text-on-surface-variant">Electrónicos</td>
+<td class="py-3.5 px-space-lg font-body-base-semibold text-body-base-semibold text-right text-on-surface">$ 12.500 COP</td>
+<td class="py-3.5 px-space-lg font-mono text-right text-on-surface font-semibold">50</td>
+<td class="py-3.5 px-space-lg">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-primary-fixed text-on-primary-fixed-variant">Del Río</span>
+</td>
+<td class="py-3.5 px-space-lg text-center">
+<button class="p-1.5 rounded-lg text-primary hover:bg-primary-fixed transition-colors" onclick="viewProductDetails(this)" title="Ver Detalle Producto">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Item 3 -->
+<tr class="hover:bg-primary-fixed/20 transition-colors" data-categoria="Papelería" data-desc="Papel ultra blanco multiuso ideal para fotocopiado e impresión láser continua" data-nombre="Resma Papel Carta 75g (500 hojas)" data-precio="48000" data-proveedor="Ivon" data-sku="PRD-103" data-stock="15">
+<td class="py-3.5 px-space-lg font-mono font-bold text-on-surface">PRD-103</td>
+<td class="py-3.5 px-space-lg font-body-base text-body-base text-on-surface">Resma Papel Carta 75g (500 hojas)</td>
+<td class="py-3.5 px-space-lg font-body-sm text-body-sm text-on-surface-variant">Papelería</td>
+<td class="py-3.5 px-space-lg font-body-base-semibold text-body-base-semibold text-right text-on-surface">$ 48.000 COP</td>
+<td class="py-3.5 px-space-lg font-mono text-right text-error font-semibold">15</td>
+<td class="py-3.5 px-space-lg">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-secondary-fixed text-on-secondary-fixed-variant">Ivon</span>
+</td>
+<td class="py-3.5 px-space-lg text-center">
+<button class="p-1.5 rounded-lg text-primary hover:bg-primary-fixed transition-colors" onclick="viewProductDetails(this)" title="Ver Detalle Producto">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Item 4 -->
+<tr class="hover:bg-primary-fixed/20 transition-colors bg-surface-container-low/40" data-categoria="Papelería" data-desc="Cinta adhesiva acrílica de alta adherencia para sellado de cajas de cartón corrugado" data-nombre="Cinta Embalaje Transparente 48mm x 100m" data-precio="35000" data-proveedor="Regol" data-sku="PRD-104" data-stock="20">
+<td class="py-3.5 px-space-lg font-mono font-bold text-on-surface">PRD-104</td>
+<td class="py-3.5 px-space-lg font-body-base text-body-base text-on-surface">Cinta Embalaje Transparente 48mm x 100m</td>
+<td class="py-3.5 px-space-lg font-body-sm text-body-sm text-on-surface-variant">Papelería</td>
+<td class="py-3.5 px-space-lg font-body-base-semibold text-body-base-semibold text-right text-on-surface">$ 35.000 COP</td>
+<td class="py-3.5 px-space-lg font-mono text-right text-error font-semibold">20</td>
+<td class="py-3.5 px-space-lg">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-tertiary-fixed text-on-tertiary-fixed-variant">Regol</span>
+</td>
+<td class="py-3.5 px-space-lg text-center">
+<button class="p-1.5 rounded-lg text-primary hover:bg-primary-fixed transition-colors" onclick="viewProductDetails(this)" title="Ver Detalle Producto">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Item 5 -->
+<tr class="hover:bg-primary-fixed/20 transition-colors" data-categoria="Periféricos" data-desc="Base ergonómica con 6 ángulos de inclinación regulables y almohadillas antideslizantes" data-nombre="Soporte Ajustable de Aluminio para Laptop" data-precio="28000" data-proveedor="Tech" data-sku="PRD-105" data-stock="30">
+<td class="py-3.5 px-space-lg font-mono font-bold text-on-surface">PRD-105</td>
+<td class="py-3.5 px-space-lg font-body-base text-body-base text-on-surface">Soporte Ajustable de Aluminio para Laptop</td>
+<td class="py-3.5 px-space-lg font-body-sm text-body-sm text-on-surface-variant">Periféricos</td>
+<td class="py-3.5 px-space-lg font-body-base-semibold text-body-base-semibold text-right text-on-surface">$ 28.000 COP</td>
+<td class="py-3.5 px-space-lg font-mono text-right text-on-surface font-semibold">30</td>
+<td class="py-3.5 px-space-lg">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-primary-fixed text-on-primary-fixed-variant">Tech</span>
+</td>
+<td class="py-3.5 px-space-lg text-center">
+<button class="p-1.5 rounded-lg text-primary hover:bg-primary-fixed transition-colors" onclick="viewProductDetails(this)" title="Ver Detalle Producto">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Item 6 -->
+<tr class="hover:bg-primary-fixed/20 transition-colors bg-surface-container-low/40" data-categoria="Periféricos" data-desc="Hub concentrador USB tipo C con salidas HDMI 4K, USB 3.0 dual y lector SD/TF" data-nombre="Adaptador USB-C Multipuerto 7 en 1" data-precio="18000" data-proveedor="Regol" data-sku="PRD-106" data-stock="10">
+<td class="py-3.5 px-space-lg font-mono font-bold text-on-surface">PRD-106</td>
+<td class="py-3.5 px-space-lg font-body-base text-body-base text-on-surface">Adaptador USB-C Multipuerto 7 en 1</td>
+<td class="py-3.5 px-space-lg font-body-sm text-body-sm text-on-surface-variant">Periféricos</td>
+<td class="py-3.5 px-space-lg font-body-base-semibold text-body-base-semibold text-right text-on-surface">$ 18.000 COP</td>
+<td class="py-3.5 px-space-lg font-mono text-right text-error font-semibold">10</td>
+<td class="py-3.5 px-space-lg">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-tertiary-fixed text-on-tertiary-fixed-variant">Regol</span>
+</td>
+<td class="py-3.5 px-space-lg text-center">
+<button class="p-1.5 rounded-lg text-primary hover:bg-primary-fixed transition-colors" onclick="viewProductDetails(this)" title="Ver Detalle Producto">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- TAB 3: HISTORIAL DE COMPRAS (ÓRDENES OC)     -->
+<!-- ========================================== -->
+<div class="flex-col gap-space-lg hidden" id="view-ordenes">
+<!-- MÉTRICAS RESUMEN COMPRAS -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm border border-outline-variant/30 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant font-bold uppercase">Total Compras del Mes</span>
+<span class="font-headline-1 text-headline-1 text-primary font-bold">$ 13.805.000</span>
+<span class="font-caption text-caption text-on-surface-variant">Facturación consolidada COP</span>
+</div>
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[28px]">payments</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm border border-outline-variant/30 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant font-bold uppercase">Órdenes Completadas</span>
+<span class="font-headline-1 text-headline-1 text-emerald-800 font-bold">3</span>
+<span class="font-caption text-caption text-emerald-800 font-semibold">100% recibidas en bodega</span>
+</div>
+<div class="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-800">
+<span class="material-symbols-outlined text-[28px]">task_alt</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm border border-outline-variant/30 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant font-bold uppercase">Facturas Pendientes</span>
+<span class="font-headline-1 text-headline-1 text-secondary font-bold">1</span>
+<span class="font-caption text-caption text-secondary font-semibold">En tránsito hacia entrega</span>
+</div>
+<div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed-variant">
+<span class="material-symbols-outlined text-[28px]">pending_actions</span>
+</div>
+</div>
+</div>
+<!-- TOOLBAR Y FILTROS ÓRDENES -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col md:flex-row items-stretch md:items-center justify-between gap-space-md">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface rounded-lg font-body-base text-body-base text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="search-ordenes" onkeyup="filterOrdenesTable()" placeholder="Buscar por N° OC o proveedor..." type="text">
+</div>
+<div class="flex flex-wrap items-center gap-space-md">
+<div class="flex items-center gap-2">
+<label class="font-caption text-caption text-on-surface-variant font-bold uppercase" for="filter-orden-estado">Estado:</label>
+<select class="px-space-md py-2 bg-surface rounded-lg font-body-sm-medium text-body-sm-medium text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="filter-orden-estado" onchange="filterOrdenesTable()">
+<option value="todos">Todos</option>
+<option value="Completado">Completado</option>
+<option value="En Tránsito">En Tránsito</option>
+<option value="Pendiente">Pendiente</option>
+</select>
+</div>
+<button class="px-space-md py-2 bg-surface-container hover:bg-surface-container-high rounded-lg text-on-surface-variant font-body-sm-medium text-body-sm-medium flex items-center gap-1.5 transition-colors" onclick="showToast('Exportando reporte en PDF...', 'picture_as_pdf')">
+<span class="material-symbols-outlined text-[18px]">download</span>
+        Exportar Reporte
+      </button>
+</div>
+</div>
+<!-- BANNER ENCABEZADO ÓRDENES -->
+<div class="bg-primary-container text-on-primary px-space-lg py-3 rounded-t-xl font-headline-3 text-headline-3 tracking-wide flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+<span>HISTORIAL DE ÓRDENES DE COMPRA (OC)</span>
+</div>
+<span class="font-caption text-caption text-on-primary-container uppercase font-semibold">Moneda Oficial COP ($)</span>
+</div>
+<!-- TABLA DE ÓRDENES -->
+<div class="bg-surface-container-lowest rounded-b-xl shadow-sm overflow-hidden -mt-space-lg">
+<div class="overflow-x-auto">
+<table class="w-full text-left" id="table-ordenes">
+<thead>
+<tr class="bg-surface-container text-on-surface-variant">
+<th class="py-3 px-space-lg font-caption text-caption uppercase font-bold tracking-wider">N° ORDEN</th>
+<th class="py-3 px-space-lg font-caption text-caption uppercase font-bold tracking-wider">FECHA</th>
+<th class="py-3 px-space-lg font-caption text-caption uppercase font-bold tracking-wider">PROVEEDOR</th>
+<th class="py-3 px-space-lg font-caption text-caption uppercase font-bold tracking-wider">PRODUCTOS / ITEMS</th>
+<th class="py-3 px-space-lg font-caption text-caption uppercase font-bold tracking-wider text-right">TOTAL COMPRA (COP)</th>
+<th class="py-3 px-space-lg font-caption text-caption uppercase font-bold tracking-wider">MÉTODO DE PAGO</th>
+<th class="py-3 px-space-lg font-caption text-caption uppercase font-bold tracking-wider text-center">ESTADO</th>
+<th class="py-3 px-space-lg font-caption text-caption uppercase font-bold tracking-wider text-center">ACCIONES</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container" id="ordenes-tbody">
+<tr class="hover:bg-primary-fixed/20 transition-colors" data-estado="Completado" data-oc="OC-2024-0089" data-prov="Importaciones Vladi S.A.S">
+<td class="py-3.5 px-space-lg font-mono font-bold text-primary">OC-2024-0089</td>
+<td class="py-3.5 px-space-lg font-body-sm text-body-sm text-on-surface-variant font-mono">24/10/2024</td>
+<td class="py-3.5 px-space-lg font-body-base-semibold text-body-base-semibold text-on-surface">Importaciones Vladi S.A.S</td>
+<td class="py-3.5 px-space-lg font-body-sm text-body-sm text-on-surface-variant">12 unidades (Cables, Hubs)</td>
+<td class="py-3.5 px-space-lg font-mono font-bold text-right text-on-surface">$ 1.840.000 COP</td>
+<td class="py-3.5 px-space-lg font-body-sm text-body-sm text-on-surface-variant">Transferencia Bancolombia</td>
+<td class="py-3.5 px-space-lg text-center">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">Completado</span>
+</td>
+<td class="py-3.5 px-space-lg text-center">
+<button class="p-1.5 rounded-lg text-primary hover:bg-primary-fixed transition-colors" onclick="showToast('Descargando comprobante OC-2024-0089', 'receipt')" title="Ver comprobante">
+<span class="material-symbols-outlined text-[20px]">receipt</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-primary-fixed/20 transition-colors bg-surface-container-low/40" data-estado="Completado" data-oc="OC-2024-0088" data-prov="Importaciones Chang-gal S.A.S">
+<td class="py-3.5 px-space-lg font-mono font-bold text-primary">OC-2024-0088</td>
+<td class="py-3.5 px-space-lg font-body-sm text-body-sm text-on-surface-variant font-mono">21/10/2024</td>
+<td class="py-3.5 px-space-lg font-body-base-semibold text-body-base-semibold text-on-surface">Importaciones Chang-gal S.A.S</td>
+<td class="py-3.5 px-space-lg font-body-sm text-body-sm text-on-surface-variant">45 unidades (Cuadernos cosidos)</td>
+<td class="py-3.5 px-space-lg font-mono font-bold text-right text-on-surface">$ 9.900.000 COP</td>
+<td class="py-3.5 px-space-lg font-body-sm text-body-sm text-on-surface-variant">Crédito 30 días</td>
+<td class="py-3.5 px-space-lg text-center">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">Completado</span>
+</td>
+<td class="py-3.5 px-space-lg text-center">
+<button class="p-1.5 rounded-lg text-primary hover:bg-primary-fixed transition-colors" onclick="showToast('Descargando comprobante OC-2024-0088', 'receipt')" title="Ver comprobante">
+<span class="material-symbols-outlined text-[20px]">receipt</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-primary-fixed/20 transition-colors" data-estado="En Tránsito" data-oc="OC-2024-0087" data-prov="Tech &amp; Solutions Ltda">
+<td class="py-3.5 px-space-lg font-mono font-bold text-primary">OC-2024-0087</td>
+<td class="py-3.5 px-space-lg font-body-sm text-body-sm text-on-surface-variant font-mono">15/10/2024</td>
+<td class="py-3.5 px-space-lg font-body-base-semibold text-body-base-semibold text-on-surface">Tech &amp; Solutions Ltda</td>
+<td class="py-3.5 px-space-lg font-body-sm text-body-sm text-on-surface-variant">8 unidades (Soportes aluminio)</td>
+<td class="py-3.5 px-space-lg font-mono font-bold text-right text-on-surface">$ 625.000 COP</td>
+<td class="py-3.5 px-space-lg font-body-sm text-body-sm text-on-surface-variant">PSE En Línea</td>
+<td class="py-3.5 px-space-lg text-center">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-secondary-fixed text-on-secondary-fixed-variant">En Tránsito</span>
+</td>
+<td class="py-3.5 px-space-lg text-center">
+<button class="p-1.5 rounded-lg text-primary hover:bg-primary-fixed transition-colors" onclick="showToast('Descargando comprobante OC-2024-0087', 'receipt')" title="Ver comprobante">
+<span class="material-symbols-outlined text-[20px]">receipt</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-primary-fixed/20 transition-colors bg-surface-container-low/40" data-estado="Completado" data-oc="OC-2024-0086" data-prov="Scribe Papelería S.A.S">
+<td class="py-3.5 px-space-lg font-mono font-bold text-primary">OC-2024-0086</td>
+<td class="py-3.5 px-space-lg font-body-sm text-body-sm text-on-surface-variant font-mono">08/10/2024</td>
+<td class="py-3.5 px-space-lg font-body-base-semibold text-body-base-semibold text-on-surface">Scribe Papelería S.A.S</td>
+<td class="py-3.5 px-space-lg font-body-sm text-body-sm text-on-surface-variant">30 unidades (Resmas de papel)</td>
+<td class="py-3.5 px-space-lg font-mono font-bold text-right text-on-surface">$ 1.440.000 COP</td>
+<td class="py-3.5 px-space-lg font-body-sm text-body-sm text-on-surface-variant">Transferencia Davivienda</td>
+<td class="py-3.5 px-space-lg text-center">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">Completado</span>
+</td>
+<td class="py-3.5 px-space-lg text-center">
+<button class="p-1.5 rounded-lg text-primary hover:bg-primary-fixed transition-colors" onclick="showToast('Descargando comprobante OC-2024-0086', 'receipt')" title="Ver comprobante">
+<span class="material-symbols-outlined text-[20px]">receipt</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- TAB 4: HISTÓRICO Y VARIACIÓN DE PRECIOS      -->
+<!-- ========================================== -->
+<div class="flex-col gap-space-lg flex" id="view-variacion">
+<!-- 3 TARJETAS RESUMEN LLAMATIVAS -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm border border-outline-variant/30 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant font-bold uppercase">Precios que Suben</span>
+<span class="font-headline-1 text-headline-1 text-error font-bold">+8.2%</span>
+<span class="font-caption text-caption text-error font-semibold">3 productos con alza detectada</span>
+</div>
+<div class="w-12 h-12 rounded-full bg-rose-100 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[28px]">trending_up</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm border border-outline-variant/30 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant font-bold uppercase">Precios que Bajan</span>
+<span class="font-headline-1 text-headline-1 text-emerald-800 font-bold">-5.4%</span>
+<span class="font-caption text-caption text-emerald-800 font-semibold">4 productos con ahorro de costo</span>
+</div>
+<div class="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-800">
+<span class="material-symbols-outlined text-[28px]">trending_down</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm border border-outline-variant/30 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant font-bold uppercase">Precios Estables</span>
+<span class="font-headline-1 text-headline-1 text-secondary font-bold">0.0%</span>
+<span class="font-caption text-caption text-secondary font-semibold">8 productos sin variaciones</span>
+</div>
+<div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed-variant">
+<span class="material-symbols-outlined text-[28px]">horizontal_rule</span>
+</div>
+</div>
+</div>
+<!-- BANNER ENCABEZADO VARIACIÓN -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col md:flex-row items-stretch md:items-center justify-between gap-space-md">
+  <div class="relative flex-1">
+    <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span>
+    <input id="search-variacion" type="text" placeholder="Buscar producto por nombre, SKU o proveedor..." onkeyup="filterVariacionTable()" class="w-full pl-10 pr-4 py-2 bg-surface rounded-lg font-body-base text-body-base text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm">
+  </div>
+  <div class="flex flex-wrap items-center gap-space-md">
+    <div class="flex items-center gap-2">
+      <label for="filter-variacion-tendencia" class="font-caption text-caption text-on-surface-variant font-bold uppercase">Tendencia:</label>
+      <select id="filter-variacion-tendencia" onchange="filterVariacionTable()" class="px-space-md py-2 bg-surface rounded-lg font-body-sm-medium text-body-sm-medium text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm">
+        <option value="todos">Todos</option>
+        <option value="Sube">Sube</option>
+        <option value="Baja">Baja</option>
+        <option value="Mantiene">Mantiene</option>
+      </select>
+    </div>
+    <div class="flex items-center gap-2">
+      <label for="filter-variacion-categoria" class="font-caption text-caption text-on-surface-variant font-bold uppercase">Categoría:</label>
+      <select id="filter-variacion-categoria" onchange="filterVariacionTable()" class="px-space-md py-2 bg-surface rounded-lg font-body-sm-medium text-body-sm-medium text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm">
+        <option value="todas">Todas</option>
+        <option value="Papelería">Papelería</option>
+        <option value="Electrónicos">Electrónicos</option>
+        <option value="Periféricos">Periféricos</option>
+      </select>
+    </div>
+  </div>
+</div><div class="bg-primary-container text-on-primary px-space-lg py-3 rounded-t-xl font-headline-3 text-headline-3 tracking-wide flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">monitoring</span>
+<span>TABLA DE AUDITORÍA Y VARIACIÓN DE PRECIOS DE INSUMOS</span>
+</div>
+<span class="font-caption text-caption text-on-primary-container uppercase font-semibold">Histórico Comparativo COP</span>
+</div>
+<!-- TABLA DE VARIACIÓN -->
+<div class="bg-surface-container-lowest rounded-b-xl shadow-sm overflow-hidden -mt-space-lg">
+<div class="overflow-x-auto">
+<table class="w-full text-left" id="table-variacion">
+  <thead>
+    <tr class="bg-surface-container text-on-surface-variant">
+      <th class="py-3 px-space-lg font-caption text-caption uppercase font-bold tracking-wider">SKU</th>
+      <th class="py-3 px-space-lg font-caption text-caption uppercase font-bold tracking-wider">PRODUCTO</th>
+      <th class="py-3 px-space-lg font-caption text-caption uppercase font-bold tracking-wider">PROVEEDOR</th>
+      <th class="py-3 px-space-lg font-caption text-caption uppercase font-bold tracking-wider text-right">PRECIO ANTERIOR</th>
+      <th class="py-3 px-space-lg font-caption text-caption uppercase font-bold tracking-wider text-right">PRECIO ACTUAL</th>
+      <th class="py-3 px-space-lg font-caption text-caption uppercase font-bold tracking-wider text-center">VARIACIÓN</th>
+      <th class="py-3 px-space-lg font-caption text-caption uppercase font-bold tracking-wider text-center">FECHA ÚLTIMO CAMBIO</th>
+      <th class="py-3 px-space-lg font-caption text-caption uppercase font-bold tracking-wider text-center">ESTADO TENDENCIA</th>
+      <th class="py-3 px-space-lg font-caption text-caption uppercase font-bold tracking-wider text-center">HISTORIAL</th>
+    </tr>
+  </thead>
+  <tbody class="divide-y divide-surface-container" id="variacion-tbody">
+    <!-- Fila 1 -->
+    <tr class="hover:bg-primary-fixed/20 transition-colors cursor-pointer variacion-row" data-sku="PRD-001" data-nombre="Cuaderno Cosido 100 Hoj." data-prov="Ivon" data-categoria="Papelería" data-tendencia="Sube" onclick="toggleVariacionHistory('hist-PRD-001', this)">
+      <td class="py-3.5 px-space-lg font-mono font-bold text-on-surface">PRD-001</td>
+      <td class="py-3.5 px-space-lg font-body-base-semibold text-body-base-semibold text-on-surface">Cuaderno Cosido 100 Hoj.</td>
+      <td class="py-3.5 px-space-lg font-body-sm text-body-sm text-on-surface-variant">Ivon</td>
+      <td class="py-3.5 px-space-lg font-mono text-right text-on-surface-variant">$ 205.000 COP</td>
+      <td class="py-3.5 px-space-lg font-mono font-bold text-right text-on-surface">$ 220.000 COP</td>
+      <td class="py-3.5 px-space-lg font-mono font-bold text-center text-error">+7.3%</td>
+      <td class="py-3.5 px-space-lg font-body-sm text-body-sm text-center text-on-surface-variant font-mono">18/10/2024</td>
+      <td class="py-3.5 px-space-lg text-center">
+        <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800">
+          <span class="material-symbols-outlined text-[14px]">north_east</span>
+          Sube
+        </span>
+      </td>
+      <td class="py-3.5 px-space-lg text-center">
+        <button type="button" class="p-1.5 rounded-lg text-primary hover:bg-primary-fixed transition-transform duration-200 chevron-btn" title="Ver historial de ajustes">
+          <span class="material-symbols-outlined text-[20px]">expand_more</span>
+        </button>
+      </td>
+    </tr>
+    <!-- Sub-row Historial 1 -->
+    <tr id="hist-PRD-001" class="hidden bg-surface-container-low/60 border-t border-b border-surface-container">
+      <td colspan="9" class="p-space-md">
+        <div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm border border-outline-variant/30 flex flex-col gap-2">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-[20px]">history</span>
+              <span class="font-body-base-semibold text-body-base-semibold text-on-surface">Historial de Ajustes de Precios — PRD-001 (Cuaderno Cosido 100 Hoj.)</span>
+            </div>
+            <span class="font-caption text-caption text-on-surface-variant">3 registros auditados</span>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs">
+              <thead>
+                <tr class="bg-surface-container font-caption text-caption uppercase text-on-surface-variant font-bold">
+                  <th class="py-2 px-3">Fecha Ajuste</th>
+                  <th class="py-2 px-3">Proveedor</th>
+                  <th class="py-2 px-3 text-right">Precio Anterior</th>
+                  <th class="py-2 px-3 text-right">Precio Nuevo</th>
+                  <th class="py-2 px-3 text-center">Variación</th>
+                  <th class="py-2 px-3">Motivo / Justificación</th>
+                  <th class="py-2 px-3">Registrado Por</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-surface-container font-body-sm text-body-sm text-on-surface">
+                <tr>
+                  <td class="py-2 px-3 font-mono">18/10/2024</td>
+                  <td class="py-2 px-3 font-medium">Ivon</td>
+                  <td class="py-2 px-3 font-mono text-right text-on-surface-variant">$ 205.000 COP</td>
+                  <td class="py-2 px-3 font-mono font-bold text-right text-on-surface">$ 220.000 COP</td>
+                  <td class="py-2 px-3 font-mono font-bold text-center text-error">+7.3%</td>
+                  <td class="py-2 px-3 text-on-surface-variant">Aumento en costo de pasta dura y papel importado</td>
+                  <td class="py-2 px-3 font-medium text-primary">Carlos Morales</td>
+                </tr>
+                <tr>
+                  <td class="py-2 px-3 font-mono">05/08/2024</td>
+                  <td class="py-2 px-3 font-medium">Ivon</td>
+                  <td class="py-2 px-3 font-mono text-right text-on-surface-variant">$ 195.000 COP</td>
+                  <td class="py-2 px-3 font-mono font-bold text-right text-on-surface">$ 205.000 COP</td>
+                  <td class="py-2 px-3 font-mono font-bold text-center text-error">+5.1%</td>
+                  <td class="py-2 px-3 text-on-surface-variant">Ajuste semestral de catálogo mayorista</td>
+                  <td class="py-2 px-3 font-medium text-primary">Carlos Morales</td>
+                </tr>
+                <tr>
+                  <td class="py-2 px-3 font-mono">12/03/2024</td>
+                  <td class="py-2 px-3 font-medium">Ivon</td>
+                  <td class="py-2 px-3 font-mono text-right text-on-surface-variant">$ 190.000 COP</td>
+                  <td class="py-2 px-3 font-mono font-bold text-right text-on-surface">$ 195.000 COP</td>
+                  <td class="py-2 px-3 font-mono font-bold text-center text-error">+2.6%</td>
+                  <td class="py-2 px-3 text-on-surface-variant">Actualización por aranceles de transporte</td>
+                  <td class="py-2 px-3 font-medium text-primary">Sistema Stock.net</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- Fila 2 -->
+    <tr class="hover:bg-primary-fixed/20 transition-colors bg-surface-container-low/40 cursor-pointer variacion-row" data-sku="PRD-102" data-nombre="Teclado Mecánico RGB Switch" data-prov="Del Río" data-categoria="Electrónicos" data-tendencia="Baja" onclick="toggleVariacionHistory('hist-PRD-102', this)">
+      <td class="py-3.5 px-space-lg font-mono font-bold text-on-surface">PRD-102</td>
+      <td class="py-3.5 px-space-lg font-body-base-semibold text-body-base-semibold text-on-surface">Teclado Mecánico RGB Switch</td>
+      <td class="py-3.5 px-space-lg font-body-sm text-body-sm text-on-surface-variant">Del Río</td>
+      <td class="py-3.5 px-space-lg font-mono text-right text-on-surface-variant">$ 14.000 COP</td>
+      <td class="py-3.5 px-space-lg font-mono font-bold text-right text-on-surface">$ 12.500 COP</td>
+      <td class="py-3.5 px-space-lg font-mono font-bold text-center text-emerald-800">-10.7%</td>
+      <td class="py-3.5 px-space-lg font-body-sm text-body-sm text-center text-on-surface-variant font-mono">14/10/2024</td>
+      <td class="py-3.5 px-space-lg text-center">
+        <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">
+          <span class="material-symbols-outlined text-[14px]">south_east</span>
+          Baja
+        </span>
+      </td>
+      <td class="py-3.5 px-space-lg text-center">
+        <button type="button" class="p-1.5 rounded-lg text-primary hover:bg-primary-fixed transition-transform duration-200 chevron-btn" title="Ver historial de ajustes">
+          <span class="material-symbols-outlined text-[20px]">expand_more</span>
+        </button>
+      </td>
+    </tr>
+    <!-- Sub-row Historial 2 -->
+    <tr id="hist-PRD-102" class="hidden bg-surface-container-low/60 border-t border-b border-surface-container">
+      <td colspan="9" class="p-space-md">
+        <div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm border border-outline-variant/30 flex flex-col gap-2">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-[20px]">history</span>
+              <span class="font-body-base-semibold text-body-base-semibold text-on-surface">Historial de Ajustes de Precios — PRD-102 (Teclado Mecánico RGB Switch)</span>
+            </div>
+            <span class="font-caption text-caption text-on-surface-variant">2 registros auditados</span>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs">
+              <thead>
+                <tr class="bg-surface-container font-caption text-caption uppercase text-on-surface-variant font-bold">
+                  <th class="py-2 px-3">Fecha Ajuste</th>
+                  <th class="py-2 px-3">Proveedor</th>
+                  <th class="py-2 px-3 text-right">Precio Anterior</th>
+                  <th class="py-2 px-3 text-right">Precio Nuevo</th>
+                  <th class="py-2 px-3 text-center">Variación</th>
+                  <th class="py-2 px-3">Motivo / Justificación</th>
+                  <th class="py-2 px-3">Registrado Por</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-surface-container font-body-sm text-body-sm text-on-surface">
+                <tr>
+                  <td class="py-2 px-3 font-mono">14/10/2024</td>
+                  <td class="py-2 px-3 font-medium">Del Río</td>
+                  <td class="py-2 px-3 font-mono text-right text-on-surface-variant">$ 14.000 COP</td>
+                  <td class="py-2 px-3 font-mono font-bold text-right text-on-surface">$ 12.500 COP</td>
+                  <td class="py-2 px-3 font-mono font-bold text-center text-emerald-800">-10.7%</td>
+                  <td class="py-2 px-3 text-on-surface-variant">Descuento por compra por lote &gt; 50 uds</td>
+                  <td class="py-2 px-3 font-medium text-primary">Carlos Morales</td>
+                </tr>
+                <tr>
+                  <td class="py-2 px-3 font-mono">01/06/2024</td>
+                  <td class="py-2 px-3 font-medium">Del Río</td>
+                  <td class="py-2 px-3 font-mono text-right text-on-surface-variant">$ 15.500 COP</td>
+                  <td class="py-2 px-3 font-mono font-bold text-right text-on-surface">$ 14.000 COP</td>
+                  <td class="py-2 px-3 font-mono font-bold text-center text-emerald-800">-9.7%</td>
+                  <td class="py-2 px-3 text-on-surface-variant">Renegociación de convenio corporativo</td>
+                  <td class="py-2 px-3 font-medium text-primary">Carlos Morales</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- Fila 3 -->
+    <tr class="hover:bg-primary-fixed/20 transition-colors cursor-pointer variacion-row" data-sku="PRD-103" data-nombre="Resma Papel Carta 75g" data-prov="Ivon" data-categoria="Papelería" data-tendencia="Mantiene" onclick="toggleVariacionHistory('hist-PRD-103', this)">
+      <td class="py-3.5 px-space-lg font-mono font-bold text-on-surface">PRD-103</td>
+      <td class="py-3.5 px-space-lg font-body-base-semibold text-body-base-semibold text-on-surface">Resma Papel Carta 75g</td>
+      <td class="py-3.5 px-space-lg font-body-sm text-body-sm text-on-surface-variant">Ivon</td>
+      <td class="py-3.5 px-space-lg font-mono text-right text-on-surface-variant">$ 48.000 COP</td>
+      <td class="py-3.5 px-space-lg font-mono font-bold text-right text-on-surface">$ 48.000 COP</td>
+      <td class="py-3.5 px-space-lg font-mono font-bold text-center text-on-surface-variant">0.0%</td>
+      <td class="py-3.5 px-space-lg font-body-sm text-body-sm text-center text-on-surface-variant font-mono">01/10/2024</td>
+      <td class="py-3.5 px-space-lg text-center">
+        <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-secondary-fixed text-on-secondary-fixed-variant">
+          <span class="material-symbols-outlined text-[14px]">drag_handle</span>
+          Mantiene
+        </span>
+      </td>
+      <td class="py-3.5 px-space-lg text-center">
+        <button type="button" class="p-1.5 rounded-lg text-primary hover:bg-primary-fixed transition-transform duration-200 chevron-btn" title="Ver historial de ajustes">
+          <span class="material-symbols-outlined text-[20px]">expand_more</span>
+        </button>
+      </td>
+    </tr>
+    <!-- Sub-row Historial 3 -->
+    <tr id="hist-PRD-103" class="hidden bg-surface-container-low/60 border-t border-b border-surface-container">
+      <td colspan="9" class="p-space-md">
+        <div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm border border-outline-variant/30 flex flex-col gap-2">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-[20px]">history</span>
+              <span class="font-body-base-semibold text-body-base-semibold text-on-surface">Historial de Ajustes de Precios — PRD-103 (Resma Papel Carta 75g)</span>
+            </div>
+            <span class="font-caption text-caption text-on-surface-variant">2 registros auditados</span>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs">
+              <thead>
+                <tr class="bg-surface-container font-caption text-caption uppercase text-on-surface-variant font-bold">
+                  <th class="py-2 px-3">Fecha Ajuste</th>
+                  <th class="py-2 px-3">Proveedor</th>
+                  <th class="py-2 px-3 text-right">Precio Anterior</th>
+                  <th class="py-2 px-3 text-right">Precio Nuevo</th>
+                  <th class="py-2 px-3 text-center">Variación</th>
+                  <th class="py-2 px-3">Motivo / Justificación</th>
+                  <th class="py-2 px-3">Registrado Por</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-surface-container font-body-sm text-body-sm text-on-surface">
+                <tr>
+                  <td class="py-2 px-3 font-mono">01/10/2024</td>
+                  <td class="py-2 px-3 font-medium">Ivon</td>
+                  <td class="py-2 px-3 font-mono text-right text-on-surface-variant">$ 48.000 COP</td>
+                  <td class="py-2 px-3 font-mono font-bold text-right text-on-surface">$ 48.000 COP</td>
+                  <td class="py-2 px-3 font-mono font-bold text-center text-on-surface-variant">0.0%</td>
+                  <td class="py-2 px-3 text-on-surface-variant">Ratificación de contrato trimestral con precio fijo</td>
+                  <td class="py-2 px-3 font-medium text-primary">Carlos Morales</td>
+                </tr>
+                <tr>
+                  <td class="py-2 px-3 font-mono">15/05/2024</td>
+                  <td class="py-2 px-3 font-medium">Ivon</td>
+                  <td class="py-2 px-3 font-mono text-right text-on-surface-variant">$ 45.000 COP</td>
+                  <td class="py-2 px-3 font-mono font-bold text-right text-on-surface">$ 48.000 COP</td>
+                  <td class="py-2 px-3 font-mono font-bold text-center text-error">+6.6%</td>
+                  <td class="py-2 px-3 text-on-surface-variant">Incremento índice celulosa papelera</td>
+                  <td class="py-2 px-3 font-medium text-primary">Sistema Stock.net</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- Fila 4 -->
+    <tr class="hover:bg-primary-fixed/20 transition-colors bg-surface-container-low/40 cursor-pointer variacion-row" data-sku="PRD-106" data-nombre="Adaptador USB-C Multipuerto" data-prov="Regol" data-categoria="Periféricos" data-tendencia="Baja" onclick="toggleVariacionHistory('hist-PRD-106', this)">
+      <td class="py-3.5 px-space-lg font-mono font-bold text-on-surface">PRD-106</td>
+      <td class="py-3.5 px-space-lg font-body-base-semibold text-body-base-semibold text-on-surface">Adaptador USB-C Multipuerto</td>
+      <td class="py-3.5 px-space-lg font-body-sm text-body-sm text-on-surface-variant">Regol</td>
+      <td class="py-3.5 px-space-lg font-mono text-right text-on-surface-variant">$ 19.500 COP</td>
+      <td class="py-3.5 px-space-lg font-mono font-bold text-right text-on-surface">$ 18.000 COP</td>
+      <td class="py-3.5 px-space-lg font-mono font-bold text-center text-emerald-800">-7.6%</td>
+      <td class="py-3.5 px-space-lg font-body-sm text-body-sm text-center text-on-surface-variant font-mono">22/10/2024</td>
+      <td class="py-3.5 px-space-lg text-center">
+        <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">
+          <span class="material-symbols-outlined text-[14px]">south_east</span>
+          Baja
+        </span>
+      </td>
+      <td class="py-3.5 px-space-lg text-center">
+        <button type="button" class="p-1.5 rounded-lg text-primary hover:bg-primary-fixed transition-transform duration-200 chevron-btn" title="Ver historial de ajustes">
+          <span class="material-symbols-outlined text-[20px]">expand_more</span>
+        </button>
+      </td>
+    </tr>
+    <!-- Sub-row Historial 4 -->
+    <tr id="hist-PRD-106" class="hidden bg-surface-container-low/60 border-t border-b border-surface-container">
+      <td colspan="9" class="p-space-md">
+        <div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm border border-outline-variant/30 flex flex-col gap-2">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-[20px]">history</span>
+              <span class="font-body-base-semibold text-body-base-semibold text-on-surface">Historial de Ajustes de Precios — PRD-106 (Adaptador USB-C Multipuerto)</span>
+            </div>
+            <span class="font-caption text-caption text-on-surface-variant">2 registros auditados</span>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs">
+              <thead>
+                <tr class="bg-surface-container font-caption text-caption uppercase text-on-surface-variant font-bold">
+                  <th class="py-2 px-3">Fecha Ajuste</th>
+                  <th class="py-2 px-3">Proveedor</th>
+                  <th class="py-2 px-3 text-right">Precio Anterior</th>
+                  <th class="py-2 px-3 text-right">Precio Nuevo</th>
+                  <th class="py-2 px-3 text-center">Variación</th>
+                  <th class="py-2 px-3">Motivo / Justificación</th>
+                  <th class="py-2 px-3">Registrado Por</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-surface-container font-body-sm text-body-sm text-on-surface">
+                <tr>
+                  <td class="py-2 px-3 font-mono">22/10/2024</td>
+                  <td class="py-2 px-3 font-medium">Regol</td>
+                  <td class="py-2 px-3 font-mono text-right text-on-surface-variant">$ 19.500 COP</td>
+                  <td class="py-2 px-3 font-mono font-bold text-right text-on-surface">$ 18.000 COP</td>
+                  <td class="py-2 px-3 font-mono font-bold text-center text-emerald-800">-7.6%</td>
+                  <td class="py-2 px-3 text-on-surface-variant">Campaña promocional de fin de temporada</td>
+                  <td class="py-2 px-3 font-medium text-primary">Carlos Morales</td>
+                </tr>
+                <tr>
+                  <td class="py-2 px-3 font-mono">10/07/2024</td>
+                  <td class="py-2 px-3 font-medium">Regol</td>
+                  <td class="py-2 px-3 font-mono text-right text-on-surface-variant">$ 21.000 COP</td>
+                  <td class="py-2 px-3 font-mono font-bold text-right text-on-surface">$ 19.500 COP</td>
+                  <td class="py-2 px-3 font-mono font-bold text-center text-emerald-800">-7.1%</td>
+                  <td class="py-2 px-3 text-on-surface-variant">Reducción arancelaria de importación tecnológica</td>
+                  <td class="py-2 px-3 font-medium text-primary">Carlos Morales</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- Fila 5 -->
+    <tr class="hover:bg-primary-fixed/20 transition-colors cursor-pointer variacion-row" data-sku="PRD-105" data-nombre="Soporte Ajustable Aluminio" data-prov="Tech" data-categoria="Periféricos" data-tendencia="Sube" onclick="toggleVariacionHistory('hist-PRD-105', this)">
+      <td class="py-3.5 px-space-lg font-mono font-bold text-on-surface">PRD-105</td>
+      <td class="py-3.5 px-space-lg font-body-base-semibold text-body-base-semibold text-on-surface">Soporte Ajustable Aluminio</td>
+      <td class="py-3.5 px-space-lg font-body-sm text-body-sm text-on-surface-variant">Tech</td>
+      <td class="py-3.5 px-space-lg font-mono text-right text-on-surface-variant">$ 26.000 COP</td>
+      <td class="py-3.5 px-space-lg font-mono font-bold text-right text-on-surface">$ 28.000 COP</td>
+      <td class="py-3.5 px-space-lg font-mono font-bold text-center text-error">+7.7%</td>
+      <td class="py-3.5 px-space-lg font-body-sm text-body-sm text-center text-on-surface-variant font-mono">25/10/2024</td>
+      <td class="py-3.5 px-space-lg text-center">
+        <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800">
+          <span class="material-symbols-outlined text-[14px]">north_east</span>
+          Sube
+        </span>
+      </td>
+      <td class="py-3.5 px-space-lg text-center">
+        <button type="button" class="p-1.5 rounded-lg text-primary hover:bg-primary-fixed transition-transform duration-200 chevron-btn" title="Ver historial de ajustes">
+          <span class="material-symbols-outlined text-[20px]">expand_more</span>
+        </button>
+      </td>
+    </tr>
+    <!-- Sub-row Historial 5 -->
+    <tr id="hist-PRD-105" class="hidden bg-surface-container-low/60 border-t border-b border-surface-container">
+      <td colspan="9" class="p-space-md">
+        <div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm border border-outline-variant/30 flex flex-col gap-2">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-[20px]">history</span>
+              <span class="font-body-base-semibold text-body-base-semibold text-on-surface">Historial de Ajustes de Precios — PRD-105 (Soporte Ajustable Aluminio)</span>
+            </div>
+            <span class="font-caption text-caption text-on-surface-variant">2 registros auditados</span>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs">
+              <thead>
+                <tr class="bg-surface-container font-caption text-caption uppercase text-on-surface-variant font-bold">
+                  <th class="py-2 px-3">Fecha Ajuste</th>
+                  <th class="py-2 px-3">Proveedor</th>
+                  <th class="py-2 px-3 text-right">Precio Anterior</th>
+                  <th class="py-2 px-3 text-right">Precio Nuevo</th>
+                  <th class="py-2 px-3 text-center">Variación</th>
+                  <th class="py-2 px-3">Motivo / Justificación</th>
+                  <th class="py-2 px-3">Registrado Por</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-surface-container font-body-sm text-body-sm text-on-surface">
+                <tr>
+                  <td class="py-2 px-3 font-mono">25/10/2024</td>
+                  <td class="py-2 px-3 font-medium">Tech</td>
+                  <td class="py-2 px-3 font-mono text-right text-on-surface-variant">$ 26.000 COP</td>
+                  <td class="py-2 px-3 font-mono font-bold text-right text-on-surface">$ 28.000 COP</td>
+                  <td class="py-2 px-3 font-mono font-bold text-center text-error">+7.7%</td>
+                  <td class="py-2 px-3 text-on-surface-variant">Incremento internacional en aleaciones de aluminio</td>
+                  <td class="py-2 px-3 font-medium text-primary">Carlos Morales</td>
+                </tr>
+                <tr>
+                  <td class="py-2 px-3 font-mono">04/04/2024</td>
+                  <td class="py-2 px-3 font-medium">Tech</td>
+                  <td class="py-2 px-3 font-mono text-right text-on-surface-variant">$ 24.500 COP</td>
+                  <td class="py-2 px-3 font-mono font-bold text-right text-on-surface">$ 26.000 COP</td>
+                  <td class="py-2 px-3 font-mono font-bold text-center text-error">+6.1%</td>
+                  <td class="py-2 px-3 text-on-surface-variant">Ajuste de precio base por tipo de cambio USD/COP</td>
+                  <td class="py-2 px-3 font-medium text-primary">Carlos Morales</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- MODALES INTERACTIVOS                       -->
+<!-- ========================================== -->
+<!-- MODAL 1: CREAR PROVEEDOR -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm items-center justify-center p-4 hidden" id="modal-crear">
+<div class="bg-surface-container-lowest rounded-xl shadow-xl w-full max-w-lg overflow-hidden flex flex-col transform transition-all">
+<div class="bg-primary px-space-lg py-3 flex items-center justify-between text-on-primary">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">add_business</span>
+<span class="font-headline-3 text-headline-3 uppercase tracking-wider">CREAR PROVEEDOR</span>
+</div>
+<button class="text-on-primary hover:bg-primary-container/40 rounded p-1" onclick="closeModal('modal-crear')">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<form class="p-space-lg flex flex-col gap-space-md" id="form-crear-proveedor" onsubmit="handleCrearProveedor(event)">
+<div class="font-caption text-caption text-secondary uppercase font-bold tracking-wider">DATOS BÁSICOS</div>
+<div class="flex flex-col gap-1">
+<label class="font-body-sm-medium text-body-sm-medium text-on-surface-variant">Nombre de Proveedor</label>
+<input class="w-full px-3 py-2 bg-surface rounded-lg font-body-base text-body-base text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="crear-nombre" placeholder="Ej: Importaciones del Caribe S.A.S" required="" type="text">
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-body-sm-medium text-body-sm-medium text-on-surface-variant">Descripción Operativa</label>
+<textarea class="w-full px-3 py-2 bg-surface rounded-lg font-body-base text-body-base text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="crear-desc" placeholder="Distribuidora de productos..." rows="2"></textarea>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1">
+<label class="font-body-sm-medium text-body-sm-medium text-on-surface-variant">NIT / RUT</label>
+<input class="w-full px-3 py-2 bg-surface rounded-lg font-body-base text-body-base text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="crear-nit" placeholder="Ej: 900.123.456-7" required="" type="text">
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-body-sm-medium text-body-sm-medium text-on-surface-variant">Número de Contacto</label>
+<input class="w-full px-3 py-2 bg-surface rounded-lg font-body-base text-body-base text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="crear-tel" placeholder="Ej: 310 9876543" required="" type="text">
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-body-sm-medium text-body-sm-medium text-on-surface-variant">Correo Electrónico</label>
+<input class="w-full px-3 py-2 bg-surface rounded-lg font-body-base text-body-base text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="crear-correo" placeholder="proveedor@empresa.com" required="" type="email">
+</div>
+<div class="flex items-center justify-end gap-space-md pt-space-sm">
+<button class="px-space-lg py-2 rounded-lg bg-surface-container text-on-surface-variant font-body-base-semibold text-body-base-semibold hover:bg-surface-container-high transition-colors" onclick="closeModal('modal-crear')" type="button">
+  Cancelar
+</button>
+<button class="px-space-lg py-2 rounded-lg bg-secondary-container text-on-secondary-container font-body-base-semibold text-body-base-semibold hover:bg-secondary-fixed-dim transition-colors shadow-sm" type="submit">
+  Guardar
+</button>
+</div>
+</form>
+</div>
+</div>
+<!-- MODAL 2: EDITAR PROVEEDOR -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm items-center justify-center p-4 hidden" id="modal-editar">
+<div class="bg-surface-container-lowest rounded-xl shadow-xl w-full max-w-lg overflow-hidden flex flex-col transform transition-all">
+<div class="bg-primary px-space-lg py-3 flex items-center justify-between text-on-primary">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">edit_note</span>
+<span class="font-headline-3 text-headline-3 uppercase tracking-wider">EDITAR PROVEEDOR</span>
+</div>
+<button class="text-on-primary hover:bg-primary-container/40 rounded p-1" onclick="closeModal('modal-editar')">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<form class="p-space-lg flex flex-col gap-space-md" id="form-editar-proveedor" onsubmit="handleGuardarEdicion(event)">
+<div class="font-caption text-caption text-secondary uppercase font-bold tracking-wider">DATOS BÁSICOS REGISTRADOS</div>
+<input id="edit-original-nit" type="hidden" value="">
+<div class="flex flex-col gap-1">
+<label class="font-body-sm-medium text-body-sm-medium text-on-surface-variant">Nombre del Proveedor</label>
+<input class="w-full px-3 py-2 bg-surface rounded-lg font-body-base text-body-base text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="edit-nombre" required="" type="text">
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-body-sm-medium text-body-sm-medium text-on-surface-variant">Descripción</label>
+<textarea class="w-full px-3 py-2 bg-surface rounded-lg font-body-base text-body-base text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="edit-desc" rows="2"></textarea>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1">
+<label class="font-body-sm-medium text-body-sm-medium text-on-surface-variant">NIT / RUT</label>
+<input class="w-full px-3 py-2 bg-surface rounded-lg font-body-base text-body-base text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="edit-nit" required="" type="text">
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-body-sm-medium text-body-sm-medium text-on-surface-variant">Número de Contacto</label>
+<input class="w-full px-3 py-2 bg-surface rounded-lg font-body-base text-body-base text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="edit-tel" required="" type="text">
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-body-sm-medium text-body-sm-medium text-on-surface-variant">Correo Electrónico</label>
+<input class="w-full px-3 py-2 bg-surface rounded-lg font-body-base text-body-base text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="edit-correo" required="" type="email">
+</div>
+<div class="flex items-center justify-end gap-space-md pt-space-sm">
+<button class="px-space-lg py-2 rounded-lg bg-surface-container text-on-surface-variant font-body-base-semibold text-body-base-semibold hover:bg-surface-container-high transition-colors" onclick="closeModal('modal-editar')" type="button">
+  Cancelar
+</button>
+<button class="px-space-lg py-2 rounded-lg bg-secondary-container text-on-secondary-container font-body-base-semibold text-body-base-semibold hover:bg-secondary-fixed-dim transition-colors shadow-sm" type="submit">
+  Guardar Cambios
+</button>
+</div>
+</form>
+</div>
+</div>
+<!-- MODAL 3: DETALLE DEL PROVEEDOR -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm items-center justify-center p-4 hidden" id="modal-detalle">
+<div class="bg-surface-container-lowest rounded-xl shadow-xl w-full max-w-xl overflow-hidden flex flex-col transform transition-all">
+<div class="bg-primary px-space-lg py-3 flex items-center justify-between text-on-primary">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+<span class="font-headline-3 text-headline-3 uppercase tracking-wider">DETALLE DEL PROVEEDOR</span>
+</div>
+<button class="text-on-primary hover:bg-primary-container/40 rounded p-1" onclick="closeModal('modal-detalle')">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="p-space-lg flex flex-col gap-space-md">
+<div class="grid grid-cols-1 sm:grid-cols-5 gap-space-md items-start">
+<!-- FOTO RECUADRO -->
+<div class="sm:col-span-2 aspect-square rounded-xl bg-secondary-fixed flex flex-col items-center justify-center p-space-md text-center text-on-secondary-fixed shadow-sm">
+<span class="material-symbols-outlined text-[54px] mb-1">domain</span>
+<span class="font-caption text-caption uppercase font-bold tracking-wider">FOTO DEL PROVEEDOR</span>
+<span class="font-caption text-[9px] opacity-75 mt-1">Stock.net Verified</span>
+</div>
+<!-- DETALLES FORMATO FICHA -->
+<div class="sm:col-span-3 flex flex-col divide-y divide-surface-container bg-surface-container-low rounded-xl p-space-md">
+<div class="pb-2">
+<span class="font-caption text-caption text-on-surface-variant uppercase font-bold">NOMBRE DEL PROVEEDOR</span>
+<p class="font-body-base-semibold text-body-base-semibold text-on-surface" id="det-nombre">Importaciones Vladi S.A.S</p>
+</div>
+<div class="py-2 grid grid-cols-2 gap-2">
+<div>
+<span class="font-caption text-caption text-on-surface-variant uppercase font-bold">NÚMERO</span>
+<p class="font-body-sm text-body-sm text-on-surface font-mono" id="det-tel">300 839919</p>
+</div>
+<div>
+<span class="font-caption text-caption text-on-surface-variant uppercase font-bold">RUT/NIT</span>
+<p class="font-body-sm text-body-sm text-on-surface font-mono font-semibold" id="det-nit">220819929-3</p>
+</div>
+</div>
+<div class="py-2">
+<span class="font-caption text-caption text-on-surface-variant uppercase font-bold">CORREO ELECTRÓNICO</span>
+<p class="font-body-sm text-body-sm text-on-surface" id="det-correo">vladi_import@gmail.com</p>
+</div>
+<div class="pt-2">
+<span class="font-caption text-caption text-on-surface-variant uppercase font-bold">DESCRIPCIÓN</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed" id="det-desc">Distribuidora mayorista de accesorios y componentes tecnológicos</p>
+</div>
+</div>
+</div>
+<div class="flex justify-end pt-space-xs">
+<button class="px-space-xl py-2 rounded-lg bg-secondary-container text-on-secondary-container font-body-base-semibold text-body-base-semibold hover:bg-secondary-fixed-dim transition-colors shadow-sm" onclick="closeModal('modal-detalle')">
+  Cerrar
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- MODAL 4: ALERTA DE SEGURIDAD / INACTIVAR PROVEEDOR -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm items-center justify-center p-4 hidden" id="modal-inactivar">
+<div class="bg-surface-container-lowest rounded-xl shadow-xl w-full max-w-md overflow-hidden flex flex-col transform transition-all">
+<div class="bg-primary px-space-lg py-3 flex items-center justify-between text-on-primary">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-secondary-container">shield_with_heart</span>
+<span class="font-headline-3 text-headline-3 uppercase tracking-wider">Alerta de Seguridad</span>
+</div>
+<button class="text-on-primary hover:bg-primary-container/40 rounded p-1" onclick="cancelInactivarModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="p-space-lg flex flex-col items-center text-center gap-space-md">
+<div class="w-14 h-14 rounded-full bg-error-container flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[32px]">warning</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="font-headline-3 text-headline-3 text-on-surface">¿Está seguro de inactivar este proveedor?</h3>
+<p class="font-body-base-semibold text-body-base-semibold text-primary" id="inactivar-target-nombre">Proveedor</p>
+<div class="mt-2 p-2 bg-error-container/40 rounded-lg text-error font-caption text-caption font-semibold flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[16px]">info</span>
+<span>ATENCIÓN: Se requiere confirmación operativa</span>
+</div>
+</div>
+<input id="inactivar-target-nit" type="hidden" value="">
+<div class="flex items-center justify-center gap-space-md w-full pt-space-xs">
+<button class="flex-1 py-2 rounded-lg bg-surface-container text-on-surface-variant font-body-base-semibold text-body-base-semibold hover:bg-surface-container-high transition-colors" onclick="cancelInactivarModal()" type="button">
+  Cancelar
+</button>
+<button class="flex-1 py-2 rounded-lg bg-secondary-container text-on-secondary-container font-body-base-semibold text-body-base-semibold hover:bg-secondary-fixed-dim transition-colors shadow-sm" onclick="executeInactivar()" type="button">
+  Inactivar
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- MODAL 5: DETALLE DEL PRODUCTO -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm items-center justify-center p-4 hidden" id="modal-detalle-producto">
+<div class="bg-surface-container-lowest rounded-xl shadow-xl w-full max-w-xl overflow-hidden flex flex-col transform transition-all">
+<div class="bg-primary px-space-lg py-3 flex items-center justify-between text-on-primary">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">package_2</span>
+<span class="font-headline-3 text-headline-3 uppercase tracking-wider">DETALLE DEL PRODUCTO</span>
+</div>
+<button class="text-on-primary hover:bg-primary-container/40 rounded p-1" onclick="closeModal('modal-detalle-producto')">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="p-space-lg flex flex-col gap-space-md">
+<div class="grid grid-cols-1 sm:grid-cols-5 gap-space-md items-start">
+<!-- FOTO PRODUCTO RECUADRO -->
+<div class="sm:col-span-2 aspect-square rounded-xl bg-tertiary-fixed flex flex-col items-center justify-center p-space-md text-center text-on-tertiary-fixed shadow-sm">
+<span class="material-symbols-outlined text-[54px] mb-1">shelves</span>
+<span class="font-caption text-caption uppercase font-bold tracking-wider">FOTO DEL PRODUCTO</span>
+<span class="font-caption text-[9px] opacity-75 mt-1">Referencia Fiel</span>
+</div>
+<!-- FICHA TÉCNICA DEL PRODUCTO -->
+<div class="sm:col-span-3 flex flex-col divide-y divide-surface-container bg-surface-container-low rounded-xl p-space-md">
+<div class="pb-2">
+<span class="font-caption text-caption text-on-surface-variant uppercase font-bold">DESCRIPCIÓN DEL PRODUCTO</span>
+<p class="font-body-base-semibold text-body-base-semibold text-on-surface" id="prod-det-desc">Base ergonómica con 6 ángulos de inclinación regulables y almohadillas antideslizantes</p>
+</div>
+<div class="py-2 grid grid-cols-2 gap-2">
+<div>
+<span class="font-caption text-caption text-on-surface-variant uppercase font-bold">SKU REGISTRO</span>
+<p class="font-body-sm text-body-sm text-on-surface font-mono font-bold" id="prod-det-sku">PRD-105</p>
+</div>
+<div>
+<span class="font-caption text-caption text-on-surface-variant uppercase font-bold">STOCK ACTUAL</span>
+<p class="font-body-sm text-body-sm text-on-surface font-mono font-bold" id="prod-det-stock">30 UNIDADES</p>
+</div>
+</div>
+<div class="py-2">
+<span class="font-caption text-caption text-on-surface-variant uppercase font-bold">PRECIO DE COMPRA UNITARIO</span>
+<p class="font-body-sm-medium text-body-sm-medium text-secondary" id="prod-det-precio">$ 28.000 COP</p>
+</div>
+<div class="pt-2">
+<span class="font-caption text-caption text-on-surface-variant uppercase font-bold">PROVEEDOR ASOCIADO</span>
+<p class="font-body-base-semibold text-body-base-semibold text-primary" id="prod-det-prov">Tech</p>
+</div>
+</div>
+</div>
+<div class="flex justify-end pt-space-xs">
+<button class="px-space-xl py-2 rounded-lg bg-secondary-container text-on-secondary-container font-body-base-semibold text-body-base-semibold hover:bg-secondary-fixed-dim transition-colors shadow-sm" onclick="closeModal('modal-detalle-producto')">
+  Cerrar
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- TOAST NOTIFICATION -->
+<div class="fixed bottom-6 right-6 z-50 hidden bg-inverse-surface text-inverse-on-surface px-4 py-3 rounded-lg shadow-xl flex items-center gap-3 transition-opacity duration-300" id="toast-notification">
+<span class="material-symbols-outlined text-[20px] text-secondary-container" id="toast-icon">check_circle</span>
+<span class="font-body-sm-medium text-body-sm-medium" id="toast-msg">Operación exitosa</span>
+</div>
+<script>
+  // ==========================================
+  // NAVEGACIÓN ENTRE PESTAÑAS (4 APARTADOS)
+  // ==========================================
+  const tabConfigs = {
+    'directorio': {
+      viewId: 'view-directorio',
+      btnId: 'tab-btn-directorio',
+      title: 'DIRECTORIO DE PROVEEDORES'
+    },
+    'historial': {
+      viewId: 'view-historial',
+      btnId: 'tab-btn-historial',
+      title: 'PROVEEDORES POR PRODUCTO'
+    },
+    'ordenes': {
+      viewId: 'view-ordenes',
+      btnId: 'tab-btn-ordenes',
+      title: 'HISTORIAL DE COMPRAS'
+    },
+    'variacion': {
+      viewId: 'view-variacion',
+      btnId: 'tab-btn-variacion',
+      title: 'HISTÓRICO Y VARIACIÓN DE PRECIOS'
+    }
+  };
+
+  const activeBtnClasses = 'flex items-center gap-2 px-space-lg py-2.5 rounded-lg font-body-base-semibold text-body-base-semibold transition-all shadow-sm bg-secondary-container text-on-secondary-container';
+  const inactiveBtnClasses = 'flex items-center gap-2 px-space-lg py-2.5 rounded-lg font-body-base-semibold text-body-base-semibold transition-all bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container';
+
+  function switchAppTab(selectedKey) {
+    Object.keys(tabConfigs).forEach(key => {
+      const config = tabConfigs[key];
+      const viewEl = document.getElementById(config.viewId);
+      const btnEl = document.getElementById(config.btnId);
+
+      if (key === selectedKey) {
+        if (viewEl) {
+          viewEl.classList.remove('hidden');
+          viewEl.classList.add('flex');
+        }
+        if (btnEl) btnEl.className = activeBtnClasses;
+        const titleEl = document.getElementById('section-title');
+        if (titleEl) titleEl.textContent = config.title;
+      } else {
+        if (viewEl) {
+          viewEl.classList.add('hidden');
+          viewEl.classList.remove('flex');
+        }
+        if (btnEl) btnEl.className = inactiveBtnClasses;
+      }
+    });
+  }
+
+  // ==========================================
+  // GESTIÓN DE MODALES
+  // ==========================================
+  function openModal(id) {
+    const modal = document.getElementById(id);
+    if (modal) {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+  }
+
+  function closeModal(id) {
+    const modal = document.getElementById(id);
+    if (modal) {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+  }
+
+  window.addEventListener('click', function(e) {
+    const modals = ['modal-crear', 'modal-editar', 'modal-detalle', 'modal-inactivar', 'modal-detalle-producto'];
+    modals.forEach(id => {
+      const modal = document.getElementById(id);
+      if (modal && e.target === modal) {
+        if (id === 'modal-inactivar') {
+          cancelInactivarModal();
+        } else {
+          closeModal(id);
+        }
+      }
+    });
+  });
+
+  // TOAST NOTIFICATIONS
+  function showToast(msg, icon = 'check_circle') {
+    const toast = document.getElementById('toast-notification');
+    const toastMsg = document.getElementById('toast-msg');
+    const toastIcon = document.getElementById('toast-icon');
+    if (!toast) return;
+
+    toastMsg.textContent = msg;
+    toastIcon.textContent = icon;
+    toast.classList.remove('hidden');
+    toast.style.opacity = '1';
+
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      setTimeout(() => toast.classList.add('hidden'), 300);
+    }, 3200);
+  }
+
+  // ==========================================
+  // ACCIONES DIRECTORIO DE PROVEEDORES
+  // ==========================================
+  function viewProveedorDetails(btn) {
+    const row = btn.closest('tr');
+    document.getElementById('det-nombre').textContent = row.dataset.nombre || 'N/A';
+    document.getElementById('det-tel').textContent = row.dataset.telefono || 'N/A';
+    document.getElementById('det-nit').textContent = row.dataset.nit || 'N/A';
+    document.getElementById('det-correo').textContent = row.dataset.correo || 'N/A';
+    document.getElementById('det-desc').textContent = row.dataset.desc || 'Proveedor regular activo en el sistema Stock.net';
+    openModal('modal-detalle');
+  }
+
+  function editProveedorRow(btn) {
+    const row = btn.closest('tr');
+    document.getElementById('edit-original-nit').value = row.dataset.nit;
+    document.getElementById('edit-nombre').value = row.dataset.nombre;
+    document.getElementById('edit-desc').value = row.dataset.desc || '';
+    document.getElementById('edit-nit').value = row.dataset.nit;
+    document.getElementById('edit-tel').value = row.dataset.telefono;
+    document.getElementById('edit-correo').value = row.dataset.correo;
+    openModal('modal-editar');
+  }
+
+  function handleGuardarEdicion(event) {
+    event.preventDefault();
+    const origNit = document.getElementById('edit-original-nit').value;
+    const newNombre = document.getElementById('edit-nombre').value;
+    const newDesc = document.getElementById('edit-desc').value;
+    const newNit = document.getElementById('edit-nit').value;
+    const newTel = document.getElementById('edit-tel').value;
+    const newCorreo = document.getElementById('edit-correo').value;
+
+    const rows = document.querySelectorAll('#proveedores-tbody tr');
+    rows.forEach(row => {
+      if (row.dataset.nit === origNit) {
+        row.dataset.nit = newNit;
+        row.dataset.nombre = newNombre;
+        row.dataset.desc = newDesc;
+        row.dataset.telefono = newTel;
+        row.dataset.correo = newCorreo;
+
+        row.cells[0].textContent = newNit;
+        row.cells[1].textContent = newNombre;
+        row.cells[2].textContent = newTel;
+        row.cells[3].textContent = newCorreo;
+      }
+    });
+
+    closeModal('modal-editar');
+    showToast('Proveedor actualizado exitosamente');
+  }
+
+  function handleCrearProveedor(event) {
+    event.preventDefault();
+    const nombre = document.getElementById('crear-nombre').value;
+    const desc = document.getElementById('crear-desc').value;
+    const nit = document.getElementById('crear-nit').value;
+    const tel = document.getElementById('crear-tel').value;
+    const correo = document.getElementById('crear-correo').value;
+
+    const tbody = document.getElementById('proveedores-tbody');
+    const newRow = document.createElement('tr');
+    newRow.className = 'hover:bg-primary-fixed/20 transition-colors';
+    newRow.dataset.nit = nit;
+    newRow.dataset.nombre = nombre;
+    newRow.dataset.telefono = tel;
+    newRow.dataset.correo = correo;
+    newRow.dataset.desc = desc;
+    newRow.dataset.estado = 'disponible';
+
+    newRow.innerHTML = `
+      <td class="py-3.5 px-space-lg font-body-base-semibold text-body-base-semibold text-on-surface">${nit}</td>
+      <td class="py-3.5 px-space-lg font-body-base text-body-base text-on-surface">${nombre}</td>
+      <td class="py-3.5 px-space-lg font-body-base text-body-base text-on-surface-variant font-mono">${tel}</td>
+      <td class="py-3.5 px-space-lg font-body-base text-body-base text-on-surface-variant">${correo}</td>
+      <td class="py-3.5 px-space-lg text-center status-col">
+        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">Disponible</span>
+      </td>
+      <td class="py-3.5 px-space-lg text-right whitespace-nowrap">
+        <div class="flex items-center justify-end gap-2">
+          <button onclick="viewProveedorDetails(this)" class="p-1.5 rounded-lg text-primary hover:bg-primary-fixed transition-colors" title="Ver Detalle">
+            <span class="material-symbols-outlined text-[20px]">visibility</span>
+          </button>
+          <button onclick="editProveedorRow(this)" class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" title="Editar">
+            <span class="material-symbols-outlined text-[20px]">edit</span>
+          </button>
+          <div class="inline-flex items-center ml-1">
+            <label class="relative inline-flex items-center cursor-pointer" title="Activar/Inactivar proveedor">
+              <input type="checkbox" checked class="sr-only switch-input" onchange="toggleProveedorSwitch(this)">
+              <div class="switch-track w-11 h-6 bg-emerald-500 rounded-full transition-colors relative after:content-[''] after:absolute after:top-[2px] after:left-[22px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all shadow-inner"></div>
+            </label>
+          </div>
+        </div>
+      </td>
+    `;
+
+    tbody.prepend(newRow);
+    document.getElementById('form-crear-proveedor').reset();
+    closeModal('modal-crear');
+
+    const totalRows = tbody.querySelectorAll('tr').length;
+    document.getElementById('counter-badge').textContent = `${totalRows} Proveedores Registrados`;
+    document.getElementById('total-count').textContent = totalRows;
+    document.getElementById('showing-count').textContent = totalRows;
+    showToast('Proveedor registrado correctamente');
+  }
+
+  // ==========================================
+  // SWITCH TOGGLE Y CONFIRMACIÓN DE INACTIVACIÓN
+  // ==========================================
+  let pendingSwitchRow = null;
+  let pendingSwitchInput = null;
+
+  function toggleProveedorSwitch(checkbox) {
+    const row = checkbox.closest('tr');
+    const track = checkbox.parentElement.querySelector('.switch-track');
+
+    if (!checkbox.checked) {
+      // Usuario intentó apagar el switch -> Requerir confirmación
+      pendingSwitchRow = row;
+      pendingSwitchInput = checkbox;
+      
+      document.getElementById('inactivar-target-nit').value = row.dataset.nit;
+      document.getElementById('inactivar-target-nombre').textContent = row.dataset.nombre;
+      openModal('modal-inactivar');
+    } else {
+      // Usuario encendió el switch -> Activar inmediatamente
+      row.dataset.estado = 'disponible';
+      row.classList.remove('opacity-75', 'bg-surface-container-low/40');
+      const statusCell = row.querySelector('.status-col');
+      if (statusCell) {
+        statusCell.innerHTML = '<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">Disponible</span>';
+      }
+      track.className = 'switch-track w-11 h-6 bg-emerald-500 rounded-full transition-colors relative after:content-[\'\'] after:absolute after:top-[2px] after:left-[22px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all shadow-inner';
+      showToast('Proveedor activado (Disponible)');
+    }
+  }
+
+  function cancelInactivarModal() {
+    if (pendingSwitchInput) {
+      pendingSwitchInput.checked = true;
+      const track = pendingSwitchInput.parentElement.querySelector('.switch-track');
+      if (track) {
+        track.className = 'switch-track w-11 h-6 bg-emerald-500 rounded-full transition-colors relative after:content-[\'\'] after:absolute after:top-[2px] after:left-[22px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all shadow-inner';
+      }
+    }
+    pendingSwitchRow = null;
+    pendingSwitchInput = null;
+    closeModal('modal-inactivar');
+  }
+
+  function executeInactivar() {
+    if (pendingSwitchRow && pendingSwitchInput) {
+      pendingSwitchInput.checked = false;
+      const track = pendingSwitchInput.parentElement.querySelector('.switch-track');
+      if (track) {
+        track.className = 'switch-track w-11 h-6 bg-outline-variant rounded-full transition-colors relative after:content-[\'\'] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all shadow-inner';
+      }
+      pendingSwitchRow.dataset.estado = 'inactivo';
+      pendingSwitchRow.classList.add('opacity-75', 'bg-surface-container-low/40');
+      const statusCell = pendingSwitchRow.querySelector('.status-col');
+      if (statusCell) {
+        statusCell.innerHTML = '<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800">Inactivo</span>';
+      }
+    }
+    pendingSwitchRow = null;
+    pendingSwitchInput = null;
+    closeModal('modal-inactivar');
+    showToast('Proveedor marcado como inactivo', 'warning');
+  }
+
+  // ==========================================
+  // FILTRADO TABLA PROVEEDORES
+  // ==========================================
+  function filterProveedoresTable() {
+    const q = (document.getElementById('search-directorio').value || '').toLowerCase();
+    const st = document.getElementById('filter-estado').value.toLowerCase();
+    const rows = document.querySelectorAll('#proveedores-tbody tr');
+    let visible = 0;
+
+    rows.forEach(row => {
+      const nit = (row.dataset.nit || '').toLowerCase();
+      const nom = (row.dataset.nombre || '').toLowerCase();
+      const estado = (row.dataset.estado || '').toLowerCase();
+
+      const matchText = nit.includes(q) || nom.includes(q) || estado.includes(q);
+      const matchEstado = (st === 'todos') || (estado === st);
+
+      if (matchText && matchEstado) {
+        row.style.display = '';
+        visible++;
+      } else {
+        row.style.display = 'none';
+      }
+    });
+
+    const showingCount = document.getElementById('showing-count');
+    if (showingCount) showingCount.textContent = visible;
+  }
+
+  // ==========================================
+  // PROVEEDORES POR PRODUCTO
+  // ==========================================
+  let activeVendorFilter = 'todos';
+
+  function filterProductsByVendor(vendorName, cardEl) {
+    activeVendorFilter = vendorName;
+    document.querySelectorAll('.vendor-card').forEach(c => {
+      c.className = 'vendor-card cursor-pointer shrink-0 flex flex-col items-center justify-center p-space-md rounded-xl bg-surface-container-lowest text-on-surface min-w-[130px] h-[105px] shadow-sm transition-all hover:bg-surface-container hover:scale-[1.02]';
+      const icon = c.querySelector('.material-symbols-outlined');
+      if (icon) icon.className = 'material-symbols-outlined text-[32px] text-on-surface-variant mb-1';
+    });
+
+    if (cardEl) {
+      cardEl.className = 'vendor-card cursor-pointer shrink-0 flex flex-col items-center justify-center p-space-md rounded-xl bg-primary text-on-primary min-w-[130px] h-[105px] shadow-sm transition-all scale-[1.03]';
+      const icon = cardEl.querySelector('.material-symbols-outlined');
+      if (icon) icon.className = 'material-symbols-outlined text-[32px] text-secondary-container mb-1';
+    }
+
+    filterProductsTable();
+  }
+
+  function filterProductsTable() {
+    const q = (document.getElementById('search-products').value || '').toLowerCase();
+    const cat = document.getElementById('filter-categoria').value;
+    const stk = document.getElementById('filter-stock').value;
+    const rows = document.querySelectorAll('#products-tbody tr');
+
+    rows.forEach(row => {
+      const sku = (row.dataset.sku || '').toLowerCase();
+      const nom = (row.dataset.nombre || '').toLowerCase();
+      const pCat = row.dataset.categoria || '';
+      const pProv = row.dataset.proveedor || '';
+      const pStk = Number(row.dataset.stock) || 0;
+
+      const matchText = sku.includes(q) || nom.includes(q) || pCat.toLowerCase().includes(q) || pProv.toLowerCase().includes(q);
+      const matchVendor = (activeVendorFilter === 'todos') || (pProv.toLowerCase() === activeVendorFilter.toLowerCase());
+      const matchCat = (cat === 'todas') || (pCat === cat);
+
+      let matchStock = true;
+      if (stk === 'alto') matchStock = pStk > 25;
+      if (stk === 'bajo') matchStock = pStk <= 25;
+
+      if (matchText && matchVendor && matchCat && matchStock) {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
+      }
+    });
+  }
+
+  function scrollVendorPills(offset) {
+    const el = document.getElementById('vendor-cards-container');
+    if (el) el.scrollBy({ left: offset, behavior: 'smooth' });
+  }
+
+  function viewProductDetails(btn) {
+    const row = btn.closest('tr');
+    document.getElementById('prod-det-sku').textContent = row.dataset.sku;
+    document.getElementById('prod-det-desc').textContent = row.dataset.desc;
+    document.getElementById('prod-det-stock').textContent = `${row.dataset.stock} UNIDADES`;
+    document.getElementById('prod-det-precio').textContent = `$ ${Number(row.dataset.precio).toLocaleString('es-CO')} COP`;
+    document.getElementById('prod-det-prov').textContent = row.dataset.proveedor;
+    openModal('modal-detalle-producto');
+  }
+
+  // ==========================================
+  // FILTRADO HISTORIAL DE COMPRAS (ÓRDENES)
+  // ==========================================
+  function filterOrdenesTable() {
+    const q = (document.getElementById('search-ordenes').value || '').toLowerCase();
+    const st = document.getElementById('filter-orden-estado').value;
+    const rows = document.querySelectorAll('#ordenes-tbody tr');
+
+    rows.forEach(row => {
+      const oc = (row.dataset.oc || '').toLowerCase();
+      const prov = (row.dataset.prov || '').toLowerCase();
+      const estado = row.dataset.estado || '';
+
+      const matchText = oc.includes(q) || prov.includes(q);
+      const matchEstado = (st === 'todos') || (estado === st);
+
+      if (matchText && matchEstado) {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
+      }
+    });
+  }
+</script>
+</div></main></div>
+
+
+
+</body></html>

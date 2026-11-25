@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Montserrat:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "error": "#ba1a1a", "surface-container-highest": "#e5e2dc", "surface-variant": "#e5e2dc", "background": "#fcf9f3", "secondary-container": "#fcb32e", "surface-container-high": "#eae8e2", "on-error": "#ffffff", "secondary-fixed": "#ffddaf", "tertiary-fixed-dim": "#ecbf83", "on-tertiary-fixed-variant": "#5f4110", "on-secondary": "#ffffff", "surface-dim": "#dcdad4", "surface-container-lowest": "#ffffff", "surface-bright": "#fcf9f3", "on-secondary-fixed": "#281800", "surface-container": "#f0eee7", "outline-variant": "#c2c7ce", "tertiary-container": "#85622f", "on-tertiary": "#ffffff", "secondary": "#805600", "on-error-container": "#93000a", "inverse-surface": "#31312d", "on-background": "#1c1c18", "error-container": "#ffdad6", "inverse-primary": "#a8caed", "primary-fixed": "#cee5ff", "on-tertiary-container": "#ffe5c5", "outline": "#73777e", "primary": "#315371", "surface-container-low": "#f6f3ed", "tertiary-fixed": "#ffddb3", "on-secondary-container": "#6b4800", "on-primary-fixed-variant": "#274967", "primary-fixed-dim": "#a8caed", "on-secondary-fixed-variant": "#614000", "secondary-fixed-dim": "#ffba44", "on-primary": "#ffffff", "surface-tint": "#406180", "surface": "#fcf9f3", "on-surface-variant": "#42474d", "on-primary-fixed": "#001d32", "tertiary": "#6a4a19", "on-surface": "#1c1c18", "primary-container": "#4a6b8a", "on-primary-container": "#d8eaff", "inverse-on-surface": "#f3f0ea", "on-tertiary-fixed": "#291800" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-xl": "2rem", "space-sm": "0.5rem", "gutter": "1rem", "space-md": "0.75rem", "margin-desktop": "2rem", "gutter-desktop": "1.5rem", "margin": "1rem", "space-lg": "1.25rem", "space-xs": "0.25rem" }, "fontFamily": { "headline-3": [ "Montserrat" ], "body-sm-medium": [ "Inter" ], "caption": [ "Inter" ], "headline-1-mobile": [ "Montserrat" ], "body-lg": [ "Inter" ], "headline-2": [ "Montserrat" ], "body-base-semibold": [ "Inter" ], "headline-1": [ "Montserrat" ], "body-sm": [ "Inter" ], "body-base": [ "Inter" ] }, "fontSize": { "headline-3": [ "18px", { "lineHeight": "24px", "fontWeight": "600" } ], "body-sm-medium": [ "12px", { "lineHeight": "16px", "fontWeight": "500" } ], "caption": [ "10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" } ], "headline-1-mobile": [ "24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "body-lg": [ "16px", { "lineHeight": "24px", "fontWeight": "400" } ], "headline-2": [ "22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "body-base-semibold": [ "14px", { "lineHeight": "20px", "fontWeight": "600" } ], "headline-1": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "body-sm": [ "12px", { "lineHeight": "16px", "fontWeight": "400" } ], "body-base": [ "14px", { "lineHeight": "20px", "fontWeight": "400" } ] } } } };</script></head><body class="bg-surface font-body-base text-on-surface antialiased min-h-screen"><header class="fixed top-0 left-0 right-0 h-16 bg-primary-container z-50 shadow-[0_1px_8px_rgba(0,0,0,0.08)]"><div class="h-16 w-full px-gutter-desktop flex items-center justify-between"><div class="flex items-center gap-space-md"><img alt="Stock.net" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8RYVWUtTEUQT7inPD8HEBVnJhNoocL1WmpsCI7c_tXverk7Z-Vf8tZxwcuDei38iaWd9WZpKCfEZW4SlfQAIgybCgKH3IgGahI54gz2oXBSh3SePmlD6om_k8KrBBZqIbfuu7VLlb6W_wLvmM2iHM0kvusQOSiJbSbq-UzIW0fpWuAv0yJsGDHsIZiXNIdacpGTJXxmi3FwOovORjptQWHvLlWQrCioAz_5UDVssZksdiLJRdk7Ye"/><div class="h-5 w-px bg-on-primary-container/20 hidden xl:block"></div><span class="font-caption text-caption text-on-primary-container/80 tracking-wider uppercase hidden xl:block font-medium">SISTEMA INTEGRAL DE GESTIÓN DE INVENTARIO, CONTROL Y SEGURIDAD</span></div><div class="flex items-center gap-space-lg"><div class="hidden md:flex items-center bg-black/20 text-white rounded-full px-3 py-1 gap-2 text-xs font-semibold backdrop-blur-sm border border-white/10"><span class="material-symbols-outlined text-sm text-amber-400">verified_user</span><span>Administrador</span><span class="bg-[#E6A017] text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">ACCESO TOTAL</span></div><div class="flex items-center gap-space-md"><div class="text-right font-montserrat hidden sm:block"><p class="text-xs font-bold leading-tight text-white tracking-wide">Carlos Morales</p><p class="text-[10px] text-white/70 font-medium">Jefe de Operaciones</p></div><div class="w-8 h-8 rounded-full bg-slate-700/60 border border-white/20 flex items-center justify-center text-white cursor-pointer hover:bg-slate-700/80 transition shadow-inner"><span class="material-symbols-outlined text-lg">person</span></div></div></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-64 bg-surface-container-low z-40 flex flex-col py-space-md overflow-y-auto"><div class="px-space-md mb-space-sm"><span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider font-semibold px-space-sm">Operaciones &amp; Control</span></div><nav class="flex flex-col gap-1 px-space-sm mb-space-lg" data-active-classes="bg-primary-container text-on-primary font-body-base-semibold rounded-lg shadow-sm"><a class="flex items-center gap-space-md px-space-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm-medium text-body-sm-medium" data-path="panel-principal" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Panel Principal</span></a><a class="flex items-center gap-space-md px-space-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm-medium text-body-sm-medium" data-path="gestion-de-inventario" href="#"><span class="material-symbols-outlined text-[20px]">warehouse</span><span>Gestión de Inventario</span></a><a class="flex items-center gap-space-md px-space-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm-medium text-body-sm-medium" data-path="gestion-de-ventas" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span>Gestión de Ventas</span></a><a class="flex items-center gap-space-md px-space-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm-medium text-body-sm-medium" data-path="punto-de-venta" href="#"><span class="material-symbols-outlined text-[20px]">point_of_sale</span><span>Punto de Venta</span></a><a class="flex items-center gap-space-md px-space-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm-medium text-body-sm-medium" data-path="compras" href="#"><span class="material-symbols-outlined text-[20px]">shopping_cart</span><span>Compras</span></a><a class="flex items-center gap-space-md px-space-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm-medium text-body-sm-medium" data-path="creditos" href="#"><span class="material-symbols-outlined text-[20px]">credit_score</span><span>Créditos</span></a></nav><div class="px-space-md mb-space-sm"><span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider font-semibold px-space-sm">Socios &amp; Reportes</span></div><nav class="flex flex-col gap-1 px-space-sm flex-1" data-active-classes="bg-primary-container text-on-primary font-body-base-semibold rounded-lg shadow-sm"><a class="flex items-center gap-space-md px-space-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm-medium text-body-sm-medium" data-path="analisis-de-margenes" href="#"><span class="material-symbols-outlined text-[20px]">bar_chart</span><span>Análisis de Márgenes</span></a><a aria-current="page" class="flex items-center gap-space-md px-space-md py-2 transition-colors bg-primary-container text-on-primary font-body-base-semibold rounded-lg shadow-sm" data-path="clientes" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span>Clientes</span></a><a class="flex items-center gap-space-md px-space-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm-medium text-body-sm-medium" data-path="proveedores" href="#"><span class="material-symbols-outlined text-[20px]">local_shipping</span><span>Proveedores</span></a><a class="flex items-center gap-space-md px-space-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm-medium text-body-sm-medium" data-path="usuarios-y-roles" href="#"><span class="material-symbols-outlined text-[20px]">admin_panel_settings</span><span>Usuarios &amp; Roles</span></a></nav><div class="mt-auto px-space-md pt-space-md bg-surface-container/60 mx-space-sm rounded-lg p-space-sm"><div class="flex items-center justify-between text-on-surface-variant font-caption text-caption"><span>Terminal #04</span><span class="inline-flex items-center gap-1 text-secondary font-medium"><span class="w-1.5 h-1.5 rounded-full bg-secondary-container animate-pulse"></span>En línea</span></div></div></aside><div class="pl-64"><main class="relative pt-16 bg-surface min-h-screen w-full px-gutter-desktop py-space-lg"><div class="flex flex-col w-full">
+<!-- Top Navigation & Page Title Bar -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md mb-space-lg">
+<div class="flex items-center gap-space-md">
+<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors shadow-sm" onclick="history.back()" title="Regresar">
+<span class="material-symbols-outlined text-[22px]">arrow_back</span>
+</button>
+<div>
+<h1 class="font-headline-1 text-headline-1 text-primary tracking-tight uppercase">Gestión de Clientes</h1>
+<p class="font-caption text-caption text-on-surface-variant uppercase tracking-wider mt-0.5">Módulo de fidelización, cartera y control de cuentas comerciales</p>
+</div>
+</div>
+<!-- Quick stats and Primary Action -->
+<div class="flex items-center gap-space-md">
+<div class="hidden lg:flex items-center gap-space-md bg-surface-container-low px-space-md py-1.5 rounded-lg border-0 shadow-sm">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant uppercase">Clientes Registrados</span>
+<span class="font-headline-3 text-headline-3 text-primary font-bold" id="kpiTotalClients">148</span>
+</div>
+<div class="h-8 w-px bg-surface-container-highest"></div>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant uppercase">Activos Hoy</span>
+<span class="font-headline-3 text-headline-3 text-secondary font-bold" id="kpiActiveClients">136</span>
+</div>
+</div>
+<button class="flex items-center gap-space-xs px-space-lg py-2.5 bg-secondary-container hover:bg-secondary text-on-secondary-fixed hover:text-on-secondary font-body-base-semibold text-body-base-semibold rounded-lg shadow-sm transition-all" id="btnOpenCreate">
+<span class="material-symbols-outlined text-[20px]">person_add</span>
+<span>+ Crear cliente</span>
+</button>
+</div>
+</div>
+<!-- Search & Filtration Toolbar -->
+<div class="bg-surface-container-low p-space-md rounded-xl mb-space-lg shadow-sm flex flex-col sm:flex-row gap-space-md items-center justify-between">
+<div class="relative w-full sm:max-w-xl">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full bg-surface-container-lowest text-on-surface pl-10 pr-space-md py-2.5 rounded-lg font-body-base text-body-base outline-none focus:ring-2 focus:ring-primary shadow-inner" id="clientSearchInput" placeholder="Buscar cliente por nombre o tipo de documento..." type="text"/>
+</div>
+<div class="flex items-center gap-space-sm w-full sm:w-auto justify-end">
+<div class="flex items-center bg-surface-container-lowest rounded-lg px-space-md py-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant mr-1.5">filter_list</span>
+<label class="font-caption text-caption text-on-surface-variant mr-2 uppercase font-medium" for="statusFilter">Estado:</label>
+<select class="bg-transparent font-body-sm-medium text-body-sm-medium text-on-surface outline-none cursor-pointer" id="statusFilter">
+<option value="all">Todos los estados</option>
+<option value="Activo">Activos</option>
+<option value="Inactivo">Inactivos</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Main Customers Table Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse" id="clientsTable">
+<thead>
+<tr class="bg-surface-container-high text-on-surface uppercase font-headline-3 text-[13px] tracking-wider">
+<th class="py-3.5 px-space-lg font-semibold">Tipo de Documento</th>
+<th class="py-3.5 px-space-lg font-semibold">Nombre Cliente</th>
+<th class="py-3.5 px-space-lg font-semibold">Teléfono</th>
+<th class="py-3.5 px-space-lg font-semibold text-center">Estado</th>
+<th class="py-3.5 px-space-lg font-semibold text-right">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high font-body-base text-body-base text-on-surface">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors client-row" data-address="Cra 45 # 12-88, Medellín" data-credit="200000" data-doc="1.003.127.440" data-email="pablo.makaky@corp.com" data-name="Pablo Makaky" data-orders="14" data-phone="300 839919" data-status="Activo">
+<td class="py-3.5 px-space-lg font-mono font-medium text-primary">1.003.127.440 <span class="font-caption text-caption text-on-surface-variant block">Cédula de Ciudadanía</span></td>
+<td class="py-3.5 px-space-lg font-semibold text-on-surface">Pablo Makaky</td>
+<td class="py-3.5 px-space-lg font-mono text-on-surface-variant">300 839919</td>
+<td class="py-3.5 px-space-lg text-center status-cell">
+<span class="inline-flex items-center px-space-md py-0.5 rounded-full text-[12px] font-semibold bg-surface-container-highest text-primary">Activo</span>
+</td>
+<td class="py-3.5 px-space-lg text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" onclick="openEditModal('Pablo Makaky', '1.003.127.440', '300 839919', 'Activo')" title="Editar cliente">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" onclick="openViewModal('Pablo Makaky', '1.003.127.440', '300 839919', 'Activo', '$ 200.000 COP', '14 órdenes')" title="Visualizar ficha">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-secondary hover:bg-surface-container transition-colors" onclick="openHistoryModal('Pablo Makaky', '1.003.127.440', '$ 2.850.000 COP', '21/07/2026', '8')" title="Historial de compras">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+</button>
+<button aria-checked="true" class="status-toggle relative inline-flex h-5 w-10 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none bg-emerald-600 self-center ml-1" onclick="handleStatusToggleClick(this)" role="switch" title="Estado Activo (Clic para cambiar)"><span class="toggle-knob pointer-events-none inline-block h-4 w-4 transform rounded-full bg-white shadow-md ring-0 transition duration-200 ease-in-out translate-x-5"></span></button></div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors client-row" data-address="Calle 74 Sur # 33-10, Envigado" data-credit="0" data-doc="1.003.127.445" data-email="sanchez.st@correo.com" data-name="Santiago Sanchez" data-orders="3" data-phone="318028822" data-status="Inactivo">
+<td class="py-3.5 px-space-lg font-mono font-medium text-primary">1.003.127.445 <span class="font-caption text-caption text-on-surface-variant block">Cédula de Ciudadanía</span></td>
+<td class="py-3.5 px-space-lg font-semibold text-on-surface">Santiago Sanchez</td>
+<td class="py-3.5 px-space-lg font-mono text-on-surface-variant">318028822</td>
+<td class="py-3.5 px-space-lg text-center status-cell">
+<span class="inline-flex items-center px-space-md py-0.5 rounded-full text-[12px] font-semibold bg-surface-container-high text-on-surface-variant">Inactivo</span>
+</td>
+<td class="py-3.5 px-space-lg text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" onclick="openEditModal('Santiago Sanchez', '1.003.127.445', '318028822', 'Inactivo')" title="Editar cliente">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" onclick="openViewModal('Santiago Sanchez', '1.003.127.445', '318028822', 'Inactivo', '$ 0 COP', '3 órdenes')" title="Visualizar ficha">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-secondary hover:bg-surface-container transition-colors" onclick="openHistoryModal('Santiago Sanchez', '1.003.127.445', '$ 420.000 COP', '10/05/2026', '3')" title="Historial de compras">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+</button>
+<button aria-checked="false" class="status-toggle relative inline-flex h-5 w-10 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none bg-slate-300 self-center ml-1" onclick="handleStatusToggleClick(this)" role="switch" title="Estado Inactivo (Clic para cambiar)"><span class="toggle-knob pointer-events-none inline-block h-4 w-4 transform rounded-full bg-white shadow-md ring-0 transition duration-200 ease-in-out translate-x-0"></span></button></div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors client-row" data-address="Av. Nutibara # 65-19" data-credit="500000" data-doc="1.003.127.449" data-email="jaider.giraldo@provee.com" data-name="Jaider Giraldo" data-orders="22" data-phone="3003786136" data-status="Activo">
+<td class="py-3.5 px-space-lg font-mono font-medium text-primary">1.003.127.449 <span class="font-caption text-caption text-on-surface-variant block">Cédula de Ciudadanía</span></td>
+<td class="py-3.5 px-space-lg font-semibold text-on-surface">Jaider Giraldo</td>
+<td class="py-3.5 px-space-lg font-mono text-on-surface-variant">3003786136</td>
+<td class="py-3.5 px-space-lg text-center status-cell">
+<span class="inline-flex items-center px-space-md py-0.5 rounded-full text-[12px] font-semibold bg-surface-container-highest text-primary">Activo</span>
+</td>
+<td class="py-3.5 px-space-lg text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" onclick="openEditModal('Jaider Giraldo', '1.003.127.449', '3003786136', 'Activo')" title="Editar cliente">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" onclick="openViewModal('Jaider Giraldo', '1.003.127.449', '3003786136', 'Activo', '$ 500.000 COP', '22 órdenes')" title="Visualizar ficha">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-secondary hover:bg-surface-container transition-colors" onclick="openHistoryModal('Jaider Giraldo', '1.003.127.449', '$ 4.190.000 COP', '18/07/2026', '22')" title="Historial de compras">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+</button>
+<button aria-checked="true" class="status-toggle relative inline-flex h-5 w-10 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none bg-emerald-600 self-center ml-1" onclick="handleStatusToggleClick(this)" role="switch" title="Estado Activo (Clic para cambiar)"><span class="toggle-knob pointer-events-none inline-block h-4 w-4 transform rounded-full bg-white shadow-md ring-0 transition duration-200 ease-in-out translate-x-5"></span></button></div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors client-row" data-address="Circular 4 # 71-20" data-credit="350000" data-doc="1.004.892.110" data-email="valeria.r@diseno.com" data-name="Valeria Restrepo" data-orders="9" data-phone="3124567890" data-status="Activo">
+<td class="py-3.5 px-space-lg font-mono font-medium text-primary">1.004.892.110 <span class="font-caption text-caption text-on-surface-variant block">Cédula de Ciudadanía</span></td>
+<td class="py-3.5 px-space-lg font-semibold text-on-surface">Valeria Restrepo</td>
+<td class="py-3.5 px-space-lg font-mono text-on-surface-variant">3124567890</td>
+<td class="py-3.5 px-space-lg text-center status-cell">
+<span class="inline-flex items-center px-space-md py-0.5 rounded-full text-[12px] font-semibold bg-surface-container-highest text-primary">Activo</span>
+</td>
+<td class="py-3.5 px-space-lg text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" onclick="openEditModal('Valeria Restrepo', '1.004.892.110', '3124567890', 'Activo')" title="Editar cliente">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" onclick="openViewModal('Valeria Restrepo', '1.004.892.110', '3124567890', 'Activo', '$ 350.000 COP', '9 órdenes')" title="Visualizar ficha">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-secondary hover:bg-surface-container transition-colors" onclick="openHistoryModal('Valeria Restrepo', '1.004.892.110', '$ 1.620.000 COP', '02/07/2026', '9')" title="Historial de compras">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+</button>
+<button aria-checked="true" class="status-toggle relative inline-flex h-5 w-10 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none bg-emerald-600 self-center ml-1" onclick="handleStatusToggleClick(this)" role="switch" title="Estado Activo (Clic para cambiar)"><span class="toggle-knob pointer-events-none inline-block h-4 w-4 transform rounded-full bg-white shadow-md ring-0 transition duration-200 ease-in-out translate-x-5"></span></button></div>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low transition-colors client-row" data-address="Km 2 Vía San Antonio de Pereira" data-credit="1200000" data-doc="900.543.210-4" data-email="compras@liceojoaquin.edu.co" data-name="Liceo Joaquín Cárdenas" data-orders="31" data-phone="3209876543" data-status="Activo">
+<td class="py-3.5 px-space-lg font-mono font-medium text-primary">900.543.210-4 <span class="font-caption text-caption text-on-surface-variant block">NIT Institucional</span></td>
+<td class="py-3.5 px-space-lg font-semibold text-on-surface">Liceo Joaquín Cárdenas</td>
+<td class="py-3.5 px-space-lg font-mono text-on-surface-variant">3209876543</td>
+<td class="py-3.5 px-space-lg text-center status-cell">
+<span class="inline-flex items-center px-space-md py-0.5 rounded-full text-[12px] font-semibold bg-surface-container-highest text-primary">Activo</span>
+</td>
+<td class="py-3.5 px-space-lg text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" onclick="openEditModal('Liceo Joaquín Cárdenas', '900.543.210-4', '3209876543', 'Activo')" title="Editar cliente">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" onclick="openViewModal('Liceo Joaquín Cárdenas', '900.543.210-4', '3209876543', 'Activo', '$ 1.200.000 COP', '31 órdenes')" title="Visualizar ficha">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-secondary hover:bg-surface-container transition-colors" onclick="openHistoryModal('Liceo Joaquín Cárdenas', '900.543.210-4', '$ 8.760.000 COP', '15/07/2026', '31')" title="Historial de compras">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+</button>
+<button aria-checked="true" class="status-toggle relative inline-flex h-5 w-10 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none bg-emerald-600 self-center ml-1" onclick="handleStatusToggleClick(this)" role="switch" title="Estado Activo (Clic para cambiar)"><span class="toggle-knob pointer-events-none inline-block h-4 w-4 transform rounded-full bg-white shadow-md ring-0 transition duration-200 ease-in-out translate-x-5"></span></button></div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination -->
+<div class="flex items-center justify-between px-space-lg py-space-md bg-surface-container-low">
+<span class="font-caption text-caption text-on-surface-variant" id="tablePaginationInfo">Mostrando 1 a 5 de 148 clientes registrados</span>
+<div class="flex items-center gap-1">
+<button class="px-2 py-1 rounded bg-surface-container text-on-surface-variant font-caption text-caption hover:bg-surface-container-high transition-colors" disabled="">Anterior</button>
+<span class="px-2.5 py-1 rounded bg-primary text-on-primary font-caption text-caption font-bold">1</span>
+<button class="px-2 py-1 rounded bg-surface-container text-on-surface-variant font-caption text-caption hover:bg-surface-container-high transition-colors">2</button>
+<button class="px-2 py-1 rounded bg-surface-container text-on-surface-variant font-caption text-caption hover:bg-surface-container-high transition-colors">Siguiente</button>
+</div>
+</div>
+</div>
+<!-- ==================== MODAL 1: CREAR NUEVO CLIENTE ==================== -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-inverse-surface/60 backdrop-blur-sm p-4 hidden" id="modalCreateClient">
+<div class="bg-surface rounded-xl shadow-2xl w-full max-w-xl overflow-hidden flex flex-col transform transition-all">
+<!-- Modal Header -->
+<div class="bg-primary-container px-space-lg py-space-md flex items-center justify-between text-on-primary">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-secondary-container">person_add</span>
+<h2 class="font-headline-3 text-headline-3 font-bold tracking-wide uppercase">Crear Nuevo Cliente</h2>
+</div>
+<button class="text-on-primary hover:text-secondary-container transition-colors" onclick="closeModal('modalCreateClient')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<form class="p-space-lg space-y-space-md max-h-[80vh] overflow-y-auto" id="formCreateClient" onsubmit="handleCreateSubmit(event)">
+<!-- Sección: DATOS BÁSICOS -->
+<div>
+<span class="font-caption text-caption text-primary uppercase font-bold tracking-wider block mb-space-xs">Datos Básicos</span>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<div>
+<label class="font-caption text-caption text-on-surface-variant font-medium block mb-1">Tipo de Documento:</label>
+<div class="relative">
+<select class="w-full bg-secondary-container text-on-secondary-fixed font-body-base-semibold text-body-base-semibold px-space-md py-2 rounded-lg appearance-none cursor-pointer outline-none" id="newDocType">
+<option value="Cédula de Ciudadanía">Cédula de Ciudadanía</option>
+<option value="NIT">NIT (Empresas)</option>
+<option value="Cédula de Extranjería">Cédula de Extranjería</option>
+<option value="Pasaporte">Pasaporte</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-on-secondary-fixed text-[18px]">arrow_drop_down</span>
+</div>
+</div>
+<div>
+<label class="font-caption text-caption text-on-surface-variant font-medium block mb-1">Número:</label>
+<input class="w-full bg-surface-container-lowest text-on-surface px-space-md py-2 rounded-lg font-body-base text-body-base outline-none focus:ring-2 focus:ring-primary shadow-inner" id="newDocNumber" placeholder="Ej: 1.003.987.234" required="" type="text"/>
+</div>
+</div>
+<div class="mt-space-sm">
+<label class="font-caption text-caption text-on-surface-variant font-medium block mb-1">Nombre Completo / Razón Social:</label>
+<input class="w-full bg-surface-container-lowest text-on-surface px-space-md py-2 rounded-lg font-body-base text-body-base outline-none focus:ring-2 focus:ring-primary shadow-inner" id="newName" placeholder="Nombre de la persona o razón social de empresa" required="" type="text"/>
+</div>
+<div class="mt-space-sm">
+<label class="font-caption text-caption text-on-surface-variant font-medium block mb-1">Persona de Contacto:</label>
+<input class="w-full bg-surface-container-lowest text-on-surface px-space-md py-2 rounded-lg font-body-base text-body-base outline-none focus:ring-2 focus:ring-primary shadow-inner" id="newContactPerson" placeholder="Nombre de representante o encargado" type="text"/>
+</div>
+</div>
+<!-- Sección: DATOS DE CONTACTO -->
+<div class="pt-space-xs">
+<span class="font-caption text-caption text-primary uppercase font-bold tracking-wider block mb-space-xs">Datos de Contacto</span>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<div>
+<label class="font-caption text-caption text-on-surface-variant font-medium block mb-1">Teléfono:</label>
+<input class="w-full bg-surface-container-lowest text-on-surface px-space-md py-2 rounded-lg font-body-base text-body-base outline-none focus:ring-2 focus:ring-primary shadow-inner" id="newPhone" placeholder="Ej: 300 123 4567" required="" type="tel"/>
+</div>
+<div>
+<label class="font-caption text-caption text-on-surface-variant font-medium block mb-1">Correo Completo:</label>
+<input class="w-full bg-surface-container-lowest text-on-surface px-space-md py-2 rounded-lg font-body-base text-body-base outline-none focus:ring-2 focus:ring-primary shadow-inner" id="newEmail" placeholder="cliente@ejemplo.com" type="email"/>
+</div>
+</div>
+<div class="mt-space-sm">
+<label class="font-caption text-caption text-on-surface-variant font-medium block mb-1">Dirección:</label>
+<input class="w-full bg-surface-container-lowest text-on-surface px-space-md py-2 rounded-lg font-body-base text-body-base outline-none focus:ring-2 focus:ring-primary shadow-inner" id="newAddress" placeholder="Dirección de facturación / despacho" type="text"/>
+</div>
+</div>
+<!-- Sección: ESTADO -->
+<div class="pt-space-xs">
+<span class="font-caption text-caption text-primary uppercase font-bold tracking-wider block mb-space-xs">Estado</span>
+<div class="relative w-44">
+<select class="w-full bg-secondary-container text-on-secondary-fixed font-body-base-semibold text-body-base-semibold px-space-md py-2 rounded-lg appearance-none cursor-pointer outline-none shadow-sm" id="newStatus">
+<option value="Activo">Activo</option>
+<option value="Inactivo">Inactivo</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-on-secondary-fixed text-[18px]">arrow_drop_down</span>
+</div>
+</div>
+<!-- Modal Actions -->
+<div class="flex items-center justify-end gap-space-sm pt-space-md">
+<button class="px-space-lg py-2 rounded-lg bg-surface-container-highest text-on-surface-variant hover:bg-surface-dim font-body-base-semibold text-body-base-semibold transition-colors" onclick="closeModal('modalCreateClient')" type="button">
+            Cancelar
+          </button>
+<button class="px-space-lg py-2 rounded-lg bg-secondary-container hover:bg-secondary text-on-secondary-fixed hover:text-on-secondary font-body-base-semibold text-body-base-semibold shadow-sm transition-all" type="submit">
+            Guardar Cambios
+          </button>
+</div>
+</form>
+</div>
+</div>
+<!-- ==================== MODAL 2: EDITAR CLIENTE ==================== -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-inverse-surface/60 backdrop-blur-sm p-4 hidden" id="modalEditClient">
+<div class="bg-surface rounded-xl shadow-2xl w-full max-w-lg overflow-hidden flex flex-col transform transition-all">
+<!-- Modal Header -->
+<div class="bg-primary-container px-space-lg py-space-md flex items-center justify-between text-on-primary">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-secondary-container">edit_document</span>
+<h2 class="font-headline-3 text-headline-3 font-bold tracking-wide uppercase">Editar Cliente</h2>
+</div>
+<button class="text-on-primary hover:text-secondary-container transition-colors" onclick="closeModal('modalEditClient')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<form class="p-space-lg space-y-space-md" id="formEditClient" onsubmit="handleEditSubmit(event)">
+<div>
+<label class="font-caption text-caption text-on-surface-variant font-medium block mb-1">Nombre de Cliente:</label>
+<input class="w-full bg-surface-container-lowest text-on-surface px-space-md py-2.5 rounded-lg font-body-base text-body-base outline-none focus:ring-2 focus:ring-primary shadow-inner" id="editName" required="" type="text"/>
+</div>
+<div>
+<label class="font-caption text-caption text-on-surface-variant font-medium block mb-1">Tipo de Documento / Número:</label>
+<input class="w-full bg-surface-container-lowest text-on-surface px-space-md py-2.5 rounded-lg font-body-base text-body-base outline-none focus:ring-2 focus:ring-primary shadow-inner" id="editDoc" required="" type="text"/>
+</div>
+<div>
+<label class="font-caption text-caption text-on-surface-variant font-medium block mb-1">Teléfono:</label>
+<input class="w-full bg-surface-container-lowest text-on-surface px-space-md py-2.5 rounded-lg font-body-base text-body-base outline-none focus:ring-2 focus:ring-primary shadow-inner" id="editPhone" required="" type="tel"/>
+</div>
+<div>
+<label class="font-caption text-caption text-on-surface-variant font-medium block mb-1">ESTADO:</label>
+<div class="relative w-44">
+<select class="w-full bg-secondary-container text-on-secondary-fixed font-body-base-semibold text-body-base-semibold px-space-md py-2 rounded-lg appearance-none cursor-pointer outline-none shadow-sm" id="editStatus">
+<option value="Activo">Activo</option>
+<option value="Inactivo">Inactivo</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-on-secondary-fixed text-[18px]">arrow_drop_down</span>
+</div>
+</div>
+<!-- Modal Actions -->
+<div class="flex items-center justify-end gap-space-sm pt-space-md">
+<button class="px-space-lg py-2 rounded-lg bg-surface-container-highest text-on-surface-variant hover:bg-surface-dim font-body-base-semibold text-body-base-semibold transition-colors" onclick="closeModal('modalEditClient')" type="button">
+            Cancelar
+          </button>
+<button class="px-space-lg py-2 rounded-lg bg-secondary-container hover:bg-secondary text-on-secondary-fixed hover:text-on-secondary font-body-base-semibold text-body-base-semibold shadow-sm transition-all" type="submit">
+            Guardar Cambios
+          </button>
+</div>
+</form>
+</div>
+</div>
+<!-- ==================== MODAL 3: VISUALIZACIÓN DE CLIENTE ==================== -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-inverse-surface/60 backdrop-blur-sm p-4 hidden" id="modalViewClient">
+<div class="bg-surface rounded-xl shadow-2xl w-full max-w-2xl overflow-hidden flex flex-col transform transition-all">
+<!-- Modal Header -->
+<div class="bg-primary-container px-space-lg py-space-md flex items-center justify-between text-on-primary">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-secondary-container">account_circle</span>
+<h2 class="font-headline-3 text-headline-3 font-bold tracking-wide uppercase">Visualización de Cliente</h2>
+</div>
+<button class="text-on-primary hover:text-secondary-container transition-colors" onclick="closeModal('modalViewClient')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Modal Body (Two columns matching mockup reference) -->
+<div class="p-space-lg grid grid-cols-1 md:grid-cols-12 gap-space-lg">
+<!-- Photo column -->
+<div class="md:col-span-5 flex flex-col items-center justify-center bg-secondary-fixed/50 rounded-xl p-space-lg text-center aspect-square md:aspect-auto">
+<div class="w-24 h-24 rounded-full bg-surface-container-lowest shadow-sm flex items-center justify-center text-primary mb-space-sm">
+<span class="material-symbols-outlined text-[48px]">account_box</span>
+</div>
+<span class="font-headline-3 text-[14px] text-on-secondary-fixed uppercase tracking-wider font-bold">Foto del Cliente</span>
+<span class="font-caption text-caption text-secondary mt-1">Registrado en Módulo ERP</span>
+</div>
+<!-- Data details column -->
+<div class="md:col-span-7 flex flex-col justify-between space-y-space-md bg-surface-container-low p-space-md rounded-xl">
+<div class="pb-space-xs border-b border-surface-container-highest">
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider block">Nombre Cliente:</span>
+<span class="font-headline-3 text-headline-3 text-primary font-bold" id="viewClientName">Pablo Makaky</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm pb-space-xs border-b border-surface-container-highest">
+<div>
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider block">Tipo de Documento:</span>
+<span class="font-body-base-semibold text-body-base-semibold text-on-surface font-mono" id="viewClientDoc">1.003.127.440</span>
+</div>
+<div>
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider block">Teléfono:</span>
+<span class="font-body-base-semibold text-body-base-semibold text-on-surface font-mono" id="viewClientPhone">300 839919</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-sm pb-space-xs border-b border-surface-container-highest">
+<div>
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider block">Cupo Crédito:</span>
+<span class="font-body-base-semibold text-body-base-semibold text-secondary font-mono" id="viewClientCredit">$ 200.000 COP</span>
+</div>
+<div>
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider block">Total Compras:</span>
+<span class="font-body-base-semibold text-body-base-semibold text-primary" id="viewClientOrders">14 órdenes</span>
+</div>
+</div>
+<div>
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider block mb-1">Estado:</span>
+<span class="inline-flex items-center px-space-md py-0.5 rounded-full text-caption font-semibold bg-surface-container-highest text-primary" id="viewClientStatus">Activo</span>
+</div>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="px-space-lg py-space-md bg-surface-container flex items-center justify-end">
+<button class="px-space-xl py-2 rounded-lg bg-secondary-container hover:bg-secondary text-on-secondary-fixed hover:text-on-secondary font-body-base-semibold text-body-base-semibold shadow-sm transition-all" onclick="closeModal('modalViewClient')">
+          Cerrar
+        </button>
+</div>
+</div>
+</div>
+<!-- ==================== MODAL 4: HISTORIAL DE COMPRAS (Flow image 2) ==================== -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-inverse-surface/60 backdrop-blur-sm p-4 hidden" id="modalHistoryClient">
+<div class="bg-surface rounded-xl shadow-2xl w-full max-w-3xl overflow-hidden flex flex-col transform transition-all">
+<!-- Modal Header -->
+<div class="bg-primary-container px-space-lg py-space-md flex items-center justify-between text-on-primary">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-secondary-container">receipt_long</span>
+<h2 class="font-headline-3 text-headline-3 font-bold tracking-wide uppercase">
+            Historial Compras de Cliente - <span class="text-secondary-fixed" id="historyClientName">Jaider Giraldo</span>
+</h2>
+</div>
+<button class="text-on-primary hover:text-secondary-container transition-colors" onclick="closeModal('modalHistoryClient')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Summary KPI Row -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm p-space-md bg-surface-container-low border-b border-surface-container-highest">
+<div class="bg-surface-container-lowest p-space-sm rounded-lg">
+<span class="font-caption text-caption text-on-surface-variant uppercase block">Total Comprado</span>
+<span class="font-headline-3 text-headline-3 text-secondary font-bold" id="historyTotal">$ 4.190.000 COP</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded-lg">
+<span class="font-caption text-caption text-on-surface-variant uppercase block">Última Transacción</span>
+<span class="font-headline-3 text-headline-3 text-primary font-bold" id="historyDate">18/07/2026</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded-lg">
+<span class="font-caption text-caption text-on-surface-variant uppercase block">Tickets Emitidos</span>
+<span class="font-headline-3 text-headline-3 text-on-surface font-bold" id="historyCount">22 comprobantes</span>
+</div>
+</div>
+<!-- Purchases History Table -->
+<div class="p-space-md max-h-72 overflow-y-auto">
+<table class="w-full text-left border-collapse text-body-sm">
+<thead>
+<tr class="bg-surface-container-high text-on-surface uppercase font-caption text-caption tracking-wider">
+<th class="py-2 px-space-md">ID Venta</th>
+<th class="py-2 px-space-md">Fecha</th>
+<th class="py-2 px-space-md">Detalle de Productos</th>
+<th class="py-2 px-space-md">Método</th>
+<th class="py-2 px-space-md text-right">Total ($ COP)</th>
+<th class="py-2 px-space-md text-center">Estado</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container font-body-sm text-body-sm text-on-surface">
+<tr>
+<td class="py-2 px-space-md font-mono text-primary font-bold">#VNT-0894</td>
+<td class="py-2 px-space-md">21/07/2026 14:22</td>
+<td class="py-2 px-space-md font-medium">3x Filtro Hidráulico H-400 + Aceite Sintético</td>
+<td class="py-2 px-space-md">Crédito 30d</td>
+<td class="py-2 px-space-md text-right font-mono font-bold">$ 450.000</td>
+<td class="py-2 px-space-md text-center"><span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-surface-container-highest text-primary">Pagada</span></td>
+</tr>
+<tr>
+<td class="py-2 px-space-md font-mono text-primary font-bold">#VNT-0741</td>
+<td class="py-2 px-space-md">04/07/2026 10:15</td>
+<td class="py-2 px-space-md font-medium">1x Kit de Sellos Industriales Ref-9</td>
+<td class="py-2 px-space-md">Efectivo POS</td>
+<td class="py-2 px-space-md text-right font-mono font-bold">$ 180.000</td>
+<td class="py-2 px-space-md text-center"><span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-surface-container-highest text-primary">Pagada</span></td>
+</tr>
+<tr>
+<td class="py-2 px-space-md font-mono text-primary font-bold">#VNT-0620</td>
+<td class="py-2 px-space-md">18/06/2026 16:48</td>
+<td class="py-2 px-space-md font-medium">10x Conectores Rápidos 3/4 + Manguera Reforzada</td>
+<td class="py-2 px-space-md">Transferencia</td>
+<td class="py-2 px-space-md text-right font-mono font-bold">$ 920.000</td>
+<td class="py-2 px-space-md text-center"><span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-surface-container-highest text-primary">Pagada</span></td>
+</tr>
+<tr>
+<td class="py-2 px-space-md font-mono text-primary font-bold">#VNT-0512</td>
+<td class="py-2 px-space-md">29/05/2026 11:30</td>
+<td class="py-2 px-space-md font-medium">Lote Pernos Grado 8 (200 unds)</td>
+<td class="py-2 px-space-md">Crédito 15d</td>
+<td class="py-2 px-space-md text-right font-mono font-bold">$ 1.300.000</td>
+<td class="py-2 px-space-md text-center"><span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-surface-container-highest text-primary">Pagada</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Modal Footer -->
+<div class="px-space-lg py-space-md bg-surface-container flex items-center justify-between">
+<button class="inline-flex items-center gap-1.5 px-space-md py-2 rounded-lg bg-surface-container-lowest text-primary hover:bg-surface-container-high font-body-base-semibold text-body-base-semibold transition-colors" onclick="alert('Generando extracto contable en formato PDF...')">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+<span>Exportar Historial (PDF)</span>
+</button>
+<button class="px-space-xl py-2 rounded-lg bg-secondary-container hover:bg-secondary text-on-secondary-fixed hover:text-on-secondary font-body-base-semibold text-body-base-semibold shadow-sm transition-all" onclick="closeModal('modalHistoryClient')">
+          Cerrar
+        </button>
+</div>
+</div>
+</div>
+<!-- ==================== MODAL 5: DIAGRAMA DE FLUJO (Referencia de Navegación) ==================== -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-inverse-surface/60 backdrop-blur-sm p-4 hidden" id="modalFlowInfo">
+<div class="bg-surface rounded-xl shadow-2xl w-full max-w-xl overflow-hidden flex flex-col transform transition-all">
+<div class="bg-primary-container px-space-lg py-space-md flex items-center justify-between text-on-primary">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-secondary-container">account_tree</span>
+<h2 class="font-headline-3 text-headline-3 font-bold tracking-wide uppercase">Diagrama de Flujo: Gestión de Clientes</h2>
+</div>
+</div>
+<div class="p-space-lg flex flex-col items-center">
+<img alt="Flujo de Navegación del Módulo de Clientes" class="w-full max-w-md h-auto rounded-lg shadow-sm border border-surface-container-highest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-PJ7g9G4KyAH09JQm7GcOkwKTlp7DNwNZUYld5E33N0Iso9-5cJ_2bUF0F2LgD_ywYyvHQj5ug5qmb7FD8Rq_omt9924rNvzvshqlzH-_g-JWPOD0OA_z1IQhvoXWqxIlPxTnGZMNL32GUH28DNCp6tiMxgdmjeCTk5fuCjQHYXwh2gee5iqhOzd5O1RjmhVKzCZmcW08zaU1S8zLPuYx6m8bpneCIIoDqJm25oB8iXaLJvSBEui1"/>
+<p class="font-caption text-caption text-on-surface-variant text-center mt-space-md">
+          Estructura de pantallas activas enlazadas mediante modales directos: Registrar Cliente, Modificar Cliente, Ficha de Visualización e Historial de Facturación.
+        </p>
+</div>
+<div class="px-space-lg py-space-sm bg-surface-container flex justify-end">
+</div>
+</div>
+</div>
+<!-- ==================== MODAL 6: CONFIRMACIÓN CAMBIO DE ESTADO ==================== -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-inverse-surface/60 backdrop-blur-sm p-4 hidden" id="modalDeactivateClient">
+<div class="bg-surface rounded-xl shadow-2xl w-full max-w-md overflow-hidden flex flex-col transform transition-all">
+<div class="bg-primary-container px-space-lg py-space-md flex items-center justify-between text-on-primary">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-amber-400" id="statusModalIcon">warning</span>
+<h2 class="font-headline-3 text-headline-3 font-bold tracking-wide uppercase" id="statusModalTitle">Confirmación de Estado</h2>
+</div>
+<button class="text-on-primary hover:text-secondary-container transition-colors" onclick="closeModal('modalDeactivateClient')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-space-lg flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full flex items-center justify-center mb-space-md transition-colors" id="statusModalAvatarBg">
+<span class="material-symbols-outlined text-[36px]" id="statusModalCenterIcon">warning</span>
+</div>
+<h3 class="font-headline-3 text-headline-3 font-bold text-on-surface mb-space-xs" id="statusModalHeading">¿Está seguro de inactivar este cliente?</h3>
+<p class="font-body-base text-body-base text-on-surface-variant mb-space-sm">Cliente: <span class="font-bold text-primary" id="deactivateClientTargetName">Pablo Makaky</span></p>
+<div class="border rounded-lg p-space-sm w-full transition-colors" id="statusModalAlertBox">
+<p class="font-caption text-caption font-bold uppercase tracking-wide" id="statusModalAlertTitle">⚠ ATENCIÓN: Se requiere confirmación</p>
+<p class="font-caption text-caption text-on-surface-variant mt-0.5" id="statusModalAlertDesc">El cliente no podrá emitir nuevos pedidos ni créditos mientras permanezca inactivo.</p>
+</div>
+</div>
+<div class="px-space-lg py-space-md bg-surface-container flex items-center justify-end gap-space-sm">
+<button class="px-space-lg py-2 rounded-lg bg-surface-container-highest text-on-surface-variant hover:bg-surface-dim font-body-base-semibold text-body-base-semibold transition-colors" onclick="closeModal('modalDeactivateClient')" type="button">Cancelar</button>
+<button class="px-space-lg py-2 rounded-lg bg-secondary-container hover:bg-secondary text-on-secondary-fixed hover:text-on-secondary font-body-base-semibold text-body-base-semibold shadow-sm transition-all" id="btnConfirmDeactivate" type="button">Inactivar</button>
+</div>
+</div>
+</div>
+<!-- Inline Interactive Logic -->
+<script>
+    // Modal Helpers
+    function openModal(modalId) {
+      const el = document.getElementById(modalId);
+      if (el) {
+        el.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeModal(modalId) {
+      const el = document.getElementById(modalId);
+      if (el) {
+        el.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Connect Create Button
+    document.getElementById('btnOpenCreate').addEventListener('click', function() {
+      openModal('modalCreateClient');
+    });
+
+    // Populate and open Edit Modal
+    let editingRow = null;
+    function openEditModal(name, doc, phone, status) {
+      document.getElementById('editName').value = name;
+      document.getElementById('editDoc').value = doc;
+      document.getElementById('editPhone').value = phone;
+      document.getElementById('editStatus').value = status;
+      // find row
+      const rows = document.querySelectorAll('.client-row');
+      editingRow = null;
+      rows.forEach(r => {
+        if (r.getAttribute('data-name') === name || r.getAttribute('data-doc') === doc) {
+          editingRow = r;
+        }
+      });
+      openModal('modalEditClient');
+    }
+
+    // Populate and open View Modal
+    function openViewModal(name, doc, phone, status, credit, orders) {
+      document.getElementById('viewClientName').innerText = name;
+      document.getElementById('viewClientDoc').innerText = doc;
+      document.getElementById('viewClientPhone').innerText = phone;
+      document.getElementById('viewClientCredit').innerText = credit || '$ 200.000 COP';
+      document.getElementById('viewClientOrders').innerText = orders || '14 órdenes';
+      
+      const stEl = document.getElementById('viewClientStatus');
+      stEl.innerText = status;
+      if (status === 'Activo') {
+        stEl.className = 'inline-flex items-center px-space-md py-0.5 rounded-full text-caption font-semibold bg-surface-container-highest text-primary';
+      } else {
+        stEl.className = 'inline-flex items-center px-space-md py-0.5 rounded-full text-caption font-semibold bg-surface-container-high text-on-surface-variant';
+      }
+      openModal('modalViewClient');
+    }
+
+    // Populate and open History Modal
+    function openHistoryModal(name, doc, total, date, count) {
+      document.getElementById('historyClientName').innerText = name;
+      document.getElementById('historyTotal').innerText = total;
+      document.getElementById('historyDate').innerText = date;
+      document.getElementById('historyCount').innerText = count + ' comprobantes';
+      openModal('modalHistoryClient');
+    }
+
+    // Recalculate KPIs
+    function updateKPIs() {
+      const allRows = document.querySelectorAll('.client-row');
+      let total = allRows.length;
+      let activeCount = 0;
+      allRows.forEach(r => {
+        if (r.getAttribute('data-status') === 'Activo') {
+          activeCount++;
+        }
+      });
+      // In mockup we have total base registered 148, active base 136.
+      // We adjust based on sample diff or direct calculation
+      const kpiTotalEl = document.getElementById('kpiTotalClients');
+      const kpiActiveEl = document.getElementById('kpiActiveClients');
+      if (kpiActiveEl) {
+        // Keep baseline ratio aligned
+        kpiActiveEl.innerText = (132 + activeCount).toString();
+      }
+    }
+
+    // Apply Switch UI State
+    function renderRowSwitchState(row, isActivo) {
+      const toggleBtn = row.querySelector('.status-toggle');
+      const knob = toggleBtn ? toggleBtn.querySelector('.toggle-knob') : null;
+      const statusCell = row.querySelector('.status-cell');
+
+      if (isActivo) {
+        row.setAttribute('data-status', 'Activo');
+        if (statusCell) {
+          statusCell.innerHTML = '<span class="inline-flex items-center px-space-md py-0.5 rounded-full text-[12px] font-semibold bg-surface-container-highest text-primary">Activo</span>';
+        }
+        if (toggleBtn) {
+          toggleBtn.className = 'status-toggle relative inline-flex h-5 w-10 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none bg-emerald-600 self-center ml-1';
+          toggleBtn.setAttribute('aria-checked', 'true');
+          toggleBtn.title = 'Estado Activo (Clic para cambiar)';
+        }
+        if (knob) {
+          knob.className = 'toggle-knob pointer-events-none inline-block h-4 w-4 transform rounded-full bg-white shadow-md ring-0 transition duration-200 ease-in-out translate-x-5';
+        }
+      } else {
+        row.setAttribute('data-status', 'Inactivo');
+        if (statusCell) {
+          statusCell.innerHTML = '<span class="inline-flex items-center px-space-md py-0.5 rounded-full text-[12px] font-semibold bg-surface-container-high text-on-surface-variant">Inactivo</span>';
+        }
+        if (toggleBtn) {
+          toggleBtn.className = 'status-toggle relative inline-flex h-5 w-10 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none bg-slate-300 self-center ml-1';
+          toggleBtn.setAttribute('aria-checked', 'false');
+          toggleBtn.title = 'Estado Inactivo (Clic para cambiar)';
+        }
+        if (knob) {
+          knob.className = 'toggle-knob pointer-events-none inline-block h-4 w-4 transform rounded-full bg-white shadow-md ring-0 transition duration-200 ease-in-out translate-x-0';
+        }
+      }
+    }
+
+    // Handle Switch Click (Opens dynamic confirm modal)
+    let pendingToggleRow = null;
+    let pendingTargetStatus = null;
+
+    function handleStatusToggleClick(buttonEl) {
+      const row = buttonEl.closest('.client-row');
+      if (!row) return;
+
+      const currentStatus = row.getAttribute('data-status') || 'Activo';
+      const clientName = row.getAttribute('data-name') || 'Cliente';
+      
+      pendingToggleRow = row;
+      pendingTargetStatus = (currentStatus === 'Activo') ? 'Inactivo' : 'Activo';
+
+      const nameEl = document.getElementById('deactivateClientTargetName');
+      if (nameEl) nameEl.textContent = clientName;
+
+      const titleEl = document.getElementById('statusModalTitle');
+      const headingEl = document.getElementById('statusModalHeading');
+      const confirmBtn = document.getElementById('btnConfirmDeactivate');
+      const avatarBg = document.getElementById('statusModalAvatarBg');
+      const centerIcon = document.getElementById('statusModalCenterIcon');
+      const alertBox = document.getElementById('statusModalAlertBox');
+      const alertTitle = document.getElementById('statusModalAlertTitle');
+      const alertDesc = document.getElementById('statusModalAlertDesc');
+
+      if (pendingTargetStatus === 'Inactivo') {
+        // Confirm inactivating
+        if (titleEl) titleEl.textContent = 'Alerta de Seguridad';
+        if (headingEl) headingEl.textContent = '¿Está seguro de inactivar este cliente?';
+        if (avatarBg) avatarBg.className = 'w-16 h-16 rounded-full bg-error-container flex items-center justify-center text-error mb-space-md';
+        if (centerIcon) {
+          centerIcon.textContent = 'warning';
+          centerIcon.className = 'material-symbols-outlined text-[36px] text-error';
+        }
+        if (alertBox) alertBox.className = 'bg-error-container/40 border border-error/20 rounded-lg p-space-sm w-full';
+        if (alertTitle) {
+          alertTitle.textContent = '⚠ ATENCIÓN: Se requiere confirmación';
+          alertTitle.className = 'font-caption text-caption text-error font-bold uppercase tracking-wide';
+        }
+        if (alertDesc) alertDesc.textContent = 'El cliente no podrá emitir nuevos pedidos ni créditos mientras permanezca inactivo.';
+        if (confirmBtn) {
+          confirmBtn.textContent = 'Inactivar';
+          confirmBtn.className = 'px-space-lg py-2 rounded-lg bg-secondary-container hover:bg-secondary text-on-secondary-fixed hover:text-on-secondary font-body-base-semibold text-body-base-semibold shadow-sm transition-all';
+        }
+      } else {
+        // Confirm activating
+        if (titleEl) titleEl.textContent = 'Confirmación de Activación';
+        if (headingEl) headingEl.textContent = '¿Está seguro de activar este cliente?';
+        if (avatarBg) avatarBg.className = 'w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 mb-space-md';
+        if (centerIcon) {
+          centerIcon.textContent = 'check_circle';
+          centerIcon.className = 'material-symbols-outlined text-[36px] text-emerald-600';
+        }
+        if (alertBox) alertBox.className = 'bg-emerald-50 border border-emerald-200 rounded-lg p-space-sm w-full';
+        if (alertTitle) {
+          alertTitle.textContent = '✓ CONFIRMACIÓN DE REACTIVACIÓN';
+          alertTitle.className = 'font-caption text-caption text-emerald-700 font-bold uppercase tracking-wide';
+        }
+        if (alertDesc) alertDesc.textContent = 'El cliente volverá a tener acceso a facturación, créditos y cotizaciones activas.';
+        if (confirmBtn) {
+          confirmBtn.textContent = 'Activar';
+          confirmBtn.className = 'px-space-lg py-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-body-base-semibold text-body-base-semibold shadow-sm transition-all';
+        }
+      }
+
+      openModal('modalDeactivateClient');
+    }
+
+    // Modal Confirmation Listener
+    document.getElementById('btnConfirmDeactivate')?.addEventListener('click', function() {
+      if (pendingToggleRow && pendingTargetStatus) {
+        const isActivo = (pendingTargetStatus === 'Activo');
+        renderRowSwitchState(pendingToggleRow, isActivo);
+        updateKPIs();
+        filterTable();
+      }
+      closeModal('modalDeactivateClient');
+      pendingToggleRow = null;
+      pendingTargetStatus = null;
+    });
+
+    // Handle Forms
+    function handleCreateSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('newName').value;
+      const doc = document.getElementById('newDocNumber').value;
+      const phone = document.getElementById('newPhone').value;
+      const status = document.getElementById('newStatus').value;
+      const docType = document.getElementById('newDocType').value;
+      const isActivo = (status === 'Activo');
+
+      const tbody = document.querySelector('#clientsTable tbody');
+      const tr = document.createElement('tr');
+      tr.className = 'hover:bg-surface-container-low transition-colors client-row';
+      tr.setAttribute('data-name', name);
+      tr.setAttribute('data-doc', doc);
+      tr.setAttribute('data-phone', phone);
+      tr.setAttribute('data-status', status);
+
+      tr.innerHTML = `
+        <td class="py-3.5 px-space-lg font-mono font-medium text-primary">${doc} <span class="font-caption text-caption text-on-surface-variant block">${docType}</span></td>
+        <td class="py-3.5 px-space-lg font-semibold text-on-surface">${name}</td>
+        <td class="py-3.5 px-space-lg font-mono text-on-surface-variant">${phone}</td>
+        <td class="py-3.5 px-space-lg text-center status-cell">
+          <span class="inline-flex items-center px-space-md py-0.5 rounded-full text-[12px] font-semibold ${isActivo ? 'bg-surface-container-highest text-primary' : 'bg-surface-container-high text-on-surface-variant'}">${status}</span>
+        </td>
+        <td class="py-3.5 px-space-lg text-right">
+          <div class="inline-flex items-center gap-1">
+            <button onclick="openEditModal('${name}', '${doc}', '${phone}', '${status}')" class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" title="Editar cliente">
+              <span class="material-symbols-outlined text-[20px]">edit</span>
+            </button>
+            <button onclick="openViewModal('${name}', '${doc}', '${phone}', '${status}', '$ 0 COP', '0 órdenes')" class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" title="Visualizar ficha">
+              <span class="material-symbols-outlined text-[20px]">visibility</span>
+            </button>
+            <button onclick="openHistoryModal('${name}', '${doc}', '$ 0 COP', 'N/A', '0')" class="p-1.5 rounded-lg text-on-surface-variant hover:text-secondary hover:bg-surface-container transition-colors" title="Historial de compras">
+              <span class="material-symbols-outlined text-[20px]">receipt_long</span>
+            </button>
+            <button class="status-toggle relative inline-flex h-5 w-10 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${isActivo ? 'bg-emerald-600' : 'bg-slate-300'} self-center ml-1" onclick="handleStatusToggleClick(this)" role="switch" aria-checked="${isActivo}" title="Estado ${status} (Clic para cambiar)"><span class="toggle-knob pointer-events-none inline-block h-4 w-4 transform rounded-full bg-white shadow-md ring-0 transition duration-200 ease-in-out ${isActivo ? 'translate-x-5' : 'translate-x-0'}"></span></button>
+          </div>
+        </td>
+      `;
+      tbody.prepend(tr);
+      closeModal('modalCreateClient');
+      document.getElementById('formCreateClient').reset();
+      updateKPIs();
+    }
+
+    function handleEditSubmit(e) {
+      e.preventDefault();
+      if (editingRow) {
+        const name = document.getElementById('editName').value;
+        const doc = document.getElementById('editDoc').value;
+        const phone = document.getElementById('editPhone').value;
+        const status = document.getElementById('editStatus').value;
+        const isActivo = (status === 'Activo');
+
+        editingRow.setAttribute('data-name', name);
+        editingRow.setAttribute('data-doc', doc);
+        editingRow.setAttribute('data-phone', phone);
+        editingRow.children[1].textContent = name;
+        editingRow.children[2].textContent = phone;
+        renderRowSwitchState(editingRow, isActivo);
+        updateKPIs();
+        filterTable();
+      }
+      closeModal('modalEditClient');
+    }
+
+    // Dynamic Client Search and Status Filter
+    const searchInput = document.getElementById('clientSearchInput');
+    const statusFilter = document.getElementById('statusFilter');
+
+    function filterTable() {
+      const q = (searchInput.value || '').toLowerCase().trim();
+      const st = statusFilter.value;
+      const rows = document.querySelectorAll('.client-row');
+
+      rows.forEach(row => {
+        const name = (row.getAttribute('data-name') || '').toLowerCase();
+        const doc = (row.getAttribute('data-doc') || '').toLowerCase();
+        const rowStatus = row.getAttribute('data-status');
+
+        const matchesQuery = name.includes(q) || doc.includes(q);
+        const matchesStatus = (st === 'all') || (rowStatus === st);
+
+        if (matchesQuery && matchesStatus) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+
+    searchInput.addEventListener('input', filterTable);
+    statusFilter.addEventListener('change', filterTable);
+
+    // Close on backdrop click
+    ['modalCreateClient', 'modalEditClient', 'modalViewClient', 'modalHistoryClient', 'modalFlowInfo', 'modalDeactivateClient'].forEach(id => {
+      const modal = document.getElementById(id);
+      if (modal) {
+        modal.addEventListener('click', function(e) {
+          if (e.target === modal) {
+            closeModal(id);
+          }
+        });
+      }
+    });
+  </script>
+</div></main></div>
+</body></html>

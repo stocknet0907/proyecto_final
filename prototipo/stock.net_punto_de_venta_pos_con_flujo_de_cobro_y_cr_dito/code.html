@@ -1,0 +1,884 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>STOCK.net - Módulo Punto de Venta (POS)</title>
+<!-- Google Fonts: Inter & Montserrat -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Montserrat:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS v3 CDN with forms & container plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              top: '#4A6B8A',
+              topDark: '#3A5570',
+              cream: '#FCF9F3',
+              sidebarBg: '#FAF7F2',
+              cardBg: '#FFFFFF',
+              accentYellow: '#E6A017',
+              accentYellowHover: '#D38F0F',
+              greenEmerald: '#1E7552',
+              greenEmeraldHover: '#175E42',
+              greenTeal: '#246D5E',
+              grayCancel: '#B1ABA1',
+              grayCancelHover: '#9E988E',
+              navyText: '#263D52',
+              borderLight: '#E8E2D6',
+            }
+          },
+          fontFamily: {
+            sans: ['Montserrat', 'Inter', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom Styles -->
+<style data-purpose="base-typography">
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #FCF9F3;
+      color: #334155;
+      overflow-x: hidden;
+      user-select: none;
+    }
+    input, button, select {
+      font-family: 'Montserrat', sans-serif;
+    }
+  </style>
+<style data-purpose="scrollbar-and-effects">
+    /* Custom subtle scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F3EFE6;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D1C9BC;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #B4ACA0;
+    }
+    .modal-backdrop {
+      background-color: rgba(30, 41, 59, 0.45);
+      backdrop-filter: blur(2px);
+    }
+  </style>
+<!-- END: Custom Styles -->
+</head>
+<body class="min-h-screen flex flex-col antialiased">
+<!-- BEGIN: TopBar -->
+<header class="w-full h-14 bg-brand-top border-b border-brand-topDark flex items-center justify-between px-4 sm:px-6 shadow-md z-30 sticky top-0" data-purpose="top-navigation-bar">
+<!-- Left Logo & System Designation -->
+<div class="flex items-center space-x-3.5">
+<!-- 3D Box Logo Icon -->
+<div class="flex items-center text-white"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUj3W1w9thvGW-0RSblr6lWIosSwUKCSPCfzjAVewme9kBDEujltB1kAPvDnrrIxV15EiSGrCewc6PznBMwNXuwmdNO93FY8nL50euIv47e--zXYVcB214cT9W7bEHMeja6-IgzFtrJpuW7yt4DWrve2_DkXx8uBZqSG3y8LMn_n7bj5dIYwidsIuI7KsaW7TMZim2MmDNk2y3lX_YGLPFYg8IC_wsCzCYQxC8b0PwBmsGmRhBcO-d" alt="STOCK.net Logo" class="h-8 w-auto object-contain mr-1.5"></div>
+<span class="hidden md:inline-block text-[11px] text-slate-200 font-medium tracking-wide uppercase border-l border-white/20 pl-3">
+        Sistema Integral de Gestión de Inventario, Control y Seguridad
+      </span>
+</div>
+<!-- Right User Status & Credentials -->
+<div class="flex items-center space-x-4">
+<!-- Role Badge -->
+<div class="hidden sm:flex items-center bg-slate-800/40 rounded-full pl-2 pr-1 py-0.5 border border-white/10 text-white text-xs">
+<svg class="w-3.5 h-3.5 text-amber-400 mr-1.5" fill="currentColor" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M10 1.944A11.954 11.954 0 012.166 5C2.056 5.649 2 6.319 2 7c0 5.225 3.34 9.67 8 11.317C14.66 16.67 18 12.225 18 7c0-.682-.057-1.35-.166-2.001A11.954 11.954 0 0110 1.944zM11 14a1 1 0 11-2 0 1 1 0 012 0zm0-7a1 1 0 10-2 0v3a1 1 0 102 0V7z" fill-rule="evenodd"></path>
+</svg>
+<span class="mr-1.5 font-medium">Administrador</span>
+<span class="bg-[#E6A017] text-slate-900 font-bold px-2 py-0.5 rounded-full text-[10px] uppercase tracking-wider">Acceso total</span>
+</div>
+<!-- User Profile -->
+<div class="flex items-center space-x-2.5">
+<div class="text-right hidden lg:block leading-tight">
+<div class="text-white text-xs font-bold">Carlos Morales</div>
+<div class="text-slate-300 text-[10px]">Jefe de Operaciones</div>
+</div>
+<div class="w-8 h-8 rounded-full bg-slate-900/50 flex items-center justify-center text-white border border-white/30 text-xs font-bold shadow-inner">
+<svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" fill-rule="evenodd"></path>
+</svg>
+</div>
+</div>
+</div>
+</header>
+<!-- END: TopBar -->
+<!-- Container for Sidebar + POS Content -->
+<div class="flex-1 flex flex-row overflow-hidden">
+<!-- BEGIN: LeftSidebar -->
+<aside class="w-60 bg-brand-sidebarBg border-r border-[#EBE5DA] flex-shrink-0 flex flex-col justify-between py-4 select-none overflow-y-auto" data-purpose="system-sidebar">
+<div class="space-y-6">
+<!-- Group 1: OPERACIONES & CONTROL -->
+<div class="px-3">
+<div class="px-3 mb-2 text-[10px] font-bold text-slate-500 uppercase tracking-wider">
+            Operaciones &amp; Control
+          </div>
+<nav class="space-y-1">
+<!-- 1. Panel Principal -->
+<a class="flex items-center space-x-3 px-3 py-2 rounded-md text-xs font-medium text-slate-700 hover:bg-slate-200/60 transition" href="#">
+<svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<rect height="7" width="7" x="3" y="3"></rect>
+<rect height="7" width="7" x="14" y="3"></rect>
+<rect height="7" width="7" x="14" y="14"></rect>
+<rect height="7" width="7" x="3" y="14"></rect>
+</svg>
+<span>Panel Principal</span>
+</a>
+<!-- 2. Gestión de Inventario -->
+<a class="flex items-center space-x-3 px-3 py-2 rounded-md text-xs font-medium text-slate-700 hover:bg-slate-200/60 transition" href="#">
+<svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M3 21h18v-8a2 2 0 0 0-2-2h-1.5L12 3 6.5 11H5a2 2 0 0 0-2 2v8z"></path>
+<path d="M9 21v-5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v5"></path>
+</svg>
+<span>Gestión de Inventario</span>
+</a>
+<!-- 3. Gestión de Ventas -->
+<a class="flex items-center space-x-3 px-3 py-2 rounded-md text-xs font-medium text-slate-700 hover:bg-slate-200/60 transition" href="#">
+<svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M14 2H6a2 2 0 0 0-2 2v16l3-1.5L10 20l3-1.5L16 20l4-2V8l-6-6z"></path>
+<path d="M14 2v6h6M8 13h8M8 17h5"></path>
+</svg>
+<span>Gestión de Ventas</span>
+</a>
+<!-- 4. Punto de Venta (ACTIVE ITEM) -->
+<a class="flex items-center space-x-3 px-3 py-2 rounded-md text-xs font-semibold bg-brand-top text-white shadow-sm transition" href="#">
+<!-- Cash Register Icon -->
+<svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<rect height="6" rx="1" width="14" x="5" y="3"></rect>
+<path d="M4 14h16l1 7H3l1-7z"></path>
+<path d="M7 11v3M12 11v3M17 11v3"></path>
+<line x1="8" x2="16" y1="18" y2="18"></line>
+</svg>
+<span>Punto de Venta</span>
+</a>
+<!-- 5. Compras -->
+<a class="flex items-center space-x-3 px-3 py-2 rounded-md text-xs font-medium text-slate-700 hover:bg-slate-200/60 transition" href="#">
+<svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<circle cx="9" cy="21" r="1"></circle>
+<circle cx="20" cy="21" r="1"></circle>
+<path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+</svg>
+<span>Compras</span>
+</a>
+<!-- 6. Créditos -->
+<a class="flex items-center space-x-3 px-3 py-2 rounded-md text-xs font-medium text-slate-700 hover:bg-slate-200/60 transition" href="#">
+<svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<rect height="14" rx="2" width="20" x="2" y="5"></rect>
+<line x1="2" x2="22" y1="10" y2="10"></line>
+<path d="M8 15l2 2 4-4"></path>
+</svg>
+<span>Créditos</span>
+</a>
+</nav>
+</div>
+<!-- Group 2: SOCIOS & REPORTES -->
+<div class="px-3">
+<div class="px-3 mb-2 text-[10px] font-bold text-slate-500 uppercase tracking-wider">
+            Socios &amp; Reportes
+          </div>
+<nav class="space-y-1">
+<!-- 7. Análisis de Márgenes -->
+<a class="flex items-center space-x-3 px-3 py-2 rounded-md text-xs font-medium text-slate-700 hover:bg-slate-200/60 transition" href="#">
+<svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<rect height="18" rx="2" width="18" x="3" y="3"></rect>
+<path d="M8 16v-3M12 16v-6M16 16v-9"></path>
+</svg>
+<span>Análisis de Márgenes</span>
+</a>
+<!-- 8. Clientes -->
+<a class="flex items-center space-x-3 px-3 py-2 rounded-md text-xs font-medium text-slate-700 hover:bg-slate-200/60 transition" href="#">
+<svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+<circle cx="9" cy="7" r="4"></circle>
+<path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+<path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+</svg>
+<span>Clientes</span>
+</a>
+<!-- 9. Proveedores -->
+<a class="flex items-center space-x-3 px-3 py-2 rounded-md text-xs font-medium text-slate-700 hover:bg-slate-200/60 transition" href="#">
+<svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<rect height="13" width="15" x="1" y="3"></rect>
+<polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+<circle cx="5.5" cy="18.5" r="2.5"></circle>
+<circle cx="18.5" cy="18.5" r="2.5"></circle>
+</svg>
+<span>Proveedores</span>
+</a>
+<!-- 10. Usuarios & Roles -->
+<a class="flex items-center space-x-3 px-3 py-2 rounded-md text-xs font-medium text-slate-700 hover:bg-slate-200/60 transition" href="#">
+<svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+<circle cx="12" cy="10" r="2.5"></circle>
+<path d="M8.5 15.5c.8-1.5 2-2 3.5-2s2.7.5 3.5 2"></path>
+</svg>
+<span>Usuarios &amp; Roles</span>
+</a>
+</nav>
+</div>
+</div>
+<!-- Quick System Info Badge -->
+<div class="px-4 text-[10px] text-slate-400">
+<p>Stock.net POS Terminal #01</p>
+<p class="text-[9px]">Sincronización online</p>
+</div>
+</aside>
+<!-- END: LeftSidebar -->
+<!-- BEGIN: MainPOSArea -->
+<main class="flex-1 bg-brand-cream overflow-y-auto p-4 lg:p-6" data-purpose="pos-workspace">
+<!-- Back Action Button & Context Heading -->
+<div class="flex items-center space-x-3 mb-4">
+<button class="w-8 h-8 rounded-full bg-slate-900 text-white flex items-center justify-center shadow hover:bg-slate-800 transition" title="Volver al panel" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+<path d="M10 19l-7-7m0 0l7-7m-7 7h18" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<span class="text-xs font-bold text-slate-600 tracking-wider uppercase">Terminal de Ventas</span>
+</div>
+<!-- Two-Column Workspace -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+<!-- LEFT COLUMN: Product Catalog & Search (Span 8) -->
+<section class="lg:col-span-8 space-y-4" data-purpose="product-catalog-section">
+<!-- Outer Card Container for Search + Catalog -->
+<div class="bg-white rounded-2xl border border-brand-borderLight p-4 sm:p-5 shadow-sm">
+<!-- Search & Scan Bar -->
+<div class="relative flex items-center mb-6">
+<span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</span>
+<input class="w-full pl-10 pr-12 py-2 text-xs rounded-full border border-slate-300 focus:border-brand-top focus:ring-1 focus:ring-brand-top outline-none transition placeholder-slate-400 bg-white" id="product-search-input" placeholder="Buscar por Nombre, Categoria o escanea el código QR..." type="text">
+<button class="absolute right-2.5 p-1 text-slate-500 hover:text-slate-800 transition" title="Escanear Código QR" type="button">
+<!-- QR Code Icon -->
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+<path d="M2 2h7v7H2V2zm2 2v3h3V4H4zm5 7H2v7h7v-7zm-5 2v3h3v-3H4zm7-11h7v7h-7V2zm2 2v3h3V4h-3zm-2 9h2v2h-2v-2zm4 0h3v2h-3v-2zm-4 4h2v2h-2v-2zm2-2h2v2h-2v-2zm2 2h3v2h-3v-2zm0-4h2v2h-2v-2zm-6 4h2v3h-2v-3zm9 0h2v3h-2v-3z"></path>
+</svg>
+</button>
+</div>
+<!-- Product Cards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3.5" id="product-grid">
+<!-- Card 1 -->
+<div class="bg-white border border-[#E9E3D5] rounded-xl p-3 flex flex-col justify-between hover:shadow-md transition" data-id="1" data-name="Libro Hábitos Atómicos" data-price="25000" data-sku="LIB-HAB" data-stock="25">
+<div>
+<h3 class="text-xs font-bold text-slate-800 leading-snug line-clamp-2">Libro Hábitos Atómicos</h3>
+<div class="text-[11px] text-slate-500 mt-1">LIB-HAB | Stock: <span class="stock-qty font-semibold text-slate-700">25</span> uds</div>
+</div>
+<div class="mt-4">
+<div class="text-base font-extrabold text-[#263D52] mb-2">$ 25.000</div>
+<button class="btn-add-to-cart w-full py-1.5 px-2 bg-brand-accentYellow hover:bg-brand-accentYellowHover active:scale-95 text-slate-900 font-bold text-[11px] rounded-lg shadow-sm flex items-center justify-center space-x-1.5 transition" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Agregar a Venta</span>
+</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white border border-[#E9E3D5] rounded-xl p-3 flex flex-col justify-between hover:shadow-md transition" data-id="2" data-name="Libro El monje que vendió su ferrari" data-price="30000" data-sku="LIB-MON" data-stock="10">
+<div>
+<h3 class="text-xs font-bold text-slate-800 leading-snug line-clamp-2">Libro El monje que vendió su ferrari</h3>
+<div class="text-[11px] text-slate-500 mt-1">LIB-MON | Stock: <span class="stock-qty font-semibold text-slate-700">10</span> uds</div>
+</div>
+<div class="mt-4">
+<div class="text-base font-extrabold text-[#263D52] mb-2">$ 30.000</div>
+<button class="btn-add-to-cart w-full py-1.5 px-2 bg-brand-accentYellow hover:bg-brand-accentYellowHover active:scale-95 text-slate-900 font-bold text-[11px] rounded-lg shadow-sm flex items-center justify-center space-x-1.5 transition" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Agregar a Venta</span>
+</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white border border-[#E9E3D5] rounded-xl p-3 flex flex-col justify-between hover:shadow-md transition" data-id="3" data-name="Monitor Led 24&quot;" data-price="120000" data-sku="MON-24LED" data-stock="5">
+<div>
+<h3 class="text-xs font-bold text-slate-800 leading-snug line-clamp-2">Monitor Led 24"</h3>
+<div class="text-[11px] text-slate-500 mt-1">MON-24LED | Stock: <span class="stock-qty font-semibold text-slate-700">5</span> uds</div>
+</div>
+<div class="mt-4">
+<div class="text-base font-extrabold text-[#263D52] mb-2">$ 120.000</div>
+<button class="btn-add-to-cart w-full py-1.5 px-2 bg-brand-accentYellow hover:bg-brand-accentYellowHover active:scale-95 text-slate-900 font-bold text-[11px] rounded-lg shadow-sm flex items-center justify-center space-x-1.5 transition" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Agregar a Venta</span>
+</button>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-white border border-[#E9E3D5] rounded-xl p-3 flex flex-col justify-between hover:shadow-md transition" data-id="4" data-name="Teclado Mecánico K8" data-price="25000" data-sku="TCL-MEC" data-stock="15">
+<div>
+<h3 class="text-xs font-bold text-slate-800 leading-snug line-clamp-2">Teclado Mecánico K8</h3>
+<div class="text-[11px] text-slate-500 mt-1">TCL-MEC | Stock: <span class="stock-qty font-semibold text-slate-700">15</span> uds</div>
+</div>
+<div class="mt-4">
+<div class="text-base font-extrabold text-[#263D52] mb-2">$ 25.000</div>
+<button class="btn-add-to-cart w-full py-1.5 px-2 bg-brand-accentYellow hover:bg-brand-accentYellowHover active:scale-95 text-slate-900 font-bold text-[11px] rounded-lg shadow-sm flex items-center justify-center space-x-1.5 transition" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Agregar a Venta</span>
+</button>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="bg-white border border-[#E9E3D5] rounded-xl p-3 flex flex-col justify-between hover:shadow-md transition" data-id="5" data-name="Resma de papel carta 500hj" data-price="18500" data-sku="PAP-RES" data-stock="100">
+<div>
+<h3 class="text-xs font-bold text-slate-800 leading-snug line-clamp-2">Resma de papel carta 500hj</h3>
+<div class="text-[11px] text-slate-500 mt-1">PAP-RES | Stock: <span class="stock-qty font-semibold text-slate-700">100</span> uds</div>
+</div>
+<div class="mt-4">
+<div class="text-base font-extrabold text-[#263D52] mb-2">$ 18.500</div>
+<button class="btn-add-to-cart w-full py-1.5 px-2 bg-brand-accentYellow hover:bg-brand-accentYellowHover active:scale-95 text-slate-900 font-bold text-[11px] rounded-lg shadow-sm flex items-center justify-center space-x-1.5 transition" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Agregar a Venta</span>
+</button>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="bg-white border border-[#E9E3D5] rounded-xl p-3 flex flex-col justify-between hover:shadow-md transition" data-id="6" data-name="Cuaderno cosido 100 Hoj" data-price="7000" data-sku="CUA-100" data-stock="45">
+<div>
+<h3 class="text-xs font-bold text-slate-800 leading-snug line-clamp-2">Cuaderno cosido 100 Hoj</h3>
+<div class="text-[11px] text-slate-500 mt-1">CUA-100 | Stock: <span class="stock-qty font-semibold text-slate-700">45</span> uds</div>
+</div>
+<div class="mt-4">
+<div class="text-base font-extrabold text-[#263D52] mb-2">$ 7.000</div>
+<button class="btn-add-to-cart w-full py-1.5 px-2 bg-brand-accentYellow hover:bg-brand-accentYellowHover active:scale-95 text-slate-900 font-bold text-[11px] rounded-lg shadow-sm flex items-center justify-center space-x-1.5 transition" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Agregar a Venta</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- RIGHT COLUMN: Current Sale (Cart Panel) (Span 4) -->
+<section class="lg:col-span-4" data-purpose="current-sale-cart">
+<div class="bg-white border border-[#E2DBD0] rounded-2xl p-5 shadow-sm flex flex-col min-h-[560px] justify-between">
+<!-- Cart Header & Items -->
+<div>
+<!-- Cart Title -->
+<div class="flex items-center space-x-2.5 pb-4 border-b border-slate-100 mb-4">
+<svg class="w-6 h-6 text-slate-900" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+<path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<h2 class="text-xl font-bold text-slate-900 tracking-tight">Venta Actual</h2>
+</div>
+<!-- Cart Empty Placeholder -->
+<div class="py-12 flex flex-col items-center justify-center text-slate-400 hidden" id="cart-empty-view">
+<svg class="w-10 h-10 stroke-1 stroke-slate-400 mb-2 opacity-60" fill="none" viewBox="0 0 24 24">
+<path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+<p class="text-xs font-medium text-slate-600">Carrito vacío.</p>
+<p class="text-[11px] text-slate-400">Agrega productos al inventario</p>
+</div>
+<!-- Cart Item List Container -->
+<div class="space-y-2.5 max-h-72 overflow-y-auto pr-1" id="cart-items-container"><div class="bg-[#D8D2C6]/50 rounded-xl p-2.5 flex items-center justify-between border border-[#CDC5B7]">
+          <div class="flex-1 pr-2">
+            <div class="text-xs font-bold text-slate-800 truncate">Libro Hábitos Atómicos</div>
+            <div class="flex items-center space-x-1 mt-1.5">
+              <div class="inline-flex items-center bg-white rounded-full border border-slate-300 px-1 py-0.5 text-[10px] font-bold text-slate-700 shadow-inner">
+                <button type="button" class="btn-qty-decrease px-1.5 text-slate-500 hover:text-black font-extrabold" data-id="1">-</button>
+                <span class="px-1">1</span>
+                <button type="button" class="btn-qty-increase px-1.5 text-slate-500 hover:text-black font-extrabold" data-id="1">+</button>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center space-x-2">
+            <span class="text-xs font-bold text-[#263D52] whitespace-nowrap">$ 25.000</span>
+            <button type="button" class="btn-delete-item text-red-500 hover:text-red-700 p-1" data-id="1" title="Eliminar">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+              </svg>
+            </button>
+          </div>
+        </div></div>
+</div>
+<!-- Financial Summary & Actions -->
+<div class="mt-6 pt-4 border-t border-slate-200">
+<!-- Subtotals -->
+<div class="space-y-1.5 text-xs text-slate-600 font-medium">
+<div class="flex justify-between items-center">
+<span>Subtotal(sin IVA):</span>
+<span class="font-semibold text-slate-800" id="cart-subtotal">$ 25.000</span>
+</div>
+<div class="flex justify-between items-center">
+<span>IVA (19%):</span>
+<span class="font-semibold text-slate-800" id="cart-tax">$ 0</span>
+</div>
+</div>
+<!-- Grand Total -->
+<div class="flex justify-between items-baseline mt-4 mb-5 pt-3 border-t border-slate-100">
+<span class="text-xl font-bold text-[#263D52] tracking-wider">TOTAL</span>
+<span class="text-2xl font-extrabold text-[#263D52]" id="cart-total">$ 25.000</span>
+</div>
+<!-- Cart Action Buttons -->
+<div class="space-y-2.5">
+<div class="grid grid-cols-2 gap-2.5">
+<!-- Empty Cart Button -->
+<button class="py-2.5 px-3 bg-[#BFB7A8] hover:bg-[#ABA394] text-slate-800 font-semibold text-xs rounded-xl shadow-sm flex items-center justify-center space-x-1.5 transition active:scale-95" id="btn-empty-cart" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Vaciar</span>
+</button>
+<!-- Direct Pay Button -->
+<button class="py-2.5 px-3 bg-brand-greenEmerald hover:bg-brand-greenEmeraldHover text-white font-semibold text-xs rounded-xl shadow-sm flex items-center justify-center space-x-1.5 transition active:scale-95" id="btn-pay-cash" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<rect height="14" rx="2" width="20" x="2" y="5"></rect>
+<line x1="2" x2="22" y1="10" y2="10"></line>
+</svg>
+<span>Cobrar →</span>
+</button>
+</div>
+<!-- Credit Sale Button -->
+<button class="w-full py-2.5 px-3 bg-brand-greenTeal hover:bg-[#1C584C] text-white font-semibold text-xs rounded-xl shadow-sm flex items-center justify-center space-x-1.5 transition active:scale-95" id="btn-pay-credit" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<rect height="14" rx="2" width="20" x="2" y="5"></rect>
+<line x1="2" x2="22" y1="10" y2="10"></line>
+</svg>
+<span>Credito →</span>
+</button>
+</div>
+<!-- Security Footer Note -->
+<div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-center text-[10px] text-slate-400 space-x-1">
+<svg class="w-3 h-3 text-slate-400" fill="currentColor" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" fill-rule="evenodd"></path>
+</svg>
+<span>Transacciones seguras. Stock Actualizado en tiempo real</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- END: MainPOSArea -->
+</div>
+<!-- BEGIN: ModalPaymentCheckout -->
+<!-- MODAL 1: REGISTRAR COBRO -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden transition-opacity duration-200" id="modal-checkout">
+<div class="bg-brand-cream border-2 border-teal-500/80 rounded-2xl shadow-2xl w-full max-w-xl overflow-hidden animate-fadeIn">
+<!-- Modal Header -->
+<div class="bg-[#4A6B8A] px-5 py-3.5 flex justify-between items-center text-white">
+<h3 class="text-sm font-bold tracking-wide uppercase">Registrar Cobro</h3>
+<button class="btn-close-modal text-white/80 hover:text-white transition" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<!-- Modal Body -->
+<div class="p-6 space-y-4">
+<!-- Due Amount Title -->
+<div class="text-base font-bold text-slate-800 tracking-tight">
+          TOTAL A PAGAR: <span class="font-extrabold text-[#263D52]" id="modal-total-display">$ 0</span>
+</div>
+<!-- Client Search Input -->
+<div class="relative">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</span>
+<input class="w-full pl-9 pr-9 py-2 text-xs rounded-full border border-slate-300 focus:border-brand-top focus:ring-1 focus:ring-brand-top outline-none bg-white font-medium" id="client-search-input" placeholder="Buscar cliente por Nombre o Cédula / Id.." type="text" value="Juan Pérez - ID: 102030">
+<button class="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600" id="btn-toggle-client" title="Limpiar o cambiar cliente" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<!-- Selected Client Info Panel -->
+<div class="bg-white/70 p-3 rounded-lg border border-[#E8DFCF]" id="client-info-box">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-2 text-xs font-bold text-slate-800">
+<svg class="w-4 h-4 text-brand-top" fill="currentColor" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" fill-rule="evenodd"></path>
+</svg>
+<span id="client-name-label">Juan Pérez - ID: 102030</span>
+</div>
+<button class="text-xs text-slate-400 hover:text-red-500 font-bold" id="btn-remove-client" type="button">✕</button>
+</div>
+<div class="text-[11px] text-slate-500 mt-2 space-y-0.5" id="credit-stats">
+<div>Cupo total: <span class="font-semibold text-slate-700">200.000</span></div>
+<div>Deuda actual: <span class="font-semibold text-slate-700">$ 120.000</span></div>
+<div>Cupo disponible: <span class="font-semibold text-emerald-700">$ 80.000</span></div>
+</div>
+</div>
+<!-- Payment Breakdown Inputs -->
+<div class="space-y-3 pt-2">
+<!-- Efectivo -->
+<div class="flex items-center justify-between">
+<label class="text-xs font-bold text-slate-800">Efectivo</label>
+<input class="w-48 py-1.5 px-3 text-xs text-right font-semibold rounded-lg border border-slate-300 focus:ring-1 focus:ring-brand-top bg-white" id="pay-cash-input" type="text" value="$ 0">
+</div>
+<!-- Transferencia / QR -->
+<div class="flex items-center justify-between">
+<label class="text-xs font-bold text-slate-800">Transferencia / QR</label>
+<input class="w-48 py-1.5 px-3 text-xs text-right font-semibold rounded-lg border border-slate-300 focus:ring-1 focus:ring-brand-top bg-white" type="text" value="$ 0">
+</div>
+<!-- Fiado / Crédito -->
+<div class="flex items-center justify-between">
+<label class="text-xs font-bold text-slate-800">Fiado / Crédito</label>
+<input class="w-48 py-1.5 px-3 text-xs text-right font-semibold rounded-lg border border-slate-300 focus:ring-1 focus:ring-brand-top bg-white" id="pay-credit-input" type="text" value="$ 0">
+</div>
+<!-- Abono -->
+<div class="flex items-center justify-between">
+<label class="text-xs font-bold text-slate-800">Abono</label>
+<input class="w-48 py-1.5 px-3 text-xs text-right font-semibold rounded-lg border border-slate-300 focus:ring-1 focus:ring-brand-top bg-white" type="text" value="$ 0">
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex justify-end space-x-3 pt-5 border-t border-[#E8DFCF]">
+<button class="btn-close-modal px-6 py-2 rounded-xl text-xs font-bold bg-[#ABA394] hover:bg-[#979082] text-slate-900 transition" type="button">
+            CANCELAR
+          </button>
+<button class="px-6 py-2 rounded-xl text-xs font-bold bg-brand-accentYellow hover:bg-brand-accentYellowHover text-slate-900 shadow-md transition" id="btn-confirm-checkout" type="button">
+            CONFIRMAR
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- END: ModalPaymentCheckout -->
+<!-- BEGIN: ModalEmptyCartAlert -->
+<!-- MODAL 2: ALERTA DE SEGURIDAD - NO HAY PRODUCTOS -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden transition-opacity duration-200" id="modal-empty-alert">
+<div class="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-md overflow-hidden animate-fadeIn">
+<!-- Top banner -->
+<div class="bg-[#4A6B8A] px-4 py-3 flex justify-between items-center text-white">
+<h3 class="text-xs font-bold tracking-wide">Alerta de Seguridad</h3>
+<button class="btn-close-modal text-white/80 hover:text-white transition" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<!-- Warning body -->
+<div class="p-8 text-center space-y-3">
+<div class="flex items-center justify-center space-x-2 text-rose-600 font-bold text-sm sm:text-base">
+<!-- Triangle warning icon -->
+<svg class="w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>ATENCIÓN: No hay productos agregados</span>
+</div>
+<p class="text-xs text-slate-500">Selecciona o escanea artículos antes de procesar el pago o cobrar la venta.</p>
+<div class="pt-4">
+<button class="btn-close-modal px-5 py-2 bg-brand-top hover:bg-brand-topDark text-white text-xs font-bold rounded-lg shadow transition" type="button">
+            Entendido
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- END: ModalEmptyCartAlert -->
+<!-- BEGIN: ModalConfirmClearCart -->
+<!-- MODAL 3: ALERTA DE SEGURIDAD - CONFIRMAR VACIAR VENTA -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden transition-opacity duration-200" id="modal-confirm-clear">
+<div class="bg-white rounded-2xl shadow-2xl border border-slate-300 w-full max-w-md overflow-hidden animate-fadeIn">
+<!-- Top banner -->
+<div class="bg-[#4A6B8A] px-4 py-3 text-white text-center">
+<h3 class="text-xs font-bold tracking-wide">Alerta de Seguridad</h3>
+</div>
+<!-- Body -->
+<div class="p-6 text-center space-y-4">
+<p class="text-sm font-bold text-slate-800 leading-snug">
+          ¿Está seguro de que desea vaciar todos los productos de esta venta?
+        </p>
+<!-- Warning Subtext -->
+<div class="flex items-center justify-center space-x-1.5 text-xs font-semibold text-rose-600">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>ATENCIÓN: Se requiere confirmación</span>
+</div>
+<!-- Confirmation Buttons -->
+<div class="flex justify-center space-x-3 pt-3">
+<button class="px-5 py-2 bg-brand-accentYellow hover:bg-brand-accentYellowHover text-slate-900 text-xs font-bold rounded-xl shadow transition" id="btn-confirm-clear-action" type="button">
+            Confirmar
+          </button>
+<button class="btn-close-modal px-5 py-2 bg-[#ABA394] hover:bg-[#979082] text-slate-900 text-xs font-bold rounded-xl transition" type="button">
+            Cancelar
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- END: ModalConfirmClearCart -->
+<!-- BEGIN: JavaScriptApplicationLogic -->
+<script data-purpose="pos-state-and-events">
+    // State Store
+    const state = {
+      cart: [
+        // Seed default item matching screenshots: "Libro Hábitos Atómicos"
+        {
+          id: 1,
+          name: "Libro Hábitos Atómicos",
+          sku: "LIB-HAB",
+          price: 25000,
+          quantity: 1
+        }
+      ],
+      client: {
+        selected: true,
+        name: "Juan Pérez - ID: 102030",
+        quotaTotal: 200000,
+        currentDebt: 120000,
+        available: 80000
+      }
+    };
+
+    // Helper: Currency Formatter
+    function formatCOP(amount) {
+      return '$ ' + Number(amount).toLocaleString('es-CO');
+    }
+
+    // DOM Elements
+    const cartItemsContainer = document.getElementById('cart-items-container');
+    const cartEmptyView = document.getElementById('cart-empty-view');
+    const cartSubtotalEl = document.getElementById('cart-subtotal');
+    const cartTaxEl = document.getElementById('cart-tax');
+    const cartTotalEl = document.getElementById('cart-total');
+
+    // Modals
+    const modalCheckout = document.getElementById('modal-checkout');
+    const modalEmptyAlert = document.getElementById('modal-empty-alert');
+    const modalConfirmClear = document.getElementById('modal-confirm-clear');
+
+    const modalTotalDisplay = document.getElementById('modal-total-display');
+    const payCashInput = document.getElementById('pay-cash-input');
+    const payCreditInput = document.getElementById('pay-credit-input');
+
+    // Client Info in Modal
+    const clientInfoBox = document.getElementById('client-info-box');
+    const clientSearchInput = document.getElementById('client-search-input');
+    const btnRemoveClient = document.getElementById('btn-remove-client');
+    const btnToggleClient = document.getElementById('btn-toggle-client');
+
+    // Calculate Cart Totals
+    function calculateTotals() {
+      const subtotal = state.cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+      const tax = 0; // Configured as 0 in prototype
+      const total = subtotal + tax;
+      return { subtotal, tax, total };
+    }
+
+    // Render Cart DOM
+    function renderCart() {
+      if (state.cart.length === 0) {
+        cartItemsContainer.classList.add('hidden');
+        cartEmptyView.classList.remove('hidden');
+      } else {
+        cartEmptyView.classList.add('hidden');
+        cartItemsContainer.classList.remove('hidden');
+      }
+
+      // Render items
+      cartItemsContainer.innerHTML = '';
+      state.cart.forEach(item => {
+        const itemRow = document.createElement('div');
+        itemRow.className = "bg-[#D8D2C6]/50 rounded-xl p-2.5 flex items-center justify-between border border-[#CDC5B7]";
+        itemRow.innerHTML = `
+          <div class="flex-1 pr-2">
+            <div class="text-xs font-bold text-slate-800 truncate">${item.name}</div>
+            <div class="flex items-center space-x-1 mt-1.5">
+              <div class="inline-flex items-center bg-white rounded-full border border-slate-300 px-1 py-0.5 text-[10px] font-bold text-slate-700 shadow-inner">
+                <button type="button" class="btn-qty-decrease px-1.5 text-slate-500 hover:text-black font-extrabold" data-id="${item.id}">-</button>
+                <span class="px-1">${item.quantity}</span>
+                <button type="button" class="btn-qty-increase px-1.5 text-slate-500 hover:text-black font-extrabold" data-id="${item.id}">+</button>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center space-x-2">
+            <span class="text-xs font-bold text-[#263D52] whitespace-nowrap">${formatCOP(item.price * item.quantity)}</span>
+            <button type="button" class="btn-delete-item text-red-500 hover:text-red-700 p-1" data-id="${item.id}" title="Eliminar">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"/>
+              </svg>
+            </button>
+          </div>
+        `;
+        cartItemsContainer.appendChild(itemRow);
+      });
+
+      // Update Financials
+      const { subtotal, tax, total } = calculateTotals();
+      cartSubtotalEl.textContent = formatCOP(subtotal);
+      cartTaxEl.textContent = formatCOP(tax);
+      cartTotalEl.textContent = formatCOP(total);
+    }
+
+    // Modal Control Functions
+    function openModal(modalEl) {
+      modalEl.classList.remove('hidden');
+    }
+
+    function closeModal(modalEl) {
+      modalEl.classList.add('hidden');
+    }
+
+    function closeAllModals() {
+      modalCheckout.classList.add('hidden');
+      modalEmptyAlert.classList.add('hidden');
+      modalConfirmClear.classList.add('hidden');
+    }
+
+    // Event Delegations & Handlers
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCart();
+
+      // Product Add Buttons
+      document.querySelectorAll('.btn-add-to-cart').forEach(button => {
+        button.addEventListener('click', (e) => {
+          const card = e.target.closest('[data-id]');
+          if (!card) return;
+          const id = parseInt(card.dataset.id);
+          const name = card.dataset.name;
+          const sku = card.dataset.sku;
+          const price = parseInt(card.dataset.price);
+
+          const existingIndex = state.cart.findIndex(i => i.id === id);
+          if (existingIndex > -1) {
+            state.cart[existingIndex].quantity += 1;
+          } else {
+            state.cart.push({ id, name, sku, price, quantity: 1 });
+          }
+          renderCart();
+        });
+      });
+
+      // Dynamic Item Quantity and Removal within Cart
+      cartItemsContainer.addEventListener('click', (e) => {
+        const target = e.target;
+        const decBtn = target.closest('.btn-qty-decrease');
+        const incBtn = target.closest('.btn-qty-increase');
+        const delBtn = target.closest('.btn-delete-item');
+
+        if (decBtn) {
+          const id = parseInt(decBtn.dataset.id);
+          const item = state.cart.find(i => i.id === id);
+          if (item) {
+            item.quantity -= 1;
+            if (item.quantity <= 0) {
+              state.cart = state.cart.filter(i => i.id !== id);
+            }
+          }
+          renderCart();
+        } else if (incBtn) {
+          const id = parseInt(incBtn.dataset.id);
+          const item = state.cart.find(i => i.id === id);
+          if (item) item.quantity += 1;
+          renderCart();
+        } else if (delBtn) {
+          const id = parseInt(delBtn.dataset.id);
+          state.cart = state.cart.filter(i => i.id !== id);
+          renderCart();
+        }
+      });
+
+      // Vaciar Button
+      document.getElementById('btn-empty-cart').addEventListener('click', () => {
+        if (state.cart.length === 0) {
+          openModal(modalEmptyAlert);
+        } else {
+          openModal(modalConfirmClear);
+        }
+      });
+
+      // Confirm Clear from Modal
+      document.getElementById('btn-confirm-clear-action').addEventListener('click', () => {
+        state.cart = [];
+        renderCart();
+        closeModal(modalConfirmClear);
+      });
+
+      // Checkout (Cobrar) Handler
+      document.getElementById('btn-pay-cash').addEventListener('click', () => {
+        if (state.cart.length === 0) {
+          openModal(modalEmptyAlert);
+          return;
+        }
+        const { total } = calculateTotals();
+        modalTotalDisplay.textContent = formatCOP(total);
+        payCashInput.value = formatCOP(total);
+        payCreditInput.value = "$ 0";
+        openModal(modalCheckout);
+      });
+
+      // Credit (Crédito) Handler
+      document.getElementById('btn-pay-credit').addEventListener('click', () => {
+        if (state.cart.length === 0) {
+          openModal(modalEmptyAlert);
+          return;
+        }
+        const { total } = calculateTotals();
+        modalTotalDisplay.textContent = formatCOP(total);
+        payCashInput.value = "$ 0";
+        payCreditInput.value = formatCOP(total);
+        openModal(modalCheckout);
+      });
+
+      // Close modal buttons (All buttons with class .btn-close-modal)
+      document.querySelectorAll('.btn-close-modal').forEach(btn => {
+        btn.addEventListener('click', closeAllModals);
+      });
+
+      // Dismiss modal on background click
+      [modalCheckout, modalEmptyAlert, modalConfirmClear].forEach(modal => {
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) closeAllModals();
+        });
+      });
+
+      // Client Box Removal Logic in Modal
+      function removeClientSelection() {
+        state.client.selected = false;
+        clientSearchInput.value = "";
+        clientInfoBox.innerHTML = `
+          <div class="text-xs font-bold text-slate-700">Cliente general</div>
+        `;
+      }
+
+      btnRemoveClient.addEventListener('click', removeClientSelection);
+      btnToggleClient.addEventListener('click', removeClientSelection);
+
+      // Confirm Transaction in Modal
+      document.getElementById('btn-confirm-checkout').addEventListener('click', () => {
+        alert('¡Venta realizada con éxito! Se ha generado el comprobante de venta.');
+        state.cart = [];
+        renderCart();
+        closeModal(modalCheckout);
+      });
+
+      // Simple Search Filter on Products
+      document.getElementById('product-search-input').addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        const cards = document.querySelectorAll('#product-grid > div');
+        cards.forEach(card => {
+          const name = card.dataset.name.toLowerCase();
+          const sku = card.dataset.sku.toLowerCase();
+          if (name.includes(query) || sku.includes(query)) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+<!-- END: JavaScriptApplicationLogic -->
+
+
+</body></html>
